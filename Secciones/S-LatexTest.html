@@ -1,0 +1,88 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- Next part is for new coomands -->
+
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+
+
+    <!-- This part restart counter of cards to start at N+1 -->
+    <style>
+      body.card {
+        counter-reset: sectionCounter N cardCounter;
+      }
+
+      h1.card {
+        counter-reset: sectionCounter N cardCounter;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio </a> </li>
+        <li> <a href="../Secciones.html"> Secciones </a> </li>
+      </ul>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo CUATRO</h1>
+
+  </header>
+
+  <!-- Contenido empieza abajo -->
+
+
+  <body class="fondo card ">
+
+    <div class="flexbox">
+
+      <h1 class="card "> Title  </h1>
+
+
+
+
+
+
+    </div>
+
+  </body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
