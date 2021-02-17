@@ -29,13 +29,13 @@
 
     <link rel="stylesheet" , href="../styles.css" />
 
-    <!-- This part restart counter of cards to start at 1 -->
+    <!-- This part restart counter of cards to start at n+1 -->
     <style>
       body.number-title{
-        counter-reset: sectionCounter 2 cardCounter ;
+        counter-reset: sectionCounter 0 cardCounter ;
       }
       h1.number-title{
-        counter-reset: sectionCounter 2 cardCounter ;
+        counter-reset: sectionCounter 0 cardCounter ;
       }
     </style>
 
@@ -70,12 +70,416 @@
         <h2 class="number-title"> Introducción </h2>
         <p>
           Operaciones básicas con conjuntos,
-          los axiomas de los números reales, simbolo
+          los axiomas de campo y orden de los números reales, símbolo
           de sumatoria. Esta sección es un repaso de
-          estos conceptos.
+          estos conceptos, no se ven a fondo  si no más bien
+          es un recordatorio para tener un manejo fluido
+          de los mismos.
         </p>
+      </div>
 
 
+
+                <div class="definicion-box">
+                <h2 class="number-title"> Definición </h2>
+                Dado un conjunto \(S\), para denotar que un elemento \(x\) pertece a \(S\) escribimos \(x\in S\).
+                Dados dos conjuntos \(A\), \(B\), decimos que \(A\) es subconjunto de \(B\) si todo elemento de
+                \(A\) también es elemento de \(B\), es decir para toda \(a\in A\) se cumple que \(a\in B\). Esto se denota
+                por \(A\subseteq B\).
+
+                Decimos que dos conjuntos son iguales si \(A\subseteq B\) y \(B\subseteq A\).
+                </div>
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                Tomar \(A=\{1\}, B=\{1,2\}\). Discute la validez de las siguientes relaciones.
+                <ul>
+                <li> \(A \subset B\).</li>
+                <li> \(A\subseteq B\).</li>
+                <li> \(A\in B\).</li>
+                <li> \(1 \subseteq A\).</li>
+                <li> \(1 \subset B\). </li>
+                </ul>
+                </div>
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                    Resuelve el ejercicio anterior tomando \(A=\{1\}, B=\{ \{1\}, 1\}\).
+                </div>
+
+                <div class="definicion-box">
+                  <h2 class="number-title"> Definición </h2>
+                Dados  dos conjuntos \(A_1\), \(A_2\), definimos:
+                <ul>
+                <li>  la unión, como el conjunto formado por los elementos
+                  que pertenecen a \(A_1\)  o a \(A_2\). Este se
+                  denota \(A_1\cup A_2\). Esta definición se puede
+                  ampliar a cualquier cantidad de conjuntos, ya sea finito, \(\cup_{i=1}^n A_i\),
+                  o infinito, \(\cup_{i\in I} A_i\), donde
+                  \(I\) es un conjunto infinito arbitrario de índices.</li>
+                <li> la intersección, como el conjunto formado por los elementos
+                  que pertenecen a \(A_1\) y a \(A_2\). Este se denota
+                  \(A_1\cap A_2\). Esta definición se puede ampliar a cualquier
+                  cantidad de conjuntos:
+                  \(\cap_{i\in I}^n A_i\).</li>
+                <li> la diferencia, como el conjunto formado por los elemntos que
+                  están en uno pero no en otro. Así, \(A_1\setminus A_2\)
+                  denota al  conjunto formado por los elementos que están en
+                  \(A_1\)  pero que no están en \(A_2\).</li>
+                </ul>
+                </div>
+
+
+
+
+
+                 <div class="ejercicio-box">
+                   <h2 class="number-title"> Ejercicio </h2>
+                   Demuestra:
+                <ul>
+                <li> \((A\cup B) \cup C= A\cup (B\cup C)\).</li>
+                <li> \((A\cap B) \cap C= A\cap (B\cap C)\).</li>
+                <li> \(A\subseteq A\cup B\), \(A\cap B \subseteq A\).</li>
+                <li> \(A\cup \emptyset= A\), \(A\cap \emptyset=\emptyset\).</li>
+                <li> Si \(A \subseteq B\) y \(B \subseteq C\) entonces
+                  \(A\subseteq C\).</li>
+
+
+                <li> (Leyes de De Morgan) Sea \(\mathcal{F}\) una familia de
+                  conjuntos. Demuestra
+                \[
+                B - \cup_{A\in \mathcal{F}} A= \cap_{A\in \mathcal{F}} (B -  A),
+                \quad B - \cap_{A \in \mathcal{F}}A=\cup_{A \in \mathcal{F}} (B - A)
+                \]
+                donde \(A\) y \(B\) son conjuntos cualesquiera.
+                </li>
+                </ul>
+              </div>
+
+
+
+                <div class="nota-box">
+                  <h2 class="number-title"> Axiomas de campo </h2>
+                <p>
+                  Por \(\mathbb{R}\) vamos a denotar el conjunto de números reales,
+                  dotado con las operaciones de suma y producto. Por
+                  \(\mathbb{N}=\{0,1,2,\dots \}\) vamos a denotar al
+                  conjunto de números naturales, por \(\mathbb{Q}\)
+                  al conjunto de números racionales.
+                </p>
+
+                <p>
+                Las operaciones de suma y producto en \(\mathbb{R}\)
+                satisfacen los siguientes axiomas, que se conocen como
+                axiomas de campo.
+                </p>
+                <ul>
+                <li> Conmutatividad: para todos \(x,y\), \(x+y=y+x\), \(xy=yx\).
+                <li> Asociatividad:para todos \(x,y,z\), \(x+(y+z)=(x+y)+z\), \(x(yz)=(xy)z\).
+                <li> Distributividad: para todos \(x,y,z\), \(x(y+z)=xy+xz\).
+                <li> Existencia de neutros: para todo \(x\), \(x+0=x\), \(1x=x\).
+                <li> Existencia de inversos aditivos: para todo \(x\) existe \(y\) con \(x+y=0\).
+                <li> Existencia de inversos multiplicativos: para todo \(x\ne 0\) existe \(y\) con \(xy=1\).
+                </ul>
+                </div>
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                 Usando los axiomas de campo, demuestra:
+                <ul>
+                <li> que el inverso aditivo es único. Es decir, fija \(x\in\mathbb{R}\)
+                  y prueba que si \(x+y=0\) y \(x+y'=0\) entonces
+                \(y=y'\).
+                <li> al inverso aditivo de \(1\) se le denota \(-1\).
+                  Demuestra que \((-1)x\) es in inverso aditivo de \(x\).
+                  Por notación definimos \(-x:=(-1)x\).
+                </ul>
+                </div>
+
+
+                 <div class="ejercicio-box">
+                   <h2 class="number-title"> Ejercicio </h2>
+                   Usando los axiomas de campo, demuestra  que el inverso
+                   multiplicativo es único. Es decir, fija \(x\in \mathbb{R}\),
+                   con \(x\ne 0\) y prueba que si \(xy=1\) y
+                   \(xy'=1\) entonces \(y=y'\). Al inverso
+                    multiplicativo de \(x\) se le denota \(x^{-1}\) o
+                    \(\frac{1}{x}\).
+                 </div>
+
+
+                 <div class="ejercicio-box">
+                   <h2 class="number-title"> Ejercicio </h2>
+                   Usando los axiomas de campo demuestra las siguientes identidades:
+                <ul>
+                <li> Diferencia de cuadrados:
+                \[
+                b^2-a^2=(b-a)(b+a).
+                \]
+                <li> Diferencia de cubos:
+                \[
+                b^3-a^3=(b-a)(a^2+ab+b^2).
+                \]
+                </ul>
+                </div>
+
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  Usando los axiomas de campo encuentras las soluciones a las siguientes ecuaciones (si existen).
+
+                <ul>
+                <li> \(2x+5=1\)
+                <li> \(6x-2=7x+4\)
+                <li> \(\frac{5x+2}{6x-2}=3\)
+                <li> \(\frac{1-x}{x-4}=4\)
+                <li> \(\frac{1-x}{1+x}=a\)
+                </ul>
+                </div>
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  Encuentra condiciones sobre \(a\) para que la ecuación
+                  \(\frac{2x+1}{2x-1}=a\) tenga solución.
+                </div>
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  Usando los axiomas de campo, demuestra:
+                <ul>
+                <li> \(-(-a)=a\).
+                <li> \(a(b-c)=ab-ac\).
+                <li> \(a0=0\).
+                <li> para \(a\not=0\), \((a^{-1})^{-1}=a\).
+                <li> si \(ab=0\) entonces \(a=0\) o \(b=0\).
+                <li> \((-a)b=-(ab)\) y \((-a)(-b)=ab\).
+                <li> para \(c\not=0\), \(a/b=(ac)/(bc)\).
+                <li> \(-0=0\).
+                <li> \(1^{-1}=1\).
+                <li> \((a-b)+(b-c)=a-c\).
+                <li> para \(a\neq 0, b\neq 0\), \((ab)^{-1}=b^{-1}a^{-1}\).
+                </ul>
+                </div>
+
+
+
+
+
+                <div class="definicion-box">
+                  <h2 class="number-title"> Definición </h2>
+                Si \(a_1,a_2, \dots, a_n\) es una lista de números reales el símbolo
+                \[
+                \sum_{k=1}^n a_k
+                \]
+                denota la suma de todos los elementos de la lista. También se puede denotar
+                \[
+                a_1+\cdots +a_n.
+                \]
+
+                Propiedades:
+
+                <ul>
+                <li> \(\sum_{k=1}^1 a_k=a_1\)</li>
+                <li> \(\sum_{k=1}^{n+1}a_k=\left( \sum_{k=1}^n a_k  \right)
+                  + a_{n+1}\) </li>
+                </ul>
+
+                </div>
+
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  Usando inducción sobre el número de sumandos prueba las siguientes propiedades.
+                <ul>
+                <li> \(\sum_{k=1}^n (a_k+b_k)=\sum_{k=1}^n a_k + \sum_{k=1}^n b_k\).
+                <li> \(\sum_{k=1}^n ca_k= c \sum_{k=1}^n a_k\).
+                <li> Suma telescópica: \(\sum_{k=1}^n (a_k-a_{k-1})=a_n-a_0\).
+                </ul>
+                </div>
+
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  <p>Para \(x\ne 1\), demuestra la siguiente identidad:
+
+                \[
+                \sum_{k=0}^n x^k =\frac{1-x^{k+1}}{1-x}
+                \]
+                Nota: se define \(x^0=1\).
+              </p>
+                <p>
+                  Sugerencia: considera \((1-x)(\sum_{k=1}^n x^k)\).
+                </p>
+              </div>
+
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  Demuestras las siguientes fórmulas
+
+                <ul>
+
+                <li> \(\sum_{k=1}^n 2k-1=n^2\)
+
+                <p>
+                  Sugerencia: considera una suma
+                  telescópica con \(a_k=k^2\).
+                </p>
+
+                <li> \(\sum_{k=1}^n k = \frac{n^2}{2}+\frac{n}{2}\).
+
+                <p>
+                  Sugerencia: usa la fórmula anterior y
+                  las propiedades de la sumatoria.
+                </p>
+
+                <li> \(\sum_{k=1}^n 3k^2-3k+1 = n^3\)
+
+                <p>
+                  Sugerencia: considera una seria telescópica.
+                </p>
+
+                <li> Con la ayuda de los incisos anteriores encuentra una
+                  fórmula para \(\sum_{k=1}^n k^2\).
+
+                </ul>
+                </div>
+
+
+                <div class="ejercicio-box" id="Eqn:Resolvent">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  <p>Este ejercicio generaliza la diferencia de cuadrados
+                    y diferencia de cubos.
+                  </p>
+
+                  <p>
+                    Demuestra que para cualesquiera \(a,b \in \mathbb{R}\) y para \(n \geq 2\):
+                \[
+                a^n-b^n=(a-b)\left( \sum_{k=0}^{n-1} a^kb^{n-1-k} \right)
+                \]
+              </p>
+            </div>
+
+
+              <div class="nota-box">
+                <h2 class="number-title"> El orden en \(\mathbb{R}\) </h2>
+                <p>
+                La idea de que \(\mathbb{R}\) se puede representar con una
+                recta genera, de manera intuitiva, un orden en \(\mathbb{R}\).
+                Denotamos \(x < y \) si \(x\) es menor a \(y\), es decir,
+                si \(x\) est\'a a la izquierda de \(y\). Denotamos \(x\leq y\) si
+                \(x=y\) o \(x< y \).
+              </p>
+
+              <p>
+                Los intervalo  son subconjunto de \(\mathbb{R}\) determinado
+                por el orden. Hay diferentes tipos. En las siguientes
+                definiciones suponemos \(a,b \in \mathbb{R}\) con \(a< b\).
+                <ul>
+                <li>   Abiertos:
+                  \[(a,b)=\{ x\in \mathbb{R}: a< x < b  \} .
+                  \]
+                </li>
+                <li> Cerrados:
+                  \[[a,b]=\{ x\in \mathbb{R}: a\leq x \leq b\}.\]
+                </li>
+                <li>
+                  Combinaciones de abiertos y cerrados:
+                  \[
+                  [a,b)=\{ x\in \mathbb{R} : a\leq x < b\},
+                  \quad (a,b]=\{ x\in \mathbb{R}: a< x \leq b\}.
+                  \]
+                </li>
+                </ul>
+              </div>
+
+
+
+              <div class="ejercicio-box">
+                <h2 class="number-title"> Ejercicio </h2>
+                Sean \(a,b,c,d\in \mathbb{R}\), con \(a< b\), \(c< d\).
+                Usando la noci\'on intuitiva de orden, demuestra:
+                <ul>
+                  <li> si \(b< c\) o si \(d< a\) entonces
+                    \([a,b]\cap [c,d]=\emptyset\).
+                  </li>
+                  <li> si \(b \geq c\) y si \(d \geq a\)
+                    entonces \([a,b]\cap [c,d]=[ \max\{a,c\}, \min\{b ,d\}  ]\)
+                  </li>
+                </div>
+
+
+
+
+                <div class="nota-box">
+                  <h2 class="number-title"> Axiomas de orden </h2>
+                  <p> La relación de orden se puede axiomatizar de la siguiente
+                    manera.</p>
+
+                    <p>
+                      Se póstula la existencia de
+                      \(\mathbb{R}^+\), el conjunto de números positivos.  El
+                      conjunto \(\mathbb{R}^+\) satisface los siguientes axiomas
+                      de orden.
+                    </p>
+
+                    <ul>
+                    <li> si \(x,y \in \mathbb{R}^+\) entonces \(x+y, xy \in \mathbb{R}^+\);</li>
+                    <li> para todo \(x\in \mathbb{R}\), \(x\ne 0\),
+                      \(x\in \mathbb{R}^+\) o \(-x\in \mathbb{R}^+\), pero no ambos;
+                    </li>
+                    <li> \(0 \notin \mathbb{R}^+\). </li>
+                  </ul>
+                  Definimos \(x>0\) sii \(x\in \mathbb{R}^+\) y
+                  definimos \(x>y\) sii \(x-y \in \mathbb{R}^+\).
+                </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            Usando los axiomas de orden y campo demuestra:
+
+            <ul>
+              <li>para todo \(a\neq 0\), \(a^2>0\). </li>
+              <li> \(1>0\). </li>
+              <li> \(ab >0\) entonces \(a\) y \(b\) son ambos positivos o
+                ambos negativos.</li>
+              <li>  si \(a< c\) y \(b< d\) entonces \(a+b < c+d\). </li>
+              <li> no existe un n\'umero real \(x\) tal que \(x^2+1=0\). </li>
+              <li> si \(a>0\) entonces \(1/a>0\); si \(a< 0\) entonces \(1/a< 0\). </li>
+              <li>si \(0< a< b\) entonces \(0< b^{-1}< a^{-1}\). </li>
+              <li> si  \(x\) tiene  la propiedad  de que \(0\leq x < h\) para
+                todo \(h>0\) entonces \(x=0.\) </li>
+              </ul>
+            </div>
+
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              Sea \(x,y\) reales cualesquiera con \(x < y\).
+              Demuestra que existe almenos un n\'umero real \(z\) tal que
+              \(x< z < y\).
+            </div>
+
+
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Usando los axiomas, demuestra que si \(a> 0\) y \(c \leq b\) entonces \(c <  b+a\).
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+           Demuestra que \(n< 2^n \) para todo \(n \in \mathbb{N}\), \(n\geq 1\).
+        </div>
+
+        <div class="ejercicio-box" id="Ejer:LemaParaExistenciaRaices">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>Fija \(a>0\). Usando los axiomas demuestra que para todo
+          \(n\in \mathbb{N}\), \(n\geq 1\), \(a<(1+a)^n\).
+        </p>
+        <p>
+          Sugerencia: puedes usar inducción o el binomio de Newton.
+        </p>
       </div>
 
 
@@ -84,9 +488,7 @@
 
 
 
-
-
-    </div>
+</div>
 
 
 
