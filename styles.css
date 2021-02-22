@@ -11,23 +11,19 @@ html, body{
   margin: 0;
   padding: 16px;
   font-family: "Quicksand";
+  background:  rgb(255, 232, 224) ;
 }
 
-
 .fondo{
-  background: /*rgb(248, 249, 249)*/ /*rgb( 245, 229, 181 )*/  rgb(255, 232, 224) ;
+  background:  rgb( 255, 249, 205 );
+  color: white;
 }
 
 .fondo-dark{
   background: black;
-  color:white;
+  color: cyan;
 }
-.fondo-info{
-  background: rgb(63,94,251);
-  background: rgb(120,158,252);
-  background: linear-gradient(90deg,
-    rgba(120,158,252,1) 0%, rgba(116,206,254,1) 50%, rgba(111,176,236,1) 100%);
-}
+
 
 
 .flexbox{
@@ -36,6 +32,7 @@ html, body{
   justify-content: center;
   align-items: center;
 }
+
 /* for top menu */
 .main-header{
   top: 0;
@@ -117,6 +114,32 @@ h2.number-title:before{
 
 /*/////////////// for body boxes  /////////////////////*/
 
+
+.info-box{
+    background:  rgb( 255, 249, 205 );
+    color: black;
+    border-radius: 25px;
+    padding: 20px;
+    border: 10px solid  rgba( 190, 236, 172 ,0.5);
+    margin: 20px;
+    font-size: 20px;
+    width: 70%;
+    box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
+}
+
+
+.info-box-dark{
+    background: black;
+    color: cyan;
+    border-radius: 25px;
+    padding: 20px;
+    border: 10px solid  rgba( 190, 236, 172 ,0.5);
+    margin: 20px;
+    font-size: 20px;
+    width: 70%;
+    box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
+}
+
 .definicion-box{
   background:  rgb( 255, 249, 205 );
   border-radius: 25px;
@@ -142,16 +165,6 @@ h2.number-title:before{
 }
 
 
-.info-box{
-    background:  rgb( 255, 249, 205 );
-    border-radius: 25px;
-    padding: 20px;
-    border: 10px solid  rgba( 190, 236, 172 ,0.5);
-    margin: 20px;
-    font-size: 20px;
-    width: 70%;
-    box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
-}
 
 
 .nota-box{
