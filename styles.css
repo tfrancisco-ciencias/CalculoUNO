@@ -18,6 +18,10 @@ html, body{
   background: /*rgb(248, 249, 249)*/ /*rgb( 245, 229, 181 )*/  rgb(255, 232, 224) ;
 }
 
+.fondo-dark{
+  background: black;
+  color:white;
+}
 .fondo-info{
   background: rgb(63,94,251);
   background: rgb(120,158,252);
@@ -209,7 +213,7 @@ h2.number-title:before{
 .respButton{
     display: block;
     border-radius: 25px;
-    border: 10px solid  rgb(214, 234, 248,0.5 ;
+    border: 10px solid  rgb(214, 234, 248,0.5) ;
     margin-right: auto;
     margin-left: auto;
     font-size: 20px;
