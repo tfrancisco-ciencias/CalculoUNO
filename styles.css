@@ -12,11 +12,12 @@ html, body{
   padding: 16px;
   font-family: "Quicksand";
   background:  rgb(255, 232, 224) ;
+  color: black;
 }
 
 .fondo{
-  background:  rgb( 255, 249, 205 );
-  color: white;
+  background:   rgb(255, 232, 224) ;
+  color: black;
 }
 
 .fondo-dark{
