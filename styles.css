@@ -11,19 +11,23 @@ html, body{
   margin: 0;
   padding: 16px;
   font-family: "Quicksand";
-  background:  rgb(255, 232, 224) ;
+}
+
+.fondo-body{
+  background:  rgb(255, 232, 224);
   color: black;
 }
 
-.fondo{
-  background:   rgb(255, 232, 224) ;
-  color: black;
-}
-
-.fondo-dark{
+.fondo-body-dark{
   background: black;
   color: cyan;
 }
+
+.fondo{
+  background: rgb( 255, 249, 205 );
+  color: black;
+}
+
 
 
 
@@ -130,7 +134,7 @@ h2.number-title:before{
 
 
 .info-box-dark{
-    background: black;
+    background: rgb( 46, 64, 83 );
     color: cyan;
     border-radius: 25px;
     padding: 20px;
@@ -280,4 +284,18 @@ h2.number-title:before{
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+ .BLD{
+ padding:0.35em 1.2em;
+ border:0.1em solid #FFFFFF;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:300;
+ font-size:20px;
+ color:#FFFFFF;
+ text-align:right;
+ transition: all 0.2s;
 }
