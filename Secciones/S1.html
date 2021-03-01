@@ -195,9 +195,77 @@
                   y prueba que si \(x+y=0\) y \(x+y'=0\) entonces
                 \(y=y'\).
                 <li> al inverso aditivo de \(1\) se le denota \(-1\).
-                  Demuestra que \((-1)x\) es in inverso aditivo de \(x\).
+                  Demuestra que \((-1)x\) es un inverso aditivo de \(x\).
                   Por notación definimos \(-x:=(-1)x\).
                 </ol>
+
+                <button class="respButton hvr-grow"> Respuesta </button>
+
+            <div class="resp-box">
+              <ol>
+              <li> Sea \( x \in \mathbb{R}\). Supongamos que para \(y,y' \in \mathbb{R}\) se satisface que  \( x+ y=0 \) y \(x+ y'=0 \). 
+                Veamos que \( y= y' \). 
+
+                <p>
+                Partimos de  la igualdad \(x +y = 0 \), sumando \( y' \)  a cada lado de la igualdad y de la propiedad del elemento neutro 
+                se sigue que: 
+
+               $$y' +   (x+y) =  y' + 0  = y'  $$
+
+              </p>
+
+              <p>
+               Luego de los  axiomas:  asociatividad y conmutatividad,   la hipótesis \( x+ y'=0\)  
+               y la propiedad del elemento neutro,   se obtiene 
+
+               $$y' = (y' +  x ) + y =  0 + y = y$$
+
+              </p>
+
+              <p>
+               Por lo tanto, \(y=y'\) como se quería probar. 
+              </p>
+
+              <li> Consideremos primero el siguiente resultado.
+              <p> 
+                Afirmación: Para cualquier \( x \in \mathbb{R} \), se satisface  \(0\cdot x = 0\). 
+              </p>
+
+                <p>
+                 En efecto, notemos que de la propiedad del elemento neutro para la suma, la conmutatividad para el producto  y  la distributividad 
+                 se tiene que
+                 
+                 $$ 0 \cdot x = (0 + 0) x = 0\cdot x + 0 \cdot x. $$ 
+                 
+                 Luego, si  \( z \) el inverso aditivo de \(0 \cdot x \), entonces 
+                
+                 $$ 0 =  0\cdot x + z = (0\cdot x + 0 \cdot x) + z  = 0\cdot x + ( 0 \cdot x + z) = 0\cdot x + 0  = 0\cdot x $$
+
+                 Por lo tanto, en efecto \( 0 \cdot x = 0.\)
+                </p>
+
+
+                De la afirmación previa y los axiomas de campo se tiene la siguiente cadena de igualdades
+                 
+                $$0 = 0 \cdot x = (1+ (-1))x= 1\cdot x + (-1)x = x + (-1)x $$
+
+                los axiomas que garantizan las igualdades anteriores son la propiedad del elemento neutro, inverso aditivo, 
+                distributividad y la propiedad del neutro multiplicativo.
+
+                <p>
+                De todo lo anterior se sigue que  \( (-1)x \)  es  un  neutro aditivo de \( x \). Sin embargo por la parte 1, 
+                 se sabe que este es único, por lo tanto \( (-1)x\) es el único elemento en \( \mathbb{R} \)  tal que  
+                 \(x+ (-x)=0\).
+                </p>
+              </ol> 
+                En conclusión, del inciso (1) tenemos que para todo \( x \in \mathbb{R}\), el inverso aditivo de \( x\) 
+                 denotado por \(-x\) existe y además es el único elemento en  \( \mathbb{R} \) tal que 
+                 $$x + (-x) = -x + x=0 $$
+              Luego del inciso (2) sabemos que  \((-1)x\)  satisface la propiedad que define al inverso aditivo de  \(x\), 
+              por lo tanto \( -x:= (-1)x \)
+              
+
+          </div>
                 </div>
 
 
@@ -225,6 +293,10 @@
                 b^3-a^3=(b-a)(a^2+ab+b^2).
                 \]
               </ol>
+
+            </p>
+            
+
                 </div>
 
 
@@ -322,7 +394,7 @@
 
                 <ol>
 
-                <li> \(\sum_{k=1}^n 2k-1=n^2\)
+                <li> \(\sum_{k=1}^n 2k-1=n^2\) 
 
                 <p>
                   Sugerencia: considera una suma
@@ -346,6 +418,30 @@
                   fórmula para \(\sum_{k=1}^n k^2\).
 
                 </ol>
+                <button class="respButton hvr-grow"> Respuesta de 1 y 2 </button>
+
+              <div class="resp-box">
+              <ol>
+              <li>
+                Consideremos la suma telescópica \( \displaystyle \sum_{k=1}^n [k^2 - (k-1)^2] \). 
+                Sabemos que 
+                $$ \displaystyle \sum_{k=1}^n [k^2 - (k-1)^2] =  n^2.$$ 
+                Por otro lado, 
+                notemos  que
+                para cada término de la  suma se tiene que \( k^2 - (k-1)^2 = 2k -1\), 
+                por lo tanto \(\displaystyle\sum_{k=1}^n [2k -1]= n^2\).
+              </li>
+              <li>
+              Del inciso (1),  se tiene que \(2\displaystyle\sum_{k=1}^n k - n=  n^2\), o bien 
+              \(2\displaystyle\sum_{k=1}^n k =  n^2 + n\). Por lo tanto, despejando \(\displaystyle\sum_{k=1}^n k \) se deduce que
+               \( \displaystyle\sum_{k=1}^n k =  \frac{n^2}{2} + \frac{n}{2}\)
+              </li>
+
+</ol>
+
+
+
+              </div>
                 </div>
 
 
@@ -361,6 +457,11 @@
                 a^n-b^n=(a-b)\left( \sum_{k=0}^{n-1} a^kb^{n-1-k} \right)
                 \]
               </p>
+
+              
+
+
+
             </div>
 
 
@@ -468,12 +569,71 @@
 
         <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
+          <p>
           Usando los axiomas, demuestra que si \(a> 0\) y \(c \leq b\) entonces \(c <  b+a\).
-        </div>
+        </p>
+          <button class="respButton hvr-grow"> Respuesta </button>
+
+              <div class="resp-box">
+                Consideremos los siguientes casos:
+                <ul>
+                <li> <p> Caso 1: Supongamos que \( c=b\)  </p>
+                  <p> 
+                Sabemos por hipotesis que  \(  a > 0 \), lo que significa que  \( a \in \mathbb{R^{+}} \). 
+                Luego de los axiomas de campo se sigue que 
+                $$a= a + 0 = a + (c + (-c)) = (a +c) -c$$
+                De esta manera, se tiene que \( (a + c)  -c \in \mathbb{R}^{+} \). Por lo tanto, \( c < a+b\) ya que \( b=c \).
+              </p>
+                </li>
+                <li> <p> Caso 2: Supongamos que \( c\not= b\) </p>
+
+                  <p> 
+                  En este caso se tiene que \( c < b \) o equivalentemente \( b-c \in \mathbb{R}^{+} \). Dado que por hipótesis  
+                  \( a \in \mathbb{R}^{+} \), de los axiomas de orden para el conjunto de los números reales positivos  y los axiomas de campo se sigue que
+                  $$   (b-c) + a = (b+a) -c  \in \mathbb{R}^{+}$$
+                  Por lo tanto \( c < b+a \).
+                  </p>
+                <p>
+
+
+                </p>
+                </li>
+
+                
+                </ul>
+              </div>
+        </div> 
 
         <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
            Demuestra que \(n< 2^n \) para todo \(n \in \mathbb{N}\), \(n\geq 1\).
+           <button class="respButton hvr-grow"> Respuesta </button>
+
+              <div class="resp-box">
+
+              <p>
+              Usemos inducción matemática sobre \(n \in \mathbb{N}\). 
+              </p>
+            
+               <p>
+               Caso base.  Es claro que  para \( n=1\), se satisface \( 2^1 > 1 \). 
+               </p>
+
+               <p>
+                Hipótesis inductiva.  Supongamos que  la propiedad se cumple para \( n=k >1\), 
+                i.e. se verifica  
+                $$ 2^{k} >  k $$
+               </p>
+
+               <p>
+                Paso inductivo. Veamos que la propiedad se cumple para \( n=k+1\)
+               </p>
+
+               <p>En efecto, de la hipótesis inductiva  y el caso base se tiene 
+                 $$2^{k+1}=2^{k} \cdot 2 >  2k = k+k > k+1$$
+               </p>
+              
+              </div>
         </div>
 
         <div class="ejercicio-box" id="Ejer:LemaParaExistenciaRaices">
