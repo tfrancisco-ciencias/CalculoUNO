@@ -305,19 +305,16 @@ h2.number-title:before{
 }
 
 .video{
-  background-color: #FFFFFF	;
-  /*background: rgb(92,213,241);
-  background: radial-gradient(circle,
-    rgba(92,213,241,1) 50%, rgba(183,233,254,1) 70%);*/
-
+  /*background-color: #FFFFFF	;
     border-radius: 25px;
     padding: 10px;
-    border: 10px solid white;
+    border: 10px solid white;*/
     margin: auto;
     font-size: 20px;
     width: 10%;
     height: 10%;
     align-content: center;
+    display: flex;
 }
 
 
