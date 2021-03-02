@@ -67,7 +67,7 @@
 
     <div class="flexbox">
 
-      <h1 class="number-title "> El orden en los reales  </h1>
+      <h1 class="number-title "> El Axioma del supremo  </h1>
 
 
 
@@ -75,25 +75,31 @@
   <h2 class="number-title"> Definición </h2>
     Un conjunto no vacío \(A \subseteq \mathbb{R}\) se llama:
 <ol>
-<li> acotado superiormente si existe \(M\) tal que \(a \leq M\), para toda \(a\in A\).</li>
-<li> acotado inferiormente si existe \(m\) tal que \(m \leq a\), para toda \(a\in A\).</li>
+<li> acotado superiormente si existe \(M\) tal que \(a \leq M\),
+  para toda \(a\in A\).</li>
+<li> acotado inferiormente si existe \(m\) tal que \(m \leq a\),
+  para toda \(a\in A\).</li>
 </ol>
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  Sea \(m>0\). Demuestra que el intervalo solución de \(|mx+b| \leq 1\) siempre está acotado superior e inferiormente.
+  Sea \(m>0\) y \(b\in \mathbb{R}\). Demuestra que el intervalo solución de
+  \(\{ x: |mx+b| \leq 1\}\) siempre está acotado superior e inferiormente.
 </div>
 
 
  <div  class="ejercicio-box">
   <h2 class="number-title" id="Ejer:CotaExistenciaCuadrados"> Ejercicio </h2>
-    <p>Fija \(a>0\) y define \(S=\{ x \geq 0: x^2 \leq a \}\). Demuestra que \(A\) está cotado superiormente.
+    <p>Fija \(a>0\) y define \(S=\{ x \geq 0: x^2 \leq a \}\).
+      Demuestra que \(A\) está cotado superiormente.
     </p>
     <p>
       Sugerencia: primero, usa el
-      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.26</a>  para notar \(a<(1+a)^2\);
-      después, para \(x\in S\), prueba \(0< (1+a)^2-x^2\); finalmente, usa diferencia de cuadrados para
+      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.26</a>
+      para notar \(a<(1+a)^2\);
+      después, para \(x\in S\), prueba \(0< (1+a)^2-x^2\); finalmente,
+      usa diferencia de cuadrados para
       probar \(x< 1+a\), para toda \(x\in S\).
     </p>
   </div>
@@ -118,7 +124,8 @@
 
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
-  <p>El supremo de un conjunto \(S\) es la cota superior más chica. Es decir, \(\alpha\)
+  <p>El supremo de un conjunto \(S\) es la cota superior más chica. Es decir,
+    \(\alpha\)
     es el supremo de \(S\) si satisface:
   </p>
     <ol>
@@ -131,19 +138,22 @@
   <div class="ejercicio-box">
     <h2 class="number-title"> Ejercicio </h2>
     <p>Es supremo es único, es decir, demuestra que si \(\alpha\) y \(\beta\) son dos
-      supremos de \(S\) entonces \(\alpha=\beta\).
+      números que satisfacen las dos condiciones de la
+      definición anterior entonces  \(\alpha=\beta\).
     </p>
   </div>
 
   <div class="ejercicio-box">
     <h2 class="number-title" id="Ejer:CaracterizacionSupremo"> Ejercicio </h2>
-    <p>Caracterización del supremo</p>
+    <p>Caracterización del supremo.</p>
     <p>
-      Demuestra que \(\alpha\) es el supremo de \(S\) si y sólo si \(\alpha\) satisface:
+      Demuestra que \(\alpha\) es el supremo de \(S\) si y sólo si \(\alpha\)
+      satisface:
     </p>
     <ol>
       <li>\(\alpha\) es cota superior de \(S\); </li>
-      <li>para todo \(\varepsilon>0\), exsite \(x_0 \in S\) tal que \(\alpha- \varepsilon < x_0\).</li>
+      <li>para todo \(\varepsilon>0\), exsite \(x_0 \in S\) tal que
+        \(\alpha- \varepsilon < x_0\).</li>
     </ol>
   </div>
 
@@ -156,18 +166,21 @@
 
   <div class="ejercicio-box">
     <h2 class="number-title"> Ejercicio </h2>
-     <p>Usando el axioma del supremo  demuestra que \(\mathbb{N}\) no tiene cota superior.</p>
+     <p>Usando el axioma del supremo  demuestra que \(\mathbb{N}\) no tiene
+       cota superior.</p>
   </div>
 
   <div class="teorema-box">
      <h2 class="number-title"> Teorema. El principio Arquimideano </h2>
-     <p> Sea \(x>0\) fijo y arbitrario. Demuestra que existe un natural \(n\) que satisface \(x< n\).
+     <p> Sea \(x>0\) fijo y arbitrario. Demuestra que existe un natural
+       \(n\) que satisface \(x< n\).
      </p>
   </div>
 
     <div class="ejercicio-box">
       <h2 class="number-title" id ="Ejer:LemaInfimo1/n">Ejercicio</h2>
-      Sea \(x>0\) fijo y arbitrario. Demuestra que existe un natural que satisface \(\frac{1}{n}< x\).
+      Sea \(x>0\) fijo y arbitrario. Demuestra que existe un natural que
+      satisface \(\frac{1}{n}< x\).
     </div>
 
     <div class="ejercicio-box">
@@ -217,7 +230,7 @@ inferiormente y que
     fijos y arbitrarios. Define el siguiente conjunto
   </p>
 \[
-B=\{\beta a : a\in A\}, \quad C=\{\gamma+a: a\in A\}
+B=\{\beta a : a\in A\}, \quad C=\{\gamma+a: a\in A\}.
 \]
 <p>
 Si \(A\) está acotado superiormente demuestra que \(B\) y \(C\) también están
@@ -245,7 +258,8 @@ S=\{ x \geq 0: x^2 \leq a \}.
 <p>
 Como \(0^2=0\), \(0\in S\) asi que \(S \ne \emptyset\), además por el
 <a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 2.3</a>,  \(S\) está acotado
-superiormente. Por el axioma del supremo existe \(\alpha:= \sup(S)\). Demuestra que \(\alpha^2=a\).
+superiormente. Por el axioma del supremo existe \(\alpha:= \sup(S)\).
+Demuestra que \(\alpha^2=a\).
 </p>
 </div>
 
@@ -265,7 +279,8 @@ Sugerencia: usa diferencia de cuadrados.
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
 
-<p>Dada \(a>0\) por \(\sqrt{a}\) denotamos al único número positivo cuyo cuadrado es \(a\).</p>
+<p>Dada \(a>0\) por \(\sqrt{a}\) denotamos al único número positivo cuyo
+  cuadrado es \(a\).</p>
 </div>
 
 
