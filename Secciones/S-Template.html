@@ -2,7 +2,6 @@
   <html lang="es">
 
 
-
   <head>
     <!-- Following part is mathjax, for latex-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -11,40 +10,35 @@
 
     <!-- This part is for jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="../main.js"></script>
 
-    <!-- Next part is for new coomands -->
 
+    <!-- Next part is for new coomands -->
     <script>
       window.MathJax = {
         tex: {
           macros: {
             sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1],
-          },
-          tags: "ams" /* this part is for numbered equations */
+            seg: ["\\overrightarrow{#1}", 1]
+          }
         }
       };
     </script>
-
-
-
 
     <!-- CSS -->
 
     <link rel="stylesheet" , href="../styles.css" />
 
-
-
-    <!-- This part restart counter of cards to start at N+1 -->
+    <!-- This part restart counter of cards to start at n+1 -->
     <style>
-      body.number-title {
-        counter-reset: sectionCounter N cardCounter;
+      body.number-title{
+        counter-reset: sectionCounter 0 cardCounter ;
       }
-
-      h1.number-title {
-        counter-reset: sectionCounter N cardCounter;
+      h1.number-title{
+        counter-reset: sectionCounter 0 cardCounter ;
       }
     </style>
 
@@ -56,19 +50,20 @@
   <header class="main-header">
     <nav class="top-nav">
       <ul>
-        <li> <a href="../Home.html"> Inicio </a> </li>
-        <li> <a href="../Secciones.html"> Secciones </a> </li>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
       </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
     </nav>
 
-    <h1 class="calculo-title"> Cálculo CUATRO</h1>
+    <h1 class="calculo-title"> Cálculo UNO</h1>
 
   </header>
 
-  <!-- Contenido empieza abajo -->
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
 
-
-  <body class="fondo card ">
+<body class="flexbox card fondo-body">
 
     <div class="flexbox">
 
@@ -78,9 +73,9 @@
 
 
 
-    </div>
 
-  </body>
+    </div>
+</body>
 
   </html>
 
