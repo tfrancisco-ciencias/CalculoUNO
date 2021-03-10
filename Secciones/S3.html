@@ -68,7 +68,7 @@
 
     <div class="flexbox">
 
-      <h1 class="number-title "> Desigualdades  </h1>
+      <h1 class="number-title "> Desigualdades, funciones  </h1>
 
 
       <div class="definicion-box">
@@ -115,6 +115,7 @@
         Encuentra el conjunto solución de cada una de las siguientes desigualdades.
       </p>
       <ol>
+        <li> \( |x^2+2| < 3 \) .</li>
         <li> \(\frac{x^2-4}{3x}>1\) .</li>
         <li>\(\frac{x}{2+x}\leq 2x\) .</li>
       </ol>
@@ -409,6 +410,7 @@
       <li>par si \(f(-x)=f(x)\), para toda \(x\in \mathbb{R}\). </li>
       <li>impar si \(f(-x)=-f(x)\) para toda \(x\in \mathbb{R}\). </li>
     </ul>
+    Video ejemplos: identidas, -identidad, potencias pares, impares.
     </div>
 
      <div class="ejercicio-box">
@@ -422,13 +424,13 @@
 
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
+      <h2 class="number-title" id="Ejer:UnicidadFunParImpar"> Ejercicio </h2>
       <p>
-        Sea \(F:\mathbb{R}\to \mathbb{R}\) una función.
-        Supon que se puede escribir \(F\) de dos formas
+        Sea \(F:\mathbb{R}\to \mathbb{R}\) una función arbitraria.
+        Supon que se puede escribir \(F\) de dos formas:
       </p>
       \[
-      F=f+g\quad \textrm{y} \quad F=h+k
+      F=f+g\quad \textrm{y} \quad F=h+k,
       \]
       <p>
         donde \(f,h:\mathbb{R}\) son funciones pares y
@@ -442,6 +444,8 @@
         Sugerencia: usa el ejercicio anterior.
       </p>
     </div>
+
+
 
 
     <div class="ejercicio-box">
@@ -467,6 +471,33 @@
       </ol>
     </div>
 
+
+
+        <div class="nota-box">
+          <h2 class="number-title"> Nota </h2>
+          <p>
+              Los ejercicios <a href="#Ejer:UnicidadFunParImpar">Ejercicio 3.22</a> y
+              <a href="#Ejer:DescomposicionFuncionesParesImpares">Ejercicio 3.23</a>
+              tienen como consecuencia que toda
+              función \(f:\mathbb{R}\to \mathbb{R}\) puede escribirse,
+              de manera única, como una suma de una función par y una
+              función impar.
+          </p>
+          <p>
+            Por ejemplo, para \(f(x)=1+3x-5x^2-4x^3+9x^4-10x^5+7x^6\) las partes
+            pares a impares son:
+            \begin{eqnarray*}
+            f_{\textrm{impar}}(x)&=&3x-4x^3-10x^5,\\
+            f_{\textrm{par}}(x)&=& 1-5x^2+9x^4+7x^6.
+            \end{eqnarray*}
+          </p>
+          <p>
+            Esto demuestra la importancia de las funciones
+            pares a impares. Es más, muchas funciones fundamentales, como
+            las trigonométricas, son o bien pares o bien impares.
+          </p>
+
+        </div>
 
     <div class="definicion-box">
       <h2 class="number-title"> Definición </h2>
@@ -517,7 +548,7 @@
       <p>
         Considera las funciones potencias,
         \(f_n:\mathbb{R}\to \mathbb{R} \),
-        \(f(x)=x^n\) (\(n=0,1,2,\dots\)).
+        \(f(x)=x^n\), \(n\in \mathbb{N}\).
       </p>
       <p>
         Demuestra que, para todo
@@ -591,8 +622,8 @@
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
         <p>
-        Considera las funciones raíz, \(g_n:[0,\infty) \to \mathbb{R}\),
-        \(g_n(x)=\sqrt[n]{x}\) (\(n=2,\dots\)). Demuestra que para toda \(n\),
+        Considera las funciones raíz \(n\)-ésima, \(g_n:[0,\infty) \to \mathbb{R}\),
+        \(g_n(x)=\sqrt[n]{x}\), \(n \geq 2\). Demuestra que para toda \(n\),
         \(g_n\) es estrictamente creciente en \([0,\infty)\).
         </p>
         <p>
@@ -614,7 +645,7 @@
           </li>
           <li>
             Para \(n \geq 1\) y \(n\) par, \(f_n\) es estrictamente decreciente en
-            \((-\infty, 0]\).
+            \((-\infty, 0]\) y estrictamente creciente en \([0,\infty)\).
           </li>
         </ol>
       </div>
@@ -623,42 +654,94 @@
 
 
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-        <p>
-          Sean \(x_0, x_1 \in \mathbb{R}\), fijos y arbitrarios.
-          Supongamos que \(x_0 < x_1\). Para \(t\in [0,1]\) define
-          \(x_t=tx_0+(1-t)x_1\). Demuestra que
-          <ol>
+
+
+        <div class="definicion-box">
+          <h2 class="number-title"> Definicion </h2>
+          <p>
+            Sea \(I\) un intervalo y
+            \(f:I \to \mathbb{R}\) una función.
+            <ol>
             <li>
-              \(x_0 \leq x_t  \leq x_1\). Sugerencia:
-              calcula \(x_t-x_0\) y \(x_1-x_0\).
+              <p>
+              decimos que \(f\) es cóncava hacia arriba en \(I\), o convexa,
+              si, siempre que se tengan
+              \(x_0,x_1\in I\), con \(x_0< x_1 \), entonces
+              para todo \(t\in [0,1]\) se cumple:
+            </p>
+            \[
+            f((1-t)x_0+tx_1) \leq (1-t)f(x_0)+tf(x_1).
+            \]
             </li>
+
             <li>
-              \(x_t=x_0\) si y sólo si \(t=0\) y \(x_t=x_1\) si y sólo si \(t=1\).
-            </li>
-          </ol>
+              decimos que \(f\) es cóncava hacia abajo en \(I\), o cóncava, si
+              siempre que se tengan
+              \(x_0,x_1\in I\), con \(x_0< x_1 \), entonces
+              para todo \(t\in [0,1]\) se cunmple:
+            </p>
+            \[
+            f((1-t)x_0+tx_1) \geq (1-t)f(x_0)+tf(x_1).
+            \]
         </div>
 
+
+
+
+          <div class="nota-box">
+            <h2 class="number-title"> Nota </h2>
+            <p>
+              Interpretación geométrica de la concavidad.
+            </p>
+            <p>
+              Sean \(x_0, x_1 \in \mathbb{R}\), fijos, arbitrarios y
+              supongamos que \(x_0 < x_1\). Para \(t\in [0,1]\) denotamos
+                \(x_t:=tx_0+(1-t)x_1\).
+            </p>
+            <p>
+              El punto \(x_t\) es un punto entre \(x_0\) y \(x_1\),
+              es decir, \(x_0 \leq x_t \leq x_1\). Para checar lo anterior
+              simplemente tenemos que probar \(x_t-x_0 \geq 0\)
+              y \(x_1-x_t \geq 0\). Sólo verificamos la primera pues la
+              segunda condición es similar. Haciendo la cuenta tenemos
+              \[
+              x_t-x_0=tx_0+(1-t)x_1-x_0= (t-1)x_0+(1-t)x_1=(1-t)(x_1-x_0)
+              \]
+              pero \(1-t \geq 0 \) y \(x_1-x_0 \geq 0\), por lo que
+              \(x_t-x_0 \geq 0\).
+            </p>
+            <p>
+              También notamos que para \(t=0\), \(x_t=x_0\)
+              y para \(t=1\), \(x_t=x_1\). Entonces podemos pensar
+              al punto \(x_t\) viajando en el intervalo \([x_0,x_1]\),
+              iniciando en tiempo \(t=0\) en \(x_0\), avancando
+              hacia la derecha mientras \(t\) aumenta para llegar a
+              \(x_1\) en el tiempo \(t=1\).
+            </p>
+
+            <p>
+              Con esta notacíon, decir que la función \(f\) es cóncava
+              hacia arriba se escribe:
+              \[
+              f(x_t) \leq (1-t)f(x_0)+tf(x_1).
+              \]
+              Por otro lado, usando la notación \(y_t=(1-t)f(x_0)+tf(x_1)\),
+              tenemos que \(y_t\) viaja desde \(f(x_0)\), cuando \(t=0\)
+              a \(f(x_1)\), cuado \(t=1\), en una línea recta. Entonces,
+              decir que \(f\) es cóncava hacia arriba es equivalente a
+              decir que los valores de la función en \([x_0,x_1]\)
+              (representados por \(f(x_t)\))
+              están por debajo de la recta que une \((x_0,f(x_0))\)
+              con \((x_1,f(x_1))\) (representado por \(y_t\)).
+            </p>
+
+            </div>
 
 
         <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
           <p>
-            Sea \(I\) un intervalo.
-            \(f:I \to \mathbb{R}\) es
-            cóncava hacia arriba en \(I\) si
-          </p>
-          \[
-          \forall x_0,x_1 \in I, x_0 < x_1 \forall t\in [0,1]
-          \quad : f((1-t)x_0+tx_1) \leq (1-t)f(x_0)+tf(x_1)
-          \]
-        </div>
-
-        <div class="ejercicio-box">
-          <h2 class="number-title"> Ejercicio </h2>
-          <p>
-            Las función \(f_n(x)=x^2\)  es cóncava hacia arriba en
+            Prueba que la función \(f(x)=x^2\),  es cóncava hacia arriba en
             \([0,\infty)\).
           </p>
         </div>
@@ -667,8 +750,8 @@
         <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
           <p>
-            La función  \(g(x)=\sqrt{x}\), para \(x \geq 0\), es concava
-            hacia abajo.
+            Prueba que la función  \(g(x)=\sqrt{x}\), es concava
+            hacia abajo en \([0,\infty)\).
           </p>
         </div>
         <div class="resp-box">
