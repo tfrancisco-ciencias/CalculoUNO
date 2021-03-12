@@ -1,0 +1,476 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 2 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 2 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Funciones  </h1>
+
+<div class="info-box">
+  <h2 class="number-title"> Introducción </h2>
+
+</div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Determina el dominio de las siguientes funciones:
+      </p>
+    <ol>
+      <li> \(f(x)=\sqrt{\frac{4-x^2}{x^2-5x^6}}+\sqrt{\frac{4x}{x^2+1}}\) </li>
+      <li> \(f(x)= \frac{x(x-1)(x-5)}{x^2+2x}+\frac{1}{(x^2-9)^2}\) </li>
+      <li>\(f(x)=\sqrt{x^2-9}+\sqrt{4-x^2}\) </li>
+    </ol>
+  </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title" id="Def:FuncionesParesImpares"> Definición </h2>
+    <p> Una función \(f:\mathbb{R} \to \mathbb{R}\) se llama:</p>
+    <ul>
+      <li>par si \(f(-x)=f(x)\), para toda \(x\in \mathbb{R}\). </li>
+      <li>impar si \(f(-x)=-f(x)\) para toda \(x\in \mathbb{R}\). </li>
+    </ul>
+    Video ejemplos: identidas, -identidad, potencias pares, impares.
+    </div>
+
+     <div class="ejercicio-box">
+       <h2 class="number-title"> Ejercicio </h2>
+       <p>
+         Demuestra que si \(f:\mathbb{R}\to \mathbb{R}\) es al mismo
+         tiempo una función par y una función impar entonces \(f\) es la
+         función constante cero.
+       </p>
+     </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title" id="Ejer:UnicidadFunParImpar"> Ejercicio </h2>
+      <p>
+        Sea \(F:\mathbb{R}\to \mathbb{R}\) una función arbitraria.
+        Supon que se puede escribir \(F\) de dos formas:
+      </p>
+      \[
+      F=f+g\quad \textrm{y} \quad F=h+k,
+      \]
+      <p>
+        donde \(f,h:\mathbb{R}\) son funciones pares y
+        \(g,k:\mathbb{R}\to \mathbb{R}\) son funciones impares.
+      </p>
+
+      <p>
+        Demuestra que \(f=h\) y \(g=k\).
+      </p>
+      <p>
+        Sugerencia: usa el ejercicio anterior.
+      </p>
+    </div>
+
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title" id="Ejer:DescomposicionFuncionesParesImpares">
+        Ejercicio
+      </h2>
+      <p>
+        Sea \(f:D \to \mathbb{R}\) cualquier función.  Define
+      </p>
+      \[
+      f_{\textrm{par}}(x):= \frac{f(x)+ f(-x) }{2}
+      \]
+      \[
+      f_{\textrm{impar}}(x):=
+      \frac{f(x)-f(-x)}{2}
+      \]
+      <p>
+      Demuestra que:
+      <ol>
+        <li>\(f_{\textrm{par}}\) es una función par, \(f_{\textrm{impar}}\)
+          es una función impar.</li>
+        <li>\(f=f_{\textrm{par}}+f_{\textrm{impar}}\).</li>
+      </ol>
+    </div>
+
+
+
+        <div class="nota-box">
+          <h2 class="number-title"> Nota </h2>
+          <p>
+              Los ejercicios <a href="#Ejer:UnicidadFunParImpar">Ejercicio 3.22</a> y
+              <a href="#Ejer:DescomposicionFuncionesParesImpares">Ejercicio 3.23</a>
+              tienen como consecuencia que toda
+              función \(f:\mathbb{R}\to \mathbb{R}\) puede escribirse,
+              de manera única, como una suma de una función par y una
+              función impar.
+          </p>
+          <p>
+            Por ejemplo, para \(f(x)=1+3x-5x^2-4x^3+9x^4-10x^5+7x^6\) las partes
+            pares a impares son:
+            \begin{eqnarray*}
+            f_{\textrm{impar}}(x)&=&3x-4x^3-10x^5,\\
+            f_{\textrm{par}}(x)&=& 1-5x^2+9x^4+7x^6.
+            \end{eqnarray*}
+          </p>
+          <p>
+            Esto demuestra la importancia de las funciones
+            pares a impares. Es más, muchas funciones fundamentales, como
+            las trigonométricas, son o bien pares o bien impares.
+          </p>
+
+        </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Considera una función \(f:D \to \mathbb{R}\).
+      </p>
+    <ul>
+      <li>  \(f\) es monótona  creciente en \(D\) si, dados \(x_1,x_2\in D\):
+       \[
+       x_1\leq  x_2 \Rightarrow f(x_1)\leq f(x_2)
+       \]
+      </li>
+      <li>  \(f\) es monótona  decreciente en \(D\) si, dados \(x_1,x_2\in D\):
+       \[
+       x_1\leq  x_2 \Rightarrow f(x_1)\geq  f(x_2)
+       \]
+      </li>
+      <li>
+        \(f\) es estrictamente creciente en \(D\) si, dados \(x_1,x_2\in D\):
+        \[
+         x_1< x_2 \Rightarrow f(x_1)< f(x_2)
+        \]
+      </li>
+      <li>
+        \(f\) es estrictamente decreciente en \(D\) si, dados \(x_1,x_2\in D\):
+        \[
+         x_1< x_2 \Rightarrow f(x_1)> f(x_2)
+        \]
+      </li>
+    </ul>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \(m,b \in \mathbb{R}\) fijos y arbitrarios con \(m\ne 0\).
+        Considera la función
+        \(f(x)=mx+b\), con \(x\in \mathbb{R}\).
+      </p>
+        Demuestra que \(f\) es estrictamente creciente
+        si y sólo si \(m>0\)
+        y \(f\) es estrictamente decreciente si y sólo si \(m < 0 \).
+      </p>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Considera las funciones potencias,
+        \(f_n:\mathbb{R}\to \mathbb{R} \),
+        \(f(x)=x^n\), \(n\in \mathbb{N}\).
+      </p>
+      <p>
+        Demuestra que, para todo
+        \(n \geq 1\) , \(f_n\) es estrictamente creciente en
+        todo \([0,\infty)\).
+      </p>
+
+      <p>
+        Sugerencia: usar <a href="S1.html#Eqn:Resolvent">Ejercicio 1.18</a>.
+      </p>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sea \(\emptyset \ne I \subseteq \mathbb{R}\)
+      un invervalo y sean \(f,g: I \to \mathbb{R}\) dos funciones.
+      Demuestra que
+      </p>
+      <ol>
+        <li> Si \(f\) y \(g\) son monótonas crecientes/decrecientes
+          entonces \(f+g\) es monótona creciente/decreciente.
+        </li>
+        <li> Si \(f\) y \(g\) son estrictamente crecientes/decrecientes entonces
+          \(f+g\) es estrictamente creciente/decreciente.
+        </li>
+        <li> Si \(f\) y \(g\) son monótonas crecientes y ademáas
+          suponemos \(f(x) \geq 0\) y \(g(x) \geq 0\) para todo \(x\in I\),
+          demuestra que la función producto \(fg\) es monótona creciente.
+        </li>
+      </ol>
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \(x,y\in \mathbb{R}^+\) con \(y < x\).
+      </p>
+
+    <ol>
+      <li>Prueba:
+        \[
+        \sqrt{x}-\sqrt{y}=\frac{x-y}{\sqrt{x}+\sqrt{y}}
+        \]
+
+        Sugerencia: usa direfencia de cuadrados.
+      </li>
+
+      <li> El inciso anterior se generaliza como sigue:
+        toma \(n \in \mathbb{N}\), con \(n \geq 3\). Demuestra
+
+        \[
+        \sqrt[n]{x}-\sqrt[n]{y}=\frac{x-y}{\sum_{k=0}^n x^{k/n}y^{(n-1-k)/n} }.
+        \]
+
+        Sugerencia: usa el <a href="S1.html#Eqn:Resolvent">Ejercicio 1.18</a>.
+      </li>
+
+    </ol>
+    </div>
+
+    <!--  <div class="ejercicio-box">
+        <h2 class="number-title">  Ejercicio </h2>
+        <p>
+          Demuestra: \(\sum_{k=1}^n \frac{1}{\sqrt{k}+ \sqrt{k-1}}=\sqrt{n}\).
+        </p>
+      </div>-->
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+        Considera las funciones raíz \(n\)-ésima, \(g_n:[0,\infty) \to \mathbb{R}\),
+        \(g_n(x)=\sqrt[n]{x}\), \(n \geq 2\). Demuestra que para toda \(n\),
+        \(g_n\) es estrictamente creciente en \([0,\infty)\).
+        </p>
+        <p>
+          Sugerencia: usa el ejercicio anterior.
+        </p>
+      </div>
+
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Usando las simetrias de las funciones potencia y usando
+        el hecho de que son estrictamente crecientes en \([0,\infty)\)
+        demuestra que:
+        <ol>
+          <li>
+            Para \(n \geq 1\) y \(n\) impar, \(f_n\) es estrictamente
+            creciente en todo \(\mathbb{R}\).
+          </li>
+          <li>
+            Para \(n \geq 1\) y \(n\) par, \(f_n\) es estrictamente decreciente en
+            \((-\infty, 0]\) y estrictamente creciente en \([0,\infty)\).
+          </li>
+        </ol>
+      </div>
+
+
+
+
+
+
+
+        <div class="definicion-box">
+          <h2 class="number-title"> Definicion </h2>
+          <p>
+            Sea \(I\) un intervalo y
+            \(f:I \to \mathbb{R}\) una función.
+            <ol>
+            <li>
+              <p>
+              decimos que \(f\) es cóncava hacia arriba en \(I\), o convexa,
+              si, siempre que se tengan
+              \(x_0,x_1\in I\), con \(x_0< x_1 \), entonces
+              para todo \(t\in [0,1]\) se cumple:
+            </p>
+            \[
+            f((1-t)x_0+tx_1) \leq (1-t)f(x_0)+tf(x_1).
+            \]
+            </li>
+
+            <li>
+              decimos que \(f\) es cóncava hacia abajo en \(I\), o cóncava, si
+              siempre que se tengan
+              \(x_0,x_1\in I\), con \(x_0< x_1 \), entonces
+              para todo \(t\in [0,1]\) se cunmple:
+            </p>
+            \[
+            f((1-t)x_0+tx_1) \geq (1-t)f(x_0)+tf(x_1).
+            \]
+        </div>
+
+
+
+
+          <div class="nota-box">
+            <h2 class="number-title"> Nota </h2>
+            <p>
+              Interpretación geométrica de la concavidad.
+            </p>
+            <p>
+              Sean \(x_0, x_1 \in \mathbb{R}\), fijos, arbitrarios y
+              supongamos que \(x_0 < x_1\). Para \(t\in [0,1]\) denotamos
+                \(x_t:=tx_0+(1-t)x_1\).
+            </p>
+            <p>
+              El punto \(x_t\) es un punto entre \(x_0\) y \(x_1\),
+              es decir, \(x_0 \leq x_t \leq x_1\). Para checar lo anterior
+              simplemente tenemos que probar \(x_t-x_0 \geq 0\)
+              y \(x_1-x_t \geq 0\). Sólo verificamos la primera pues la
+              segunda condición es similar. Haciendo la cuenta tenemos
+              \[
+              x_t-x_0=tx_0+(1-t)x_1-x_0= (t-1)x_0+(1-t)x_1=(1-t)(x_1-x_0)
+              \]
+              pero \(1-t \geq 0 \) y \(x_1-x_0 \geq 0\), por lo que
+              \(x_t-x_0 \geq 0\).
+            </p>
+            <p>
+              También notamos que para \(t=0\), \(x_t=x_0\)
+              y para \(t=1\), \(x_t=x_1\). Entonces podemos pensar
+              al punto \(x_t\) viajando en el intervalo \([x_0,x_1]\),
+              iniciando en tiempo \(t=0\) en \(x_0\), avancando
+              hacia la derecha mientras \(t\) aumenta para llegar a
+              \(x_1\) en el tiempo \(t=1\).
+            </p>
+
+            <p>
+              Con esta notacíon, decir que la función \(f\) es cóncava
+              hacia arriba se escribe:
+              \[
+              f(x_t) \leq (1-t)f(x_0)+tf(x_1).
+              \]
+              Por otro lado, usando la notación \(y_t=(1-t)f(x_0)+tf(x_1)\),
+              tenemos que \(y_t\) viaja desde \(f(x_0)\), cuando \(t=0\)
+              a \(f(x_1)\), cuado \(t=1\), en una línea recta. Entonces,
+              decir que \(f\) es cóncava hacia arriba es equivalente a
+              decir que los valores de la función en \([x_0,x_1]\)
+              (representados por \(f(x_t)\))
+              están por debajo de la recta que une \((x_0,f(x_0))\)
+              con \((x_1,f(x_1))\) (representado por \(y_t\)).
+            </p>
+
+            </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Prueba que la función \(f(x)=x^2\),  es cóncava hacia arriba en
+            \([0,\infty)\).
+          </p>
+        </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Prueba que la función  \(g(x)=\sqrt{x}\), es concava
+            hacia abajo en \([0,\infty)\).
+          </p>
+        </div>
+        <div class="resp-box">
+          <p>
+            Fijamos \(0 \leq x_0 < x_1\).
+          </p>
+          <p>
+            Para \(t\in (0,1)\), definimos \(x_t=tx_0+(1-t)x_1\). Debemos probar:
+          </p>
+          \[
+          t\sqrt{x_0}+ (1-t)\sqrt{x_1} \leq \sqrt{x_t}
+          \]
+
+          <p>
+            Escribiendo \(\sqrt{x_t}=t\sqrt{x_t}+(1-t)\sqrt{x_t}\) lo
+            anterior es equivalente a probar
+          </p>
+          \[
+          0\leq t[ \sqrt{x_t} - \sqrt{x_0}]+ (1-t)[\sqrt{x_t}-\sqrt{x_1}]
+          \]
+
+          <p>
+            Ahora usamos
+            \begin{eqnarray*}
+            \sqrt{x_t}-\sqrt{x_0}=\frac{x_t-x_0}{\sqrt{x_t}+ \sqrt{x_0}} \\
+            \sqrt{x_t}-\sqrt{x_1}=\frac{x_t-x_1}{\sqrt{x_t}+ \sqrt{x_1}}
+            \end{eqnarray*}
+        </div>
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
