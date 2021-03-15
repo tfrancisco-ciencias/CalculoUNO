@@ -132,7 +132,7 @@
 
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
+      <h2 class="number-title" id="Ejer:AbrirValorAbs"> Ejercicio </h2>
       <p>
       Fija \(\varepsilon >0\). Demuestra:
       </p>
@@ -151,6 +151,10 @@
           Demuestra: \(|x| > \varepsilon\) si y sólo si
           \(-\varepsilon < x\) ó \(x<\varepsilon\).
         </li>
+      </ol>
+      <p>
+        Sugerencia: usar la fórmula en la definición de valor absoluto.
+      </p>
     </div>
 
 
@@ -205,6 +209,12 @@
                  \[
                  ||x|-|y|| \leq |x-y|
                  \]
+               </p>
+
+               <p>
+                 Sugerencia: usa el <a href="#Ejer:AbrirValorAbs">Ejercicio 3.5</a>
+                 para abrir el valor absoluto en dos desigualdades y luego
+                 aplica la desigualdad del triángulo.
                </p>
              </div>
 
@@ -344,7 +354,7 @@
 
           Sugerencia: reescribir
           \(\frac{x^2}{1+x^4} = \frac{1}{\frac{1}{x^2}+ x^2}\)
-          y usar la desigualdad de Korovkin.
+          y usar la desigualdad de Korovkin en el denominador.
         </li>
 
         <li>
@@ -410,12 +420,14 @@
       </li>
 
       <li>
-        Demostrar que si \(x>-1\) entonces
+        Demostrar que si \(x>-\frac{1}{n}\) entonces
         \[
         (1+x)^n\geq 1+nx
         \]
 
-        Sugerencia: considera \(y=nx\) en la desigualdad del inciso anterior
+        Sugerencia: considera \(y=nx\) en la desigualdad del inciso anterior,
+        además recuerda que si \(0 \leq a \leq b  \) entonces
+        \(a^n \leq b^n\).
       </li>
     </ol>
   </div>
@@ -426,6 +438,10 @@
       <p>
         Demuestra que si \(a,b,c\in \mathbb{R}^+\) satisfacen \(abc=8\) entonces
         \(a+b+ c\geq 6\) y \(ab+bc+ac\geq 12\).
+      </p>
+      <p>
+        Sugerencia: acomoda las suposiciones para que puedas aplicar
+        Korovkin.
       </p>
     </div>
 
