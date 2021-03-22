@@ -36,10 +36,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
       body.number-title{
-        counter-reset: sectionCounter 2 cardCounter ;
+        counter-reset: sectionCounter 3 cardCounter ;
       }
       h1.number-title{
-        counter-reset: sectionCounter 2 cardCounter ;
+        counter-reset: sectionCounter 3 cardCounter ;
       }
     </style>
 
@@ -73,11 +73,198 @@
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
 
+  <p>
+    De manera intuitiva el concepto de función puede
+    presentarse de varias formas: con palabras, tablas, fórmulas, gráficas.
+    En cada caso una función relaciona dos clases de objetos donde algunos
+    de los objetos dependen de otros, donde la dependencia se debe de presentar
+    de manera clara.
+  </p>
+  <p>
+    Por ejemplo, el área de un círculo depende de su radio. Decimos que
+    el área es una función del radio y podemos dar la relación precisa mediante
+    \[
+    \textrm{Area}= \pi r^2
+    \]
+    donde \(r\) representa el radio. Para enfiatizar ésta relación
+    se escribe, por ejemplo, \(A(r)=\pi r^2\).
+  </p>
+  <p>
+    Otra forma es mediante una gráfica:
+  </p>
+  <p>
+
+  </p>
+
+
 </div>
+
+  <div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+      Haciendo una abstracción de los ejemplos
+      anteriores una función consiste en tres partes:
+      dominio, codominio y regla de correspondencia. La definición
+      que sigue es la formalización de ésta idea. El
+      dominio va a estar representado por un conjunto \(A\),
+      el codominio por un conjunto \(B\) y la
+      regla de correspondencia por un subconjunto del
+      producto cartesiano
+      \[
+      A\times B = \{ (a,b):a \in A, b\in B\}
+      \]
+    </p>
+
+    <p>
+      Antes de dar la definición formal, ésta se llama así por que
+      depende de concepto de teoría de conjuntos (como subconjuntos
+      y dependencia). Es decir, la definición de función depende de
+      conceptos más elementales en teoría de conjuntos.
+    </p>
+    <p>
+      Sean \(A,B\) dos conjuntos distintos del vacío.
+      Una función con dominio \(A\) y codominio \(B\)
+      es un subconjunto \(R\) de \(A\times B\) que satisface:
+        <ul>
+          <li> para toda \(a\in A\) existe
+              \(b\in B\) tal que \((a,b)\in R\),
+          </li>
+          <li>
+            si \((a,b_1)\in R\) y \((a,b_2)\in R\) entonces \(b_1=b_2\).
+          </li>
+        </ul>
+    </p>
+    <p>
+      Otra forma de expresar lo anterior es que para toda
+      \(a \in A\) existe un único \(b\in B\) con \((a,b)\in R\).
+    </p>
+
+    <p>
+      Al conjunto de todos los \(b\) que aparecen como
+      segunda entrada en \(R\) se le llama el rango de
+      la función. Es decir:
+      \[
+      \textrm{Rango}(R)=\{b\in B: \textrm{existe \(a\in A\) con \((a,b)\in R\)}\}
+      \]
+    </p>
+
+
+        <p>
+          Con la notación anterior se escribe la función
+          \(R\) como \(f:A\to B\), donde \(f(a)=b\) si y sólo si
+          \((a,b)\in R\). Con esta notación tenemos
+          \[
+          R=\{ (a,f(a)): a\in A\}
+          \]
+          Notar que esto es precisamente la gráfica de la función \(f\)
+          pensada de manera intuinitva. Además
+          \[
+          \textrm{Rango}(f)=\{ f(a): a\in A\}.
+          \]
+        </p>
+
+        <p>
+          Durante el curso se presentarán principalmente funciones de
+          \(\mathbb{R}\) a \(\mathbb{R}\), es decir tanto
+          \(A\) como \(B\) serán subconjuntos de \(\mathbb{R}\), así que
+          el énfasis será en la regla de corresponedencia, es decir, la \(f\).
+        </p>
+  </div>
+
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      De la definición de función se obtiene un criterio
+      sencillo para ver que una curva en el plano es una
+      gráfica de una función.
+    </p>
+    <p>
+      Ya que, para todo punto en el dominio existe uno y sólo un
+      punto en el codominio de tal forma que el par ordenado
+      está en la función, esto se traduce en que toda línea
+      vertical cruza a la gráfica de la función en un sólo punto.
+    </p>
+    <p>
+      Para las siguientes curvas en el plano, determina cual
+      es la gráfica de una función. Además determina su
+      su dominio y rango.
+    </p>
+  </div>
+
+
 
 
     <div class="ejercicio-box">
+      <h2 class="number-title">  Ejercicio  </h2>
+      <p>
+        Considera la función \(f:[-2,2] \to \mathbb{R}\) dada por
+        \begin{eqnarray*}
+        f(x)=\left\{
+          \begin{array}{cc}
+          -1 &  -2 \leq x  < 0 \\
+           1 &   0 \leq x  < 2 \\
+          \end{array}
+          \right.
+        \end{eqnarray*}
+        Nota: \(f\) no está definida para \(x< -2\) ó para \(x>2\).
+      </p>
+      <p>
+        <ol>
+          <li> Dibuja la gráfica de \(f\) y determina su rango.</li>
+          <li> Define \(g(x)=f(4x)\). Describe
+          el dominio y el rango de \(g\) y dibuja su gráfica.</li>
+          <li> Define \(h(x)=f(x+2)\). Describe
+          el dominio y el rango de \(h\) y dibuja su gráfica.</li>
+          <li> Define \(k(x)= g(x)+h(x)\). Describe
+          el dominio y el rango de \(g\) y dibuja su gráfica.</li>
+        </ol>
+      </p>
+    </div>
+
+  <div class="ejercicio-box">
+    <h2 class="number-title">  Ejercicio  </h2>
+    <p>
+      Considera la función \(f:[0,3] \to \mathbb{R}\) dada por
+      \begin{eqnarray*}
+      f(x)=\left\{
+        \begin{array}{cc}
+        -1 &  0 \leq x  < 1 \\
+         0 &   1 \leq x  < 2 \\
+         2   &  2 \leq x \leq 3
+        \end{array}
+        \right.
+      \end{eqnarray*}
+      Nota: \(f\) no está definida para \(x< 0\) ó para \(x>3\).
+    </p>
+    <p>
+      <ol>
+        <li> Dibuja la gráfica de \(f\) y determina su rango.</li>
+        <li> Define \(g(x)=f(3x)\). Describe
+        el dominio y el rango de \(g\) y dibuja su gráfica.</li>
+        <li> Define \(h(x)=f(x-3)\). Describe
+        el dominio y el rango de \(h\) y dibuja su gráfica.</li>
+        <li> Define \(k(x)= g(x)+h(x)\). Describe
+        el dominio y el rango de \(g\) y dibuja su gráfica.</li>
+      </ol>
+    </p>
+  </div>
+
+    <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
+
+      <p>
+        Cuando se tratan de funciones de \(\mathbb{R}\) en
+        \(\mathbb{R}\) en muchos casos se especifíca solamente
+        la regla de correspondencia ó fórmula y se deja al lector
+        encontrar el dominio ó diminio natural de dicha regla. Es decir
+        se busca el subconjunto de números reales para el cual
+        la fórmula tiene sentido, es decir donde las operaciones
+        algebráicas se pueden realizar sin tener problemas de definición.
+        Por ejemplo el dominio natural de la función \(f(x)=\sqrt{x-2}\)
+        es \( [2,\infty)\), pues en este subconjunto se satisface \(x-2 \geq 0\) y
+        por lo tanto existe la raíz cuadrada.
+      </p>
       <p>
         Determina el dominio de las siguientes funciones:
       </p>
@@ -85,6 +272,24 @@
       <li> \(f(x)=\sqrt{\frac{4-x^2}{x^2-5x^6}}+\sqrt{\frac{4x}{x^2+1}}\) </li>
       <li> \(f(x)= \frac{x(x-1)(x-5)}{x^2+2x}+\frac{1}{(x^2-9)^2}\) </li>
       <li>\(f(x)=\sqrt{x^2-9}+\sqrt{4-x^2}\) </li>
+    </ol>
+
+    <p>
+      Nota: el dominio de una suma de funciones es la intersección de los dominios.
+    </p>
+  </div>
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      Para cada una de las condiciones dadas, encuentra todos los
+      polinomios \(p(x)\), de grado menor o igual a 2 que satisfacen la condición.
+    </p>
+    <ol>
+      <li> \(p(0)=p(1)=p(2)=3\). </li>
+      <li>  \(p(0)=p(1)\).      </li>
+      <li> \(p(5x)=5p(x)\). </li>
+      <li>  \(p(x-1)=p(x+1)\). </li>
     </ol>
   </div>
 
@@ -269,9 +474,9 @@
 
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
+      <h2 class="number-title" id="Ejer:DiferenciaRaices"> Ejercicio </h2>
       <p>
-        Sean \(x,y\in \mathbb{R}^+\) con \(y < x\).
+        Sean \(x,y\in \mathbb{R}\) con \(0\leq y < x\).
       </p>
 
     <ol>
@@ -336,7 +541,24 @@
       </div>
 
 
-
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Una función \(f:A\to B\) se llama inyectiva en \(A\) si \(f\)
+          manda puntos distintos de \(A\) en valores distintos. Es decir,
+          si \(a_1,a_2\in A\) y \(a_1\ne a_2\)  entonces
+          \(f(a_1)\ne f(a_2)\).
+        </p>
+        <p>
+          Sea \(A \subseteq \mathbb{R}\) distinto del vacío y
+          \(f:A \to \mathbb{R}\) estrictamente creciente  en \(A\).
+          Prueba que \(f\) es inyectiva en \(A\).
+        </p>
+        <p>
+          ¿Se vale el mismo resultado si ahora \(f\) es estrictamente
+          decreciente en \(A\)?
+        </p>
+      </div>
 
 
 
@@ -423,13 +645,6 @@
             </div>
 
 
-        <div class="ejercicio-box">
-          <h2 class="number-title"> Ejercicio </h2>
-          <p>
-            Prueba que la función \(f(x)=x^2\),  es cóncava hacia arriba en
-            \([0,\infty)\).
-          </p>
-        </div>
 
 
         <div class="ejercicio-box">
@@ -438,7 +653,9 @@
             Prueba que la función  \(g(x)=\sqrt{x}\), es concava
             hacia abajo en \([0,\infty)\).
           </p>
-        </div>
+
+
+        <button class="respButton hvr-grow "> Prueba </button>
         <div class="resp-box">
           <p>
             Fijamos \(0 \leq x_0 < x_1\).
@@ -451,22 +668,94 @@
           \]
 
           <p>
-            Escribiendo \(\sqrt{x_t}=t\sqrt{x_t}+(1-t)\sqrt{x_t}\) lo
-            anterior es equivalente a probar
+            Escribiendo \(\sqrt{x_t}=t\sqrt{x_t}+(1-t)\sqrt{x_t}\), la desigualdad
+            anterior es equivalente a probar (pasando lo que tiene
+            \(1-t\) del lado izquierdo y los que tienen \(t\) del derechoß):
           </p>
-          \[
-          0\leq t[ \sqrt{x_t} - \sqrt{x_0}]+ (1-t)[\sqrt{x_t}-\sqrt{x_1}]
-          \]
+          \begin{equation}\label{Eqn:AuxEjerRaizConcavaAbajo}
+         (1-t) (\sqrt{x_1} - \sqrt{x_t}) \leq  t(\sqrt{x_t}-\sqrt{x_0})
+          \end{equation}
 
           <p>
-            Ahora usamos
+            Ahora usamos el <a href="#Ejer:DiferenciaRaices">Ejercicio 4.17</a>
+            para obtener
             \begin{eqnarray*}
             \sqrt{x_t}-\sqrt{x_0}=\frac{x_t-x_0}{\sqrt{x_t}+ \sqrt{x_0}} \\
-            \sqrt{x_t}-\sqrt{x_1}=\frac{x_t-x_1}{\sqrt{x_t}+ \sqrt{x_1}}
+            \sqrt{x_1}-\sqrt{x_t}=\frac{x_t-x_1}{\sqrt{x_1}+ \sqrt{x_t}}
             \end{eqnarray*}
+            por lo que podemos substituir estas expresiones en
+            \eqref{Eqn:AuxEjerRaizConcavaAbajo} para obtener
+            \begin{equation}\label{Eqn:Aux2EjerRaizConcavaAbajo}
+            (1-t)\frac{x_1-x_t}{\sqrt{x_1}+\sqrt{x_t}} \leq
+            t \frac{x_t-x_0}{\sqrt{x_t}+\sqrt{x_0}}
+            \end{equation}
+            Un cálculo directo muestra que
+            \[
+            x_1-x_t=t(x_1-x_0), \quad x_t-x_0=(1-t)(x_1-x_0)
+            \]
+            Por lo tanto, se puede substituir esto en  \eqref{Eqn:Aux2EjerRaizConcavaAbajo}
+            para llegar a
+            \[
+            t(1-t)\frac{x_1-x_0}{\sqrt{x_1}+\sqrt{x_t}} \leq
+            t(1-t)\frac{x_1-x_0}{\sqrt{x_t}+\sqrt{x_0}}
+            \]
+            la cual se simplifica  a
+            \begin{equation}\label{Eqn:Aux3EjerRaizConcavaAbajo}
+            \frac{1}{\sqrt{x_1}+\sqrt{x_t}} \leq \frac{1}{\sqrt{x_t}+\sqrt{x_0}}
+            \end{equation}
+          </p>
+          <p>
+            Recapitulando hemos encontrado que \eqref{Eqn:AuxEjerRaizConcavaAbajo}
+            es equivalente a \eqref{Eqn:Aux3EjerRaizConcavaAbajo}. Así, lo
+            que resta probar es \eqref{Eqn:Aux3EjerRaizConcavaAbajo}. Para
+            probar ésta última tenemos \(x_0< x_1\) implica \(\sqrt{x_0} < \sqrt{x_1}\)
+            (al ser la función raíz estrictamente
+            creciente). Si sumamos
+            \(\sqrt{x_t}\) en ambos lados de la desigualdad enterior tenemos
+            \[
+            \sqrt{x_0}+\sqrt{x_t} < \sqrt{x_1}+\sqrt{x_t}
+            \]
+            y si scamos inversos multiplicativos concluimos
+            \[
+            \frac{1}{\sqrt{x_1}+\sqrt{x_t}} < \frac{1}{\sqrt{x_0}+\sqrt{x_t}}
+            \]
+            lo cual prueba \eqref{Eqn:Aux3EjerRaizConcavaAbajo}.
+          </p>
+        </div>
         </div>
 
 
+
+                <div class="ejercicio-box">
+                  <h2 class="number-title"> Ejercicio </h2>
+                  <p>
+                    Prueba que la función \(f(x)=x^2\),  es cóncava hacia arriba en
+                    \([0,\infty)\).
+                  </p>
+                  <p>
+                    Usa una idea similar al ejercicio anterior.
+                  </p>
+                </div>
+
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              <p>
+                Sea \(I \subset \mathbb{R}\) un intervalo
+                y \(f,g:I \to \mathbb{R}\) dos funciones.
+              </p>
+              <ol>
+                <li> Prueba que si ambas \(f\) y \(g\) son
+                  cóncavas hacia abajo y \(\alpha >0\) entonces
+                  la función \(f+\alpha g\) también es cóncava hacia abajo.</li>
+                <li> Enuncia y prueba un resultado similar al inciso anterior
+                  si ahora se supone que \(f\) y \(g\) son conavas
+                  hacia arriba.</li>
+                  <li>
+                    Si \(f\) es cóncava hacia arriba prueba que
+                    \(-f\) es cóncava hacia abajo.
+                  </li>
+              </ol>
+            </div>
 
     </div>
 </body>
