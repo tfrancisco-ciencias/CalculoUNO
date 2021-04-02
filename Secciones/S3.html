@@ -97,7 +97,21 @@
         <h2 class="number-title"> Definición </h2>
         <p>El valor absoluto de un número se define como
           la distancia de dicho número al 0.
+
+          <div class="imagen-box flexbox">
+            <img src="./Images/DistanciaValorAbs.png" alt="DistanciaValorAbs" width="350" height="150">
+          </div>
+          Usando éste punto de vista se tiene que dados \(a,b\in \mathbb{R}\),
+           \(|b-a|\) representa la distancia entre los puntos \(a\) y \(b\).
+
+           <div class="imagen-box flexbox">
+             <img src="./Images/DistanciaEntreDosNum.png" alt="DistanciaEntreNum" width="350" height="150">
+           </div>
+
+
         </p>
+
+
         <p> También se puede definir el valor absoluto como:
           \[
           |x|=\left\{
@@ -115,7 +129,22 @@
 
 
           <div class="imagen-box flexbox">
-            <img src="./Images/GraficaValorAbs.png" alt="GraficaValorAbs" width="350" height="350">
+            <img src="./Images/GraficaValorAbs.png" alt="GraficaValorAbs" width="450" height="350">
+          </div>
+        </p>
+
+
+        <p>
+          Hay una observación muy útil con respecto a la gráfica de una
+          función y la gráfica de la misma función tomada con valor absoluto.
+          Ya que el valor absoluto deja igual a números positivos o cero
+          y cambia el signo de números negativos, dada una función
+          \(f: D\ \to \mathbb{R}\), para obtener la gráfica de
+          \(|f|\) se reflejan con respecto del eje \(x\) las porciones de
+          la gráfica que están debajo del mismo eje.
+
+          <div class="imagen-box flexbox">
+            <img src="./Images/GraficasConValAbs.png" alt="GraficasConValorAbs" width="550" height="350">
           </div>
         </p>
       </div>
@@ -170,6 +199,9 @@
     <div class="ejercicio-box">
       <h2 class="number-title" id="Ejer:AbrirValorAbs"> Ejercicio </h2>
       <p>
+        Este ejercicio a veces se refiere como "abrir" un valor absoluto.
+      </p>
+      <p>
       Fija \(\varepsilon >0\). Demuestra:
       </p>
       <ol>
@@ -191,13 +223,19 @@
       <p>
         Sugerencia: usar la fórmula en la definición de valor absoluto.
       </p>
+      <p>
+        Nota: el mismo resultado se vale si se cambia \(<\) por \(\leq\).
+      </p>
     </div>
 
 
     <div class="ejercicio-box">
       <h2 class="number-title" id="Ejer:DesigualdadTriangulo"> Ejercicio </h2>
-      <p>
+      <h3>
         Desigualdad del triángulo.
+      </h3>
+      <p>
+        Esta es una de las desigualdades más utilizadas.
       </p>
       <p>
         Para todos \(x,y\in \mathbb{R}\):
@@ -243,15 +281,20 @@
           tales que \(a\leq \alpha \leq b\) y \(a\leq \beta \leq b \).
           Demuestra que  \(|\alpha-\beta | \leq b-a\).
         </p>
+        <p>
+          Nota: geométricamente ésta desigualdad es clara, pues dice que
+          la distancia entre dos puntos del intervalo \([a,b]\)
+          es, a lo más, b-a, la longitud del intervalo.
+        </p>
       </div>
 
 
 
              <div class="ejercicio-box">
                <h2 class="number-title"> Ejercicio </h2>
-               <p>
+               <h3>
                  La otra desigualdad del trángulo.
-               </p>
+               </h3>
                <p>
                  Demuestra que para todos \(x,y\in \mathbb{R}\):
                  \[
@@ -269,9 +312,9 @@
 
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
-        <p>
+        <h3>
           Desigualdad de Korovkin.
-        </p>
+        </h3>
 
         <p>
           Si \(x_1,\cdots, x_n \in \mathbb{R}^+\) satisfacen
@@ -295,9 +338,9 @@
 
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
-        <p>
+        <h3>
           Desigualdad aritmético-geométrica.
-        </p>
+        </h3>
         <p>
           Dados \(a_1,\dots a_n \in \mathbb{R}^+\), se cumple:
           \[
@@ -337,9 +380,9 @@
 
        <div class="ejercicio-box">
          <h2 class="number-title"> Ejercicio </h2>
-         <p>
+         <h3>
            Desigualdad de Cauchy-Schwartz.
-         </p>
+         </h3>
          <p>
            Para cualesquiera \(a_1,\dots, a_n, b_1, \dots, b_n \in \mathbb{R}\):
            \[
@@ -365,6 +408,23 @@
                  Cauchy-Schwartz se da si y sólo si existe
                  \(\lambda \in \mathbb{R}\) tal que \(a_i=\lambda b_i\),
                  para todo \(i=1,\dots, n\).
+               </p>
+               <p>
+                 Sugerencia: en la prueba de la desigualdad de Cauchy-Schwartz se utilizó
+                 la función
+                 \[
+                 f(t)=\sum_{i=1}^n (a_i+tb_i)^2
+                 \]
+                 Prueba que si se da la igualdad en Cauchy-Schwartz entonces
+                 \[
+                 f(t)=(\sqrt{A}\pm t \sqrt{B})^2
+                 \]
+                 donde \(A=\sum_{i=1}^n a_i^2, B=\sum_{i=1}^n b_i^2\). Ahora,
+                 para encontrar \(\lambda\),
+                 nota que  la expresión
+                 \((\sqrt{A}\pm t \sqrt{B})^2\) se hace cero si y sólo
+                 si todos los sumandos \(a_i+tb_i\), \(i=1,\dots, n\),
+                 se hacen cero.
                </p>
              </div>
 
@@ -433,6 +493,10 @@
 
 <div class="ejercicio-box" >
   <h2 class="number-title" id="Ejer:DesigualdadBernoulli"> Ejercicio </h2>
+  <h3>
+    La desigualdad de Bernoulli.
+  </h3>
+
   <p>
     Sean \(a_1, \dots, a_n\) números reales todos con el mismo
     signo y que satisfacen \(a_i>-1\), para todo \(i=1,\dots, n\).
