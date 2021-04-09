@@ -1,0 +1,539 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 4 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 4 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()"
+        class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Límites  </h1>
+
+
+
+
+
+      <div class="info-box">
+        <h2 class="number-title"> Introducción </h2>
+        <p>
+
+        </p>
+      </div>
+
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+      <p> Dado un número positivo \(r>0\), el intervalo centrado en
+        \(a\in \mathbb{R}\) y radio \(r\), denotado  \(B_r(a)\), se define como
+      \[
+      B_r(a)=\{ x\in \mathbb{R}: |x-a|< r \}=\{x\in \mathbb{R}: a-r < x < a+r \}
+      \]
+
+      La idea es que los puntos en \(B_r(a)\) son puntos "cercanos" al punto
+      \(a\), ¿qué tan cercanos? depende de la \(r\) que se tome. Al conjunto
+      \(B_r(a)\) también se le llama una vecindad de \(a\).
+      </p>
+
+      <p> En otras ocaciones es importante analizar a una función "cerca"
+        de un valor dado \(a\in \mathbb{R}\), pero evitando el valor
+        de \(a\). Es decir, se analizan los valores
+        \(f(x)\), con \(x\in B_r(a)\) pero asumiendo \(x\ne a\)
+        (por ejemplo, \(f\) puede ser fuerza de gravedad
+        y \(a\) el centro de un agujero negro). En estos
+        casos lo conveniente es tomar vecindades agujereadas, las cuales se
+        definen simplemente como
+        \[
+        B_r(a)\setminus\{a\} = \{ x\in \mathbb{R}: |x-a|< r, x\ne a \}=
+        \{ x\in \mathbb{R}: 0< |x-a|< r \}
+        \]
+      </p>
+      </div>
+
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+      <p>
+       Sea \(f\) una función definida en una vecindad agujereada de
+       \(a\). La idea del límite de \(f(x)\) cuando \(x\) tiende a un número
+       (fijo) \(a\) es que los números \(f(x)\) van formando una tendencia
+       hacia un número, es decir, los valores de \(f(x)\) se van aproximando
+       a un número fijo, éste es el que se llama el límite.
+       Si el número al que se aproximan los valores de \(f(x)\) es \(L\) escribimos
+       \[
+       \lim_{x\to a} f(x)=L
+       \]
+      </p>
+      <p>
+        Por ejemplo, vamos a encontrar
+        \[
+        \lim_{x\to 0} \frac{\frac{1}{x}+6}{\frac{1}{x}+2}
+        \]
+        En este caso \(f(x)=\frac{\frac{1}{x}+6}{\frac{1}{x}+2}\). Nota
+        que \(f(x)\) esta definido para valores de \(x\) cercano a
+        cero pero \(f(0)\) no está bien definido (pues \(\frac{1}{0}\)no existe).
+        Es decir, \(f\) está definida en una vecindad agujereada de cero.
+      </p>
+      <p>
+        Ahora, queremos ver la tendencia de \(f(x)\) cuando la variable \(x\)
+        se aproxima cada vez más al cero. Notamos que si
+        \(x\) está cercano a cero, el valor \(\frac{1}{x}\) se hace muy grande,
+        puede ser muy grande positivo o muy grande negativo (dependiendo del
+        signo de \(x\)). Por ejemplo
+        \[
+        \begin{array}{cc}
+        x & \frac{1}{x} \\
+        \hline \\
+        0.1 & 10 \\
+        -0.1 & -10 \\
+        0.01 & 100 \\
+        -0.01 & -100 \\
+        \frac{1}{10^n} & 10^n
+        \end{array}
+        \]
+        Por lo tanto, para valores "muy cercanos a cero", sin tocar el cero,
+        \(\frac{1}{x}\) es "muy grande". Continuendo con el análisis de
+        \(f(x)\), como \(\frac{1}{x}\) es "muy grande"
+        los valores \(\frac{1}{x}+6\) y \(\frac{1}{x}+2\) son "muy parecidos".
+        Pensando en porcentajes de \(\frac{1}{x}\), \(\frac{1}{x}+6\)
+        y \(\frac{1}{x}+2\) aportan prácticamente los mismos porcentajes. Por
+        lo tanto, intuitivamente
+        \[
+          \lim_{x\to 0} \frac{\frac{1}{x}+6}{\frac{1}{x}+2}=1.
+        \]
+      </p>
+      <p>
+        La definición formal que se presenta abajo tiene como objetivo
+        poner en claro y cuantificar las frases "muy cercanos", "muy grande",
+        "muy parecido", que se usaron en el análisis anterior.
+      </p>
+      </div>
+
+      <div class="definicion-box">
+        <h2 class="number-title" id="Def:Limite"> Definición </h2>
+          <p>
+            Sea \(f\) una función, con valores reales, definida en una
+            vecindad agujereada de \(a\).
+          </p>
+        <p>
+          Decimos que el límite de los valores \(f(x)\), cuando
+          la variable \(x\) tiende al número \(a\), es \(L\) si:
+        </p>
+        <p>
+          para toda \(\varepsilon >0\) existe \(\delta >0\) tal que
+          si \(0<|x-a|< \delta\) entonces \(|f(x)-a|< \varepsilon\).
+        </p>
+        <p>
+          La definición es complicada, pero lo importante que dice es que
+          cuando los valores de \(x\) están cercanos a \(a\), sin tocarlo
+          (codificado en \(0<|x-a|<\delta\)) entonces los valores
+          de \(f(x)\) están cercanos a \(L\) (codificado en
+          \(|f(x)-L|< \varepsilon\)).
+        </p>
+        <p>
+          Otro aspecto importante de la definición son los cuantificadores.
+          El para todo en la \(\varepsilon\) dice que las vecindades centradas
+          en \(L\) se van haciendo pequeñas, algo necesario para establecer
+          a \(L\) como la tendencia de los valores de \(f(x)\), pues si
+          para unos valores de \(\varepsilon\) falla la condición entonces
+          los valores de \(f(x)\) realmente tiende a otro lado.
+        </p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Usando la <a  href="Def:Limite">Definción 5.4</a>
+          prueba que
+          \[
+          \lim_{x\to 0} \frac{\frac{1}{x}+6}{\frac{1}{x}+2}=1.
+          \]
+      </div>
+
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Fija dos números \(a,b\in \mathbb{R}\), distintos de cero.
+        </p>
+        <p>
+          Usando la <a  href="Def:Limite">Definción 5.4</a>
+          prueba que
+          \[
+          \lim_{x\to 0} \frac{\frac{a}{x}+6}{\frac{b}{x}+2}=\frac{a}{b}.
+          \]
+          Sugerencia: usa mismas ideas que en el ejercicio anterior.
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      Sea \(f(x)=x^2\) y \(\varepsilon=1/10\).
+
+      Determina un valor de \(\delta>0\) tal que si
+      \[
+      |x-2|< \delta \Rightarrow |f(x)-4| <\varepsilon
+      \]
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sea \(f(x)=\frac{1}{x^2}\), para \(x>0\) y
+      \(\varepsilon=1/100\).
+      </p>
+      <p>
+      Determina un valor de \(\delta >0\) tal que
+      si
+      \[
+      |x-2|<\delta \Rightarrow |f(x)-\frac{1}{4}|< \varepsilon
+      \]
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title" id="Ejer:LimitLawsLinearComb"> Ejercicio </h2>
+
+      <p>
+      Sean \(f\) y
+      \(g\) dos funciones
+      definidas en una vecindad agujereada de \(x_0\), tal que los siguientes
+      límites existen \(\lim_{x\to x_0}f(x)=A\) y
+      \(\lim_{x\to x_0} g(x)=B\). Demuestra que:
+      </p>
+      <ol>
+      <li>  \(\lim_{x\to x_0}(f+g)(x)=A+B\).
+      <li> para \(c \in \mathbb{R}\) fijo y arbitrario,
+      \(\lim_{x\to x_0}cf(x)=cA\).
+      </ol>
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <h3 > Teorema del sandiwch para límites </h3>
+        <p>
+          Sean \(f,g\) y \(h\) funciones definidas en una
+          vecindad agujereada de \(a\). Supongamos que
+          \(\lim_{x\to a} f(x)\) y \(\lim_{x\to a}h(x)\) existen
+          y son iguales. Denotemos \(L=\lim_{x\to a}f(x)=\lim_{x\to a}h(x)\)
+        </p>
+        <p>
+          Además supongamos que \(f(x)\leq g(x) \leq h(x)\),
+          para todo \(x\) en una vecindad agujereada de \(a\)
+          (de ésta parte proviene el nombre de sandwich).
+        </p>
+        <p>
+          Entonces \(\lim_{x\to a}g(x)\) existe y
+          \[
+          \lim_{x\to a} g(x)=L.
+          \]
+        </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sea \(F\) una función definida en una
+      vecindad agujereada de
+      \(x_0\) y tal que \(\lim_{x\to x_0}F(x)=L\).
+      </p>
+      <p>
+      Demuestra que existe \(V\),
+      una vecindad agujereada de \(x_0\),  tal que \(|F(x)| \leq |L|+1\),
+      para todo \(x \in V\).
+      </p>
+      </div>
+
+
+      <div class="ejercicio-box" >
+      <h2 class="number-title" id="Ejer:LimitLawProduct"> Ejercicio </h2>
+      Sean \(f\) y \(g\)
+      dos funciones
+      definidas en una vecindad agujereada de \(x_0\) tal que los siguientes
+      límites existen
+      \[\lim_{x\to x_0}f(x)=A, \quad \lim_{x\to x_0} g(x)=B\]
+
+      Demuestra que \(\lim_{x\to x_0} f(x)g(x)=AB\).
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      Sea \(f\) una función definida en una vecindad agujereada de
+      \(x_0 \) tal que el límite existe \(\lim_{x\to x_0}f(x)=L\). Demuestra
+      que para todo \(n \in \mathbb{N}\)
+      \[
+      \lim_{x\to x_0} f^n(x)=L^n.
+      \]
+
+      En particular, nota que \(\lim_{x\to x_0}x^n=x_0^n\).
+
+      Sugerencia: usa el ejercicio \ref{Ejer:LimitLawProduct} e inducción.
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title" id="Ejer:LimitLawPoly"> Ejercicio </h2>
+
+      Sea
+      \(p(x)=\sum_{k=0}^n a_kx^k\) un
+      polinomio. Demuestra que, para todo \(x_0 \in \mathbb{R}\)
+      \[
+      \lim_{x\to x_0}p(x)=\sum_{k=0}^na_kx_0^k=p(x_0).
+      \]
+
+      Sugerencia: usa los ejercicios \ref{Ejer:LimitLawsLinearComb} y
+      \ref{Ejer:LimitLawProduct}.
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      Supon que \(f\) es una función
+      definida en una vecindad de
+      \(x_0\) y que satisface
+      \[
+      \frac{1}{2}-\left( \frac{x-7}{4} \right)^2 \leq f(x)
+      \leq  \frac{1}{2}+ \left( \frac{2x-14}{7}\right)^2
+      \]
+
+      Encuentra \(\lim_{x\to 7}f(x)\).
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sea \(G\) una función definida en una
+      vecindad agujereada de
+      \(x_0\), tal que \(\lim_{x\to x_0}G(x)=L\) con \(L\ne 0\).
+      </p>
+      <p>
+      Demuestra
+      que existe \(V\), una vecindad agujereada de \(x_0\),  tal que
+      \(\frac{|L|}{2}< |G(x)|\), para todo \(x\in V\).
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title" id="Ejer:LimitLawQuotients"> Ejercicio </h2>
+
+      <p>
+      Sea \(g\) una
+      función definida
+      en una vecindad agujereada de \(x_0\), tal que \(\lim_{x\to x_0} g(x)=B\)
+      con \(B \ne 0\). Demuestra que
+      \(\lim_{x\to x_0} \frac{1}{g(x)}=\frac{1}{B}\).
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sean \(p(x)\) y \(q(x)\) dos polinomios.
+      Si \(q(x_0)\ne 0\),
+      demuestra que
+      \[
+      \lim_{x\to x_0}\frac{p(x)}{q(x)}=\frac{p(x_0)}{q(x_0)}
+      \]
+      </p>
+      <p>
+        Sugerencia: usa \ref{Ejer:LimitLawQuotients} y \ref{Ejer:LimitLawPoly}.
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Considera la función \(f(x)=\sqrt{x}\)
+      para \(x \geq 0\). Para
+      \(\varepsilon=1/100\) encuentra una \(\delta >0\)
+      tal que si
+      \[
+      |x-4|<\delta \Rightarrow |f(x)-2|< \varepsilon.
+      \]
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sea \(f\) una función definida en una
+      vecindad agujereada
+      de \(x_0\).
+      </p>
+      <p>
+      Asume que existen constantes \(m,M\) tales que
+      \(m  \leq f(x) \leq M\) para todo \(x\) en la vecinda y que existe
+      \(\lim_{x\to x_0} f(x)\). Demuestra que
+      \[m \leq \lim_{x\to x_0} f(x) \leq M.\]
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sea \(f\) una función definida en una
+      vecindad agujereada de
+      \(x_0\), tal que \(f(x) \geq 0\) en dicha vecindad y tal que
+      \(\lim_{x\to x_0} f(x)=A\).
+      </p>
+      <p>
+      Demuestra que \(\lim_{x\to x_0}
+      \sqrt{f(x)}=\sqrt{A}\).
+      </p>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      Calcula los siguientes límites.
+
+      <ol>
+      <li>
+      \[
+      \lim_{x\to 0} \sqrt{\frac{1}{x}+1}-\sqrt{\frac{1}{x}-1}
+      \]
+
+      <li> Sean \(a,b \in \mathbb{R}^+\) fijos y arbitrarios.
+
+      \[
+      \lim_{x\to 0} \sqrt{\frac{1}{x}+a}-\sqrt{\frac{1}{x}-b}
+      \]
+
+      <li> Sean \(b_1,b_2,c_1,c_2 \in \mathbb{E}^+\).
+
+      \[
+      \lim_{x\to 0} \sqrt{\frac{1}{x^2}+\frac{b_1}{x^4}+c_1}-
+      \sqrt{\frac{1}{x^4}+\frac{b_2}{x^2}+c_2}
+      \]
+
+      <li> Sean \(a,b \in \mathbb{R}^+\) fijos y arbotarios.
+      \[
+      \lim_{x\to 0} \frac{\sqrt{\frac{1}{x^4}+a}} {\sqrt{\frac{1}{x^2}+b}}
+      \]
+
+      <li> Sean \(p(x)\) y \(q(x)\) dos polinomios (arbitrarios). Calcular
+      \[
+      \lim_{x\to 0} \frac{\sqrt{\frac{1}{x^4}+p(x)}}{\sqrt{\frac{1}{x^6}+q(x)}}
+      \]
+
+      </ol>
+      </div>
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+      Sean \(f,g\) dos funciones definidas en
+      una vecindad
+      agujereada de \(x_0\), tal que los límites
+      \(\lim_{x\to x_0}f(x)\) y \(\lim_{x\to x_0} g(x)\) existen.
+      </p>
+
+      <p>
+      Si \(f(x) \leq g(x)\), para todo \(x\) en la vecindad agujereada
+      demuestra que
+      \[\lim_{x\to x_0} f(x) \leq \lim_{x\to x_0}g(x).\]
+      </p>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+      \[
+      \lim_{x\to a^+} f(x)=L
+      \]
+
+      \[
+      \lim_{x\to a^-}f(x)=L
+      \]
+      </p>
+      </div>
+
+
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      Calcula los siguientes límites.
+      Justifica tu respuesta.
+
+      <ol>
+      <li> \(\lim_{x\to 3}\frac{x^2-6x+9}{x^2-9}\)
+      <li> \(\lim_{x\to 0} \frac{\sqrt{4+3x}-\sqrt{4-3x}}{x}\)
+      <li> \(\lim_{x\to 9^+} \frac{|81-x^2|}{\sqrt{x}-3}\)
+      <li> \(\lim_{h\to 0} \frac{\sqrt{16+h}-4	}{h}\)
+      <li> \(\lim_{x\to 0} \frac{\sqrt[3]{8+x}-2}{x}\)
+      <li> \(\lim_{t\to 1} \frac{t^4-1}{t^3-1}\)
+      </ol>
+      </div>
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
