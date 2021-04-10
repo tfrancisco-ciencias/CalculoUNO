@@ -77,7 +77,7 @@
     De manera intuitiva el concepto de función puede
     presentarse de varias formas: con palabras, tablas, fórmulas, gráficas.
     En cada caso una función relaciona dos clases de objetos donde algunos
-    de los objetos dependen de otros, donde la dependencia se debe de presentar
+    de los objetos dependen de otros y  donde la dependencia se debe de presentar
     de manera clara.
   </p>
   <p>
@@ -91,11 +91,56 @@
   </p>
   <p>
     Otra forma es mediante una gráfica:
+
+
+    <div class="imagen-box flexbox">
+      <img src="./Images/EjemploGraficaFuncion.png" alt="EjemploGrafica" width="300" height="230">
+    </div>
+    donde cada punto \((x,y)\) en el plano está  en la gráfica
+    sí y sólo si satisface la relación \(y=\pi x^2\).
   </p>
+
+  <p>
+    Aún otra forma de pensar a las funciones es cómo máquinas que aceptan
+    ciertas entradas (insumos) las modifican para construir  nuevos resultados
+    (productos). Las variables independientes son los insumos, la regla
+    de correspondencia es el proceso que usa la máquina y  el resultado
+    (producto) es la variable dependiente.
+  </p>
+
   <p>
 
-  </p>
+    <div class="imagen-box flexbox">
+    <img src="./Images/MaquinaFuncion.png" alt="Maquina" width="300" height="230">
+    </div>
 
+  </p>
+  <p>
+    Es importante notar que en todas las formas de presentar a una función
+    siempre hay tres componentes (las cuales son escenciales):
+    <ol>
+    <li>
+      los objetos o variables independientes, el el ejemplo anterior
+      \(r\), el radio;
+    </li>
+    <li>
+      los objetos que se relacionan con las variables independientes,
+      en el ejemplo anterior \(A\), el área que se representa con un
+      número mayor o igual a cero;
+    </li>
+    <li>
+      la relación precisa entres las variables independientes y
+      dependientes, en el ejemplo la ecuación \(A=\pi r^2\).
+    </li>
+    </ol>
+
+
+  </p>
+  <p>
+    En la definición que sigue se usa teoría de conjuntos para dar una
+    definición precisa de lo que es una función, pero la idea es capturar
+    las tres partes escenciales que se mencionaron.
+  </p>
 
 </div>
 
@@ -190,6 +235,29 @@
       es la gráfica de una función. Además determina su
       su dominio y rango.
     </p>
+    <ol>
+      <li> \( \)
+        <div class="imagen-box flexbox">
+        <img src="./Images/EjerGrafica1.png" alt="EjerGrafica1" width="300" height="230">
+        </div>
+      </li>
+      <li>\( \)
+        <div class="imagen-box flexbox">
+        <img src="./Images/EjerGrafica2.png" alt="EjerGrafica2" width="300" height="230">
+        </div>
+      </li>
+      <li>\( \)
+        <div class="imagen-box flexbox">
+        <img src="./Images/EjerGrafica3.png" alt="EjerGrafica3" width="300" height="230">
+        </div>
+      </li>
+      <li>\( \)
+        <div class="imagen-box flexbox">
+        <img src="./Images/EjerGrafica4.png" alt="EjerGrafica4" width="300" height="230">
+        </div>
+      </li>
+
+    </ol>
   </div>
 
 
@@ -202,8 +270,8 @@
         \begin{eqnarray*}
         f(x)=\left\{
           \begin{array}{cc}
-          -1 &  -2 \leq x  < 0 \\
-           1 &   0 \leq x  < 2 \\
+          -1 &  -2 \leq x  < 0, \\
+           1 &   0 \leq x  < 2 .\\
           \end{array}
           \right.
         \end{eqnarray*}
@@ -275,12 +343,33 @@
     </ol>
 
     <p>
-      Nota: el dominio de una suma de funciones es la intersección de los dominios.
+      Nota: el dominio de una suma de funciones es la intersección de los dominios
+      de los sumandos.
     </p>
   </div>
 
   <div class="ejercicio-box">
     <h2 class="number-title"> Ejercicio </h2>
+
+    <p>
+      Una familia imporante de funciones son los polinomios de una variable. Estos son
+      funciones con diminio y codominio \(\mathbb{R}\) y cuyas reglas de
+      de correspondencia son de la forma
+      \[
+      p(x)=a_0+a_1x+a_2x^2+ \cdots + a_nx^n
+      \]
+      donde los números, \(a_0,\dots, a_n \in \mathbb{R}\) se llaman
+      los coeficientes y el polinimio se dice que es de grado \(n\)
+      si \(n\) el en natural más grande para el cual el coeficiente
+      \(a_n\) es distinto de cero. Por ejemplo, los polinomios de
+      grado cero son las funciones constantes, los de grado uno tienen
+      por gráficas  líneas rectas y los de grado 2 parábolas.
+    </p>
+    <p>
+      Una característica importante es que dos polinomios \(p(x)\) y
+      \(q(x)\) son iguales si y sólo si
+      todos sus coeficientes son iguales.
+    </p>
     <p>
       Para cada una de las condiciones dadas, encuentra todos los
       polinomios \(p(x)\), de grado menor o igual a 2 que satisfacen la condición.
@@ -295,10 +384,30 @@
 
     <div class="definicion-box">
       <h2 class="number-title" id="Def:FuncionesParesImpares"> Definición </h2>
+      <p>
+        Para estudiar funciones muchas veces es útil ver algunas de las simetrías
+        de su gráfica. Si la gráfica es simétrica con respecto al eje \(y\)
+        la función se llama par, si la función se simétrica con respecto
+        al origen, se llama impar. Otro aspecto importante, y que se verá
+        en los <a href="#Ejer:UnicidadFunParImpar">Ejercicio 4.10 </a>
+        y <a href="#Ejer:DescomposicionFuncionesParesImpares">Ejercicio 4.11 </a>,
+        es que las
+        funciones pares e impares  puden pensarse como los
+        bloques que forman a cualquier otra función.
+      </p>
     <p> Una función \(f:\mathbb{R} \to \mathbb{R}\) se llama:</p>
     <ul>
       <li>par si \(f(-x)=f(x)\), para toda \(x\in \mathbb{R}\). </li>
+
+      <div class="imagen-box flexbox">
+        <img src="./Images/FuncionPar.png" alt="FuncionPar" width="300" height="230">
+      </div>
+
       <li>impar si \(f(-x)=-f(x)\) para toda \(x\in \mathbb{R}\). </li>
+
+      <div class="imagen-box flexbox">
+        <img src="./Images/FuncionImpar.png" alt="FuncionImpar" width="300" height="230">
+      </div>
     </ul>
     Video ejemplos: identidas, -identidad, potencias pares, impares.
     </div>
@@ -392,6 +501,13 @@
     <div class="definicion-box">
       <h2 class="number-title"> Definición </h2>
       <p>
+        Un aspecto importante en el análisis de una función
+        es si crece o decrece, por ejemplo piensa en
+        una función que mide la temperatura con respecto al tiempo.
+        Dependiendo del tipo de crecimiento vamos a definir
+        cuatro tipos de funciones.
+      </p>
+      <p>
         Considera una función \(f:D \to \mathbb{R}\).
       </p>
     <ul>
@@ -399,23 +515,48 @@
        \[
        x_1\leq  x_2 \Rightarrow f(x_1)\leq f(x_2)
        \]
+
+       <div class="imagen-box flexbox">
+         <img src="./Images/MonotonaCreciente.png" alt="MonotonaCreciente" width="300" height="230">
+       </div>
+
+       Nota que este tipo de funciones puede tener secciones donde
+       la función permanece constante.
+
       </li>
       <li>  \(f\) es monótona  decreciente en \(D\) si, dados \(x_1,x_2\in D\):
        \[
        x_1\leq  x_2 \Rightarrow f(x_1)\geq  f(x_2)
        \]
+
+
+       <div class="imagen-box flexbox">
+         <img src="./Images/MonotonaDecreciente.png" alt="MonotonaDecreciente" width="300" height="230">
+       </div>
+
+       Nota que este tipo de funciones puede tener secciones donde
+       la función permanece constante.
       </li>
       <li>
         \(f\) es estrictamente creciente en \(D\) si, dados \(x_1,x_2\in D\):
         \[
          x_1< x_2 \Rightarrow f(x_1)< f(x_2)
         \]
+
+        <div class="imagen-box flexbox">
+          <img src="./Images/EstCreciente.png" alt="EstrictamenteCreciente" width="300" height="230">
+        </div>
+
+
       </li>
       <li>
         \(f\) es estrictamente decreciente en \(D\) si, dados \(x_1,x_2\in D\):
         \[
          x_1< x_2 \Rightarrow f(x_1)> f(x_2)
         \]
+        <div class="imagen-box flexbox">
+          <img src="./Images/EstDecreciente.png" alt="EstrictamenteDecreciente" width="300" height="230">
+        </div>
       </li>
     </ul>
     </div>
@@ -565,31 +706,48 @@
 
         <div class="definicion-box">
           <h2 class="number-title"> Definicion </h2>
+
+          <p>
+            Al analizar el crecimiento de una función hay un factor
+            importante que se llama concavidad. La manera en qué
+            una función crece es muy importante. Las gráficas de abajo
+            presentan dos funciones monótonas crecientes pero, cualitativamete,
+            su crecimiento es muy distinto. El crecimiento de
+            \(f\) parece se más lento que el de la \(g\). Si pensamos que
+            que ambas funciones representan ganancias ¿cuál prefeririás
+            que representara tus ganancias?
+          </p>
+
+          <div class="imagen-box flexbox">
+            <img src="./Images/Concavidades.png" alt="Concavidades" width="500" height="230">
+          </div>
           <p>
             Sea \(I\) un intervalo y
-            \(f:I \to \mathbb{R}\) una función.
+            \(f,g:I \to \mathbb{R}\) funciones.
             <ol>
             <li>
               <p>
-              decimos que \(f\) es cóncava hacia arriba en \(I\), o convexa,
+              decimos que \(f\) es cóncava hacia abajo  en \(I\), o cóncava,
               si, siempre que se tengan
               \(x_0,x_1\in I\), con \(x_0< x_1 \), entonces
               para todo \(t\in [0,1]\) se cumple:
             </p>
             \[
-            f((1-t)x_0+tx_1) \leq (1-t)f(x_0)+tf(x_1).
+            f((1-t)x_0+tx_1) \geq (1-t)f(x_0)+tf(x_1).
             \]
             </li>
 
             <li>
-              decimos que \(f\) es cóncava hacia abajo en \(I\), o cóncava, si
+              decimos que \(g\) es cóncava hacia arriba en \(I\), o convexa, si
               siempre que se tengan
               \(x_0,x_1\in I\), con \(x_0< x_1 \), entonces
               para todo \(t\in [0,1]\) se cunmple:
             </p>
             \[
-            f((1-t)x_0+tx_1) \geq (1-t)f(x_0)+tf(x_1).
+            g((1-t)x_0+tx_1) \leq (1-t)g(x_0)+tg(x_1).
             \]
+
+
         </div>
 
 
@@ -627,21 +785,31 @@
             </p>
 
             <p>
-              Con esta notacíon, decir que la función \(f\) es cóncava
+              Con esta notacíon, decir que la función \(g\) es cóncava
               hacia arriba se escribe:
               \[
-              f(x_t) \leq (1-t)f(x_0)+tf(x_1).
+              g(x_t) \leq (1-t)g(x_0)+tg(x_1).
               \]
               Por otro lado, usando la notación \(y_t=(1-t)f(x_0)+tf(x_1)\),
-              tenemos que \(y_t\) viaja desde \(f(x_0)\), cuando \(t=0\)
-              a \(f(x_1)\), cuado \(t=1\), en una línea recta. Entonces,
-              decir que \(f\) es cóncava hacia arriba es equivalente a
+              tenemos que \(y_t\) viaja desde \(g(x_0)\), cuando \(t=0\)
+              a \(g(x_1)\), cuado \(t=1\), en una línea recta. Entonces,
+              decir que \(g\) es cóncava hacia arriba es equivalente a
               decir que los valores de la función en \([x_0,x_1]\)
-              (representados por \(f(x_t)\))
-              están por debajo de la recta que une \((x_0,f(x_0))\)
-              con \((x_1,f(x_1))\) (representado por \(y_t\)).
+              (representados por \(g(x_t)\))
+              están por debajo de la recta que une \((x_0,g(x_0))\)
+              con \((x_1,g(x_1))\) (representado por \(y_t\)).
+            </p>
+            <p>
+              Nota que para una función \(f\), cóncava hacia abajo, las
+              desigualdades se voltean por lo que ahora la gráfica de \(f\)
+              está por arriba de la  línea
+              que une \((x,f(x_0))\) con \((x_1,f(x_1))\).
+
             </p>
 
+            <div class="imagen-box flexbox">
+            <img src="./Images/DefConcavidad.png" alt="DefConcavidad" width="500" height="230">
+            </div>
             </div>
 
 
