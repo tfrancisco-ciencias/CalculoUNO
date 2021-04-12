@@ -14,6 +14,10 @@
     </script>
 
 
+    <script id="WolframAlphaScript" src="//www.wolframalpha.com/input/embed/?type=small"
+    type="text/javascript"></script>
+
+
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="../main.js"></script>
 
@@ -80,7 +84,23 @@
       <div class="info-box">
         <h2 class="number-title"> Introducción </h2>
         <p>
-
+          El concepto de límite es escencial en el desarrollo
+          del cálculo diferencial que se presente más adelante.
+          Aunque la idea no es complicada: "el límite es el
+          número al cual los valores de una función se van aproximando",
+          la definición formal, la que es precisa, no es intuitiva
+          a primera vista y hay que programar el cerebro para manejarla
+          fluidamente.
+        </p>
+        <p>
+          En esta sección se presenta la definición formal así como
+          algunas de las propiedades algebráicas de los límites. Tema aparte
+          es dar condiciones para la exitencia de límites, lo cual se verá
+          en otra sección.
+        </p>
+        <p>
+          Antes de dar la definición de límite necesitamos la definición
+          de vecindad de un punto.
         </p>
       </div>
 
@@ -91,6 +111,12 @@
       \[
       B_r(a)=\{ x\in \mathbb{R}: |x-a|< r \}=\{x\in \mathbb{R}: a-r < x < a+r \}
       \]
+
+
+      <div class="imagen-box flexbox">
+        <img src="./Images/DefVecindad.png" alt="Vecindad"
+        width="500" height="250">
+      </div>
 
       La idea es que los puntos en \(B_r(a)\) son puntos "cercanos" al punto
       \(a\), ¿qué tan cercanos? depende de la \(r\) que se tome. Al conjunto
@@ -103,12 +129,19 @@
         \(f(x)\), con \(x\in B_r(a)\) pero asumiendo \(x\ne a\)
         (por ejemplo, \(f\) puede ser fuerza de gravedad
         y \(a\) el centro de un agujero negro). En estos
-        casos lo conveniente es tomar vecindades agujereadas, las cuales se
+        casos lo conveniente es tomar vecindades agujereadas
+        o perforadas, las cuales se
         definen simplemente como
         \[
         B_r(a)\setminus\{a\} = \{ x\in \mathbb{R}: |x-a|< r, x\ne a \}=
         \{ x\in \mathbb{R}: 0< |x-a|< r \}
         \]
+
+
+        <div class="imagen-box flexbox">
+          <img src="./Images/DefVecindadPerforada.png" alt="VecindadPerforada"
+            width="500" height="250">
+          </div>
       </p>
       </div>
 
@@ -182,8 +215,14 @@
         </p>
         <p>
           para toda \(\varepsilon >0\) existe \(\delta >0\) tal que
-          si \(0<|x-a|< \delta\) entonces \(|f(x)-a|< \varepsilon\).
+          si \(0<|x-a|< \delta\) entonces \(|f(x)-L|< \varepsilon\).
         </p>
+
+
+              <div class="imagen-box flexbox">
+                <img src="./Images/DefLimite.png" alt="Limite"
+                width="500" height="300">
+              </div>
         <p>
           La definición es complicada, pero lo importante que dice es que
           cuando los valores de \(x\) están cercanos a \(a\), sin tocarlo
@@ -204,7 +243,7 @@
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
         <p>
-          Usando la <a  href="Def:Limite">Definción 5.4</a>
+          Usando la <a  href="#Def:Limite">Definción 5.4</a>
           prueba que
           \[
           \lim_{x\to 0} \frac{\frac{1}{x}+6}{\frac{1}{x}+2}=1.
@@ -334,7 +373,8 @@
       </div>
 
       <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
+      <h2 class="number-title" id="Ejer:LimitPotencias"> Ejercicio </h2>
+      <p>
       Sea \(f\) una función definida en una vecindad agujereada de
       \(x_0 \) tal que el límite existe \(\lim_{x\to x_0}f(x)=L\). Demuestra
       que para todo \(n \in \mathbb{N}\)
@@ -343,8 +383,11 @@
       \]
 
       En particular, nota que \(\lim_{x\to x_0}x^n=x_0^n\).
-
-      Sugerencia: usa el ejercicio \ref{Ejer:LimitLawProduct} e inducción.
+      </p>
+      <p>
+      Sugerencia: usa el ejercicio <a href="#Ejer:LimitLawProduct">Ejercicio 5.13</a>
+      e inducción.
+      </p>
       </div>
 
       <div class="ejercicio-box">
@@ -357,8 +400,9 @@
       \lim_{x\to x_0}p(x)=\sum_{k=0}^na_kx_0^k=p(x_0).
       \]
 
-      Sugerencia: usa los ejercicios \ref{Ejer:LimitLawsLinearComb} y
-      \ref{Ejer:LimitLawProduct}.
+      Sugerencia: usa los ejercicios
+      <a href="#Ejer:LimitLawsLinearComb">Ejercicio 5.10</a> y
+      <a href="#Ejer:LimitPotencias">Ejercicio 5.14</a>.
       </div>
 
       <div class="ejercicio-box">
@@ -411,7 +455,9 @@
       \]
       </p>
       <p>
-        Sugerencia: usa \ref{Ejer:LimitLawQuotients} y \ref{Ejer:LimitLawPoly}.
+        Sugerencia: usa <a href="#Ejer:LimitLawProduct">Ejercicio 5.13</a>,
+        y <a href="#Ejer:LimitLawPoly"> Ejercicio 5.15</a> y
+        <a href="#Ejer:LimitLawQuotients">Ejercicio 5.18</a>.
       </p>
       </div>
 
@@ -419,13 +465,27 @@
       <h2 class="number-title"> Ejercicio </h2>
       <p>
       Considera la función \(f(x)=\sqrt{x}\)
-      para \(x \geq 0\). Para
+      para \(x \geq 0\).
+      </p>
+      <ol>
+      <li>Para
       \(\varepsilon=1/100\) encuentra una \(\delta >0\)
       tal que si
       \[
       |x-4|<\delta \Rightarrow |f(x)-2|< \varepsilon.
       \]
-      </p>
+      Sugerencia: analisa la expresión \(|f(x)-2|\) usando el
+      <a href="./S4.html#Ejer:DiferenciaRaices">Ejercicio 4.17</a>.
+      </li>
+      <li>
+        Generaliza el ejercicio anterior probando que para
+        toda \(x_0>0\) se cumple
+        \[
+        \lim_{x\to x_0} f(x)=f(x_0).
+        \]
+      </li>
+
+      </ol>
       </div>
 
       <div class="ejercicio-box">
@@ -514,38 +574,127 @@
 
 
 
+            <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            Calcula los siguientes límites.
+            Justifica tu respuesta.
+
+            <ol>
+            <li> \(\lim_{x\to 3}\frac{x^2-6x+9}{x^2-9}\) </li>
+            <li> \(\lim_{x\to 0} \frac{\sqrt{4+3x}-\sqrt{4-3x}}{x}\)</li>
+
+            <li> \(\lim_{h\to 0} \frac{\sqrt{16+h}-4	}{h}\)</li>
+            <li> \(\lim_{x\to 0} \frac{\sqrt[3]{8+x}-2}{x}\)</li>
+            <li> \(\lim_{t\to 1} \frac{t^4-1}{t^3-1}\)</li>
+            </ol>
+            </div>
 
 
 
       <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
+
         <p>
-      \[
-      \lim_{x\to a^+} f(x)=L
-      \]
+          Cuando se calcula límites de funciones no siempre es posible aproximarse
+          a un valor dado de manera arbitraria. Por ejemplo, supongamos
+          que queremos analizar la expresión
+          \[
+          \sqrt{\frac{x-1}{|x^2-1|}}
+          \]
+          cuando \(x\) se aproxima a \(1\). Nota que la expresión
+          anterior sólo está definida en un vecindades agujereadas de \(1\).
+        </p>
+        <p>
+          Si queremos obtener valores reales
+          debemos de pedir que \(\frac{x-1}{|x^2-1|} >0\). Ya que
+          el denominador tiene un valor absoluto la desigualdad anterior
+          se reduce a pedir \(x-1>0\), es decir \(x>1\). Por lo tanto
+          sólo los valores de \(x\) que están a la derecha del cero deben
+          de tomarse en cuenta.
+        </p>
+        <p>
+          Ejemplos como el anterior muestran la necesitad de límites pero
+          en los cuales los valores de la variable independiente
+          sólo se aproximan "por un lado" a un número fijo. Estos tipos
+          de límites se llaman límites laterales.
+        </p>
+        <ul>
+          <li>
+            <p>
+            Decimos que el límite de los valores \(f(x)\), cuando
+            la variable \(x\) tiende al número \(a\) por la derechia,
+            es \(L\) si:
+            </p>
+            <p>
+            para toda \(\varepsilon >0\) existe \(\delta >0\) tal que
+            si \( a< x < a+\delta  \) entonces \(|f(x)-L|< \varepsilon\).
+            </p>
 
-      \[
-      \lim_{x\to a^-}f(x)=L
-      \]
-      </p>
+
+              <div class="imagen-box flexbox">
+                <img src="./Images/DefLimiteDerecho.png" alt="LimiteDerecho"
+                width="500" height="300">
+              </div>
+
+            <p> Lo anterior se denota como
+              \[
+              \lim_{x\to a^+} f(x)=L
+              \]
+            </p>
+          </li>
+          <li>
+            <p>
+              Decimos que el límite de los valores \(f(x)\), cuando
+              la variable \(x\) tiende al número \(a\) por la izquierda,
+              es \(L\) si:
+            </p>
+            <p>
+              para toda \(\varepsilon >0\) existe \(\delta >0\) tal que
+              si \( a-\delta < x < a\) entonces \(|f(x)-L|< \varepsilon\), lo cual
+              denotamos
+              \[
+              \lim_{x\to a^-}f(x)=L
+              \]
+
+              <div class="imagen-box flexbox">
+                <img src="./Images/DefLimiteIzquierdo.png" alt="LimiteIzquierdo"
+                width="500" height="300">
+              </div>
+            </p>
+          </li>
       </div>
 
 
-
-      <div class="ejercicio-box">
+    <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
-      Calcula los siguientes límites.
-      Justifica tu respuesta.
-
+      <p>
+        Calcula los siguientes límites. Justifica tu respuesta.
+      </p>
       <ol>
-      <li> \(\lim_{x\to 3}\frac{x^2-6x+9}{x^2-9}\)
-      <li> \(\lim_{x\to 0} \frac{\sqrt{4+3x}-\sqrt{4-3x}}{x}\)
-      <li> \(\lim_{x\to 9^+} \frac{|81-x^2|}{\sqrt{x}-3}\)
-      <li> \(\lim_{h\to 0} \frac{\sqrt{16+h}-4	}{h}\)
-      <li> \(\lim_{x\to 0} \frac{\sqrt[3]{8+x}-2}{x}\)
-      <li> \(\lim_{t\to 1} \frac{t^4-1}{t^3-1}\)
+
+
+        <li>
+          \(\lim_{x\to 1^+}\sqrt{\frac{x-1}{|x^2-1|}} \)
+        </li>
+        <li>
+          \(\lim_{x\to 0^+} \frac{x}{|x|}\)
+        </li>
+        <li>
+          \( \lim_{x\to 0^-} \frac{x}{|x|} \)
+        </li>
+        <li>
+          \(\lim_{x\to 2^-} \frac{|x^2-4|}{x-2}\)
+        <li>
+          \(\lim_{x\to 9^+} \frac{|81-x^2|}{\sqrt{x}-3}\)
+        </li>
+        <li>
+          \(\lim_{x\to 2^+} \frac{x-2}{\sqrt{x-2}-\sqrt{2x-4}}\)
+        </li>
       </ol>
-      </div>
+
+    </div>
+
+
 
     </div>
 </body>
