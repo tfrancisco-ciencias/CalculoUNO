@@ -355,9 +355,53 @@
       </p>
       <p>
       Demuestra que existe \(V\),
-      una vecindad agujereada de \(x_0\),  tal que \(|F(x)| \leq |L|+1\),
+      una vecindad agujereada de \(x_0\),  tal que \(|F(x)| \leq 1+|L|\),
       para todo \(x \in V\).
       </p>
+
+
+
+      <button class="respButton hvr-grow "> Prueba </button>
+             <div class="resp-box flexbox">
+
+               <p>
+                 Tenemos por suposición que
+                 \[
+                 \lim_{x\to x_0} F(x)=L
+                 \]
+                 Usando la  <a href="#Def:Limite">Definición 5.4</a>, para
+                 \(\varepsilon=1\) existe una \(\delta >0\) tal que,
+                 para toda \(x\) con \(0<|x-x_0| < \delta\) se satisface
+                 \(|F(x)-L|< 1\).
+               </p>
+
+               <p>
+                 Por la <a href="./S3.html#Ejer:LaOtraDesTriang"> otra
+                  desigualadad del
+                 triángulo </a> tenemos
+                 \[
+                 |F(x)-L| \geq ||F(x)|-|L||,
+                 \]
+                 por lo que
+                 \[
+                 1> ||F(x)|-|L||, \quad \textrm{para toda \(x\)
+                 con \(0< |x-x_0| < \delta\)}.
+                 \]
+                 Si abrimos el último valor absoluto llegamos a
+                 \[
+                 -1< |F(x)|-|L|< 1 \Rightarrow |F(x)|< 1+|L|.
+                 \]
+               </p>
+               <p>
+                 Por lo tanto, en la vecindad perforada
+                 \(V:=B_\delta(x_0)\setminus \{x_0\}\) se satisface
+                 \[
+                 |F(x)|< 1+|L|, \quad \textrm{para toda \(x\in V\).}
+                 \]
+               </p>
+
+              </div>
+
       </div>
 
 
