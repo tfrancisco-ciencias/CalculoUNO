@@ -474,6 +474,37 @@
       que existe \(V\), una vecindad agujereada de \(x_0\),  tal que
       \(\frac{|L|}{2}< |G(x)|\), para todo \(x\in V\).
       </p>
+
+      <button class="respButton hvr-grow "> Prueba </button>
+      <div class="resp-box flexbox">
+
+      <p>
+        Ya que \(L\ne 0\), el número \(\frac{|L|}{2}\) es positivo
+        y podemos tomar \(\varepsilon= \frac{|L|}{2}\) en la
+        <a href="#Def:Limite">Definición 5.4</a> para asegurar la
+        existencia de una \(\delta > 0\) tal que para toda
+        \(x\) que satisface \(0<|x-x_0|< \delta \) se cumple
+        \[
+        |G(x)-L| < \frac{|L|}{2}
+        \]
+        Usando
+        <a href="./S3.html#Ejer:LaOtraDesTriang"> la otra desigualdad del triángulo </a>
+        tenemos \(||G(x)|-|L|| \leq |G(x)-L|\), por lo que
+        abriendo el valor absoluto \(||G(x)|-|L|| < \frac{|L|}{2}\), resulta
+        \[
+         -\frac{|L|}{2} < |G(x)|-L
+        \Rightarrow -\frac{|L|}{2}+L=\frac{|L|}{2} < |G(x)|.
+        \]
+
+      </p>
+      <p>
+        Por lo tanto, para la vecindad perforada
+        \(V=B_\delta(x_0)\setminus \{x_0\}\)  se cumple
+        \[
+        \frac{|L|}{2} < |G(x)|, \quad \textrm{para toda \(x\in V\).}
+        \]
+      </p>
+      </div>
       </div>
 
       <div class="ejercicio-box">
