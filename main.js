@@ -12,6 +12,7 @@ $(document).ready(function() {
   var elementTeo=document.querySelectorAll("div.teorema-box");
   var elementResp=document.querySelectorAll("div.resp-box");
   var elementProp=document.querySelectorAll("div.prop-box");
+  var elementQuiz=document.querySelectorAll("div.quiz-box");
   document.body.classList.toggle("fondo-body-dark");
   var i;
   for (i=0; i < elementInfo.length; i++ ){
@@ -34,5 +35,8 @@ $(document).ready(function() {
   };
   for (i=0;i < elementProp.length;i++){
     elementProp[i].classList.toggle("prop-box-dark");
+  };
+  for (i=0;i < elementQuiz.length;i++){
+    elementQuiz[i].classList.toggle("quiz-box-dark");
   };
   };
