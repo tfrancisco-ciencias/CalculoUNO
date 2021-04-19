@@ -113,7 +113,7 @@ function selectAnswer(e) {
     solutionsButton.classList.remove("hide")
     }
   }
-
+  
 
 function setStatusClass(element, correct) {
   clearStatusClass(element)
