@@ -584,7 +584,7 @@
     </div>
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
+      <h2 class="number-title" id="Ejer:PotenciasEstCreEnPositivos"> Ejercicio </h2>
       <p>
         Considera las funciones potencias,
         \(f_n:\mathbb{R}\to \mathbb{R} \),
@@ -635,14 +635,14 @@
         \sqrt{x}-\sqrt{y}=\frac{x-y}{\sqrt{x}+\sqrt{y}}
         \]
 
-        Sugerencia: usa direfencia de cuadrados.
+        Sugerencia: usa diferencia de cuadrados.
       </li>
 
       <li> El inciso anterior se generaliza como sigue:
         toma \(n \in \mathbb{N}\), con \(n \geq 3\). Demuestra
 
         \[
-        \sqrt[n]{x}-\sqrt[n]{y}=\frac{x-y}{\sum_{k=0}^n x^{k/n}y^{(n-1-k)/n} }.
+        \sqrt[n]{x}-\sqrt[n]{y}=\frac{x-y}{\sum_{k=0}^{n-1} x^{k/n}y^{(n-1-k)/n} }.
         \]
 
         Sugerencia: usa el <a href="S1.html#Eqn:Resolvent">Ejercicio 1.18</a>.
@@ -680,14 +680,90 @@
         demuestra que:
         <ol>
           <li>
-            Para \(n \geq 1\) y \(n\) impar, \(f_n\) es estrictamente
+            Para \(n \geq 1\) y \(n\) impar, \(f_n(x):=x^n\) es estrictamente
             creciente en todo \(\mathbb{R}\).
           </li>
           <li>
-            Para \(n \geq 1\) y \(n\) par, \(f_n\) es estrictamente decreciente en
+            Para \(n \geq 1\) y \(n\) par, \(f_n(x):=x^n\) es estrictamente decreciente en
             \((-\infty, 0]\) y estrictamente creciente en \([0,\infty)\).
           </li>
         </ol>
+
+        <button class="respButton hvr-grow "> Prueba</button>
+        <div class="resp-box">
+        <p>
+          Prueba de 1. Supongamos que \(n\) es un natural impar.
+        </p>
+        <p>
+          Para probar que
+          \(f_n\) es estrictamente creciente en \(\mathbb{R}\) debemos de probar que dados
+          cualesquiera \(x,y\in \mathbb{R}\):
+          \begin{equation}\label{Eqn:Aux1PotenciasEstCre}
+          x< y  \Rightarrow x^n < y^n.
+          \end{equation}
+          para lo cual se ven tres casos.
+        </p>
+        <p>
+          <p>Caso 1: ambos son meyores o iguales a cero, es decir, \(x,y\in [0,\infty)\) con \(x< y\).</p>
+          <p>
+          En este caso notamos que
+           \eqref{Eqn:Aux1PotenciasEstCre} se sigue
+          directamente del <a href="#Ejer:PotenciasEstCreEnPositivos">Ejercicio 4.15</a>.
+          </p>
+        </p>
+        <p>
+          <p>
+          Caso 2: ambos son menores o iguales a cero, es decir, \(x,y\in (-\infty, 0]\) con \(x< y\).
+          </p>
+          <p>
+          Se sigue que
+          \(-x,-y\in [0,\infty)\) y \(-y< - x \). Usando el caso anterior
+          tenemos \((-y)^n < (-x)^n\). Ahora, usando que
+          \(n\) es impar resulta que \((-y)^n=-y^n, (-x)^n=-x^n \), por
+          lo que
+          \[
+          (-y)^n < (-x)^n \Rightarrow -y^n< -x^n \Rightarrow x^n < y^n
+          \]
+          probando \eqref{Eqn:Aux1PotenciasEstCre}.
+        </p>
+        <p>
+          Caso 3: tienen signos distintos, es decir, \(x\in  (-\infty,0], y\in [0,\infty)\)
+          con \(x< y\).
+        </p>
+        <p>Observamos que debido a la suposición \(x< y\), podemos suponer que alguno de \(x\)
+          o \(y\) es distinto de cero.  Supongamos \(x< 0\).
+        </p>
+        <p>
+          Por el caso 1, \( 0 \leq y \Rightarrow 0 \leq y^n\).
+          Por el caso 2, \(x< 0 \Rightarrow x^n < 0\). Juntando las
+          dos últimas desigualdades concluimos \(x^n< y^n\).
+        </p>
+
+
+        <p>
+          Prueba de 2. Supongamos que \(n\) es un natural par.
+        </p>
+        <p>
+          Del <a href="#Ejer:PotenciasEstCreEnPositivos">Ejercicio 4.15</a> se sigue inmediatamente que
+          \(f_n(x)=x^n\) es estrictamente creciente en \([0,\infty)\).
+        </p>
+        <p>
+          Por lo tanto, sólo resta ver que \(f_n\) es estrictamente
+          decreciente en \((-\infty,0]\). Para probarlo,
+          tamamos \(x,y\in (-\infty,0]\) con \(x< y\).
+        </p>
+        <p>
+          Se sigue
+          que \(-x,-y\in [0,\infty)\) y que \(-y< -x\). Aplicando
+          que las funciones potencia son estrictamente
+          crecientes en \([0,\infty)\) obtenemos \((-y)^n < (-x)^n\). Pero
+          al ser \(n\) par \((-x)^n=x^n\), \((-x)^n=x^n\). Por
+          lo tanto
+          \[
+          x< y \Rightarrow (-y)^n=y^n < (-x)^n=x^n
+          \]
+        </p>
+      </div>
       </div>
 
 
