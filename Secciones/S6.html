@@ -1,0 +1,324 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 0 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 0 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Más sobre límites  </h1>
+
+
+
+<div class="definicion-box">
+Sea $f$ una funci\'on definida en una vecindad agujereada de $a$. Decimos que:
+$$
+\lim_{x\to a}f(x)=+\infty
+$$
+si, para todo $M>0$, exsite $\delta>0$ tal que:
+
+$$0<|x-a|< \delta \Rightarrow f(x)\geq M$$
+
+</div>
+
+<div class="ejercicio-box">
+Usando la definici\'on demuestra:
+
+\begin{enumerate}
+\item  $\lim_{x\to 0} \frac{1}{x^2}=+\infty$.
+\item $\lim_{x\to 2} \frac{2}{(x-2)^2}=+\infty$.
+\end{enumerate}
+</div>
+
+<div class="definicion-box">
+Sea $f$ una funci\'on definida en una vecindad  $a$. Decimos que:
+$$
+\lim_{x\to a^+}f(x)=+\infty
+$$
+si, para todo $M>0$, exsite $\delta>0$ tal que:
+
+$$a< x < a+ \delta \Rightarrow f(x)\geq M$$
+
+</div>
+
+<div class="ejercicio-box">
+Usando la definici\'on demuestra que:
+\begin{enumerate}
+\item $\lim_{x\to 0^+} \frac{1}{x}=+\infty$.
+\item $\lim_{x\to 0^+} \frac{1}{\sqrt{x}}=+\infty$.
+\item Para $m\in \mathbb{R}^+$ y $b\in \mathbb{R}$, $\lim_{x\to 0^+} \frac{m}{x}+b=+\infty$.
+\item Para $m\in \mathbb{R}^+$ y $b\in \mathbb{R}$, $\lim_{x\to 0^+} \frac{-m}{x}+b=-\infty$.
+
+\end{enumerate}
+</div>
+
+
+<div class="ejercicio-box">
+  \label{Ejer:Limite(Positivo)(Infinito)}
+Sea $f $ y $g$ dos funciones definidas en una vecindad agujereada de $x_0$. Asume que $\lim_{x\to x_0} f(x)=L$ con $L>0$ y que
+$\lim_{x\to x_0} g(x)=\infty$. Demuestra que
+$$
+\lim_{x\to x_0} f(x)g(x)=\infty.
+$$
+</div>
+
+<div class="ejercicio-box">
+Calcula los siguientes l\'imites:
+\begin{enumerate}
+\item $\lim_{x\to 0} \frac{\sqrt{\frac{1}{x^4}+1}}{\sqrt{ \frac{1}{x^2}+1}}$
+\item $\lim_{x\to 0^+} \sqrt{\frac{2}{x}+1} - \sqrt{\frac{1}{x}-1}$
+\item Sean $a_1,a_2 \in \mathbb{R}^+$ con $a_1\not= a_2$ y $b_1,b_2 \in \mathbb{R}$.
+$$\lim_{x\to 0^+} \sqrt{\frac{a_1}{x}+b_1}-\sqrt{\frac{a_2}{x}+b_2} $$
+
+Nota: considera los casos $a_1<a_2$ y $ a_1>a_2$.
+</div>
+
+<div class="ejercicio-box">
+Para $a\in \mathbb{R}^+$ y $p(x)$, $q(x)$ dos polinomios encontrar:
+$$\lim_{x\to 0^+} \sqrt{\frac{2a}{x^2}+p(x)} - \sqrt{\frac{a}{x^2}+q(x)}$$
+</div>
+
+
+<div class="ejercicio-box">
+Sean $f,g$ dos funciones definidas en una vecindad de $x_0$ con $g(x)>0$
+para $x\ne x_0$. Demuestra que si  $\lim_{x\to x_0} f(x)= L >0$ y
+$\lim_{x\to x_0} g(x)=0$ entonces
+$$
+\lim_{x\to x_0} \frac{f(x)}{g(x)}=\infty
+$$
+</div>
+
+<div>
+En la teor\'ia de la relatividad, la masa de un objeto est\'a dada por:
+$$
+m=\frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}
+$$
+donde $m_0$ es la masa en reposo, $v$ es su velocidad y $c$ es la velocidad de la luz.
+
+Probar
+$$
+\lim_{v\to c^-}m=\infty.
+$$
+</div>
+
+\subsection*{L\'imites al infinito}
+
+\begin{definicion}
+Decimos que
+$$
+\lim_{x\to + \infty} f(x)=L
+$$
+si, para toda $\varepsilon>0$, existe $r>0$ tal que:
+$$ x> r \Rightarrow |f(x)-L|<\varepsilon $$
+\end{definicion}
+
+\item Demuestra que, para todo $a\in \mathbb{R}$, con $a\ne 0$, $n\in \mathbb{N}$,
+$$\lim_{x\to \infty} \frac{a}{x^n}=0$$
+
+\item Sea $p(x)$ un polinomio fijo de grado $n$. Demuestra que
+$$
+\lim_{x\to +\infty} \frac{p(x)}{x^{n+1}}=0.
+$$
+
+
+\begin{definicion}
+Sea $f:[a,\infty) \to \mathbb{R}$. Decimos que
+$$
+\lim_{x\to +\infty} f(x)=+\infty
+$$
+si, para todo $M>0$, existe $r>0$, tal que $f(x)>M$, para todo $x \geq r$.
+\end{definicion}
+
+\item \label{Ejer:LimiteX^nXInfinito} Para $n\in \mathbb{Z}^+$, $\lim_{x\to +\infty} x^n=\infty$.
+\begin{proof}
+Primero demuestra que, dado  $m\in \mathbb{Z}^+$ con $m\geq 2$:
+$$m^n\geq mn, n=1,2,\cdots$$
+
+Dado $M>0$, por la propiedad arquimedeana existe $m \geq 2$ tal que $m n>M$. Por la primera observaci\'on
+$m^n \geq nm > M$. Tomar $r=m$. Ya que las funciones potencias son estrictamente crecientes, para toda $x>r$,
+$x^n > r^n= m^n \geq mn > M$.
+\end{proof}
+
+\begin{proof}
+Supongamos que no. Entonces existe $M>0$ tal que $x^n \leq M$,  para toda $x\geq 0$.
+
+Sabemos que:
+$$
+a^n-b^n= (a-b)\left( \sum_{k=0}^{n-1}a^kb^{n-1-k} \right).
+$$
+Si $0 \leq b < a$, usando que $a^n, b^n \leq M$ concluimos que $a^n -b^n \leq M$, por lo tanto
+$$
+(a-b) \left( \sum_{k=0}^{n-1}a^kb^{n
+-1-k} \right) \leq M
+$$
+para toda $0 \leq b <a$.
+
+Por otro lado, notamos que
+$$
+b^{n-1} \leq \left( \sum_{k=0}^{n-1}a^kb^{n-1-k} \right)
+$$
+por lo que concluimos
+$$
+(a-b)b^{n-1} \leq M
+$$
+para todos $0 \leq b < a$.
+
+Ahora, en la desigualdad anterior tomamos $b=1, a=k+1$, con $k\in \mathbb{N}$ para obtener
+$$
+k \leq M.
+$$
+Lo anterior dice que $M$ es cota superior para $\mathbb{N}$, lo cual es una contradicci\'on.
+\end{proof}
+
+\item Fija $n \in \mathbb{Z}^+$.
+\begin{enumerate}
+
+\item Considera el polinomio $p(x)=x^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0$.  Demuestra
+$$
+\lim_{x\to +\infty} p(x)=+\infty.
+$$
+
+Hint: Para $x>0$ escribe:
+$$
+p(x)=x^n\left( 1+ \frac{a_{n-1}}{x}+ \cdots + \frac{a_1}{x^{n-1}}+\frac{a_0}{x^n} \right)
+$$
+
+\begin{proof}
+Usar el ejercicio \ref{Ejer:Limite(Positivo)(Infinito)}, el ejercicio \ref{Ejer:LimiteX^nXInfinito} y el hecho de que
+$$
+\lim_{x\to +\infty}  \frac{a_{n-1}}{x}+ \cdots + \frac{a_1}{x^{n-1}}+\frac{a_0}{x^n}=1.
+$$
+\end{proof}
+
+\item Sea $p(x)=a_nx^n+ \cdots +a_1x+a_0$ un polinomio de grado $n$. Demuestra
+$$
+\lim_{x\to +\infty} p(x)=\left\{
+\begin{array}{cc}
++ \infty & \textrm{si $a_n>0$}\\
+-\infty & \textrm{si $a_n<0$}
+\end{array}
+\right.
+$$
+
+
+\item Fija $n\in \mathbb{Z}^+$, impar.
+\begin{enumerate}
+\item Demuestra $\lim_{x\to -\infty} x^n = - \infty$.
+\item Considera el polinomio $p(x)=x^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0$. Demuestra:
+$$
+\lim_{x\to -\infty} p(x)=-\infty.
+$$
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Existencia de l\'imites}
+
+\item Sea $f$ una funci\'on definida en una vecindad agujereada de $x_0$. Asume que existen constantes $m,M$ tales que
+$m  \leq f(x) \leq M$ para todo $x$ en la vecinda y que existe $\lim_{x\to x_0} f(x)$. Demuestra que
+$$m \leq \lim_{x\to x_0} f(x) \leq M.$$
+
+\item El l\'imite $\lim_{x\to 0}\sen(\frac{1}{x})$ no existe.
+
+
+\item Para toda $n=1,2,\cdots$
+$$
+\lim_{x\to 0}x^n \sen(\frac{1}{x})=0
+$$
+
+\item Da un ejemplo de funciones $f$ y $g$, definidas en una vecindad agujereada del $0$, tales que
+$\lim_{x\to 0}(fg)(x)$ existe pero algunos de los l\'imites $\lim_{x\to 0}f(x)$ \'o $\lim_{x\to 0}g(x)$ no existe.
+
+\item Da un ejemplo de funciones $f$ y $g$, definidas en una vecindad agujereada del $0$, tales que
+$\lim_{x\to 0}(f+g)(x)$ existe pero los l\'imites $\lim_{x\to 0}f(x)$ y $\lim_{x\to 0} g(x)$ no existe.
+
+\item Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $a$.
+\begin{enumerate}
+\item Si $\lim_{x\to a}(f+g)(x)$ existe y $\lim_{x\to a} f(x)$ existe, demuestra que $\lim_{x\to a}g(x)$ tambi\'en existe.
+\item Si $\lim_{x\to a} (fg)(x)$ existe , $\lim_{x\to a} f(x)$ exsite y es distinto de cero, demuestra que $\lim_{x\to a}g(x)$ existe.
+\end{enumerate}
+
+
+\item Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $x_0$ y supon que existe $M>0$ tal que
+$|g(x) | \leq M$, para $x$ en la vecindad agujereada.
+
+Si $\lim_{x\to x_0} f(x)=0$ demuestra que:
+$$
+\lim_{x\to x_0}f(x)g(x)=0.
+$$
+Nota: no se asume que el l\'imite $\lim_{x\to x_0}g(x)$ existe.
+
+
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
