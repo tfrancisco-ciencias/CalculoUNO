@@ -203,11 +203,27 @@ Usando la definición anterior demuestra:
 
 <ol>
 <li>  \(\lim_{x\to 0} \frac{1}{x^2}=+\infty\).
-<li> Para \(a,b \in \mathbb{R}\) con \(b>0\), \(\lim_{x\to a} \frac{b}{(x-a)^2}=+\infty\).
-<li> \(\lim_{x\to 0^+} \frac{1}{x}=+\infty\).
+<li> Para \(a,b \in \mathbb{R}\) con \(b\ne 0\),
+  \[
+  \lim_{x\to a} \frac{b}{(x-a)^2}=+\infty, \quad \textrm{si} \quad b>0
+  \]
+  \[
+  \lim_{x\to a} \frac{b}{(x-a)^2}=-\infty, \quad \textrm{si} \quad b< 0
+  \]
+<li> \[
+      \lim_{x\to 0^+} \frac{1}{x}=+\infty
+     \]
+     \[
+      \lim_{x\to 0^-} \frac{1}{x}=-\infty
+      \]
 <li> \(\lim_{x\to 0^+} \frac{1}{\sqrt{x}}=+\infty\).
-<li> Para \(m\in \mathbb{R}^+\) y \(b\in \mathbb{R}\), \(\lim_{x\to 0^+} \frac{m}{x}+b=+\infty\).
-<li> Para \(m\in \mathbb{R}^+\) y \(b\in \mathbb{R}\), \(\lim_{x\to 0^+} \frac{-m}{x}+b=-\infty\).
+<li> Para \(m\in \mathbb{R}^+\) y \(b\in \mathbb{R}\),
+  \[
+   \lim_{x\to 0^+} \frac{m}{x}+b=+\infty
+   \]
+  \[
+    \lim_{x\to 0^+} \frac{-m}{x}+b=-\infty
+  \]
 
 
 </ol>
@@ -235,7 +251,7 @@ Calcula los siguientes límites:
 <li> Sean \(a_1,a_2 \in \mathbb{R}^+\) con \(a_1\not= a_2\) y \(b_1,b_2 \in \mathbb{R}\).
 \[\lim_{x\to 0^+} \sqrt{\frac{a_1}{x}+b_1}-\sqrt{\frac{a_2}{x}+b_2} \]
 
-Nota: considera los casos \(a_1<a_2\) y \( a_1>a_2\).
+Nota: considera los casos \(a_1< a_2\) y \( a_1 > a_2\).
 </ol>
 </div>
 
@@ -271,24 +287,67 @@ Probar
 </div>
 
 <div class="nota-box">
-<h2 class="number-title">Límites al infinito</h3>
+<h2 class="number-title"> Límites al infinito</h3>
+  <p>
+    Al analizar una función \(f(x)\), un comportamiento que puede ser importante
+    es analizar los valores de \(f(x)\) cuando \(x\) es muy grande positivo o
+    muy grande negativamente. Por ejemplo, \(f(x)\) puede representar
+    la temperatura el tiempo \(x\) y se busca analizar que pasa con la
+    temperatura cuando pasa una cantidad de tiempo grande.
+  </p>
+  <p>
+    Para analizar lo anterior se utilizan límites de la forma:
+    \[
+    \lim_{x\to +\infty} f(x), \quad \lim_{x\to -\infty}f(x).
+    \]
+  </p>
+  <p>
+    Geométricamente un límite de este tipo nos da información sobre
+    las asíntotas horizontales de la gráfica de \(f(x\).
+  </p>
 </div>
 
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
-Decimos que
+<p>
+  Sea \(f:D\to \mathbb{R}\) una función.
+</p>
+<ul>
+<li>
+<p>
+  Supongamos que su dominio contiene un intervalo de la forma \((a,+\infty)\).
+  Decimos que la función \(f\) tiende a un número \(L\in \mathbb{R}\)
+  cuando \(x\) tiende al infinito, denotado
 \[
 \lim_{x\to + \infty} f(x)=L
 \]
 si, para toda \(\varepsilon>0\), existe \(r>0\) tal que:
 \[ x> r \Rightarrow |f(x)-L|<\varepsilon \]
+</p>
+</li>
+<li>
+<p>
+  Supongamos que su dominio contiene un intervalo de la forma \((-\infty,a)\).
+  Decimos que la función \(f\) tiende a un número \(L\in \mathbb{R}\)
+  cuando \(x\) tiende a \(-\infty\), denotado
+\[
+\lim_{x\to - \infty} f(x)=L
+\]
+si, para toda \(\varepsilon>0\), existe \(r>0\) tal que:
+\[ x<  -r \Rightarrow |f(x)-L|<\varepsilon \]
+</p>
+</li>
+</ul>
+<p>
+
+</p>
 </div>
 
 <div class="ejercicio-box">
 <h2 class="number-title"> Ejercicio </h2>
-Demuestra que, para todo \(a\in \mathbb{R}\), con \(a\ne 0\), \(n\in \mathbb{N}\),
-\[\lim_{x\to \infty} \frac{a}{x^n}=0\]
+Demuestra que, para todo \(a\in \mathbb{R}\), con \(a\ne 0\) y todo \(n\in \mathbb{N}\),
+\[\lim_{x\to \infty} \frac{a}{x^n}=0.\]
 </div>
 
 <div class="ejercicio-box">
@@ -300,38 +359,114 @@ Sea \(p(x)\) un polinomio fijo de grado \(n\). Demuestra que
 </div>
 
 <div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-Sea \(f:[a,\infty) \to \mathbb{R}\). Decimos que
+<h2 class="number-title" id="Def:LimitesInfinitosInfinitos"> Definición </h2>
+<p>
+  Para terminar el recorrido sobre límites infinitos se
+  presenta el que mezcla los dos infinitos, tanto cuando
+  la variable crece al infinito como cuando los valores de la
+  función también crecen indefinidamente.
+</p>
+<ul>
+<li>
+Sea \(f:[a,\infty) \to \mathbb{R}\) una función. Decimos que
 \[
 \lim_{x\to +\infty} f(x)=+\infty
 \]
-si, para todo \(M>0\), existe \(r>0\), tal que \(f(x)>M\), para todo \(x \geq r\).
+si, para todo \(M>0\), existe \(r>0\), tal que \(f(x)>M\),
+para todo \(x \geq r\).
+
+</li>
+<li>
+Sea \(f:[a,\infty) \to \mathbb{R}\) una función. Decimos que
+\[
+\lim_{x\to +\infty} f(x)= - \infty
+\]
+si, para todo \(M>0\), existe \(r>0\), tal que \(f(x)< -M\),
+para todo \(x \geq r\).
+</li>
+</ul>
+<p>
+Nota: las expresiones \(\lim_{x\to -\infty} f(x)=+\infty\) y
+\(\lim_{x\to -\infty} f(x)=-\infty\) se definen modificando
+las definiciones de manera adecuada.
+</p>
+<p>
+Es importante notar que, a pesar de que
+la expresión \(\lim_{x\to \infty}f(x)=+\infty\)  nos
+dice que los valores \(f(x)\) crecen, no nos dice
+cómo estos valores están creciendo. Por ejemplo,
+las funciones con las gráficas mostradas abajo
+satisfacen \(\lim_{x\to +\infty}f(x)=+\infty\)
+sin embargo, la manera en cómo crecen es muy distinta. Para
+esutidar el tipo de crecimiento uno utiliza herramientas
+como concavidad.
+</p>
+
 </div>
 
 <div class="ejercicio-box">
 <h2 class="number-title" id ="Ejer:LimiteX^nXInfinito"> Ejercicio </h2>
 
+<p>
+ Para \(n\in \mathbb{N}\) prueba
+ \[
+ \lim_{x\to +\infty} x^n=\infty.
+ \]
+</p>
 
-Para \(n\in \mathbb{Z}^+\), \(\lim_{x\to +\infty} x^n=\infty\).
+<button class="respButton hvr-grow "> Prueba </button>
+<div class="resp-box">
 
-Primero demuestra que, dado  \(m\in \mathbb{Z}^+\) con \(m\geq 2\):
-\[m^n\geq mn, n=1,2,\cdots\]
+<h3 > Primera prueba. </h3>
+<p>
+  Primero notamos que, dados  \(m, n \in \mathbb{N}\) con \(m\geq 2\):
+  \[m^n\geq mn \]
+  En efecto, usando inducción sobre \(n\): el caso \(n=1\) es claro;
+  si suponemos \(m^n \geq nm\) multiplicando por \(m\) obtenemos
+  \(m^{n+1} \geq m^2 n\), por lo que es suficiente probar
+  \(m^2 n \geq m(n+1)\) pero ésto último es equivalente
+  a \(mn \geq n+1\) lo cual es cierto pues \(mn \geq 2n \geq n+1\).
+</p>
+<p>
+ En esta prueba usamos directamente
+la <a href="#Def:LimitesInfinitosInfinitos">Definición 6.14.</a>
+</p>
 
-Dado \(M>0\), por la propiedad arquimedeana existe \(m \geq 2\) tal que
-\(m n>M\). Por la primera observación
-\(m^n \geq nm > M\). Tomar \(r=m\).
-Ya que las funciones potencias son estrictamente crecientes, para toda \(x>r\),
-\(x^n > r^n= m^n \geq mn > M\).
+<p>
+Sea \(M>0\). Aplicando la propiedad arquimedeana a \(n\) existe
+\(m \geq 2\) tal que
+\(m n >M\). Por el primer inciso,
+\(m^n \geq nm > M\).
+</p>
+<p>
+  Para terminar, tomamos \(r=m\). Ya que las funciones potencias son
+  estrictamente crecientes, para toda \(x>r\)
+  se cumple
+  \[
+  x^n > r^n= m^n \geq mn > M.
+  \]
+</p>
+<h3> Seguna prueba.</h3>
+<p>
+ Suponemos que no y llegamos a una contradicción.
+</p>
 
-
-
-Supongamos que no. Entonces existe \(M>0\) tal que \(x^n \leq M\),
-para toda \(x\geq 0\).
-
-Sabemos que:
+<p>
+  Negando la <a href="#Def:LimitesInfinitosInfinitos">Definición 6.14.</a>
+  obtenemos que  existe \(M>0\) tal que para toda
+  \(r>0\) existe \(x\) con \(x^n \leq M\). Utilizando
+  que las funciones potencia son estrictamente crecientes
+  en \([-0,\infty)\) obtenemos que \(x^n \leq M\),
+  para toda \(x\geq 0\).
+</p>
+<p>
+Ahora, utilizamos la siguiente identidad:
 \[
 a^n-b^n= (a-b)\left( \sum_{k=0}^{n-1}a^kb^{n-1-k} \right).
 \]
+</p>
+
+<p>
 Si \(0 \leq b < a\), usando que \(a^n, b^n \leq M\) concluimos
 que \(a^n -b^n \leq M\), por lo tanto
 \[
@@ -339,7 +474,8 @@ que \(a^n -b^n \leq M\), por lo tanto
 -1-k} \right) \leq M
 \]
 para toda \(0 \leq b < a\).
-
+</p>
+<p>
 Por otro lado, notamos que
 \[
 b^{n-1} \leq \left( \sum_{k=0}^{n-1}a^kb^{n-1-k} \right)
@@ -350,6 +486,8 @@ por lo que concluimos
 \]
 para todos \(0 \leq b < a\).
 
+</p>
+<p>
 Ahora, en la desigualdad anterior tomamos \(b=1, a=k+1\),
 con \(k\in \mathbb{N}\) para obtener
 \[
@@ -357,7 +495,8 @@ k \leq M.
 \]
 Lo anterior dice que \(M\) es cota superior para \(\mathbb{N}\),
 lo cual es una contradicción.
-
+</p>
+</div>
 
 </div>
 
@@ -380,7 +519,7 @@ Usar el ejercicio <a href="#Ejer:Limite(Positivo)(Infinito)"> Ejercicio 6.7</a>,
 el <a href="#Ejer:LimiteX^nXInfinito"> Ejercicio 6.17</a> y el hecho de que
 \[
 \lim_{x\to +\infty}  \frac{a_{n-1}}{x}+ \cdots
-+ \frac{a_1}{x^{n-1}}+\frac{a_0}{x^n}=1.
++ \frac{a_1}{x^{n-1}}+\frac{a_0}{x^n}=0.
 \]
 
 </div>
@@ -402,7 +541,7 @@ Sea \(p(x)=a_nx^n+ \cdots +a_1x+a_0\) un polinomio de grado \(n\). Demuestra
 
 <div class="ejercicio-box">
 <h2 class="number-title"> Ejercicio </h2>
-Fija \(n\in \mathbb{Z}^+\), impar.
+Fija \(n\in \mathbb{N}\), impar.
 <ol>
 <li> Demuestra \(\lim_{x\to -\infty} x^n = - \infty\).</li>
 <li> Considera el polinomio \(p(x)=x^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0\). Demuestra:
@@ -455,7 +594,7 @@ agujereada del \(0\), tales que
 Sean \(f\) y \(g\) dos funciones definidas en una vecindad agujereada de \(a\).
 <ol>
 <li> Si \(\lim_{x\to a}(f+g)(x)\) existe y \(\lim_{x\to a} f(x)\) existe,
-  demuestra que \(\lim_{x\to a}g(x)\) tambi\'en existe.
+  demuestra que \(\lim_{x\to a}g(x)\) también existe.
 </li>
 <li> Si \(\lim_{x\to a} (fg)(x)\) existe , \(\lim_{x\to a} f(x)\) exsite y
   es distinto de cero, demuestra que \(\lim_{x\to a}g(x)\) existe.
