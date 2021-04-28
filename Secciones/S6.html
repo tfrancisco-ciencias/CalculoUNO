@@ -74,17 +74,67 @@
 
 <div class="info-box">
 <h2 class="number-title"> Introducción </h2>
-
+  <p>
+    En esta sección se recopilan tres temas sobre límites
+    <ol>
+      <li> Límites infinitos. Un ejemplo clásico de este tipo
+        de límites es
+        \[
+        \lim_{x\to 0} \frac{1}{x^2}=\infty
+        \]
+      </li>
+      <li> Límites hacia el infinito. Ejemplos de estos límites
+        se presentan en asíntotas, por ejemplo
+        \[
+        \lim_{x\to \infty} \frac{x+1}{x+2}=1
+        \]
+      </li>
+      <li>
+        Existencia de límites. Hasta ahora no se ha hecho mucho énfasis
+        en cuato a si la  expresión \(\lim_{x\to a}f(x)\) tiene sentido o no.
+        Se ven algunos ejemplos dónde el límite no existe y algunas
+        condiciones para ver que un límite dado existe.
+      </li>
+    </ol>
+  </p>
 </div>
 
 
 <div class="nota-box">
 <h2 class="number-title"> Límites infinitos </h2>
+<p>
+  Estrictamenta hablando los límites infinitos son una extensión de
+  la definición de límite pues el "infinito" no es un número real.
+  Un ejemplo de un límite infinito es
+  \[
+  \lim_{x\to 0}\frac{1}{x^2}=\infty
+  \]
+  y la idea de la expresión anterior es que, si tomamos
+  \(x\) cercana a cero (sin ser cero) entonces \(\frac{1}{x^2}\)
+  es muy grande.
+</p>
+<p>
+  Otros ejemplo que aparece naturalmente son
+  \begin{eqnarray*}
+  \lim_{\theta \to \frac{\pi}{2}^-}\tan(\theta) &=& \infty \\
+  \lim_{\theta \to \frac{\pi}{2}^+}\tan(\theta) &=& -\infty
+  \end{eqnarray*}
+  Es importante notar que en el caso anterior además se usan
+  límites laterales. El significado de las expresiones anteriores
+  se hace un poco más claro si uno ve la gráfica de la
+  función tangente.
+</p>
 
+<p>
+  La definición siguiente precisa la noción de límite infinito
+  cuantificando las expresiones "\(x\) cercano " y "muy grande".
+</p>
 </div>
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
+<ul>
+<li>
 Sea \(f\) una función definida en una vecindad agujereada de \(a\). Decimos que:
 \[
 \lim_{x\to a}f(x)=+\infty
@@ -92,42 +142,78 @@ Sea \(f\) una función definida en una vecindad agujereada de \(a\). Decimos que
 si, para todo \(M>0\), exsite \(\delta>0\) tal que:
 
 \[0<|x-a|< \delta \Rightarrow f(x)\geq M\]
+Nota: si no hay confusió se suele ominir el \(+\)
+en \(+\infty\) y escribir: \(\lim_{x\to a}f(x)=\infty\).
+</li>
 
-</div>
+<li>
+Sea \(f\) una función definida en una vecindad agujereada de \(a\). Decimos que:
+\[
+\lim_{x\to a}f(x)=-\infty
+\]
+si, para todo \(M>0\), exsite \(\delta>0\) tal que:
 
-<div class="ejercicio-box">
-<h2 class="number-title"> Ejercicio </h2>
-Usando la definición demuestra:
-
-<ol>
-<li>  \(\lim_{x\to 0} \frac{1}{x^2}=+\infty\).
-<li> \(\lim_{x\to 2} \frac{2}{(x-2)^2}=+\infty\).
-</ol>
-</div>
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-Sea \(f\) una función definida en una vecindad  \(a\). Decimos que:
+\[0<|x-a|< \delta \Rightarrow f(x)\leq  -M\]
+</li>
+</ul>
+<p>
+  Puede ocurrir que la función \(f(x)\) sólo este definida para \(x\) sólo del
+  lado derecho de \(a\) ó sólo del lado izquierdo. Incluso el comportamiento de
+  \(f(x)\) puede diferir dependiendo si
+  \(x\) está a la derecha o izquierda de \(a\) (como la en
+  función tangente). En estos casos se usan también límites laterales.
+</p>
+<ul>
+<li>
+Sea \(f\) una función definida en un intervalo de la forma \((a,b)\)
+donde \(a< b\). Decimos que:
 \[
 \lim_{x\to a^+}f(x)=+\infty
 \]
 si, para todo \(M>0\), exsite \(\delta>0\) tal que:
 
-\[a< x < a+ \delta \Rightarrow f(x)\geq M\]
+\[0< x-a < \delta \Rightarrow f(x)\geq M\]
+</li>
+
+<li>
+Sea \(f\) una función definida en un intervalo de la forma  \((c,a)\). Decimos que:
+\[
+\lim_{x\to a^-}f(x)=+\infty
+\]
+si, para todo \(M>0\), exsite \(\delta>0\) tal que:
+
+\[0< a-x < \delta \Rightarrow f(x)\geq  M\]
+</li>
+</ul>
+<p>
+  La definiciones para
+  \[
+  \lim_{x\to a^+}f(x)=-\infty, \lim_{x\to a^-}f(x)=-\infty
+  \]
+  se pueden obtener modificando las definiciones anteriores de la manera
+  adecuada.
+</p>
+
 
 </div>
 
 <div class="ejercicio-box">
 <h2 class="number-title"> Ejercicio </h2>
-Usando la definición demuestra que:
+Usando la definición anterior demuestra:
+
 <ol>
+<li>  \(\lim_{x\to 0} \frac{1}{x^2}=+\infty\).
+<li> Para \(a,b \in \mathbb{R}\) con \(b>0\), \(\lim_{x\to a} \frac{b}{(x-a)^2}=+\infty\).
 <li> \(\lim_{x\to 0^+} \frac{1}{x}=+\infty\).
 <li> \(\lim_{x\to 0^+} \frac{1}{\sqrt{x}}=+\infty\).
 <li> Para \(m\in \mathbb{R}^+\) y \(b\in \mathbb{R}\), \(\lim_{x\to 0^+} \frac{m}{x}+b=+\infty\).
 <li> Para \(m\in \mathbb{R}^+\) y \(b\in \mathbb{R}\), \(\lim_{x\to 0^+} \frac{-m}{x}+b=-\infty\).
 
+
 </ol>
 </div>
+
+
 
 
 <div class="ejercicio-box">
@@ -290,8 +376,8 @@ Hint: Para \(x>0\) escribe:
 p(x)=x^n\left( 1+ \frac{a_{n-1}}{x}+ \cdots + \frac{a_1}{x^{n-1}}+\frac{a_0}{x^n} \right)
 \]
 
-Usar el ejercicio \ref{Ejer:Limite(Positivo)(Infinito)},
-el ejercicio \ref{Ejer:LimiteX^nXInfinito} y el hecho de que
+Usar el ejercicio <a href="#Ejer:Limite(Positivo)(Infinito)"> Ejercicio 6.7</a>,
+el <a href="#Ejer:LimiteX^nXInfinito"> Ejercicio 6.17</a> y el hecho de que
 \[
 \lim_{x\to +\infty}  \frac{a_{n-1}}{x}+ \cdots
 + \frac{a_1}{x^{n-1}}+\frac{a_0}{x^n}=1.
@@ -329,18 +415,9 @@ Fija \(n\in \mathbb{Z}^+\), impar.
 
 
 <div class="nota-box">
-<h2 class="number-title">Existencia de límites</h2>
+<h2 class="number-title"> Existencia de límites</h2>
 </div>
 
-
-<div class="ejercicio-box">
-<h2 class="number-title"> Ejercicio </h2>
-Sea \(f\) una función definida en una vecindad agujereada de \(x_0\).
-Asume que existen constantes \(m,M\) tales que
-\(m  \leq f(x) \leq M\) para todo \(x\) en la vecinda y que existe
-\(\lim_{x\to x_0} f(x)\). Demuestra que
-\[m \leq \lim_{x\to x_0} f(x) \leq M.\]
-</div>
 
 
 <div class="ejercicio-box">
