@@ -1,0 +1,324 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--<script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+    </script>-->
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 6 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 6 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Sucesiones  </h1>
+
+
+
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+Una sucesión de números reales es simplemente una función de
+\(\mathbb{N}\) a \(\mathbb{R}\), es decir \(f:\mathbb{N} \to \mathbb{R}\).
+Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
+\((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
+</div>
+
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+Decimos que una sucesión \((a_n)_{n=1}^\infty\) converge al número
+\(L\in \mathbb{R}\), si, para toda \(\varepsilon\) existe \(N\)
+(que depende de \(\varepsilon\)), tal que para toda \(n \geq N\)
+\[
+|a_n- L| <\varepsilon.
+\]
+Denotamos \(L=\lim_{n\to \infty}a_n\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que toda sucesión constante es convergente.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:PropiedadesLimitesSucesiones"> Ejercicio </h2>
+  Sean
+  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\), dos sucesiones convergentes.
+  Demuestra
+<ol>
+<li>
+  \(\lim_{n\to \infty}(a_n+b_n)=\lim_{n\to \infty}a_n + \lim_{n\to \infty}b_n\).
+</li>
+<li>
+  dada \(\alpha\in \mathbb{R}\), fija y arbitraria,
+  \(\lim_{n\to \infty} \alpha a_n=\alpha \lim_{n\to \infty}a_n\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Considera la sucesión \((a_n)_{n=1}^\infty\) dada por \(a_n=(-1)^n\).
+  Demuestra que \((a_n)_{n=1}^\infty\) no es convergente.
+
+Sugerencia: procede por contradción.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Decimos que una sucesión \((a_n)_{n=1}^\infty\) está acotada,
+  si existe \(M>0\) tal que \(|a_n| \leq M\), para toda
+  \(n\in \mathbb{N}\).
+<ol>
+<li>
+  Demuestra que si \((a_n)_{n=1}^\infty\) es convergente entonces también
+  está acotada.
+</li>
+<li>
+  Da un ejemplo de una sucesión que esté acotada pero que no sea convergente.
+</li>
+</ol>
+</div>
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona decreciente si
+\[a_1 \geq a_2 \geq a_3 \geq \cdots \geq \cdots \geq a_{n} \geq a_{n+1} \geq \cdots\]
+
+Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
+\[a_1 \leq a_2 \leq a_3 \leq \cdots \leq \cdots \leq a_{n} \leq a_{n+1} \leq \cdots\]
+
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio </h2>
+
+
+  Sea \((a_n)_{n=1}^\infty\) una sucesión.
+<ol>
+<li>
+  si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
+  tal que \(a_n \leq M\) para toda \(n\), entonces
+\(\lim_{n \to \infty}a_n\) existe.
+</li>
+<li>
+  si \((a_n)_{n=1}^\infty\) es monótona decreciente  y existe \(m \in \mathbb{R}\)
+  tal que \(m \leq a_n \) para toda \(n\), entonces
+\(\lim_{n \to \infty}a_n\) existe.
+</li>
+</ol>
+
+
+Sugerencia: para el caso monótono creciente  usa el ejercicio
+\ref{Ejer:CaracterizacionSupremo}  para probar que la serie converge a
+\(\sup_{n\in \mathbb{N}}\{ a_n\}\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que \(\lim_{n\to \infty} \frac{1}{n}=0\).
+
+  Sugerencia: usa el ejercicio \ref{Ejer:TeoremaConvergenciaMonotonaSucesiones}
+  y \ref{Ejer:LemaInfimo1/n}.
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LemaTeoSandiwch"> Ejercicio </h2>
+   Sean \((a_n)_{n=1}^\infty\) una sucesión
+  y \(\alpha \in \mathbb{R}\). Supon que exsite  una sucesión \((z_n)_{n=1}^\infty\)
+  tal que \(\lim_{n\to \infty}z_n=0\) y que satisface \(|a_n-L| \leq |z_n|\),
+  para todo \(n\). Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Ejercicio </h2>
+   Sean
+  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
+  tres sucesiones que satisfacen:
+<ol>
+<li>
+  \(a_n \leq b_n \leq c_n\), para toda \(n\).
+</li>
+<li>
+  los limites \(\lim_{n\to \infty}a_n\)  y \(\lim_{n\to \infty}c_n\)
+  existen y son iguales. Denotamos
+\(L=\lim_{n\to \infty}a_n=\lim_{n\to \infty}c_n\).
+</li>
+</ol>
+
+Demuestra que \(\lim_{n\to \infty}b_n =L\).
+
+Sugerencia: usa el ejercicio \ref{Ejer:SandwichDesigualdades} para obtener
+\(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
+\ref{Ejer:PropiedadesLimitesSucesiones} junto  con el
+ejercicio \ref{Ejer:LemaTeoSandiwch}.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
+   Sean
+  \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
+  Demuestra que
+  \[\lim_{n\to \infty} (a_nb_n)=
+  \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
+
+Sugerencia: usa la desigualdad del triángulo para probar  que
+\(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
+sucesión \((a_n)_{n=1}^\infty\) y luego usa el ejercicio \ref{Ejer:LemaTeoSandiwch}.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:ConvergenciaSerieRecorridaDerecha"> Ejercicio </h2>
+   Supongamos que la
+  sucesión \((a_n)_{n=1}^\infty\) es convergente con \(L=\lim_{n\to \infty}a_n\).
+
+
+<ol>
+<li>
+  Demuestra que
+  \[
+  L=\lim_{n\to \infty} a_{n+1}.
+  \]
+</li>
+<li>
+  Más en general, toma \(p\in \mathbb{N}\) fijo y defne una nueva sucesión
+  \(b_n=a_{n+p}\). Demuestra que la sucesión \((b_n)_{n=1}^\infty\) converge si
+  y sólo si \((a_n)_{n=1}^\infty\) converge y que ambas tienen el mismo limite.
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass">
+    Teorema: Bolzano-Weirestrass  </h2>
+
+  Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
+  Demuestra que existe \(x_0\in [a,b]\) y
+  \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
+  que \(\lim_{k\to \infty} x_{n_k}=x_0\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
+   Demuestra \(\lim_{n\to \infty} \frac{n}{2^n}=0\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
+   Sea \(t>0\). Demuestra que
+  \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
+
+  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
+  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>p\), factoriza
+  \[
+  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{x^{m-k}}{(k+1)(k+2)\cdots m}
+  \]
+  después, con esta factorización, prueba la desigualdad
+  \[
+  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
+  \]
+  con \(C=\frac{t^k}{k!}\).
+</div>
+
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
+todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
+para todos \(n,m \geq N\)
+\[
+|x_n-x_m|<\varepsilon
+\]
+</div>
+
+
+<div class="ejercicio-box">
+
+  <h2 class="number-title"> Teorema: Completez de \(\mathbb{R}\) </h2>
+
+  Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
+  satisface el criterio de Cauchy.
+
+</div>
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
