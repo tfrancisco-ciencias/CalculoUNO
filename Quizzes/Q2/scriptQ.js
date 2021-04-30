@@ -7,15 +7,12 @@ const questionContainerElement = document.getElementById('question-container');
 const quizConteinerElement = document.getElementById("quiz-container");
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
-const solutionContainer = document.getElementById("solution-container");
 
 let   currentQuestionIndex ;
 
-
-/* This part is for creating question and sol text, used below
 const questionTextElement= document.getElementById("question-text");
-const solutionTextElement= document.getElementById("solution-text");
-*/
+const resultsElement = document.getElementById("results-container");
+
 
 
 
@@ -30,9 +27,10 @@ solutionsButton.addEventListener("click",showSolutions)
 function startGame() {
   startButton.classList.add('hide')
   solutionsButton.classList.add("hide")
+  resultsElement.classList.add("hide")
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
-  solutionContainer.classList.add('hide')
+  resetSolutions()
   setNextQuestion()
 }
 
@@ -44,6 +42,24 @@ function setNextQuestion() {
 
 
 function showQuestion(question) {
+
+  const divQuestionText= document.createElement("div")
+  divQuestionText.innerText = questions[currentQuestionIndex].question
+  MathJax.Hub.Queue(['Typeset', MathJax.Hub, questions[currentQuestionIndex].question])
+  divQuestionText.classList.add("ejercicio-box")
+  questionTextElement.appendChild(divQuestionText)
+
+
+  const divSolutionText = document.createElement("div")
+  questions[currentQuestionIndex].solutionLines.forEach( solutionLine =>{
+  const lineText = document.createElement("p")
+  lineText.innerText = solutionLine.text
+  MathJax.Hub.Queue(['Typeset', MathJax.Hub, solutionLine.text])
+  divSolutionText.append(lineText)
+  divSolutionText.classList.add("resp-box")
+  })
+  questionTextElement.appendChild(divSolutionText)
+
   questionElement.innerText = question.question
   MathJax.Hub.Queue(['Typeset', MathJax.Hub, "questionElement"]);
   question.answers.forEach(answer => {
@@ -57,27 +73,15 @@ function showQuestion(question) {
     button.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(button)
   })
-  /* This part is for creating question and sol text
-  the problem is that text should be in single line
-  in questions object
-  const divQuestionText= document.createElement("div")
-  divQuestionText.innerText = question.question
-  divQuestionText.classList.add("ejercicio-box")
-  questionTextElement.appendChild(divQuestionText)
-  const divSolutionText = document.createElement("div")
-  divSolutionText.innerText= question.solution
-  divSolutionText.classList.add("resp-box")
-  questionTextElement.appendChild(divSolutionText)
-  */
 }
 
 
 
 function showSolutions(){
   clearStatusClass(document.body)
-  quizConteinerElement.classList.add("hide")
   console.log("solutions")
-  solutionContainer.classList.remove("hide")
+  resultsElement.classList.remove("hide")
+  questionContainerElement.classList.add('hide')
 }
 
 
@@ -88,19 +92,22 @@ function resetState() {
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
+  }
+
+function resetSolutions(){
+  while(questionTextElement.firstChild){
+    questionTextElement.removeChild(questionTextElement.firstChild)
+  }
 }
 
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
-  /*This part is for showing questions at random
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
 
-  })*/
   if(correct){
     console.log(true)
+
   }else{
     console.log(false)
   }
@@ -113,7 +120,7 @@ function selectAnswer(e) {
     solutionsButton.classList.remove("hide")
     }
   }
-  
+
 
 function setStatusClass(element, correct) {
   clearStatusClass(element)
@@ -129,25 +136,36 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
+
+/// question agrupa las preguntas y opciones, esta la parte que hay que modificar
+/// para cada quiz
 const questions = [
   {
-    question: " Encuentra el supremo del conjunto $A=\\{1-\\frac{3}{n}:n=1,2,\\dots \\}$.",
+    question: " Encuentra el supremo del conjunto \\(A=\\{1-\\frac{3}{n}:n=1,2,\\dots \\}\\).",
     answers: [
       { text: '$ 1 $', correct: true },
       { text: '$ 0 $', correct: false },
       { text: '$ 3 $', correct: false }
+    ],
+    solutionLines:[
+      {text: "Por las propiedades del supremo e infimo  sabemos"},
+      {text: "\\(\\inf(A)=1+\\sup\\{ -\\frac{3}{n}: n\\in \\mathbb{N} \\}=1-3\\sup\\{ \\frac{1}{n}: n\\in \\mathbb{N} \\} \\)"},
+      {text: "Pero sabemos $\\inf(\\{1/n: n\\in \\mathbb{N} \\} )=0$. Por lo tanto $\\sup(A)=1$"}
     ]
   },
   {
-    question: 'Encuentra el ínfimo del conjunto $B=\\{\\frac{1}{nm}: n,m \\in \\mathbb{N} \\}$.',
+    question: 'Encuentra el ínfimo del conjunto \\(B=\\{\\frac{1}{nm}: n,m \\in \\mathbb{N} \\}\\).',
     answers: [
       { text: '$ 0 $', correct: true },
       { text: '$ 1  $', correct: false },
       { text: '$ \\frac{1}{4}  $', correct: false }
+    ],
+    solutionLines:[
+      {text:"Primero notamos que \\( B=\\{ \\frac{1}{k}: \\mathbb{N} \\} \\)."},
+      {text:"Ahora, usando  que \\( \\inf \\{\\frac{1}{k}: k\\in \\mathbb{N} \\} =0 \\), concluimos $\inf(B)=0$"}
     ]
   }
 ]
-
 
 
 
