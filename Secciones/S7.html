@@ -81,22 +81,30 @@
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
+<p>
 Una sucesión de números reales es simplemente una función de
 \(\mathbb{N}\) a \(\mathbb{R}\), es decir \(f:\mathbb{N} \to \mathbb{R}\).
+</p>
+<p>
 Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
 \((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
+</p>
 </div>
 
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
+<p>
 Decimos que una sucesión \((a_n)_{n=1}^\infty\) converge al número
 \(L\in \mathbb{R}\), si, para toda \(\varepsilon\) existe \(N\)
 (que depende de \(\varepsilon\)), tal que para toda \(n \geq N\)
 \[
 |a_n- L| <\varepsilon.
 \]
+</p>
+<p>
 Denotamos \(L=\lim_{n\to \infty}a_n\).
+</p>
 </div>
 
 <div class="ejercicio-box">
@@ -106,9 +114,13 @@ Denotamos \(L=\lim_{n\to \infty}a_n\).
 
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:PropiedadesLimitesSucesiones"> Ejercicio </h2>
+  <p>
   Sean
   \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\), dos sucesiones convergentes.
+  </p>
+  <p>
   Demuestra
+  </p>
 <ol>
 <li>
   \(\lim_{n\to \infty}(a_n+b_n)=\lim_{n\to \infty}a_n + \lim_{n\to \infty}b_n\).
@@ -122,18 +134,26 @@ Denotamos \(L=\lim_{n\to \infty}a_n\).
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
+  <p>
   Considera la sucesión \((a_n)_{n=1}^\infty\) dada por \(a_n=(-1)^n\).
+  </p>
+  <p>
   Demuestra que \((a_n)_{n=1}^\infty\) no es convergente.
+  </p>
 
-Sugerencia: procede por contradción.
+  <p>
+  Sugerencia: procede por contradción.
+  </p>
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
+  <p>
   Decimos que una sucesión \((a_n)_{n=1}^\infty\) está acotada,
   si existe \(M>0\) tal que \(|a_n| \leq M\), para toda
   \(n\in \mathbb{N}\).
+  </p>
 <ol>
 <li>
   Demuestra que si \((a_n)_{n=1}^\infty\) es convergente entonces también
@@ -147,11 +167,15 @@ Sugerencia: procede por contradción.
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
+<p>
 Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona decreciente si
 \[a_1 \geq a_2 \geq a_3 \geq \cdots \geq \cdots \geq a_{n} \geq a_{n+1} \geq \cdots\]
+</p>
 
+<p>
 Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
 \[a_1 \leq a_2 \leq a_3 \leq \cdots \leq \cdots \leq a_{n} \leq a_{n+1} \leq \cdots\]
+</p>
 
 </div>
 
@@ -162,7 +186,9 @@ Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
   <h2 class="number-title" id="Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio </h2>
 
 
+  <p>
   Sea \((a_n)_{n=1}^\infty\) una sucesión.
+  </p>
 <ol>
 <li>
   si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
@@ -177,17 +203,24 @@ Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
 </ol>
 
 
-Sugerencia: para el caso monótono creciente  usa el ejercicio
-\ref{Ejer:CaracterizacionSupremo}  para probar que la serie converge a
+<p>
+Sugerencia: para el caso monótono creciente  usa el
+<a href="./S2.html#Ejer:CaracterizacionSupremo">Ejercicio 2.8</a>
+  para probar que la serie converge a
 \(\sup_{n\in \mathbb{N}}\{ a_n\}\).
+</p>
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
+  <p>
   Demuestra que \(\lim_{n\to \infty} \frac{1}{n}=0\).
+  </p>
 
-  Sugerencia: usa el ejercicio \ref{Ejer:TeoremaConvergenciaMonotonaSucesiones}
-  y \ref{Ejer:LemaInfimo1/n}.
+  <p>
+  Sugerencia: usa el <a href="#Ejer:TeoremaConvergenciaMonotonaSucesiones">Ejercicio anterior</a>
+  y <a href="./S2.html#Ejer:LemaInfimo1/n"> Ejercicio 2.13</a>
+  </p>
 </div>
 
 
@@ -195,18 +228,29 @@ Sugerencia: para el caso monótono creciente  usa el ejercicio
 
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:LemaTeoSandiwch"> Ejercicio </h2>
-   Sean \((a_n)_{n=1}^\infty\) una sucesión
-  y \(\alpha \in \mathbb{R}\). Supon que exsite  una sucesión \((z_n)_{n=1}^\infty\)
+  <p>
+  Sean \((a_n)_{n=1}^\infty\) una sucesión
+  y \(\alpha \in \mathbb{R}\).
+  </p>
+  <p>
+  Supon que exsite  una sucesión \((z_n)_{n=1}^\infty\)
   tal que \(\lim_{n\to \infty}z_n=0\) y que satisface \(|a_n-L| \leq |z_n|\),
-  para todo \(n\). Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
+  para todo \(n\).
+  </p>
+  <p>
+  Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
+  </p>
 </div>
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Ejercicio </h2>
-   Sean
+  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Ejercicio (Teorema del
+    Sandwich para sucesiones) </h2>
+  <p>
+  Sean
   \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
   tres sucesiones que satisfacen:
+  </p>
 <ol>
 <li>
   \(a_n \leq b_n \leq c_n\), para toda \(n\).
@@ -217,34 +261,44 @@ Sugerencia: para el caso monótono creciente  usa el ejercicio
 \(L=\lim_{n\to \infty}a_n=\lim_{n\to \infty}c_n\).
 </li>
 </ol>
-
+<p>
 Demuestra que \(\lim_{n\to \infty}b_n =L\).
+</p>
+<p>
 
-Sugerencia: usa el ejercicio \ref{Ejer:SandwichDesigualdades} para obtener
+Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7</a>  para obtener
 \(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
-\ref{Ejer:PropiedadesLimitesSucesiones} junto  con el
-ejercicio \ref{Ejer:LemaTeoSandiwch}.
+<a href="#Ejer:PropiedadesLimitesSucesiones">Ejercicio 7.4</a> junto  con el
+<a href="#Ejer:LemaTeoSandiwch">Ejercicio anterior </a>.
+</p>
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
-   Sean
+  <p>
+  Sean
   \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
+  </p>
+  <p>
   Demuestra que
   \[\lim_{n\to \infty} (a_nb_n)=
   \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
-
-Sugerencia: usa la desigualdad del triángulo para probar  que
-\(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
-sucesión \((a_n)_{n=1}^\infty\) y luego usa el ejercicio \ref{Ejer:LemaTeoSandiwch}.
+  </p>
+  <p>
+  Sugerencia: usa la desigualdad del triángulo para probar  que
+  \(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
+  sucesión \((a_n)_{n=1}^\infty\) y luego usa el
+  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 7.10 </a>.
+  </p>
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:ConvergenciaSerieRecorridaDerecha"> Ejercicio </h2>
-   Supongamos que la
+  <p>
+  Supongamos que la
   sucesión \((a_n)_{n=1}^\infty\) es convergente con \(L=\lim_{n\to \infty}a_n\).
-
+  </p>
 
 <ol>
 <li>
@@ -265,10 +319,14 @@ sucesión \((a_n)_{n=1}^\infty\) y luego usa el ejercicio \ref{Ejer:LemaTeoSandi
   <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass">
     Teorema: Bolzano-Weirestrass  </h2>
 
+  <p>
   Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
+  </p>
+  <p>
   Demuestra que existe \(x_0\in [a,b]\) y
   \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
   que \(\lim_{k\to \infty} x_{n_k}=x_0\).
+  </p>
 </div>
 
 <div class="ejercicio-box">
@@ -278,9 +336,12 @@ sucesión \((a_n)_{n=1}^\infty\) y luego usa el ejercicio \ref{Ejer:LemaTeoSandi
 
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
+  <p>
    Sea \(t>0\). Demuestra que
   \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
+  </p>
 
+  <p>
   Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
   \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>p\), factoriza
   \[
@@ -291,17 +352,20 @@ sucesión \((a_n)_{n=1}^\infty\) y luego usa el ejercicio \ref{Ejer:LemaTeoSandi
   \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
   \]
   con \(C=\frac{t^k}{k!}\).
+  </p>
 </div>
 
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
+<p>
 Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
 todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
 para todos \(n,m \geq N\)
 \[
 |x_n-x_m|<\varepsilon
 \]
+</p>
 </div>
 
 
