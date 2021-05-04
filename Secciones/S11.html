@@ -1,0 +1,349 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 10 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 10 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> La función exponencial </h1>
+<div class="info-box">
+  <h2 class="number-title"> Introducción </h2>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:Exp1"> Ejercicio </h2>
+
+
+  Sea \(x\in \mathbb{R}\), fija y arbitraria.
+<ol>
+<li>
+  Para \(n,m\in \mathbb{R}\) con \(-x< m < n\) se satisface
+\[
+\left(1+\frac{x}{m}\right)^m \leq \left(1+\frac{x}{n}\right)^n
+\]
+donde la igualdad se da si y sólo si \(x=0\).
+</li>
+<li>
+Para \(n,m\in \mathbb{R}\) con \(x< m < n\) se satisface
+\[
+\left(1-\frac{x}{n}\right)^{-n} \leq \left(1-\frac{x}{m}\right)^{-m}
+\]
+donde la igualdad se da si y sólo si \(x=0\).
+</li>
+</ol>
+
+Sugerencia: usar la desigualdad aritmética geométrica.
+
+Para la primera tomar
+\[
+a_1=\cdots=a_m= 1+\frac{x}{m}, \quad a_{m+1}=\cdots =a_n=1
+\]
+Para la segunda tomar
+\[
+a_1=\cdots=a_m=1-\frac{x}{m}, \quad a_{m+1}=\cdots=a_n=1
+\]
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:Exp2"> Ejercicio </h2>
+
+Sea \(x\in \mathbb{R}\) fijo y arbitrario.
+Para \(k\in \mathbb{N}\) con \(k > |x|\)
+
+\[
+\left( 1+\frac{x}{k} \right)^k < \left( 1-\frac{x}{k} \right)^{-k}
+\]
+</div>
+
+<div class="ejercicio-box">
+<h2 class="number-title"> Ejercicio </h2>
+
+Sea \(x\in \mathbb{R}\) fijo y arbitrario. Entonces los
+siguientes límites existen
+\[
+\lim_{n}\left( 1+\frac{x}{n} \right)^n,
+\quad
+\lim_{m} \left( 1- \frac{x}{m} \right)^{-m}
+\]
+
+
+Sugerencia: Considera los conjuntos
+\[
+A=\left\{  \left(  1+ \frac{x}{n}\right)^{n} \right\}_{n \in \mathbb{N}},
+B=\left\{  \left(  1- \frac{x}{m}\right)^{-m} \right\}_{m \in \mathbb{N}}
+\]
+Usa  <a href="#Ejer:Exp1">Ejercicio 11.2-1</a> y <a href="#Ejer:Exp2">Ejercicio 11.3</a>
+para demostrar que están
+acotados superior e inferiormente, respectivamente. Sean \(\alpha\) y \(\beta\)
+el supremo e infimo respectivamente. Probar
+
+\[
+\alpha= \lim_n \left(  1+ \frac{x}{n}\right)^{n} \quad \beta
+=\lim_m \left(  1- \frac{x}{m}\right)^{-m}
+\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Demuestra que
+\[
+\lim_n \left(  1+ \frac{x}{n}\right)^{n} \quad
+=\lim_m \left(  1- \frac{x}{m}\right)^{-m}
+\]
+
+Sugerencia:  con \(n>|x|\), toma \(b=(1-x/n)^{-1}, a=(1+x/n)\); usa el
+<a href="./S1.html#Eqn:Resolvent">Ejercicio 1.18</a> para estimar \(b^n-a^n\) y obtener
+\[
+0\leq b^n-a^n \leq \frac{x^2}{n-x}\left( 1 -\frac{x}{n} \right)b^n.
+\]
+Finalmente toma  límite \(n\to \infty\).
+</div>
+
+
+<div class="definicion-box">
+Definimos
+\[
+e^x=\lim_{n}\left( 1+\frac{x}{n} \right)^n
+= \lim_{n} \left( 1- \frac{x}{n} \right)^{-n}
+\]
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sean \(x,y\in \mathbb{R}\) fijos y arbitrarios y toma
+\(n\in \mathbb{N}\) tal que \(n>-x,-y,-(x+y)\).
+
+<ol>
+<li>
+Demuestra que
+\begin{eqnarray*}
+& \left| \left( 1+\frac{x}{n} \right)^n\left(1+\frac{y}{n} \right)^n-
+\left( 1+\frac{x+y}{n}\right)^n \right| \leq
+\\
+& \frac{|xy|}{n^2}
+\sum_{k=0}^{n-1} \left(\left( 1+\frac{|x|}{n}\right)
+\left( 1+\frac{|y|}{n}\right) \right)^k
+\left( 1+\frac{|x|+|y|}{n}\right)^{n-k-1}
+\end{eqnarray*}
+</li>
+<li>
+Demuestra que
+\[
+1+\frac{|x|+|y|}{n} \leq \left( 1+\frac{|x|}{n} \right)
+\left(1+\frac{|y|}{n} \right)
+\]
+</li>
+<li>
+Usando los dos ejercicios anteriores demuestra que
+\[
+\left| \left( 1+\frac{x}{n} \right)^n\left(1+\frac{y}{n} \right)^n
+- \left( 1+\frac{x+y}{n}\right)^n \right| \leq  \frac{|xy|}{n}e^{|x|}e^{|y|}
+\]
+</li>
+<li>
+Toma límites en el inciso anterior para concluir
+\[
+e^{x}e^y=e^{x+y}
+\]
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Demuestra que \(e^{-x}=\frac{1}{e^{x}}\).
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Toma \(h\in(-1,1)\) fija y arbitraria.
+
+<ol>
+<li>
+Demuestra que para todo \(n\in \mathbb{N}\)
+
+\[
+1+h \leq \left( 1+\frac{h}{n} \right)^n  \leq (1-h)^{-1}
+\]
+</li>
+
+<li>
+Usando el inciso anterior prueba
+\[
+h \leq e^h-1\leq \frac{h}{1-h}
+\]
+</li>
+
+<li>
+Finalmente, demuestra que
+\[
+\lim_{h\to 0}\frac{e^h-1}{h}=1
+\]
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Demuestra que la función exponencial es diferenciable en todo
+punto de \(\mathbb{R}\) con
+\[
+\frac{d e^x}{dx}=e^x
+\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Por \(P_0\) denotamos cierta cantidad de dinero (llamado principal)
+el cual se invertirá anualmete con una tasa de interés del \(100 r\)
+porciento, con \(0< r < 1\). Es decir, a final del año el principal crece a
+\[
+P_1=P_0+rP_0=P_0(1+r)
+\]
+<ol>
+<li>
+Si el principal  se reinvierte de manera semestral entonces el
+capital al final de año es
+\[
+P_1=P_0\left(1+\frac{r}{2}\right)^2
+\]
+y después de \(t\) años prueba que el principal es
+\[
+P_t=P_0\left(1+\frac{r}{2}\right)^{2t}
+\]
+</li>
+<li>
+Si el principal  se reinvierte \(n\)-veces al año prueba el
+capital al final de año es
+\[
+P_1=P_0\left(1+\frac{r}{n}\right)^n
+\]
+y después de \(t\) años prueba que el principal es
+\[
+P_t=P_0\left(1+\frac{r}{n}\right)^{nt}
+\]
+</li>
+
+<li>
+En teoría, si el principal se reinvirtiera cada instante del año,
+el capital al final del año será
+\[
+P_1=\lim_{n\to \infty} P_0\left(1+\frac{r}{n}\right)^n=P_0e^r
+\]
+esto se como conoce como interés continuo.
+
+Prueba que  después de \(t\) años el principal será
+\[
+P_t=P_0e^{rt}
+\]
+</li>
+
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:ODEMasImportante"> Ejercicio </h2>
+
+
+
+Sea \(f:[a,b] \to \mathbb{R}\) una
+función continua en \([a,b]\) y diferenciable en \((a,b)\) que satisface
+\[
+f'(x)=f(x), \quad \forall x\in (a,b).
+\]
+Demuestra que existe una constante \(c\) tal que \(f(x)=ce^x\), para todo \(x\in (a,b)\).
+
+Este ejercicio se puede pensar en términos de ecuaciones diferenciales.
+El ejercicio dice que, excepto por  constantes, la única función
+\(f\) que satisface \(f'=f\) (una ecuación diferencial) es la exponencial.
+
+Sugerencia: deriva la función \(\frac{f(x)}{e^x}\).
+</div>
+
+
+
+  </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
