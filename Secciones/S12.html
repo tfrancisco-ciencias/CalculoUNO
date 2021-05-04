@@ -1,0 +1,414 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 11 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 11 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Continuidad  </h1>
+
+<div class="info-box">
+  <h2 class="number-title"> Introducción </h2>
+
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f\) una función definida en una vecindad de \(a\). Decimos que \(f\) es
+continua en \(a\) si,
+
+\[
+\lim_{x\to a}f(x)=f(a).
+\]
+
+Equivalentemente, para toda \(\varepsilon>0\) existe \(\delta>0\) tal que
+\[
+|x-a|<\delta \Rightarrow |f(x)-f(a)|<\varepsilon.
+\]
+
+
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f\) una función definida en una vecindad de \(a\). Demuestra que
+\(f\) es continua en \(a\) si y sólo si
+\[
+\lim_{h\to 0} f(a+h)=f(a)
+\]
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f\) una función definida en una vecindad de \(a\). Si \(f\) es
+diferenciable en \(a\) entonces
+\(f\) es continua en \(a\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que la función \(f(x)=|x|\), \(x\in \mathbb{R}\) es continua
+en todo punto de \(\mathbb{R}\).
+
+Sugerencia: usar la otra desigualdad del triángulo.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Encuentra los puntos donde las siguientes funciones son continuas.
+<ol>
+<li>
+    la función \(f(x)=\lfloor x \rfloor\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  la función \(f(x)=\lfloor \frac{1}{x} \rfloor\), \(x\in \mathbb{R}\),
+\(x\ne 0\).
+</li>
+<li>
+  la función \(f(x)=\lfloor \sqrt{x} \rfloor\), \(x\in \mathbb{R}\),
+\(x\geq 0\).
+</li>
+<li>
+  la función \(f(x)=\lfloor x^2 \rfloor\), \(x\in \mathbb{R}\).
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Considera la función \(f(x)=x(-1)^{\lfloor x \rfloor }\), para \(x\ne 0\).
+¿  Puede definirse \(f(0)\) para que \(f\) sea continua en \(0\)?
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Considera la función \(D:\mathbb{R}\to \mathbb{R}\) dada por
+\[
+D(x)=
+\left\{
+\begin{array}{cc}
+1, & \textrm{\(x\) racional,} \\
+0 ,& \textrm{\(x\) irracional.}
+\end{array}
+\right.
+\]
+<ol>
+<li>
+  Encuentra los puntos donde \(f\) es continua.
+</li>
+
+<li>
+Considera la función \(g(x)=x^2D(x)\), \(x\in \mathbb{R}\). Encuentra los
+puntos donde \(g\) es continua.
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:DesigualdadPrincipalSeno"> Ejercicio </h2>
+   Para \(x\) que satisface
+\(0<|x|< \frac{\pi}{2}\) demuestra
+\[
+|\sen(x)|<|x|.
+\]
+
+Concluye que \(\lim_{x\to 0}\sen(x)=0\).
+
+Sugerencia: para \(x\) medido en radianes, el ángulo \(x\) se puede interpretar
+como \(2\times (\sphericalangle AOB)\),
+donde \(AOB\) es el segmento circular, del circulo unitario, que abre
+un ángulo \(x\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Demuestra que la función \(\sen: \mathbb{R} \to \mathbb{R}\) es
+continua en todo \(R\).
+
+Sugerencia: demuestra que, para toda \(a\in \mathbb{R}\),
+\(\lim_{h\to 0}\sen(a+h)=\sen(a)\). Para lo anterior
+utiliza la fórmula para el seno de una suma y el
+<a href="#Ejer:DesigualdadPrincipalSeno">Ejercicio 12.8</a>.
+</div>
+
+
+<div class="ejercicio-box">
+<h2 class="number-title"> Ejercicio </h2>
+Demuestra que la función \(\cos: \mathbb{R} \to \mathbb{R}\) es
+continua en todo \(\mathbb{R}\).
+
+Sugerencia: primero demuestra la identidad \(\cos(2\alpha)=1-2\sen^2(\alpha)\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sea \(f\) una función continua en el punto \(b\). Si \(g\) es una
+función definida en una vecindad agujereada de \(a\) tal que
+\(\lim_{x\to a}g(x)=b\) entonces
+\[
+\lim_{x\to a}f(g(x))=f(\lim_{x\to a}g(x))=f(b)
+\]
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sea \(f\) una función definida en una vecindad de \(a\) y continua en
+\(a\) con \(b=f(a)\). Sea \(g\) una función definida en una vecindad de \(b\)
+y continua en \(b\). Demuestra que la composición \(g\circ f\) es continua en \(a\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Proporciona ejemplos de funciones \(f\) y \(g\) tales que
+<ol>
+<li>
+  Ni \(f\) ni \(g\) son continuas en \(1\), pero \(f+g,f-g\), \(fg\) son continuas
+en \(1\).
+</li>
+<li>
+  \(g\) es discontinua en \(0\), \(f\) es discontinua en \(g(0)\) pero \(f\circ g\)
+es continua en \(0\).
+</li>
+</ol>
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f\) una función definida en un intervalo de la forma \([a,b)\).
+
+Decimos que \(f\) es continua por la derecha en \(a\) si
+\[
+\lim_{x\to a^+}f(x)=f(a).
+\]
+
+Sea \(f\) una función definida en un intervalo de la forma \((a,b]\).
+
+Decimos que \(f\) es continua por la izquierda en \(b\) si
+\[
+\lim_{x\to b^-}f(x)=f(b).
+\]
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sea \(f\) una función definida en una vecindad de \(a\). Prueba que \(f\)
+es contina en \(a\) si y sólo si \(f\) es continua por la derecha y por
+la izquierda en \(a\).
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+
+Decimos que una función \(f:[a,b]\to \mathbb{R}\) es continua en \([a,b]\) si:
+<ol>
+<li>
+  para todo \(c \in (a,b)\),  \(\lim_{x\to c}f(x)=f(c)\);
+</li>
+<li>
+  \(\lim_{x\to a^+} f(x)=f(a)\);
+</li>
+<li>
+  \(\lim_{x\to b^-}f(x)=f(b)\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:BabyLipschitz"> Ejercicio </h2>
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función
+que satisface: \(|f(u)-f(v)| \leq |u-v|\), para todos \(u,v\in [a,b]\).
+Demuestra que
+\(f\) es continua en todo el intervalo \([a,b]\).
+</div>
+
+
+
+<div class="ejercicio-box">
+<h2 class="number-title"> Ejercicio </h2>
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
+
+<ol>
+<li>
+  Demuestra que la función \(|f|\) es continua en todo \([a,b]\).
+</li>
+<li>
+¿ Es el regreso del inciso anterior cierto? Es decir,
+si \(|f|\) es continua en
+\([a,b]\) entonces \(f\) es continua en \([a,b]\). Demostrar o dar un contraejemplo.
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sean \(g:[a,b]\to [c,d]\), \(f:[c,d]\to \mathbb{R}\)  funciones  continuas
+en \([a,b]\) y \([c,d]\), respectivamente. Demuestra que la composición
+\(f \circ g:[a,b]\to \mathbb{R}\) es continua en todo \([a,b]\).
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\) y sea
+\(g:[b,c]\to \mathbb{R}\) una función continua en todo
+\([b,c]\). Prueba que si \(f(b)=g(b)\) entonces la función
+\(h:[a,c]\to \mathbb{R}\) dada por
+\[
+h(x)=\left\{
+\begin{array}{cc}
+f(x) & a\leq x \leq b \\
+g(x) & b< x\leq c
+\end{array}
+\right.
+\]
+es continua en todo \([a,c]\).
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+En cada inciso, determina los valores de los parámetros dados para que
+la función sea continua en el intervalo dado.
+
+<ol>
+<li>
+   \(f:[0,3] \to \mathbb{R}\) dada por
+\[
+f(x)=\left\{
+\begin{array}{cc}
+\sqrt{1-x^2} & 0\leq x \leq 1 \\
+mx+b & 1< x\leq 2 \\
+3 & 2< x \leq 3
+\end{array}
+\right.
+\]
+Determina \(m\) y \(b\)
+</li>
+<li>
+\(g:[0,\infty)\to \mathbb{R}\) dada por
+\[
+g(x)=\left\{
+\begin{array}{cc}
+mx+b & 0\leq x < 2 \\
+8 & x=2 \\
+(x-a)^2 & 2< x
+\end{array}
+\right.
+\]
+
+Determina \(a,b\) y \(m\).
+
+Advertencia: hay múltiples soluciones.
+</li>
+</ol>
+</div>
+
+
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
