@@ -1,0 +1,518 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 12 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 12 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Regla de la cadena  </h1>
+
+
+
+<div class="info-box">
+  <h2 class="number-title"> Introducción </h2>
+
+</div>
+
+
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  Este ejercicio da una demostración de la regla de la cadena.
+
+Sea \(f\) una función definida en una vecindad de \(a\) y sea \(g\) una función
+definida en una vecindad de \(f(a)\). Si \(f\) es diferenciable
+en \(a\) y \(g\) es
+diferenciable en \(f(a)\) entonces la composición
+\(g\circ f\) es diferenciable en \(a\) y
+\[
+(g\circ f)'(a)=g'(f(a))f'(a)
+\]
+
+
+Supongamos que \(f(x)\) está definida para \(x\) en una vecindad de
+\(a\) y \(g(u)\)
+está definida para \(u\) en una vecindad \(f(a)\).
+
+<ol>
+<li>
+  Para \(h\) cercana a cero define \(k=k(h)=f(a+h)-f(a)\). Demuestra que
+\[\lim_{h\to 0}k=0, \quad \lim_{h\to 0} \frac{k}{h}=f'(a)\]
+</li>
+<li>
+ Denota \(u_0=f(a)\). Demuestra que para \(t\) cercano a cero
+\[
+g(u_0+t)= g(u_0)+ g'(u_0)t+E(t)
+\]
+con \(\lim_{t\to 0} \frac{E(t)}{t}=0\).
+</li>
+
+<li>
+  Define \(G(t)=\frac{E(t)}{t}\) para \(t \ne 0\) y \(G(0)=0\). Demuestra que
+\(G\) es una función continua en cero.
+</li>
+
+
+
+<li>
+  Demuestra que, para \(t\) cercana a cero,
+\[
+g(u_0+t)-g(u_0)= t(G(t)+g'(u_0))
+\]
+</li>
+<li>
+  Con ayuda del incisco anterior prueba que, para \(h\ne 0\) y cercana a cero:
+\[
+\frac{(g\circ f)(a+h)-(g\circ f)(a)}{h}=\frac{k(h)}{h}[G(k(h))+g'(u_0)].
+\]
+</li>
+
+<li>
+  Toma límite cuando \(h\to 0\) en el inciso anterior para demostrar
+\[
+\lim_{h\to 0} \frac{(g\circ f)(a+h)-(g\circ f)(a)}{h}=f'(a) g'(f(a))
+\]
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Este ejercicio da otra demostración de la regla de la cadena.
+<ol>
+<li>
+  Supon que \(g(u)\) es una función diferenciable en \(u_0\).
+Usando aproximaciones lineales podemos escribir:
+\[
+g(u)=g(u_0)+g'(u_0)(u-u_0)+o(u-u_0)
+\]
+para \(u\) cercana a \(u_0\).
+</li>
+<li>
+  Supon que \(f(x)\) es una función diferenciable en \(a\), con \(f(a)=u_0\).
+
+Demuestra que para \(x\) cercana  a \(a\)
+\begin{equation*}
+g(f(x))=g(f(a))+g'(f(a))(f(x)-f(a))+o(f(x)-f(a))
+\end{equation*}
+</li>
+
+<li>
+   Usando aproximaciones lineales, prueba que para \(x\) cercana a \(a\):
+\[
+f(x)-f(a)=f'(x)(x-a)+o(x-a)
+\]
+</li>
+<li>
+  Usa las aproximaciones anteriores para probar que,
+
+\begin{eqnarray*}
+g(f(x))&=&g(f(a))+g'(f(a))(f'(a)(x-a)+o(x-a))\\
+&+&o(f'(a)(x-a)+o(x-a))
+\end{eqnarray*}
+para \(x\) cercana a \(a\).
+</li>
+
+
+<li>
+ Usa el <a href="./S10.html#Ejer:PropiedadesLittleo">Ejercicio 10.12</a>
+ para deducir que para
+\(x\in I'\):
+\[
+g(f(x))=g(f(a))+g'(f(a))f'(a)(x-a)+o(x-a)
+\]
+</li>
+<li>
+  Usa el <a href="./S10.html#Ejer:DerivadaLittleo">Ejercicio 10.11</a>
+  para concluir que \(g\circ f\)
+es diferenciable en \(a\) y \((g\circ f)'(a)=g'(f(a))f'(a)\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Supon que \(f\) es una función diferenciable, en un intervalo adecuado.
+Encuentra las siguientes derivadas
+<ol>
+<li>
+  \(f(x+b)\), \(b\in \mathbb{R}\) fijo y arbitrario.
+</li>
+<li>
+  \(f(ax+b)\), \(a,b\in \mathbb{R}\) fijos y arbitrarios.
+</li>
+<li>
+  \(f(ax^2+bx+c)\), \(a,b,c \in \mathbb{R}\) fijos y arbitrarios.
+</li>
+<li>
+  \(e^{f(x)}\)
+</li>
+<li>
+  \(f(e^x)\)
+</li>
+<li>
+  \(\sen(f(x))\)
+</li>
+<li>
+  \(f(\sen(x))\)
+</li>
+<li>
+  \(\cos(f(x))\)
+</li>
+<li>
+  \(f(\cos(x))\)
+</li>
+<li>
+   \(f(\tan(x))\)
+</li>
+<li>
+   \(\tan(f(x))\)
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Encuentra las derivadas de las siguientes funciones
+<ol>
+<li>
+  \(\sqrt{x^2-1}\), \(-1< x < 1\).
+</li>
+<li>
+  \(\sqrt{x^2+1}\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(\sqrt{(x-2)(x+1)^2}\), \(2 < x\).
+</li>
+<li>
+  \(\sqrt{\frac{1+x^2}{1-x^2}}\), \(|x|< 1\).
+</li>
+<li>
+  \( \sqrt{\sqrt{x}}\), \(x>0\).
+</li>
+<li>
+  \(\sqrt[4]{\sqrt[3]{\sqrt[2]{x}}}\), \(x>0\).
+</li>
+<li>
+  \(\sqrt{x+\sqrt{x^2 + \sqrt{x^3+1}}}\), \(x>0\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f\) una función diferrenciable con \(f(x)\ne 0\). Usa la regla de
+la cadena para dar otra prueba de que
+\[
+\left( \frac{1}{f(x)} \right)'=\frac{-f'(x)}{f^2(x)}
+\]
+
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> Diferenciación implícita </h2>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  La ecuación \(x^2+y^2=1\) describe el círculo de radio 1.
+<ol>
+<li>
+  Despeja \(y\) de \(x^2+y^2=1\) y encuentra \(\frac{dy}{dx}\).
+</li>
+<li>
+  Sin despejar \(y\), usa la regla de la cadena y las propiedades de la rerivada
+para derivar ambos lados de \(x^2+y^2=1\) y obtener una
+expresión para \(\frac{dy}{dx}\).
+</li>
+<li>
+  Encuentra la recta tagente a \(x^2+y^2=1\) en el punto
+\((1/\sqrt{2}, 1/\sqrt{2})\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Fija \(\alpha\in \mathbb{R}^+\). La ecuación
+\[
+x^3+y^3=3\alpha xy
+\]
+define una curva en el plano llamada la hoja de Descartes.
+<ol>
+<li>
+  Dibuja la hoja de Descartes para \(\alpha=2\) (ayudate de una computadora).
+</li>
+<li>
+  Muestra que la hoja de Descartes es simétrica con respecto
+a la recta \(y=x\).
+</li>
+<li>
+  Demuestra que la hoja de Descartes tiene una asíntota en
+la recta \(x+y+\alpha=0\).
+</li>
+<li>
+  Diferencia la hoja de descartes implícitamente para encontrar
+una expresi'on para
+\(\frac{dy}{dx}\).
+</li>
+<li>
+  Encuentra la ecuación de la recta tangente a la hoja de Descartes
+en el punto \((3,3)\).
+</li>
+<li>
+  Ecuentra los puntos de la hoja de Descartes donde la recta tangente
+es horizontal.
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Diferenciando implícitamente encuentra las ecuaciones a las rectas
+tagentes a las cruvas en los puntos dados.
+
+<ol>
+<li>
+  Elipse: \(x^2+4xy+y^2=6\) en el punto \((1,1)\).
+</li>
+<li>
+  Hipérbola: \(x^2-y^2=9\) en el punto \((\sqrt{10},1)\).
+</li>
+<li>
+  Astroide: \(x^{2/3}+y^{2/3}=\frac{1}{2}\) en el punto \((1/2^3,1/2^3)\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Usando diferenciación implícita encuentra la forma general de
+la recta tangente a la elipse \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) en
+el punto \((x_0,y_0)\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Usando diferenciación implícita encuentra la forma general de la
+recta tangente a la hiperbola \(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\) en
+el punto \((x_0,y_0)\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Dos curvas en el plano son ortogonales si sus rectas tangentes son
+perpendiculares en cada punto de intersección. Demuestra que las siguientes
+familias de curvas son ortogonales, es decir cada curva en una familia es
+ortogonal a cada curva de la otra.
+<ol>
+<li>
+  \(x^2+y^2=r^2\), para \(r>0\); \(ax+by=0\),  con \(a\ne 0\) o \(b\ne 0\).
+</li>
+<li>
+  \(y=cx^2\), \(c\ne 0\); \(x^2+2y^2=k\), \(k\ne 0\).
+</li>
+<li>
+  Demuestra que las elipses \(x^2/a^2+y^2/b^2=1\) y las hiperbolas
+\(x^2/c^2-y^2/d^2=1\) son ortogonales si
+\(c^2 < a^2\) y \(a^2-b^2=c^2+d^2\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+<h2 class="number-title" id="Ejer:DerivadasPotenciasRacionales"> Ejercicio </h2>
+
+
+  Ya hemos visto la regla de la
+potencia,  para potencias de la forma \(n\) y \(
+\frac{1}{n}\). A saber:
+
+\begin{eqnarray*}
+\frac{d f^n(x)}{dx}&=&nf^{n-1}(x)\frac{df(x)}{dx} \\
+\frac{d f^{\frac{1}{n}}(x)}{dx}&=&\frac{1}{n}f^{\frac{1}{n}-1}(x)\frac{df(x)}{dx}
+\end{eqnarray*}
+
+Este ejercicio usa diferenciación implícita para generalizar la regla de
+la potencia para potencias
+racionales.
+
+Tomemos \(p=\frac{n}{m}\), con \(n,m\in \mathbb{N}\), \(m\ne 0\).
+Supongamos que \(f\)
+es diferenciable en una vecindad de
+\(a\) y en esta vecindad \(f>0\).
+
+<ol>
+<li>
+  Define \(y(x):=f^p(x)\). Entonces \(y^m=f^n\)
+</li>
+<li> Diferencia implícitamente para obtener:
+\[
+my^{m-1}\frac{dy}{dx}=n f^{n-1}\frac{df}{dx}
+\]
+</li>
+<li>
+  Despeja \(\frac{dy}{dx}\) para concluir
+\[
+\frac{d f^p(x)}{dx}=pf^{p-1}(x)\frac{df(x)}{dx}
+\]
+</li>
+</ol>
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> Tazas relacionadas </h2>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sean \(u\) y \(v\) dos funciones diferenciables tal que podemos tomar
+\(u \circ v\). Denotemos \(y=v(x)\) y \(z=u(v(x))\). Usa la regla de la cadena
+para justificar la notación:
+\[
+\frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}.
+\]
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  En un tanque en forma de cono circular  recto invertido se vierte agua a
+la razón de 720 \(cm^3/min\). El tanque tiene una altura de 200 cm y el radio
+en la parte superior es de 60 cm. ¿Cuán rápido sube el nivel de agua cuando
+el tanque está a un octavo de su capacidad ?
+¿Cuanto se tarda en llenar el tanque? El volumen de un cono circular recto de
+altura \(h\) y de radio \(r\) es de \(V=\frac{1}{3}\pi r^3h\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Arena cae sobre una montículo de forma cónica a una tasa constante
+de 10 \(cm^3/s\). Si la altura del cono siempre es tres octavos del diámetro
+de la base determina:
+<ol>
+<li>
+  ¿Cómo cambia la altura del cono.?
+</li>
+<li>
+  ¿Cómo cambia la altura y el radio del cono en el instante en que la
+altura del cono ha alcanzado los 60 cm ?
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Supón que la relación de demanda de un cierto producto es
+\(p+2q+pq=38\), donde \(q\) se mide en miles de unidades y \(p\) es el precio en
+dólares por unidad. Supón además de ue el precio \(p\) (y en consecuencia
+la demanda \(q\)) cambia semanalmente, es decir \(p\) es una función del tiempo.
+
+<ol>
+<li>
+  ¿A qué ritmo está cambiando la demanda si el precio está
+disminuyendo a razón de 0.40 dólares por semana, a un nivel de
+demanda de \(q=4\).
+</li>
+<li>
+  ¿Qué ocurre ahora si el precio está aumentando a razón de 0.20
+dólares por semana al mismo nivel de demanda ?
+</li>
+</ol>
+</div>
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->

@@ -1,0 +1,634 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 13 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 13 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Máximos y mínimos  </h1>
+
+
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f:D \to \mathbb{R}\) una función.
+<ol>
+<li>
+  Decimos que \(f\) está acotada superiormente en \(D\) si existe \(M\) tal que
+\(f(x)\leq M\) para toda \(x\in D\).
+
+Si \(f\) está acotada superiormente en \(D\) escribimos
+
+\[
+\sup_D f =\sup_{x\in D}\{ f(x)\}
+\]
+</li>
+
+<li>
+  Decimos que \(f\) está acotada inferiormente en \(D\) si existe \(m\) tal que
+\(m\leq f(x)\) para toda \(x\in D\).
+
+Si \(f\) está acotada inferiormente en \(D\) escribimos
+\[
+\inf_D f =\inf_{x\in D}\{ f(x)\}
+\]
+</li>
+
+<li>
+  Decimos que \(f\) está acotada si existe \(M>0\) tal
+  que \(|f(x)| \leq M\) para toda
+\(x\in D\).
+</li>
+</ol>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Demuestra que \(f:(0,1) \to \mathbb{R}\) dada por \(f(x)=1/x\) está
+acotada inferiormente
+pero no superiormente en \((0,1)\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sean \(f,g:D\to \mathbb{R}\) dos funciones acotadas en \(D\) y
+\(a \in \mathbb{R}\) fijo y arbitrario. Demuestra que:
+<ol>
+<li>
+  \(af+g\) es acotada en \(D\).
+</li>
+<li>
+  \(fg\) es acotada en \(D\).
+</li>
+<li>
+  \(\tilde{f}\) es acotada en \(E\), donde \(E \subseteq D\) es no vacío y
+  \(\tilde{f}\) es la restricción de \(f\) a \(E\).
+</li>
+<li>
+  Da un ejemplo donde \(f(x)>0\) para todo \(x\in D\) y tal que la función
+  \(\frac{1}{f}\) no es acotada en \(D\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f:[a,b]\to \mathbb{R}\), \(f(x)=mx+c\). Demuestra
+\[
+|f(x)| \leq |m|\max\{|a|,|b|\}+|c|, \quad \forall x\in [a,b]
+\]
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Este ejercicio muestra que todo polinomio es acotado en un intervalo
+cerrado.
+
+Sea \(M>0\) y  \(p:[-M,M] \to \mathbb{R}\) un polinomio
+\(p(x)=\sum_{k=0}^na_kx^k\) de grado \(n\). Demuestra
+<ol>
+<li>
+  Si \(M \leq 1\), \(|p(x)| \leq \sum_{k=0}^n|a_k|\).
+</li>
+<li>
+  Si \(M>1\), \(|p(x)| \leq \left( \sum_{k=0}^n |a_k| \right)M^n\).
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:ContinuaAcotada"> Ejercicio </h2>
+
+
+Sea \(f:[a,b]\to \mathbb{R}\) una
+función continua en \([a,b]\). Demuestra que \(f\) está acotada en \([a.b]\).
+
+Sugerencia: Procede por contradicción. Si \(f\) no está acotada en \([a,b]\),
+divide el intervalo por la mitad para obtener dos sub-intervalos.
+Nota que \(f\) debe de ser no acotada en al menos uno de ellos. Procede por
+el método de bisecciones sucecivas.
+</div>
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+
+Sea \(f:D\to \mathbb{R}\) una función.
+<ol>
+<li>
+  Decimos que \(f\) alcanza su máximo absoluto en \(D\) si existe \(x^*\in D\) tal
+  que
+\[
+f(x) \leq f(x^*), \quad \textrm{ para todo \(x\in D\)}
+\]
+</li>
+<li>
+  Decimos que \(f\) alcanza su mínimo absoluto en \(D\) si existe \(x_*\in D\)
+  tal que
+\[
+f(x_*) \leq f(x), \quad \textrm{ para todo \(x\in D\)}
+\]
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Este ejercicio muestra que los puntos donde se alcanzan máximos o
+mínimos absolutos no son necesariamente únicos.
+
+<ol>
+<li>
+  Para la función \(\sen\),  \( \sen( 3\pi/2 +2\pi k )
+  \leq \sen(x) \leq \sen(\pi/2+2\pi k)\) para todo \(x\in \mathbb{R}\) y
+  todo \(k\in \mathbb{R}\). Por lo tanto \(\sen\) alcanza su máximo y mínimo
+  en una infinidad de puntos.
+</li>
+
+<li>
+  Define la función \(f:[0,2] \to \mathbb{R}\) por
+\[
+f(x)=\left\{
+\begin{array}{cc}
+x(1-x) & 0 \leq x \leq 1 \\
+(x-1)(2-x) & 1\leq x \leq 2
+\end{array}
+\right.
+\]
+Prueba que \(f\) alcanza su máximo en \(1/2\) y en \(3/2\).
+</li>
+</ol>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema (Max/Min)</h2>
+ El siguiente ejercicio esboza una demostración del siguiente teorema.
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua. Entonces \(f\) alcanza
+su valor máximo y mínimo en \([a,b]\).
+
+Es decir, existen puntos \(x_*,x^* \in [a,b]\) tal que
+\[
+f(x)  \leq f(x^*) , \quad  f(x_*) \leq f(x), \quad \forall x\in [a,b].
+\]
+En este caso  escribimos \(\max_{[a,b]} f=f(x^*), \min_{[a,b]} f=f(x_*)\).
+
+
+
+<ol>
+<li>
+  Demuestra que si \(f\) alcanza su máximo en \([a,b]\) entonces
+\[\min_{[a,b]} (-f)=-\max_{x\in [a,b]}f\]
+
+Por este incisco, es suficiente probar el teorema para máximos.
+</li>
+<li>
+  Considera el conjunto  \(S=\{f(x): x\in [a,b]\}\).  Por el
+  <a href="#Ejer:ContinuaAcotada">Ejercicio 14.6</a> , existe el supremo se
+\(S\). Denota \(M=\sup S\).
+</li>
+<li>
+  Nota que es suficiente probar que existe \(x^*\) tal que \(f(x^*)=M\).
+</li>
+<li>
+    Para terminar procede  por contradicción, es decir, supon que
+
+\[f(x) < M, \textrm{ para todo \(x\in [a,b]\)} \]
+
+Considera \(g:[a,b]\to \mathbb{R}\) dada por \(g(x)=M-f(x)\). Entonces
+\(g(x)>0\) para toda \(x\), la función \(1/g\) es continua y por lo tanto acotada
+superiormente. Si \(C=\sup_{[a,b]} 1/g\) demuestra que \(M-C\) es una conta
+superior de \(f\). Esto lleva a una contradicción.
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Este ejercicio muestra que no se pueden quitar las hipótesis de
+continuidad e intervalo cerrado en el Teorema Min/Max.
+
+Prueba que
+<ol>
+<li>
+  La función \(f(x)=\frac{x}{1-x^2}\), \(x\in (-1,1)\) no tiene ni máximo ni
+  mínimo.
+</li>
+<li>
+  La función \(f:[-1,1]\to \mathbb{R}\) dada por
+\[
+f(x)=\left\{
+\begin{array}{cc}
+|x| &  \textrm{si \(x\ne 0\),}\\
+0 & x=0
+\end{array}
+\right.
+\]
+no tiene mínimo.
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Usando la desigualdad aritmético-geométrica encuentra:
+<ol>
+<li>
+  El máximo de \(f(x)=x^3-\frac{x^2}{2}-\frac{x^4}{2}\), \(x \in [0,2]\).
+</li>
+<li>
+  El mínimo de \(f(x)=x^2+5x-2\sqrt{5x(x^2+6)}\), \(x \in [0,4]\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Usando la desigualdad de Bernoulli encuentra:
+<ol>
+<li>
+  El mínimo de \(f(x)=(4+x)^3-3(x+3)\), \(x\in [-4,0]\).
+</li>
+<li>
+  El máximo  de \(f(x)=6x-8(1+x)^3\), \(x\in [-1,1]\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f:\mathbb{R} \to \mathbb{R}\) una función continua en \(\mathbb{R}\)
+que satisface:
+\[
+\lim_{x\to \infty} f(x)=\lim_{x\to - \infty}f(x)=0
+\]
+Demuestra que \(f\) tiene una máximo absoluto o un mínimo absoluto,
+pero no ambos.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f: \mathbb{R} \to \mathbb{R}\) una función periodica, en el
+sentido de que  exsite \(p\in \mathbb{R}\) tal que
+\(f(x+p)=f(x)\), para toda \(x\in \mathbb{R}\). Si \(f\) es continua en \(\mathbb{R}\)
+muestra que \(f\) tiene un máximo y un mínimo absolutos.
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> Extremos locales y puntos críticos</h2>
+</div>
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f: D\to \mathbb{R}\) una función.
+
+<ol>
+<li>
+  Decimos que \(f\) tiene un máximo relativo en el punto \(x^*\in  D\) si existe
+  \(I \subset D\), una vecindad de \(x^*\) tal que
+\[
+f(x) \leq f(x^*), \quad \textrm{para todo \(x\in I\)}
+\]
+</li>
+<li>
+  Decimos que \(f\) tiene un mínimo relativo en el punto \(x_*\in  D\) si existe
+  \(I \subset D\), una vecindad de \(x_*\) tal que
+\[
+f(x_*) \leq f(x), \quad \textrm{para todo \(x\in I\)}
+\]
+</li>
+</ol>
+
+Decimos que \(f\) tiene un extremo local en \(x_0\) si \(f\) tiene un máximo o
+mínimo local en \(x_0\).
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Prueba que todo mínimo (máximo)  absoluto es mínimo (máximo) local.
+  </div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Grafica la función \(f(x)=x(1-x)^2\), \(-1 \leq x \leq 2\).  Nota que:
+<ol>
+<li>
+  \(f(-1)\) es el mínimo absoluto de \(f\).
+</li>
+<li>
+  \(f(2)\) es el máximo absoluto de \(f\).
+</li>
+<li>
+  \(f\) tiene un mínimo local en \(x=1\).
+</li>
+<li>
+  \(f\) tiene un máximo local en \(x=1/3\).
+</li>
+</ol>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema (de Fermat sobre max/min locales)</h2>
+El sigueinte ejercicio demuestra el siguiente teorema.
+
+
+Sea \(f: D\to \mathbb{R}\).  Supon que \(f\) tienen un extremo local en
+\(x_0 \in D\).  Demuestra que si
+\(f\) es diferenciable en \(x_0\) entonces \(f'(x)=0\).
+
+
+
+<ol>
+<li>
+  Supón que \(f\) tiene un máximo local en \(x_0\) y sea
+  \(I=(x_0-\delta, x_0+\delta)\) una vecindad de \(x_0\) tal que
+\[
+f(x) \leq f(x_0), \quad \textrm{ para todo \(x\in I\) }
+\]
+
+Demuestra:
+\[
+\frac{f(x)-f(x_0)}{x-x_0} \leq 0 \quad \textrm{para \(x\in (x_0-\delta, x_0)\)}
+\]
+y
+\[
+\frac{f(x)-f(x_0)}{x-x_0} \geq  0 \quad \textrm{para \(x\in (x_0, x_0+\delta)\)}
+\]
+</li>
+<li>
+  Tomando límite cuando \(x\to x_0\) en el cociente diferencial demuestra
+  \(f'(x_0)=0\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Da un ejemplo de una función \(f:[a,b]\to \mathbb{R}\),
+continua en \([a,b]\), diferenciable en \((a,b)\) y un
+\(c\in (a,b)\) tal que \(f'(c)=0\)  pero \(f\) no alcanza ni máximo ni
+mínimo en \(c\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Da un ejemplo de una función continua \(f:[a,b]\to \mathbb{R}\)
+tal que \(f\) tiene un máximo o mínimo relativo
+en \(c\) pero \(f\) no es diferenciable en \(c\).
+</div>
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f:D \to \mathbb{R}\). Un punto \(c\in D\) se llama punto crítico de
+\(f\) si \(f'(c)\) no existe o si \(f'(c)=0\). Con esta nomenclatura el Teorema de
+Fermat dice que si \(f\) tiene un extremo local en \(c\) entonces \(c\) es un
+punto crítico.
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Encuentras los puntos críticos de las siguientes funciones.
+<ol>
+<li>
+  \(f(x)=ax^2+bx+c\), \(x\in \mathbb{R}\), donde \(a,b,c\in \mathbb{R}\) son
+  constantes fijas con \(a\ne 0\).
+</li>
+<li>
+  \(f(x)=x^3+4x^2-21+13\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=x^4+2x^3-15x^2+3\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=x^4-cx^2+d\), \(x\in \mathbb{R}\), donde \(c,d\in \mathbb{R}\) son
+  constantes con \(c>0\).
+</li>
+<li>
+  \(f(x)=\sqrt{r^2-x^2}\), \(-r< x < r\), donde \(r\in \mathbb{R}\) es una
+  constante \(r\ne 0\).
+</li>
+<li>
+  \(f(x)=\frac{x-2}{x^2+2}\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=e^{\frac{1}{2}x^2+x+1}\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=x^{3/4}-2x^{1/4}\), \(x>0\).
+</li>
+<li>
+  \(f(x)=|3x-6|\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=|x(1-x)+1|\), \(x\in \mathbb{R}\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(p(x)\) un polinomio. Demuestra que todo punto crítico de \(p\) es
+también punto crítico de:
+<ol>
+<li>
+  \(\frac{p(x)+a}{p^2(x)+1}\), donde \(a\in \mathbb{R}\) es fijo y arbitrario.
+</li>
+<li>
+  \(\sqrt{p^2(x)+1}\).
+</li>
+<li>
+  \(e^{p(x)+a}\) donde \(a\in \mathbb{R}\) es fijo y arbitrario.
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Considera la función \(f(x)=x^{97}+x^5+x^3+x\), \(x\in \mathbb{R}\).
+<ol>
+<li>
+  Demuestra que \(f\) no tiene ni mínimo ni máximo  local.
+</li>
+<li>
+  Generaliza el ejercicio anterior ahora para una función de la forma
+  \(f(x)=\sum_{k=2}^n a_kx^{2k+1}+x\),
+donde \(a_k \geq 0\) para toda \(k\).
+</li>
+</ol>
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sean \(a,b \in \mathbb{R}^+\) fijos y arbitrarios. Considera la función
+\(f(x)=a+(x-b)^n\), donde \(n\in \mathbb{N}\).
+<ol>
+<li>
+  Prueba que \(f\) tiene un único punto crítico.
+</li>
+<li>
+  Encuentras las \(n\in \mathbb{N}\) tal que el punto crítico es un
+  mínimo local.
+</li>
+<li>
+  Encuentras las \(n\in \mathbb{N} \) tal que el punto crítico es un
+   máximo local.
+</li>
+<li>
+  Encuentras las \(n\in \mathbb{N} \) tal que el punto crítico no es ni
+  máximo ni mínimo local.
+</li>
+</ol>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+Demuestra el sigueinte
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y diferenciable e
+n \((a,b)\). Entonces los puntos
+donde \(f\) alcanza su máximo (mínimo) absoluto están contenidos en
+\[
+\{a,b\} \cup \{ c\in [a,b]:  \textrm{\(c\) es punto crítico de \(f\)} \}
+\]
+Asi pues, para calcular el máximo (mínimo) absoluto de \(f\) se aplica el
+siguiente método.
+<ol>
+<li>
+  Se encuentran los puntos críticos de \(f\) y calculan \(f(c)\), para \(c\) todo
+  punto crítico.
+</li>
+<li>
+  Calcular los valores \(f(a)\) y \(f(b)\).
+</li>
+<li>
+  El valor más grande del paso 1 y 2 es el máximo absoluto de \(f\) en
+  \([a,b]\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  En cada uno de los incisos siguientes, encuentra el máximo y el
+mínimo absoluto, de la función en el intervalo dado.
+
+<ol>
+<li>
+  \(f(x)=12+4x-x^2\), \([0,5]\).
+</li>
+<li>
+  \(f(x)=5+54x-2x^3\), \([0,4]\).
+</li>
+<li>
+  \(f(x)=2x^3-3x^2-12x+1\), \([-2,3]\).
+</li>
+</ol>
+</div>
+
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
