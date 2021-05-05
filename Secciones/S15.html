@@ -1,0 +1,371 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 14 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 14 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Teoremas importantes  </h1>
+
+
+
+<div class="info-box">
+  <h2 class="number-title"> Introducción </h2>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LemaSignoFuncionesContinuas"> Ejercicio </h2>
+
+
+  Sea \(f\) una función
+continua en el punto \(c\) con \(f(c)\ne 0\). Prueba que existe una  vecindad de
+\(c\) tal que \(f(x)\) siempre tiene el mismo signo, para todo \(x\) en la vecindad.
+</div>
+
+<div class="teorema-box">
+<h2 class="number-title"> Teorema (de Bolzano) </h2>
+   Demuestra el Teorema de Bolzano.
+
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\) y supongamos
+que \(f(a)\) y \(f(b)\) tienen signos opuestos.  Demuestra que existe almenos un
+\(c\) en \([a,b]\) tal que \(f(c)=0\).
+
+
+Nota: un punto \(c\) que satisface \(f(c)=0\), se le conoce como una raíz de \(f\).
+
+Sugerencia: Supón que \(f(a)< 0\) y \(f(b) > 0\). Define
+\[
+S=\{x\in [a,b]: f(x) \leq 0 \}.
+\]
+Nota que \(a \in S\) y que  \(S\) está acotado superiormente por \(b\). Sea
+\[
+c=\sup(S)
+\]
+Demuestra que \(f(c)=0\).
+
+Para lo anterior puedes proceder como sigue:
+
+<ol>
+<li>
+  Si \(f(c)>0\), usa el <a href="#Ejer:LemaSignoFuncionesContinuas">Ejercicio 15.2</a>
+para probar que existe \(\delta>0\) tal que \(f(x)>0\) para \(x\in (c-\delta, c)\),
+contradiciendo que \(c\) sea el supremo de \(S\).
+</li>
+<li>
+  Si \(f(c)< 0\), usa el <a href="#Ejer:LemaSignoFuncionesContinuas">Ejercicio 15.2</a> para
+probar que exsite \(\delta>0\) tal que \(f(x) < 0\) para \(x\in (c,c+\delta)\), c
+ontradiciendo que \(c\) sea cota superior de \(S\).
+</li>
+<li>
+  Concluye que \(f(c)=0\).
+</li>
+
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f:[0,1]\to \mathbb{R}\) una función continua en todo \([0,1]\).
+Supón además que \(0\leq f(x) \leq 1\), para toda \(x\).
+Demuestra que existe \(c\in [0,1]\) tal que
+\[f(c)=c\]
+
+Nota: A un punto \(c\), en el dominio de una función \(f\), que satisface
+\(f(c)=c\), se le conoce como un punto fijo de la función.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
+Si \(f(a) \leq a\) y \(f(b) \geq b\), demuestra que \(f\) tiene almenos un
+punto fijo en \([a,b]\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sean \(f,g: [a,b] \to \mathbb{R}\) dos funciones continuas en el
+intervalo \([a,b]\). Demuestra que si \(f(a) \leq g(a)\) y \(g(b) \leq f(b)\),
+entonces existe almenos un punto  \(c \in [a,b]\) tal que \(f(c)=g(c)\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Un monje Tibetano deja el monasterio a las 7.00am y toma su ruta usual
+a la cima de la montana, llegando a las 7.00pm. La siguiente manana, empieza su
+descenso desde la cima de la montana a las 7.00 am tomando la misma ruta y
+llegando al monasterio a las 7.00am. Demuestra que existe un punto en la ruta
+del monje en el cual pasa exactamente a la misma hora, en ambos dias.
+</div>
+
+<div class="ejercicio-box">
+
+<h2 class="number-title"> Ejercicio </h2>
+  Sea \(f:[0,1]\to \mathbb{R}\) una función continua en  todo \([0,1]\).
+Supon que \(f\) que satisface \(0 \leq f(x) \leq 1\), para todo \( x\in [0,1].\)
+
+Usa el Teorema de Bolzano para probar que existe \(d \in [0,1]\) tal que
+\[f(d)=1-d\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f:[a,b]\to \mathbb{R}\), continua en \([a,b]\) y tal que \(f(x)\ne 0\),
+para toda \(x\in [0,1]\). Demuestra que \(f(x_1)/f(x_2)>0\),
+para todos \(x_1,x_2 \in [a,b]\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f:[0,1]\to [0,1]\) una función continua en \([0,1]\) tal que
+\(f(1/2)\ne 1\) y sea \(g(x)=4x(1-x)\). Demostrar que \(f\) y \(g\) coinciden en al
+menos  dos puntos de \([0,1]\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(p(x)=\sum_{k=0}^n a_k x^k\) un polinomio de grado \(n\), tal que \(a_0\)
+y \(a_n\) tienen signos opuestos. Prueba que existe almenos un \(c\) tal
+que \(p(c)=0\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Decimos que una raíz \(c\), de una ecuación ha sido aislada si
+exsite una vecindad de \(c\) que sólo contiene a \(c\) como raíz.
+Con ayuda del teorema de Bolzano aisla cada una de las raíces de las
+siguientes ecuaciones (cada una tiene cuatro raíces).
+<ol>
+<li>
+  \(3x^4-2x^3-36x^2+36x-8=0\).
+</li>
+<li>
+  \(8 - 100 x + 70 x^2 - 20 x^3 + 2 x^4=0\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(a,b \in \mathbb{R}^+\), fijos y arbitrarios.
+Demuestra que la ecuación
+\[
+\frac{a}{x^3+2x^2-1}+\frac{b}{x^3+x-2}=0
+\]
+tiene almenos una solución en \((-1,1)\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que las siguientes ecuaciones tienen almenos una solución
+
+<ol>
+<li>
+  \(\frac{1}{5+\cos(x)}=x+1\)
+</li>
+<li>
+  \(x^2-8x+2=\sen(2\pi x)\)
+</li>
+</ol>
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> El Teorema del Valor Medio </h2>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Demuestra que para cualquier cuadrática \(f(x)=Ax^2+Bx+C\),
+la secante que une los puntos \((a,f(a))\) y
+\((b,f(b))\), es paralela a la recta tangente en el punto medio \(\frac{a+b}{2}\).
+Es más, demuestra que
+\[
+f(b)-f(a)=f'(c)(b-a) \Leftrightarrow c=\frac{a+b}{2}.
+\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Considera la función \(f(x)=\frac{1}{x}\), \(x>0\). Demuestra que
+la secante que une los puntos \((a,f(a))\)
+y \((b,f(b))\) es paralela a la recta tangente en el punto \(\sqrt{ab}\).
+Es más, demuestra que
+\[
+f(b)-f(a)=f'(c)(b-a) \Leftrightarrow c=\sqrt{ab}.
+\]
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+ Demuestra en Teorema de Rolle
+Sea \(f:[a,b] \to \mathbb{R}\) una función tal que
+<ol>
+<li>
+  \(f\) es continua en \([a,b]\);
+</li>
+<li>
+  \(f\) es diferenciable en \((a,b)\).
+</li>
+</ol>
+Si \(f(a)=f(b)\) entonces existe almenos un \(c\in (a,b)\) tal que \(f'(c)=0\).
+
+
+Sugerencia: Sea \(x_*\) y \(x^*\) puntos en \([a,b]\) donde \(f\) alcanza su
+mínimo y  máximo, respectivamente; si  \(x_*\) o \(x^*\) están en
+el intervalo abierto \((a,b)\) usa el Teorema de Fermat; si no,
+prueba que \(f\) es constante.
+
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Usa el Teorema del valor medio y el Teorema de Rolle para probar que,
+para toda \(k\in \mathbb{N}\), el polinomio \(p(x)=x^{2k+1}+x-1\) tiene
+una única raíz.
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f(x)=1-x^{2/3}\), \(-1\leq x \leq x\). Muestra que \(f(-1)=f(1)=0\),
+pero que \(f'(x)\) nunca es cero en \([-1,1]\). Explica por que ésto no
+contradice el Teorema de Rolle.
+</div>
+
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+Demuestra el Teorema del Valor Medio.
+
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+diferenciable en  \((a,b)\).
+Existe \(c\in (a,b)\) tal que
+\[
+\frac{f(b)-f(a)}{b-a}=f'(c)
+\]
+o equivalentemente
+\[
+f(b)-f(a)=f'(c)(b-a).
+\]
+
+
+Sugerencia: considera la función \(L(x)=m(x-a)+f(a)\) donde
+\(m=\frac{f(b)-f(a)}{b-a}\). Aplica el Teorema de Rolle a la función
+\(f(x)-L(x)\).
+</div>
+
+
+<div class="teorema-box">
+<h2 class="number-title"> Teorema </h2>
+  El siguiente resultado se conoce como el TVM de Cauchy.
+
+
+Sean \(f,g:[a,b] \to \mathbb{R}\) continuas en \([a,b]\) y diferenciables en
+\((a,b)\). Entonces existe
+\(c\in (a,b)\) tal que
+\[
+f'(c)[g(b)-g(a)]=g'(c)[f(b)-f(a)]
+\]
+
+
+Sugerencia: aplica el Teorema de Rolle a \(h(x)=f(x)[g(b)-g(a)]-g(x)[f(b)-f(a)]\).
+
+</div>
+
+
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->

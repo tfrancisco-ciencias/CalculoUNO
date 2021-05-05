@@ -2,7 +2,6 @@
   <html lang="es">
 
 
-
   <head>
     <!-- Following part is mathjax, for latex-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -11,40 +10,36 @@
 
     <!-- This part is for jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="../main.js"></script>
 
-    <!-- Next part is for new coomands -->
 
+    <!-- Next part is for new coomands -->
     <script>
       window.MathJax = {
         tex: {
           macros: {
             sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1],
+            seg: ["\\overrightarrow{#1}", 1]
           },
           tags: "ams" /* this part is for numbered equations */
         }
       };
     </script>
 
-
-
-
     <!-- CSS -->
 
     <link rel="stylesheet" , href="../styles.css" />
 
-
-
-    <!-- This part restart counter of cards to start at N+1 -->
+    <!-- This part restart counter of cards to start at n+1 -->
     <style>
-      body.number-title {
-        counter-reset: sectionCounter 14 cardCounter;
+      body.number-title{
+        counter-reset: sectionCounter 15 cardCounter ;
       }
-
-      h1.number-title {
-        counter-reset: sectionCounter 14 cardCounter;
+      h1.number-title{
+        counter-reset: sectionCounter 15 cardCounter ;
       }
     </style>
 
@@ -56,418 +51,344 @@
   <header class="main-header">
     <nav class="top-nav">
       <ul>
-        <li> <a href="../Home.html"> Inicio </a> </li>
-        <li> <a href="../Secciones.html"> Secciones </a> </li>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
       </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
     </nav>
 
     <h1 class="calculo-title"> Cálculo UNO</h1>
 
   </header>
 
-  <!-- Contenido empieza abajo -->
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
 
+<body class="flexbox card fondo-body">
 
-  <body class="fondo card ">
     <div class="flexbox">
 
-      <h1 class="number-title" > El Teorema de Cambio de Variable </h1>
+      <h1 class="number-title "> Aplicaciones </h1>
 
-      <div class="nota-box">
-        <h2 class="number-title"> Introducción </h2>
-        <p>
-          El teorema de cambio de variable en una dimensión dice
 
-            \begin{equation}\label{Eqn:CV-1D}
-            \int_{a}^{b}f(x)dx=\int_{c}^{d}f(g(t))g'(t)dt
-            \end{equation}
+<div class="info-box">
+<h2 class="number-title"> Introducción </h2>
 
-            donde \(g:[c,d]\to \mathbb{R}\) es una función
-            clase \(C^1\), con \(g(c)=a, g(d)=b\) y
-            \(f:[a,b]\to \mathbb{R}\) es una función continua.
-          </p>
-          <p>
-            Veamos cómo se traduce la identidad anterior para 1-formas
-            en \(\mathbb{R}^2\). Las 1-formas en \(\mathbb{R}\) son
-            de la forma \(fdx\), donde \(f\) es una función y para fijar
-            ideas supongamos que está definida
-            en el intervalo \([a,b]\). La función
-            \(g\) transforma el intervalo \([c,d]\) en el intervalo
-            \([a,b]\), si \(g\) es monótona creciente, por lo que podemos escribir
-            \(g([c,d])=[a,b]\). El teorema de cambio de variable
-            relaciones las 1-formas \(fdx\) y \((f\circ g) g'du \) mediante
+</div>
 
-            \[
-            \int_{g([c,d])} fdx = \int_{[c,d]} (f\circ g)g' du
-            \]
-            Nota: usualmente se usa una variable de integración diferente en
-            cada lado de la igualdad anterior porque es meas fácil de recordar
-            si tomamos \(x=g(u) \Rightarrow dx=g'du\) (la cual es válida pensando a
-            \(dx\) como la derivada exterior de \(x=g(u)\)).
 
-        </p>
+      <div class="ejercicio-box">
+        <h2 class="number-title" id="Ejer:DerivadaCeroImplicaConstante"> Ejercicio </h2>
 
-        <p>
-          En más de una variable la fórmula \eqref{Eqn:CV-1D} es similar,
-          pero los cambios son: \(g\) ahora es un campo vectorial o transoformación
-          \(\mathbb{T}: \mathbb{R}^2 \to \mathbb{R}^2 \), el cual se conoce
-          como el cambio de coordenadas o de variable; \(g'\) se reemplaza por el Jacobiano
-          de \(\mathbb{T}\), denotado \(J_{\mathbb{T}}\);
-          el intervalo \([c,d]\) es una región orientada \(\mathcal{S}\).
-        </p>
-        <p>
-          Si \(\mathbb{T}: U \subset \mathbb{R}^2 \to \mathbb{R}^2\) es una
-          transformación, diferenciable en el abierto \(U\), su Jacobiano
-          es la función \(J_{\mathbb{T}}: U \to \mathbb{R}\), dada por
-          \[
-          J_{\mathbb{T}}(x,y)=\det
-          \left[
-          \begin{array}{cc}
-          \partial_u X & \partial_v X \\
-          \partial_u Y & \partial_v Y
-          \end{array}
-          \right]
-          \]
-          donde denotamos \(\mathbb{T}(u,v)=(X(u,v),Y(u,v))\). Con esta
-          notación se dice que \(\mathbb{T}\) transforma las coordenadas
-          \((u,v)\) en las \((x,y)\). Con esta notación también se escribe
-          \[
-          \frac{\partial(X,Y)}{\partial(u,v)}=J_{\mathbb{T}}
-          \]
-        </p>
 
+        Sea \(f:[a,b] \to \mathbb{R}\)
+      continua en \([a,b]\) y diferenciable en \((a,b)\). Demuestra que
+      \(f\) es constante en \([a,b]\) si y sólo si \(f'=0\) en \([a,b]\).
       </div>
 
 
-      <div  class="teorema-box">
-        <h2 class="number-title"> Teorema del cambio de variable </h2>
-        <p>
+      <div class="ejercicio-box">
+        <h2 class="number-title" id="Ejer:DesigualdadesAplicandoTVM"> Ejercicio </h2>
 
-          Sea \(U\subset \mathbb{R}^2\) un conjunto abierto,
-          \(f:U\to \mathbb{R}\) una función integrable y \(\mathcal{R}\subset U\)
-          una región orientada.
+        Utiliza el Teorema de Valor
+      Intermedio para probar las siguientes desigualdades
+      <ol>
+      <li>
+        \(\sen(a)-\sen(b)| \leq |a-b|\)
+      </li>
+      <li>
+        \(\sen(2x)-\sen(x)| \leq |x|\)
+      </li>
+      </ol>
+      </div>
 
-        <p>
-          Supongamos que la función
-          \(\mathbb{T}:U \to \mathbb{R}^2\) es clase \(C^1\),
-          admite una inversa que también es clase \(C^1\) y que su Jacobiano,
-          \(J_T\), nunca se anula en \(\mathcal{S}\).
-        </p>
-
-        <p>
-          Entonces:
-          \[
-          \int_{T(\mathcal{R})} f dx\wedge dy = \int_{\mathcal{R}} (f\circ T) J_T  du\wedge dv
-          \]
-        </p>
-        <p>
-          Nota: el teorema también es válido cuando la transformación
-          es invertible o el Jacobiano no se anula excepto en un conjunto
-          de contenido cero.
-        </p>
-
-        <button class="respButton hvr-grow"> Demostración </button>
-          <div class="resp-box">
-            <div class="video flexbox">
-              <a href="https://youtu.be/08dKKWq7x50" target="_blank"> Video </a>
-            </div>
-          </div>
-        </div>
 
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
-        <p>
-          Considera el cambio de variable lineal \(\mathbb{T}:\mathbb{R}^2 \to
-          \mathbb{R}^2\),\(\mathbb{T}(u,v)=(au+bv,cu+dv)\) con Jacobiano
-          distinto de cero.
-          <ol>
-          <li>
-          Prueba que
-          \[
-          \int_{\mathbb{\mathbb{T}(\mathcal{S})}} f(x,y)dx \wedge dy =
-          (ad-bc)\int_{\mathcal{S}} f(au+bv,au+bv) du\wedge dv
-          \]
-          donde \(\mathcal{S}\subset \mathbb{R}^2\) es una región
-          orientada.
-          </li>
-          <li>
-            Calcula la integral
-            \[
-            \int_{\mathcal{S}} e^{(y-x)/(y+x)}dx\wedge dy
-            \]
-            donde \(\mathcal{S}\) es el triángulo por la línea
-            \(x+y=3\) y los ejes coordenados, orientado positivamente.
-          </li>
-          <li>
-            Calcula la integral
-            \[
-            \int_{\mathcal{S}} (x-y)^2\sin^2(x+y)dx \wedge dy
-            \]
-            usando un cambio de variable adecuado, donde
-            \(\mathcal{S}\) es el paralelogramo con vértices
-            \((\pi,0),(2\pi,\pi),(\pi,2\pi),(0,\pi)\).
-          </li>
-        </ol>
-        </p>
 
-        <button class="respButton hvr-grow"> Respuesta inciso 2</button>
-          <div class="resp-box">
+        Sean \(f,g:[a,\infty)\to \mathbb{R}\), continuas en \([a,\infty)\) y
+      diferenciables en \((a,\infty)\) con
+      \(f(a) \leq g(a)\).
 
-            <p>
-            De manera gráfica la región \(S\) es de la forma,
+      <ol>
+      <li>
+        Si \(f'(x) < g'(x)\), para todo \(x>a\), demuestra que \(f(x) < g(x)\),
+      para toda \(x>a\).
+      </li>
+      <li>
+        Usar el inciso anterior para probar que \(\sqrt{1+x}< 1+\frac{x}{2}\)
+      para todo \(x>0\).
+      </li>
 
-
-            <div class="imagen-box flexbox">
-              <img src="./Images/N.png" alt="N" width="350" height="250">
-            </div>
-
-
-            </p>
-            <p>
-              Ahora procedemos en hacer un cambio de variable.
-              Haciendo \( u = x + y \) y \( v = y - x \), tenemos que
-              \( x = \frac{u - v}{2}\) y \( y = \frac{u + v}{2} \).
-              Por lo tanto, proponemos el siguiente cambio de variable,
-              \(\mathbb{T}: R \subseteq \mathbb{R}^{2} \rightarrow \mathbb{R}^{2} \)
-              definida como \(\mathbb{T}(u, v) = \left(\frac{u - v}{2}, \frac{u + v}{2}\right)\)
-              y que cumple, \(\mathbb{T}[R] = S\). Ahora procederemos a
-              encontrar a la región \(R\).
-            </p>
-
-            <p>
-            Tenemos que si \(x = 0\), entonces \( v = u\), si \( y  = 0 \),
-            entonces \( v = -u\), y si \( x + y = 3\), entonces \( u = 3\).
-            Por lo tanto, la región \(R\) tal que \(\mathbb{T}[R] = S\),
-            es el triángulo formado por las rectas \( v = u\),  \( v = -u \)
-            y \( u = 3\), es decir, de manera más explícita
-            \[
-            R = \lbrace (u, v)\in \mathbb{R}^2 : u \in [0, 3], -u \leq v \leq u
-            \rbrace
-            \]
-           </p>
-            <p>
-            Y de manera gráfica, \(R\) es,
-
-            <div class="imagen-box flexbox">
-              <img src="./Images/M.png" alt="M" width="400" height="300">
-            </div>
-
-            </p>
-            <p>
-            Por otro lado, \begin{equation*}
-            J_{\mathbb{T}} = \det \left[
-            \begin{array}{cccc}
-            \partial_u x &  \partial_{v} x \\
-            \partial_u y & \partial_{v} y
-            \end{array} \right] = \det \left[
-            \begin{array}{cccc}
-            \frac{1}{2}  & -\frac{1}{2} \\
-            \frac{1}{2} & \frac{1}{2}
-            \end{array} \right] = \frac{1}{2}.
-            \end{equation*}
-            </p>
-            <p>
-            Por lo tanto, usando el Teorema del cambio de variable,
-            \begin{eqnarray*}
-            \int_S e^{(y - x)/(y + x)} dx \wedge dy  & = & \int_R e^{v/u}|J_{\mathbb{T}}| du \wedge dv = \frac{1}{2}\int_0^3\left(\int_{-u}^{u}e^{v/u} dv\right) du  \\
-             & = & \frac{1}{2}\int_0^3 u(e - e^{-1}) du = \frac{9}{4}(e - e^{-1})
-            \end{eqnarray*}
-            </p>
-            <p>
-            Por lo tanto,
-            \[
-            \int_S e^{(y - x)/(y + x)} dx \wedge dy
-            = \frac{9}{4}(e - e^{-1}).
-            \]
-            </p>
-
-
-          </div>
-
-
-
+      </ol>
       </div>
 
-
-      <div class="prop-box">
-        <h2 class="number-title"> Ejercicio </h2>
-        <p>
-          Considera el cambio de variable de coordenadas polares
-          \[
-          \mathbb{T}: [0,\infty) \times [0,2\pi] \to \mathbb{R}^2
-          \]
-          Nota que \(\mathbb{T}\) no es invertible en todo su dominio
-          pero sí lo es excepto en un conjunto de contenido cero, así que
-          se puede aplicar el teorema del cambio de variable.
-        </p>
-        <ol>
-          <li>
-            Prueba que si \(\mathcal{S}\subset \mathbb{R}^2\) es una región
-            orientada y \(f\) una función continua en un abierto
-            que contiene a \(\mathcal{S}\)  entonces
-            \[
-            \int_{\mathbb{T}(\mathcal{S})} f  dx\wedge dy
-            = \int_{\mathcal{S}} f(r\cos(\theta), r\sen(\theta))r dr \wedge d\theta
-            \]
-          </li>
-            <li>
-            Calcula la integral doble
-            \[
-            \int_{0}^{2}\left( \int_{0}^{\sqrt{2x-x^2}} x^2+y^2 dy \right)dx
-            \]
-          </li>
-          <li>
-            Encuentra el volumen bajo la gráfica del paraboloide
-            \(9z=x^2+y^2\), que está por arriba del disco
-            \(x^2+y^2  \leq 4\).
-          </li>
+      <div class="ejercicio-box">
+        <h2 class="number-title" id="Ejer:RectaSoporteExpEnCero"> Ejercicio </h2>
 
 
-          <button class="respButton hvr-grow"> Respuesta inciso 2 </button>
-            <div class="resp-box">
-              <div class="video flexbox">
-                <a href="https://youtu.be/lW2KYYJ4a5g" target="_blank"> Video </a>
-              </div>
-            </div>
+        Demuestra  que para toda
+      \(x\in \mathbb{R}\)
+      \[
+      1+x \leq e^x.
+      \]
 
-
-
-        </ol>
+      Además, grafica  \(e^x\) y \(x+1\), cerca del cero.
       </div>
 
 
       <div class="definicion-box">
-        <h2 class="number-title" > Ejercicio </h2>
-        <p>
-          Usa un cambio de variable adecuado para calcular las siguientes
-          integrales.
-
-          <ol>
-            <li>
-              \(\int_{\mathcal{R}} 3x^2dx\wedge dy\), donde
-              \(\mathcal{R}\) es la región encerrada por
-              la elipse \(4x^2+9y^2=25\), recorrida
-              en el sentido positivo.
-            </li>
-
-            <li>
-              \(\int_{\mathcal{R}}xy dx\wedge dy\), donde
-              \(\mathcal{R}\) es la región del primer cuadrante
-              encerrada por las líneas \(y=x,y=3x\) y la hipérbola
-              \(xy=1\).
-            </li>
-
-            <li>
-              \(\int_{\mathcal{R}}\frac{x-5y}{3x-y}dx\wedge dy\),
-              donde \(\mathcal{R}\) es el paralelogramo encerrado
-              por la líneas \(x-5y=0,x-5y=2, 3x-y=1\) y \(3x-y=8\).
-            </li>
-          </ol>
-        </p>
-
-        <button class="respButton hvr-grow"> Respuesta inciso 1</button>
-          <div class="resp-box">
-
-                  <p>
-                  Considerando el siguiente cambio de variable
-                  \(\mathbb{T} : [0, 1] \times [0, 2\pi] \subseteq \mathbb{R}^{2}
-                  \rightarrow \mathbb{R}^{2}\) definida como
-                  \(\mathbb{T}(r, \theta) = \left(\frac{5}{2}r\cos(\theta),
-                  \frac{5}{3}r\sen(\theta)\right)\), es decir,
-                  \(x = \frac{5}{2}r\cos(\theta) \) y
-                  \( y = \frac{5}{3}r\sen(\theta)\).
-                  Además \(\mathbb{T}[[0, 1] \times [0, 2\pi]] = R\).
-                  </p>
-                  <p>
-                    Por otro lado,
-                    \begin{equation*}
-                    J_{\mathbb{T}} = \det \left[
-                    \begin{array}{cccc}
-                    \partial_r x &  \partial_{\theta} x \\
-                    \partial_r y & \partial_{\theta} y
-                    \end{array} \right] = \det \left[
-                    \begin{array}{cccc}
-                    \frac{5}{2}\cos(\theta)  & -\frac{5}{2}r\sen(\theta) \\
-                    \frac{5}{3}\sen(\theta) & \frac{5}{3}r\cos(\theta)
-                    \end{array} \right] = \frac{25}{6}r.
-                    \end{equation*}
-                  </p>
-                  <p>
-                    Por lo tanto, usando el Teorema del cambio de variable,
-                    \begin{eqnarray*}
-                    \int_R 3x^2 dx\wedge dy & = & \int_{[0, 1] \times [0, 2\pi]} 3\left(\frac{5}{2}r\cos(\theta)\right)^{2}\left(\frac{25}{6}r\right) dr \wedge d\theta  \\
-                    & = & \frac{625}{8}\int_0^1\left(\int_0^{2\pi} r^3\cos^2(\theta) d\theta \right) dr \\
-                    & = & \frac{625}{8}\int_0^1 r^3\left(\int_0^{2\pi} \cos^2(\theta) d\theta \right) dr \\
-                    & = & \frac{625}{8}\left(\int_0^{2\pi} \cos^2(\theta) d\theta \right) \left(\int_0^1 r^3 dr \right) \\
-                    & = & \frac{625}{32}\pi
-                    \end{eqnarray*}
-
-                    ya que
-                    \[
-                    \int_0^1 r^3 dr = \frac{1}{4} \hspace{,5 cm} \text{ y }
-                    \hspace{,5 cm} \int_0^{2\pi} \cos^2(\theta) d\theta
-                    =
-                    \int_0^{2\pi} \frac{1 + \cos(2\theta)}{2} d\theta  = \pi
-                    \]
-                    </p>
-                    <p>
-                      Por lo tanto,
-                      \[
-                      \int_R 3x^2 dx\wedge dy = \frac{625}{32}\pi .
-                      \]
-
-                    </p>
-
-
-          </div>
+      Sea \(f: D \to \mathbb{R}\)  una función. Una recta soporte para la
+      gráfica de \(f\), en el punto \((x_0,f(x_0))\), es una recta \(L\) tal que:
+      <ol>
+      <li>
+        \((x_0, f(x_0)) \in L\),
+      </li>
+      <li>
+        la gráfica de \(f\) está totalmente contenida en uno de los
+      semiplanos cerrados determinados por \(L\).
+      </li>
+      </ol>
+      Por ejemplo, la recta \(y=0\) es recta soporte de \(f(x)=x^2\) en \((0,0)\) perno
+      no es recta soporte de \(f(x)=x^3\) en \((0,0)\).
 
       </div>
+
 
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
 
-        <p>
-          Para  \(r>0\) denota
-          \[
-          A(r)=\int_{-r}^r e^{-u^2}du
-          \]
-          <ol>
-            <li>
-              Prueba que
-              \[
-              (A(r))^2=\int_{\mathcal{R}}e^{-(x^2+y^2)}
-              \]
-              donde \(\mathcal{R}=[-r,r]\times [-r,r]\)
-            </li>
-            <li>
-              Si \(C_1\) y \(C_2\) son discos de tal forma que
-              \(C_1 \subset \mathcal{R}\subset C_2\). Prueba que
-              \[
-              \int_{C_1} e^{-(x^2+y^2)}  \leq (A(r))^2 \leq \int_{C_2} e^{-(x^2+y^2)}
-              \]
-            </li>
-
-            <li>
-              Usa un cambio de variable en coordenadas polares y usa
-              las desigualdades anteriores para probar
-              \[
-              \lim_{r\to \infty} A(r)=\sqrt{\pi}
-              \]
-              Esto prueba que \(\int_{-\infty}^\infty e^{-u^2}du = \sqrt{\pi}\).
-            </li>
-          </ol>
-
-        </p>
+        Este ejercicio generaliza el <a href="#Ejer:RectaSoporteExpEnCero">Ejercicio 15.25</a> .
+      Demuestra que toda recta tangente de \(e^x\) es una recta soporte.
       </div>
 
-<!-- acaba contenido -->
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Da un ejemplo de \(f:\mathbb{R} \to \mathbb{R}\), una función continua en
+      \(\mathbb{R}\) que tanga una infinidad de rectas soported en
+      \((0,f(0))\).
+      </div>
+
+
+
+
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+      Sea \(f: D \to \mathbb{R}\) una función. Decimos que \(f\) es Lipschitz en \(D\)
+      si existe \(M>0\) tal que
+      \[
+      |f(x)-f(y)| \leq M |x-y|, \quad \textrm{para toda \(x,y \in  D\).}
+      \]
+
+      Más en general, para un \(\alpha \in (0,1]\) decimos que \(f\) es
+      \(\alpha\)-Lipschitz en \(D\) si existe
+      \(M>0\) tal que
+      \[
+      |f(x)-f(y)| \leq M |x-y|^\alpha, \quad \textrm{para toda \(x,y \in  D\).}
+      \]
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Usando diferencia de cuadrados muestra que la función \(f(x)=x^2\) es
+      Lipschitz en cualquier intervalo
+      de la forma \([a,b]\).
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Da un ejemplo de una función \(f:[a,b] \to \mathbb{R}\) que sea
+      Lipschitz continua en \([a,b]\) pero
+      no sea diferenciable en una infinidad de puntos en \([a,b]\).
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable en \((a,b)\).
+      Si existe \(M>0\) tal que
+      si \(|f'(x)| \leq M\), para toda \(x\in (a,b)\), demuestra que,
+      para cualesquiera \(x_1,x_2\in [a,b]\):
+      \[
+      |f(x_1)-f(x_2)| \leq M |x_2-x_2|
+      \]
+      es decir, a función \(f\) es Lipschitz continua en \([a,b]\).
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Este ejercicio muestra porque no se define funciones
+
+      \(\alpha\)-Lipschitz para \(\alpha >1\).
+
+      Sea \(f:[a,b]\to \mathbb{R}\) una función, \(M>0\) y \(\alpha >1\) tal que satisfacen
+      \[
+      |f(x)-f(y)| \leq M |x-y|^{\alpha}
+      \]
+
+      Demuestra que \(f\) es constante.
+
+      Sugerencia: demuestra que \(f'=0\) en \([a,b]\).
+      </div>
+
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sean \(f,g:[a,b] \to \mathbb{R}\) dos funciones continuas en \([a,b]\)
+      y diferenciables en \((a,b)\). Demuestra que si \(f'(x)=g'(x)\) para toda
+      \(x\in (a,b)\) si y sólo si  existe una constante \(c\), tal que \(f(x)=c+g(x)\),
+      para toda \(x\in [a,b]\).
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sea \(f:[a,b] \to \mathbb{R}\) una función continua en \([a,b]\)
+      y diferenciable en \((a,b)\). Demuestra que si \(f'(x) \ne 0\), para toda
+      \(x\in (a,b)\) entonces \(f\) es injectiva en \([a,b]\).
+
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sea \(f:[a,b)]\to \mathbb{R}\) continua en \([a,b]\) y
+      diferenciable en \((a,b)\). Demuestra:
+      <ol>
+      <li>
+        Si \(f'(x)>0\) (\(f'(x)< 0\)) para todo \(x\in (a,b)\) entonces \(f\) es
+      estrictamente creciente (decreciente) en \([a,b]\).
+      </li>
+      <li>
+        Si \(f'(x) \geq 0\) (\(f'(x) \leq 0\)) para todo \(x\in (a,b)\) entonces
+      \(f\) es monótona creciente (decreciente) en \([a,b]\).
+      </li>
+
+      </ol>
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sean \(a,b \in \mathbb{R}\), con \(a\ne 0\). Demuestra que:
+      <ol>
+      <li>
+        Si \(a > 0\), la función \(f(x)=e^{ax+b}\), \(x\in \mathbb{R}\),
+      es estrictamente creciente.
+      </li>
+      <li>
+        Si \(a < 0\), la función \(f(x)=e^{ax+b}\), \(x\in \mathbb{R}\),
+      es estrictamente decreciente.
+      </li>
+      </ol>
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sea \(c\in \mathbb{R}\), fijo y arbitrario. Demuestra que el polinomio
+      \(p(x)=x^3+3x^2+3x+c\), tiene exáctamente una raíz.
+
+      Sugerencia: para la unicidad demuestra que \(p\) es estrictamente creciente.
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sea \(f:[a,b] \to \mathbb{R}\), continua en \([a,b]\) y diferenciable en
+      \((a,b)\). Si \(f'(x)>0\) para todo
+      \(x\in [a,b]\) excepto en un punto \(c\) donde \(f'(c)=0\), demuestra que \(f\) es
+      estrictamente creciente en
+      \([a,b]\).
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable en \((a,b)\).
+
+      <ol>
+      <li>
+        Demuestra que si
+      \(f\) tiene tres raíces en \([a,b]\) entonces \(f'\) tiene almenos dos
+      raíces en \([a,b]\).
+      </li>
+      <li>
+        Generaliza el ejercicio anterior: si \(f\) tiene \(r\) raíces en
+      \([a,b]\) entonces \(f'\) tiene almenos
+      \(r-1\) raíces en \([a,b]\).
+      </li>
+      </ol>
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Un polinomio \(p(x)\), tiene una raíz de grado \(m\) en \(x_0\) si podemos
+      factorizar el polinomio como \(p(x)=(x-x_0)^mq(x)\), donde \(q(x)\) es un
+      polinomio  con \(q(x_0)\ne 0\). Demuestra que si \(p(x)\) tiene una raíz de
+      grado \(m\) en \(x_0\) entonces su derivada  tiene una raíz de grado
+      \(m-1\) en \(x_0\).
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Criterio de la primera derivada para extremos locales.
+
+      Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\). Supongamos que \(f\) es
+      diferenciable en \(I \subset [a,b]\), una vecindad agujereada de \(c \in [a,b]\).
+      Demuestra:
+      <ol>
+      <li>
+        Si \(f'(x)>0\) para \(x< c\), \(x\in I\) y \(f'(x) < 0\) para \(x >c\), \(x\in I\)
+      entonces \(f\) tiene un máximo local en \(c\).
+      </li>
+      <li>
+        Si \(f'(x)< 0\) para \(x< c\), \(x\in I\) y \(f'(x)>0\) para \(x>c\), \(x\in I\)
+      entonces \(f\) tiene un mínimo local  en \(c\).
+      </li>
+      </ol>
+
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Criterio de la segunda derivada para extremos locales.
+
+      Supongamos que \(f\) está definida en una vecindad de \(c\) y \(f''\) existe
+      y es continua.
+
+      <ol>
+      <li>
+        Si \(f'(c)=0\) y \(f''(c)>0\) entonces \(f\) tiene un mínimo local en \(c\).
+      </li>
+      <li>
+        Si \(f'(c)=0\) y \(f''(c)< 0\) entonces \(f\) tiene un máximo local en \(c\).
+      </li>
+      </ol>
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        Considera \(f(x)=ax^2+bx+c\), \(a,b,c\in \mathbb{R}\), \(a\ne 0\).
+      <ol>
+      <li>
+        Si \(a>0\), \(f\) alcanza su un máximo absoluto en \(\mathbb{R}\) en el punto
+       \(x=-\frac{b}{2a}\). Da una fórmula para dicho máximo.
+      </li>
+      <li>
+        Si \(a< 0\), \(f\) alcanza su un mínimo absoluto en \(\mathbb{R}\) en el punto
+      \(x= -\frac{b}{2a}\). Da una fórmula para dicho mínimo.
+      </li>
+      </ol>
+      </div>
+
 
     </div>
-
-
-
-
-  </body>
+</body>
 
   </html>
 
