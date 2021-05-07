@@ -1,0 +1,391 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 16 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 16 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Concavidad, optimización, trazado de curvas  </h1>
+
+
+<div class="ejercicio-box">
+<h2 class="number-title"> Ejercicio </h2>
+Criterio de la primera derivada para concavidad.
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+diferenciable en \((a,b)\).
+
+<ol>
+
+<li>
+  Si \(f'\) es monótona creciente en \((a,b)\) entonces \(f\) es
+  cóncava hacia arriba en \([a,b]\).
+</li>
+<li>
+  Si \(f'\) es monótona decreciente en \((a,b)\) entonces \(f\) es
+  cóncava hacia abajo en \([a.b]\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Criterio de la segunda derivada para concavidad.
+
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+diferenciable en \((a,b)\) y tal que
+\(f''\) existe  en \((a,b)\).
+
+<ol>
+
+<li>
+  Si \(f'' >0\)  en \((a,b)\) entonces \(f\) es cóncava hacia arriba en \([a,b]\).
+</li>
+<li>
+  Si \(f''< 0\) en \((a,b)\) entonces \(f\) es cóncava hacia abajo en \([a.b]\).
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:RectaSoporteConcavasArriba"> Ejercicio </h2>
+
+
+Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable
+en \((a,b)\) y tal que \(f'\) es  o bien monótona creciente o
+monótona decreciente en \((a,b)\).
+
+Sea \((x,_0, f(x_0))\), \(x_0 \in (a,b)\) un punto fijo y arbitrario.
+Demuestra que la recta tangente a la gráfica de \(f\) en \((x_, f(x_0))\)
+es una recta soporte para la gráfica.
+</div>
+
+<div class="nota-box">
+<h2 class="number-title"> Optimización </h2>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sean \(a,b \geq 0\) tales que \(a+b=20\). Maximiza y minimiza las
+  siguientes cantidades.
+<ol>
+<li>
+  \(ab\),
+</li>
+<li>
+  \(a^2+b^2\),
+</li>
+<li>
+  \(a+\sqrt{b}\),
+</li>
+<li>
+  \(\sqrt{b}+\sqrt{a}\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Fija \(S>0\). Demuestra que, entre todas las posibles elecciones de
+  números positivos \(x,y\) tal que
+\(x+y=S\), el producto se maximiza cuando \(x=y=\frac{S}{2}\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<ol>
+<li>
+  Fija \(P>0\). Demuestra que, entre todas las posibles elecciones de
+  números positivos \(x,y\) tal que
+\(xy=P\), la suma se minimiza cuando \(x=y=\sqrt{P}\).
+</li>
+<li>
+  Usa el ejercicio anterior para dar otra demostración de la
+  desigualdad aritmético-geométrica. Es decir, para \(a,b>0\),
+  \(\sqrt{ab} \leq \frac{a+b}{2}\).
+
+Sugerencia: toma \(P=ab\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+   Determina las dimensiones que debe tener una caja rectangular cerrada,
+   con tapas cuadradas, que minimicen el costo de fabricación si el
+   material de los costados cuesta el cuádruple del de las tapas y si el
+   volumen debe ser 1\(m^3\).
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Este ejercicio generaliza la desigualdad de Bernoulli
+  (<a href="./S3.html#Ejer:DesigualdadBernoulli">Ejercicio 3.16</a> )
+  pasando de \(n\) natural a racional.
+
+
+Sea \(m\in \mathbb{Q}\) una constante  con \(m > 1\) y considera
+\(f(x)=(1+x)^m-mx\) con
+\(x\in [-1,\infty)\).
+<ol>
+<li>
+  Encuentra el mínimo absoluto de \(f\) en \([-1,\infty)\).
+  Sugerencia: encuentra los intervalos de crecimiento y puntos críticos.
+</li>
+<li>
+  Con ayuda del inciso anterior demuestra la desigualdad de Bernoulli:
+  dado \(m\in \mathbb{Q}\), \(m>1\):
+\[
+(1+x)^m \geq 1+mx, \quad \forall x\geq -1,
+\]
+con igualdad si y sólo si \(x=0\).
+</li>
+<li>
+  Con ejemplos muestra que la desigualdad de Bernoulli no se
+  vale si tomamos \(m\in (0,1)\).
+</li>
+</ol>
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Ejercicio </h2>
+En economia, eficiencia tecnológica se define como el cociente
+\[
+\frac{\textrm{unidades de producto}}{\textrm{unidades de insumo}}
+\]
+
+Para formalizar esta definición supongamos que \(x\) representa la cantidad
+de cierto insumo (por ejemplo tiempo o materia prima) y \(Q(x)\) representa
+la cantidad de producto generado por \(x\). Entonces la eficiencia de \(Q\) en
+el intervalo \([x_1,x_2]\) es
+\[
+\frac{Q(x_2)-Q(x_2)}{x_2-x_1}
+\]
+
+Por ejemplo, si dos intervalos \([x_1,x_2]\), \([x_3,x_4]\) satisfacen
+\(x_2-x_1=x_4-x_3\), podemos comparar \(Q\) en ambos intervalos y
+decir que  \(Q\) es mas eficiente en \([x_1,x_2]\) que en \([x_3,x_4]\) si
+\[
+\frac{Q(x_4)-Q(x_3)}{x_4-x_3} \leq \frac{Q(x_2)-Q(x_1)}{x_2-x_1}
+\Leftrightarrow Q(x_4)-Q(x_3) \leq Q(x_2)-Q(x_1).
+\]
+
+El máximo punto de eficiencia de \(Q:[a,b]\to \mathbb{R}\) se define como
+\[
+\sup_{a\leq s< t \leq b} \frac{Q(t)-Q(s)}{t-s}
+\]
+si es que éste supremo existe.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:EjemploEficiencia"> Ejercicio </h2>
+
+
+  Un estudio de productividad efectuado en una fábrica, indica que un
+  trabajador  promedio que inicia su labor a las 8.00 am habrá producido
+  \(Q(t)=-t^3+9t^2+12t\) unidades de  producto, \(t\) horas des pués del inicio.
+  Si partimos el intervalo de trabajo en 8 partes iguales, encuentra el
+  intervalo del día en el que el trabajador es más eficiente.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Supon que \(Q:[a,b] \to \mathbb{R}\) modela la cantidad de producto generado
+  utilizando \(x\) cantidades de insumo y que \(Q'\) existe y es continua en \([a,b]\).
+
+<ol>
+
+<li> Usando el T.V.M. demuestra que
+\[
+\sup_{a\leq s< t \leq b} \frac{Q(t)-Q(s)}{t-s}= \max_{x\in [a,b]}\{ Q'(x)\}
+\]
+</li>
+<li>
+  Regresando al <a href="#Ejer:EjemploEficiencia">Ejercicio 17.11</a>, ¿ en
+  qué momento de la ma\~nana es el trabajador más eficiente ?
+</li>
+<li>
+  El máximo punto de eficiencia también es conocido como el  \emph{punto
+    de beneficios decrecientes}. Proporciona un argumento que
+justifiqué los dos nombres dados a ese punto.
+</li>
+
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Un anuncio publicitario debe de tener 50 \(m^2\) de material impreso con 4
+  \(cm\) de margen arriba y abajo y con 2 \(cm\) de margen a los lados.
+  ¿ Qué dimensiones debe de tener el anuncio que requiera
+  la menor cantida de papel?
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sean \(a_1,\dots a_n \in \mathbb{R}\) fijos y arbitrarios. Demuestra que la suma
+\[
+\sum_{k=1}^n(a_k-x)^2
+\]
+se minimiza cuando \(x\) es  el promedio de las \(a_k\)'s.
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Considera una esfera de radio \(R>0\). Calcula, en términos de \(R\), el
+  radio \(r\) y la altura \(h\), del cono ciruclar recto de máximo volumen que
+  puede ser inscrito dentro de ésta esfera.
+</div>
+
+
+
+
+
+
+<div class="nota-box">
+<h2 class="number-title"> Trazado de curvas </h2>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Para las funcones que se presentan, encuentra:
+<ul>
+<li>
+  Dominio.
+</li>
+<li>
+  Coordenadas de puntos críticos, máximos y mínimos locales.
+</li>
+<li>
+  Intervalos de crecimiento y decrecimiento.
+</li>
+<li>
+  Intervalos de concavidad hacia arriba y hacia abajo.
+</li>
+<li>
+  Coordenadas de puntos de inflexión.
+</li>
+<li>
+  Bosqueja la gráfica.
+</li>
+</ul>
+
+<ol>
+<li>
+  \(f(x)=x^3-4x\).
+</li>
+<li>
+  \(f(x)=e^{x^3-4x}\).
+</li>
+<li>
+  \(f(x)=\sqrt{x}+\frac{1}{\sqrt{x}}\).
+</li>
+<li>
+  \(f(x)=\left( \frac{x-1}{x} \right)^2\).
+</li>
+<li>
+  \(f(x)=\frac{3}{2}x^{2/3}-\frac{3}{5}x^{5/3}\).
+</li>
+<li>
+  \(f(x)=\sen(x)+\cos(x)\).
+</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que la función \(f(x)=x-\sen(x)\), \(x\in \mathbb{R}\), es
+estrictamente creciente en \(\mathbb{R}\) y tienen una infinidad de puntos de
+inflexión.
+</div>
+
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
