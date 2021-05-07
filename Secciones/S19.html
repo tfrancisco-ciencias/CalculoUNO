@@ -1,0 +1,279 @@
+<! DOCTYPE html>
+  <html lang="es">
+
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 18 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 18 cardCounter ;
+      }
+    </style>
+
+  </head>
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+      <p align="right" >  <button onclick="myFunction()" class="darklightButton">Claro/Obscuro </button> </p>
+    </nav>
+
+    <h1 class="calculo-title"> Cálculo UNO</h1>
+
+  </header>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<body class="flexbox card fondo-body">
+
+    <div class="flexbox">
+
+      <h1 class="number-title "> Invertibilidad de funciones   </h1>
+
+
+<div class="info-box">
+  <h2 class="number-title"> Introducción </h2>
+</div>
+
+<div class="nota-box">
+<h2 class="number-title"> El Teorema del Valor Intermedio </h2>
+</div>
+
+
+
+<div class="teorema-box">
+<h2 class="number-title"> Teorema del valor intermedio </h2>
+Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
+Si \(x_1< x_2\) son dos puntos en \([a,b]\), tales que
+\(f(x_1) \ne f(x_2)\) entonces todo valor entre \(f(x_1)\) y \(f(x_2)\)
+es alcanzado \(f\), en el intervalo \((x_1,x_2)\). Es decir
+\[
+\forall y, \textrm{entre \(f(x_1)\) y \(f(x_2)\), existe \(x \in (x_1,x_2)\),
+  tal que \(f(x)=y\)}
+\]
+
+
+Sugerencia: si \(f(x_1)< f(x_2)\) y \(y\in (f(x_1),f(x_2))\), considera
+\(g(x)=f(x)-y\). Aplica el Teorema de Bolzano a \(g\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  (Existencia de raíces \(n\)-ésimas)
+  Si \(n\in \mathbb{Z}^+\) y si \(a>0\), existe un y sólo un
+  \(b \in \mathbb{R^+}\) que satisface \(b^n=a\).
+
+Sugerencia:
+Para la existencia, aplica el teorema del valor intermedio y el hecho de
+que \(\lim_{x\to +\infty} x^n=+\infty\), para todo \(n\).
+
+Para la unicidad usa <a href="./S1.html#Eqn:Resolvent"> Ejercicio 1.18</a>.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:SupraContinuaMonotona"> Ejercicio </h2>
+
+  Sea \(f:[a,b]\to \mathbb{R}\) una función continua  en \([a,b]\). Demuestra:
+<ol>
+<li>
+   Si \(f\) es monótona creciete  en \([a,b]\) entonces
+\[
+\{ f(x) :x\in [a,b]\}=[f(a), f(b)]
+\]
+</li>
+<li>
+  Si \(f\) es monótona decreciete  en \([a,b]\) entonces
+\[
+\{ f(x) :x\in [a,b]\}=[f(b), f(a)]
+\]
+</li>
+</ol>
+
+Sugerencia: usa el Teorema del Valor Intermedio.
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f: D\to \mathbb{R}\)  y \(E \subseteq \mathbb{R}\).
+Decimos que \(f\) es sobreyectiva a \(E\) si, para todo \(y
+\in E\) existe al menos un \(x\in D\) tal que \(f(x)=y\).
+
+Por ejemplo, por el ejercicio anterior, si \(f:[a,b] \to \mathbb{R}\)
+es monótona creciente entonces \(f\) es sobreyectiva a \([f(a),f(b)]\).
+Nota que en este caso podemos escribir \(f:[a,b] \to [f(a),f(b)]\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:InversaContinuaMonotona"> Ejercicio </h2>
+
+  Sea \(f:[a,b]\to \mathbb{R}\) una función continua y estrictamente
+  creciente en \([a,b]\). Recuerda que por el
+  <a href="#Ejer:SupraContinuaMonotona">Ejercicio 19.5</a>
+ podemos considerar a la misma función con contradominio
+ \(f:[a,b]\to [f(a),f(b)]\).
+
+Demuestra que existe \(\tilde{f}:[f(a),f(b)] \to [a,b]\) tal que
+\(\tilde{f}(f(x))=x\) para todo \(x\in [a,b]\) y
+\(f(\tilde{f}(y))=y\) para todo \(y\in [f(a),f(b)]\).
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Sea \(f:D \to D'\) una función. Decimos que \(f\) es invertible
+si existe \(\tilde{f}: D' \to D\) que satisface
+<ol>
+<li>
+  \(\tilde{f}(f(x))=x\), para todo \(x\in D\);
+</li>
+<li>
+  \(f(\tilde{f}(y))=y\), para todo \(y\in D'\).
+</li>
+</ol>
+
+Por ejemplo, el <a href="#Ejer:InversaContinuaMonotona">Ejercicio 19.7</a>
+dice que toda función continua y estrictamente creciente tiene una inversa.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f:[a,b]\to \mathbb{R}\) una función continua y estrictamente creciente.
+  Sea \(\tilde{f}:[f(a),f(b)] \to \mathbb{R}\) su inversa
+  (ver <a ref="#Ejer:InversaContinuaMonotona">Ejercicio</a>). Demuestra:
+<ol>
+<li>
+  \(\tilde{f}\) es estrictamente creciente.
+
+Sugerencia: Sean \(y_1,y_2 \in [f(a),f(b)]\) con  \(y_1 < y_2\).
+Toma \(x_1,x_2 \in [a,b]\) con \(f(x_i)=y_i\), \(i=1,2\).
+Por contradicción prueba que \(x_1 < x_2\).
+</li>
+<li> \(\tilde{f}\) es continua en \([f(a),f(b)]\).
+
+Sugerencia: Sean \(y_0 \in [f(a),f(b)]\) y \(\varepsilon>0\).
+Para encontrar la \(\delta >0\) de la continuidad considera
+\(\min\{ f(x_0)-f(x_0-\varepsilon),F( x_0+\varepsilon)-f(x_0) \}\),
+ donde \(x_0\in [a,b]\) es el único punto que satisface \(f(x_0)=y_0\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:GraficasInversas"> Ejercicio </h2>
+
+  Sea \(f:D\to D'\) una función invertible, con inversa
+  \(\tilde{f}:D' \to D\). Demuestra
+\[
+(x,y)\in \textrm{Gráfica}(f) \Leftrightarrow (y,x)\in
+\textrm{Gráfica}(\tilde{f}).
+\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(h:[a,b] \to \mathbb{R}\) una función.
+<ol>
+<li>
+  Demuestra que \(h\) es estrictamente creciente si y sólo si
+  toda recta secante a \(\textrm{Gráfica}(h)\) tiene pendiente positiva.
+</li>
+<li>
+  Supon que \(h\) es continua y estrictamente creciente en \([a,b]\).
+  Usa el inciso anteror y el <a href="#Ejer:GraficasInversas">Ejercicio 19.10</a>
+  para probar que la función inversa de \(h\) también
+  es estrictamente creciente.
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(h:[a,b] \to \mathbb{R}\) una función monótona creciente.
+  Sea \(x_0\in (a,b)\) un punto fijo y arbitrario.
+  Demuestra que ambos límites laterales \(\lim_{x\to x_0^+}f(x)\)
+  y \(\lim_{x\to x_0^-}f(x)\) existen.
+
+Sugerencia: Demuestra
+\[
+\lim_{x\to x_0^-}f(x)=\sup\{ f(x): x< x_0 \}, \quad \lim_{x\to x_0^+}f(x)
+= \inf\{ f(x): x_0 < x\}
+\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Considera \(f:\mathbb{R}\to \mathbb{R}\) dada por \(f(x)=mx+b\), \(m\ne 0\).
+  Demuestra que existe
+\(\tilde{f}:\mathbb{R} \to \mathbb{R}\) la función inversa de \(f\).
+
+Sugerencia: despeja \(x\) en \(y=mx+b\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f:\mathbb{R}\to \mathbb{R}\) una función invertible.
+  Define la función \(h(x)=mf(x)+b\), con \(m\ne 0\).
+  Demuestra que \(h\) es invertible.
+
+</div>
+
+
+
+
+    </div>
+</body>
+
+  </html>
+
+  <!--     //////////////////////////          --->
