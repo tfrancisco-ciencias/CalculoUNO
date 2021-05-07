@@ -70,199 +70,353 @@
 
       <h1 class="number-title "> Polinomios de Taylor  </h1>
 
+      <div class="info-box">
+        <h2 class="number-title"> Introducción </h2>
+      </div>
 
-      \begin{notacion}
-      Para una funci\'on $f$ y un natural $k \geq 1$, $f^{(k)}(a)$ denota la $k$-\'esima derivada de la funci\'on en $a$ (si es que existe). Por convenci\'on tenenmos $f^{(0)}(a)=f(a)$.
-      \end{notacion}
+<div class="nota-box">
+  <h2 class="number-title"> Notación </h2>
+Para una función \(f\) y un natural \(k \geq 1\), \(f^{(k)}(a)\)
+denota la \(k\)-ésima derivada de la función en \(a\) (si es que existe).
+Por convención tenenmos \(f^{(0)}(a)=f(a)\).
+</div>
 
-      \item Sabemos que la aproximaci\'on lineal
-      de $\cos(x)$ en $x=0$ es simplemente la recta a altura 1, la cual no aproxima muy bien. Este ejercicio muestra que se puede mejorar la aproximaci\'on si tomamos un polinomio de grado 2 en vez de una recta (que es un polinomio de grado 1).
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sabemos que la aproximación lineal
+de \(\cos(x)\) en \(x=0\) es simplemente la recta a altura 1, la cual no
+aproxima muy bien. Este ejercicio muestra que se puede mejorar la aproximación
+si tomamos un polinomio de grado 2 en vez de una recta (que es un
+polinomio de grado 1).
 
-      Para $f(x)=\cos(x)$ y el polinomio de grado 2, $p(x)=A+Bx+Cx^2$, encutra $A,B$ y $C$ tales que
-      \begin{eqnarray*}
-      f^{(0)}(0)=p^{(0)}(0), \quad f^{(1)}(0)=p^{(1)}(0), \quad f^{(2)}(0)=p^{(2)}(0).
-      \end{eqnarray*}
+Para \(f(x)=\cos(x)\) y el polinomio de grado 2, \(p(x)=A+Bx+Cx^2\),
+encutra \(A,B\) y \(C\) tales que
+\begin{eqnarray*}
+f^{(0)}(0)=p^{(0)}(0), \quad f^{(1)}(0)=p^{(1)}(0), \quad f^{(2)}(0)=p^{(2)}(0).
+\end{eqnarray*}
 
-      Bosqueja la fr\'afica de $\cos$ y el polinomio encontrado, cerca de una vecindad de cero.
+Bosqueja la fráfica de \(\cos\) y el polinomio encontrado,
+cerca de una vecindad de cero.
 
-      \item En este ejercicio se encuentra una aproximaci\'on, mediante un polinomio de grdo 2,  a la  funci\'on $f(x)=\sqrt{3+x}$, pero cerca del punto $x=1$. Encuentra $p$, un polinomio de grado $2$, tal que
+</div>
 
-      \begin{eqnarray*}
-      f^{(0)}(1)=p^{(0)}(1), \quad f^{(1)}(1)=p^{(1)}(1), \quad f^{(2)}(1)=p^{(2)}(1).
-      \end{eqnarray*}
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  En este ejercicio se encuentra una aproximación, mediante
+  un polinomio de grdo 2,  a la  función \(f(x)=\sqrt{3+x}\),
+  pero cerca del punto \(x=1\). Encuentra \(p\), un polinomio
+  de grado \(2\), tal que
 
-      Nota que las funciones y derivadas ahora est\'an evaluadas en $x=1$.
+\begin{eqnarray*}
+f^{(0)}(1)=p^{(0)}(1), \quad f^{(1)}(1)=p^{(1)}(1), \quad f^{(2)}(1)=p^{(2)}(1).
+\end{eqnarray*}
 
-      Nota: es mejor proponer $p$ de la forma $p(x)=A+B(x-1)+C(x-1)^2$ y encontrar $A,B$ y $C$.
+Nota que las funciones y derivadas ahora están evaluadas en \(x=1\).
 
-
-
-      \item\label{Ejer:TaylorDef} Supon que  $f$ es una funci\'on definida en una vecindad de $a$ y tal que admite $n$-derivadas en $a$. Demuestra que el polinomio
-      $$
-      \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
-      $$
-      satisface
-      \begin{eqnarray*}
-      f^{(k)}(a)=p^{(k)}(a), \quad k=0,1,\dots, n
-      \end{eqnarray*}
-
-
-      \begin{definicion}
-      El polinomio del ejercicio \ref{Ejer:TaylorDef} se conoce como el $n$-\'esimo polinomio de Taylor de f alrededor de $a$ y se denota
-      $$
-      T_nf(x;a)= \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
-      $$
-      Nota: si es claro alrededor de cual punto se est\'a tomando el polinomio de Taylor se omite la $a$ y se denota
-      $$
-      T_nf(x)= \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
-      $$
-      \end{definicion}
-
-
-      \item Demuestra que el polinomio $n$\'esimo de Taylot de la exponencial, alrededor de $0$ es
-      $$\sum_{k=0}^n\frac{1}{k!}x^k$$
-      mientras que alrededor del $1$ es
-      $$
-      \sum_{k=0}^n \frac{e}{k!}(x-1)^k
-      $$
-
-      \item Da un ejemplo de una funci\'on $f$, tal que $T_nf $ es un polinomio de grado menor estricto que $n$. \textquestiondown Qu\'e condici\'on
-      hay que pedir para que $T_nf$ tenga grado $n$ ?
-
-      \item\label{Ejer:TaylorSenoCoseno} Demuestra las siguientes f\'ormulas para los polinomios de Taylor alrededor del $0$ de las funciones seno y coseno $(n=0,1,\dots$).
-      \begin{enumerate}
-      \item $T_{2n+1}\sen(x)=\sum_{k=0}^n \frac{(-1)^k}{(2k+1)!}x^{2k}$.
-      \item $T_{2n}\cos(x)=\sum_{k=0}^n\frac{(-1)^k}{(2k)!}x^{2k}$.
-      \end{enumerate}
-
-      \item Es interesante notar que seno es una funci\'on impar y que cualquier polonomio de Taylor de seno es un polinomio impar.  Similarmente, coseno es una funci\'on par y  cualquier polinomio de Taylor de coseno es par tambi\'en. Este ejercicio  muestra que esto no es coincidencia.
-
-      Sea $f$ una funci\'on definida en una vecindad de $0$ y tal que admite $n$ derivadas en $0$.
-      \begin{enumerate}
-      \item Demuestra que si $f$ es una funci\'on impar entonces todas las potencias de $T_nf$ son impares (por lo tanto $T_nf$ es una funci\'on impar).
-
-      \item Demuestra que si $f$ es una funci\'on par entonces todas las potencias de $T_nf$ son pares (por lo tanto $T_nf$ es una funci\'on par).
-      \end{enumerate}
-
-      \item Sea $f$ una funci\'on definida en una vecinda de $a$ tal que admite $n$ derivadas en $a$.  Define $g(x)=f(x+a)$, para $x$ en una vecindad de $0$. Demuestra que $T_n f(x;a)=T_ng(x-a;0)$.
+Nota: es mejor proponer \(p\) de la forma \(p(x)=A+B(x-1)+C(x-1)^2\)
+y encontrar \(A,B\) y \(C\).
+</div>
 
 
-      \item Demuestra las siguientes propiedades del polinomio de Taylor. Se supone que tanto  $f$ como $g$ son funciones definidas en una vecindad de $a$, ambas admiten $n$ derivadas en $a$ y se toman los polinomios de Taylor alrededor de $a$.
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TaylorDef"> Ejercicio </h2>
 
-      \begin{enumerate}
-      \item $T_n(\alpha f + g)= \alpha T_nf + T_n g$.
-      \item $(T_n f)'= T_{n-1}f'$.
-      \item Si $g(x)=f(cx)$, para una constante $c$,  entonces $T_ng(x)=T_nf(cx)$.
-      \end{enumerate}
-
-      \item Calculas los polinomios de Taylor, alrededor del $0$ de las funciones:
-      \begin{enumerate}
-      \item $f(x)=e^{2x+1}$.
-      \item $f(x)=\sen(3x)$.
-      \item $f(x)=\sen(x) + \cos(x)$.
-      \item $f(x)=\sen(x) \cos(x)$.
-      \item $f(x)=\cosh(x)$.
-      \item $f(x)=\senh(x)$.
-      \end{enumerate}
-
-      \item\label{Ejer:TaylorIndirect} Este ejercicio provee una manera indirecta de encontrar polinomios de Taylor.
-
-      Sea $f$ una funci\'on definida en $I$, una  vecindad de $0$ y tal que admite $n$ derivadas en $I$.
+  Supon que  \(f\) es una función definida en una vecindad de \(a\)
+  y tal que admite \(n\)-derivadas en \(a\). Demuestra que el polinomio
+\[
+\sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
+\]
+satisface
+\begin{eqnarray*}
+f^{(k)}(a)=p^{(k)}(a), \quad k=0,1,\dots, n
+\end{eqnarray*}
+</div>
 
 
-      Supon que $p$ es un polinomio  de grado menor o igual a $n$,  $g$ una funci\'on definida en $I$ que admite $n$ derivadas en $I$ y tal que:
-      $$
-      f(x)=p(x)+x^n g(x) \quad \textrm{y} \quad \lim_{x\to 0}g(x)=0 .
-      $$
-      Demuestra que $T_nf=p$.
-
-      Sugerencia: Inicia con $n=2$. Define $h(x):=f(x)-p(x)$ y prueba que $h^{(k)}(0)=0$, $k=0,1,2$. Luego generaliza para cualquier  $n$.
-
-      \item
-      \begin{enumerate}
-      \item Demuestra la identidad
-      $$
-      \frac{1}{1-x}= 1+x+\cdots + x^n - \frac{x^{n+1}}{1-x}
-      $$
-      v\'alida para $|x|<1$.
-      \item Usa el inciso (a) y el ejercicio \ref{Ejer:TaylorIndirect} para demostrar
-      $$
-      T_n \left( \frac{1}{1-x} \right)= 1+x+\cdots + x^n
-      $$
-
-      \item Usa el inciso (a) y el ejercicio \ref{Ejer:TaylorIndirect} para demostrar
-      $$
-      T_{2n}\left( \frac{1}{1+x^2} \right)=\sum_{k=0}^n  \frac{(-1)^k}{2k+1}x^{2k+1}
-      $$
-      \end{enumerate}
-
-      \item\label{Ejer:TeoTaylor} [Teorema de Taylor] Sea $f$ una funci\'on definida en $I$, una vecindad de $a$ y tal que admite $n+1$ derivadas en $I$. Entonces para todo $x$ en $I$
-
-      $$
-      f(x)=T_nf(x;a) + E_n(x-a)
-      $$
-      donde
-      \begin{eqnarray*}
-      \lim_{x\to a}\frac{E_n(x-a)}{(x-a)^n}=0.
-      \end{eqnarray*}
-
-      Adem\'as, existe $c$ entre $x$ y $a$ tal que $E_n(x-a)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$.
-
-      Sugerencia: Inicia con $n=2$.
-
-      Para la primera parte define $h(x):=f(x)-T_nf(x;a)$ y $g(x)=(x-a)^{n}$; nota que $h^{(k)}(a)=g^{(k)}(a)=0$, $k=1,2$; usa el Teorema del T.V.M. de Cauchy para probar
-      $$
-      \frac{h(x)}{g(x)}=\frac{h^{(1)}(c_1)}{g^{(1)}(c_1)}=\frac{h^{(2)}(c)}{g^{(2)}(c_2)}
-      $$
-      despu\'es demuestra $\lim_{x\to a}\frac{E_2(x-a)}{(x-a)^2}=\lim_{x\to a}\frac{h^{(2)}(c_2)}{g(c_2)}=0$.
-
-      Para la segunda parte define $h(x):=f(x)-T_nf(x;a)$ y $g(x)=(x-a)^{n+1}$ y vuleve a usar el T.M.V para probar
-      $$
-      \frac{h(x)}{g(x)}=\frac{h^{(n+1)}(c)}{(n+1)!}
-      $$
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+El polinomio del <a href="#Ejer:TaylorDef">Ejercicio 18.5</a>  se conoce
+como el \(n\)-ésimo polinomio de Taylor de f alrededor de \(a\) y se denota
+\[
+T_nf(x;a)= \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
+\]
+Nota: si es claro alrededor de cual punto se está tomando el
+polinomio de Taylor se omite la \(a\) y se denota
+\[
+T_nf(x)= \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
+\]
+</div>
 
 
-      \item Sea $f$ una funci\'on definida en $I$, un intervalo alrededor de $a$ tal que existen $n+1$ derivadas en $I$. Si la derivada $n+1$ de $f$ satisface $|f^{(n+1)}(x)| \leq M$ para todo $x$ en $I$ entonce el error en el Teorema de Taylor satisface
-      $$
-      |E_n(x-a)| \leq  M \frac{(x-a)^{n+1}}{(n+1)!}
-      $$
-
-      \item\label{Ejer:TaylorErrorSenoCosenoExp} Demuestras las sigueintes cotas para los errores para los polinomios de Taylor, alrededor del $0$, de las funciones exponencial, seno y coseno. Para $x\in \mathbb{R}$:
-
-      \begin{eqnarray*}
-      e^x&=&\sum_{k=0}^n \frac{1}{k!}x^k+E(x), \quad |E(x)| \leq e^x \frac{|x|^n}{n!}, \\
-      \sen(x)&=&\sum_{k=0}^n \frac{(-1)^k}{(2k+1)!}x^{2k+1}+E(x), \quad |E(x)| \leq \frac{|x|^{2n+1}}{(2n+1)!},\\
-      \cos(x)&=&\sum_{k=0}^n \frac{(-1)^k}{(2k)!}x^{2k}+E(x), \quad |E(x)| \leq \frac{|x|^{2n+2}}{(2n+2)!},
-      \end{eqnarray*}
-
-      \item\label{Ejer:SeriesTaylorExpSenoCoseno} Usa el ejercicio \ref{Ejer:LimitePotenciaCocienteFactorial} y \ref{Ejer:TaylorErrorSenoCosenoExp} para demostrar
-      \begin{eqnarray*}
-      e^x&=& \lim_{n\to \infty } \sum_{k=0}^n \frac{1}{k!}x^k ,  \\
-      \sen(x)&=& \lim_{n\to \infty } \sum_{k=0}^n \frac{(-1)^k}{(2k+1)!}x^{2k+1},\\
-      \cos(x)&=&\lim_{n\to \infty} \sum_{k=0}^n \frac{(-1)^k}{(2k)!}x^{2k}.
-      \end{eqnarray*}
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que el polinomio \(n\)ésimo de Taylot de la exponencial,
+  alrededor de \(0\) es
+\[
+\sum_{k=0}^n\frac{1}{k!}x^k
+\]
+mientras que alrededor del \(1\) es
+\[
+\sum_{k=0}^n \frac{e}{k!}(x-1)^k
+\]
+</div>
 
 
-      \subsection*{Series de Taylor}
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Da un ejemplo de una función \(f\), tal que \(T_nf \) es un
+  polinomio de grado menor estricto que \(n\). ¿ Qué condición
+hay que pedir para que \(T_nf\) tenga grado \(n\) ?
+</div>
 
-      \begin{definicion}
-      Dada $(a_n)_{n=0}^\infty$,una sucesi\'on en $\mathbb{R}$, decimos que la sucesi\'on es sumable si el siguiente l\'imite existe
-      $$
-      \lim_{N\to \infty} \sum_{n=0}^N a_n
-      $$
-      Si $S$ denota tal l\'imite escribimos
-      $$
-      S=\sum_{n=0}^\infty a_n
-      $$
-      o decimos que la serie $\sum_{n=0}^\infty a_n$ es convergente.
 
-      Con esta nomenclatura, el ejercicio \ref{Ejer:SeriesTaylorExpSenoCoseno} nos da las series de Taylor de seno, conseno y exponencial, es decir, para $x\in \mathbb{R}$:
-      \begin{eqnarray*}
-      e^x&=&  \sum_{k=0}^\infty\frac{1}{k!}x^k ,  \\
-      \sen(x)&=&   \sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1},\\
-      \cos(x)&=& \sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k}.
-      \end{eqnarray*}
-      \end{definicion}
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TaylorSenoCoseno"> Ejercicio </h2>
+
+  Demuestra las siguientes fórmulas para los polinomios de Taylor
+  alrededor del \(0\) de las funciones seno y coseno \((n=0,1,\dots\)).
+<ol>
+<li>
+  \(T_{2n+1}\sen(x)=\sum_{k=0}^n \frac{(-1)^k}{(2k+1)!}x^{2k}\).
+</li>
+<li>
+  \(T_{2n}\cos(x)=\sum_{k=0}^n\frac{(-1)^k}{(2k)!}x^{2k}\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Es interesante notar que seno es una función impar y que cualquier
+  polonomio de Taylor de seno es un polinomio impar.  Similarmente,
+  coseno es una función par y  cualquier polinomio de Taylor de
+  coseno es par también. Este ejercicio  muestra que esto no es coincidencia.
+
+Sea \(f\) una función definida en una vecindad de \(0\) y tal que
+admite \(n\) derivadas en \(0\).
+<ol>
+<li>
+  Demuestra que si \(f\) es una función impar entonces todas las
+  potencias de \(T_nf\) son impares (por lo tanto \(T_nf\) es una
+  función impar).
+</li>
+
+<li>
+  Demuestra que si \(f\) es una función par entonces todas las
+  potencias de \(T_nf\) son pares (por lo tanto \(T_nf\) es una función par).
+</li>
+</ol>
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f\) una función definida en una vecinda de \(a\) tal
+  que admite \(n\) derivadas en \(a\).  Define \(g(x)=f(x+a)\),
+  para \(x\) en una vecindad de \(0\). Demuestra que \(T_n f(x;a)=T_ng(x-a;0)\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra las siguientes propiedades del polinomio de Taylor.
+  Se supone que tanto  \(f\) como \(g\) son funciones definidas en
+  una vecindad de \(a\), ambas admiten \(n\) derivadas en \(a\) y se toman
+  los polinomios de Taylor alrededor de \(a\).
+
+<ol>
+<li>
+  \(T_n(\alpha f + g)= \alpha T_nf + T_n g\).
+</li>
+<li>
+  \((T_n f)'= T_{n-1}f'\).
+</li>
+<li>
+  Si \(g(x)=f(cx)\), para una constante \(c\),  entonces \(T_ng(x)=T_nf(cx)\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Calculas los polinomios de Taylor, alrededor del \(0\) de las funciones:
+<ol>
+<li>
+  \(f(x)=e^{2x+1}\).
+</li>
+<li>
+  \(f(x)=\sen(3x)\).
+</li>
+<li>
+  \(f(x)=\sen(x) + \cos(x)\).
+</li>
+<li>
+  \(f(x)=\sen(x) \cos(x)\).
+</li>
+<li>
+  \(f(x)=\cosh(x)\).
+</li>
+<li>
+  \(f(x)=\operatorname{senh}(x)\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TaylorIndirect"> Ejercicio </h2>
+ Este ejercicio provee una manera indirecta de encontrar polinomios de Taylor.
+
+Sea \(f\) una función definida en \(I\), una  vecindad de \(0\)
+y tal que admite \(n\) derivadas en \(I\).
+
+
+Supon que \(p\) es un polinomio  de grado menor o igual a \(n\),
+\(g\) una función definida en \(I\) que admite \(n\) derivadas en \(I\)
+y tal que:
+\[
+f(x)=p(x)+x^n g(x) \quad \textrm{y} \quad \lim_{x\to 0}g(x)=0 .
+\]
+Demuestra que \(T_nf=p\).
+
+Sugerencia: Inicia con \(n=2\). Define \(h(x):=f(x)-p(x)\) y prueba que
+\(h^{(k)}(0)=0\), \(k=0,1,2\). Luego generaliza para cualquier  \(n\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<ol>
+<li>
+  Demuestra la identidad
+\[
+\frac{1}{1-x}= 1+x+\cdots + x^n - \frac{x^{n+1}}{1-x}
+\]
+válida para \(|x|< 1\).
+
+</li>
+<li>
+ Usa el inciso (1) y el <a href="#Ejer:TaylorIndirect">Ejercicio 18.14</a>
+ para demostrar
+\[
+T_n \left( \frac{1}{1-x} \right)= 1+x+\cdots + x^n
+\]
+</li>
+<li>
+  Usa el inciso (a) y el <a href="#Ejer:TaylorIndirect">Ejercicio 18.14</a>
+  para demostrar
+
+\[
+T_{2n}\left( \frac{1}{1+x^2} \right)=\sum_{k=0}^n  \frac{(-1)^k}{2k+1}x^{2k+1}
+\]
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TeoTaylor"> Ejercicio </h2>
+   [Teorema de Taylor]
+  Sea \(f\) una función definida en \(I\), una vecindad de \(a\)
+  y tal que admite \(n+1\) derivadas en \(I\). Entonces para todo \(x\) en \(I\)
+
+\[
+f(x)=T_nf(x;a) + E_n(x-a)
+\]
+donde
+\begin{eqnarray*}
+\lim_{x\to a}\frac{E_n(x-a)}{(x-a)^n}=0.
+\end{eqnarray*}
+
+Además, existe \(c\) entre \(x\) y \(a\) tal que
+\(E_n(x-a)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\).
+
+Sugerencia: Inicia con \(n=2\).
+
+Para la primera parte define \(h(x):=f(x)-T_nf(x;a)\) y
+\(g(x)=(x-a)^{n}\); nota que \(h^{(k)}(a)=g^{(k)}(a)=0\), \(k=1,2\);
+usa el Teorema del T.V.M. de Cauchy para probar
+\[
+\frac{h(x)}{g(x)}=\frac{h^{(1)}(c_1)}{g^{(1)}(c_1)}
+=\frac{h^{(2)}(c)}{g^{(2)}(c_2)}
+\]
+después demuestra \(\lim_{x\to a}\frac{E_2(x-a)}{(x-a)^2}
+=\lim_{x\to a}\frac{h^{(2)}(c_2)}{g(c_2)}=0\).
+
+Para la segunda parte define \(h(x):=f(x)-T_nf(x;a)\)
+y \(g(x)=(x-a)^{n+1}\) y vuleve a usar el T.M.V para probar
+\[
+\frac{h(x)}{g(x)}=\frac{h^{(n+1)}(c)}{(n+1)!}
+\]
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(f\) una función definida en \(I\), un intervalo alrededor de
+  \(a\) tal que existen \(n+1\) derivadas en \(I\). Si la derivada
+  \(n+1\) de \(f\) satisface \(|f^{(n+1)}(x)| \leq M\) para todo \(x\)
+  en \(I\) entonce el error en el Teorema de Taylor satisface
+\[
+|E_n(x-a)| \leq  M \frac{(x-a)^{n+1}}{(n+1)!}
+\]
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:TaylorErrorSenoCosenoExp"> Ejercicio </h2>
+
+  Demuestras las sigueintes cotas para los errores para
+  los polinomios de Taylor, alrededor del \(0\), de las funciones exponencial,
+  seno y coseno. Para \(x\in \mathbb{R}\):
+
+\begin{eqnarray*}
+e^x&=&\sum_{k=0}^n \frac{1}{k!}x^k+E(x), \quad |E(x)|
+\leq e^x \frac{|x|^n}{n!}, \\
+\sen(x)&=&\sum_{k=0}^n \frac{(-1)^k}{(2k+1)!}x^{2k+1}+E(x), \quad |E(x)|
+\leq \frac{|x|^{2n+1}}{(2n+1)!},\\
+\cos(x)&=&\sum_{k=0}^n \frac{(-1)^k}{(2k)!}x^{2k}+E(x), \quad |E(x)|
+\leq \frac{|x|^{2n+2}}{(2n+2)!},
+\end{eqnarray*}
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:SeriesTaylorExpSenoCoseno"> Ejercicio </h2>
+
+  Usa el <a href="./S7.html#Ejer:LimitePotenciaCocienteFactorial">Ejercicio 7.16</a>  y  el
+  <a href="#Ejer:TaylorErrorSenoCosenoExp">Ejercicio 18.18</a> para demostrar
+\begin{eqnarray*}
+e^x&=& \lim_{n\to \infty } \sum_{k=0}^n \frac{1}{k!}x^k ,  \\
+\sen(x)&=& \lim_{n\to \infty } \sum_{k=0}^n \frac{(-1)^k}{(2k+1)!}x^{2k+1},\\
+\cos(x)&=&\lim_{n\to \infty} \sum_{k=0}^n \frac{(-1)^k}{(2k)!}x^{2k}.
+\end{eqnarray*}
+</div>
+
+<div class="nota-box">
+<h2 class="number-title"> Series de Taylor </h2>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Dada \((a_n)_{n=0}^\infty\),una sucesión en \(\mathbb{R}\), decimos
+que la sucesión es sumable si el siguiente límite existe
+\[
+\lim_{N\to \infty} \sum_{n=0}^N a_n
+\]
+Si \(S\) denota tal límite escribimos
+\[
+S=\sum_{n=0}^\infty a_n
+\]
+o decimos que la serie \(\sum_{n=0}^\infty a_n\) es convergente.
+
+Con esta nomenclatura, el <a href="#Ejer:SeriesTaylorExpSenoCoseno">Ejercicio 18.19</a>
+nos da las series de Taylor de seno, conseno y exponencial,
+es decir, para \(x\in \mathbb{R}\):
+\begin{eqnarray*}
+e^x&=&  \sum_{k=0}^\infty\frac{1}{k!}x^k ,  \\
+\sen(x)&=&   \sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1},\\
+\cos(x)&=& \sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k}.
+\end{eqnarray*}
+</div>
 
 
 
