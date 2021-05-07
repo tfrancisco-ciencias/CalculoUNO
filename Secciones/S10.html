@@ -4,8 +4,11 @@
 
   <head>
     <!-- Following part is mathjax, for latex-->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--<script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+    </script>-->
 
 
     <!-- This part is for jQuery -->
@@ -28,6 +31,9 @@
         }
       };
     </script>
+
+
+
 
     <!-- CSS -->
 
@@ -68,447 +74,309 @@
 
     <div class="flexbox">
 
-      <h1 class="number-title "> Aproximación lineal </h1>
-
-
-<div class="info-box">
-<h2 class="number-title"> Introducción </h2>
-</div>
-
-
-
-
-
-
+      <h1 class="number-title "> Sucesiones  </h1>
 
 
 
 
 <div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
-Sea \(f\) una función definida en una vecindad de \(a\).
-
-Decimos que \(f\) admite una aproximación lineal en \(a\) si existe
-una constante \(m\in
-\mathbb{R}\) y \(V\), una vecindad perforada del cero tal que, para
-\(h\in V\)  se cumple:
-\[
-f(a+h)=f(a)+mh+E_a(h)
-\]
-donde \(E_a\) es una función que satisfce
-\[
-\lim_{h\to 0}\frac{|E_a(h)|}{|h|}=0
-\]
-Notas:
-<ol>
-<li>
-   \(E_a\) se conoce como el error.
-</li>
-<li>
-  El límite que satisface el error se puede interpretar diciendo
-que \(E_a\) se va más rápido a cero que \(h\).
-</li>
-<li>
-A la recta que pasa por el origen, \(L(h)=f(a)+mh\) se le conoce como la aproximación lineal.
-Nota que \(L\) está relacionada con la recta tangente pues ésta última se obtiene
-trasladando la gráfica de \(L\) mediante el vector \((a,f(a))\).
-</li>
-<li>
-  La idea es que si \(f\) admite aproximación lineal entonces
-\[
-f(a+h) \approx f(a)+f'(a)h
-\]
-para \(h\) cercano a \(0\).
-</li>
-</ol>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Supongamos que  \(f\) admite una aproximación lineal en \(a\).
-
-Prueba que podemos escribir
-\[
-f(x)=f(a)+m(x-a)+E_a(x-a)
-\]
-con \(x\) en una vecindad perforada de \(a\).
-
-
-Además
-\[
-\lim_{x\to a}\frac{|E_a(x-a)|}{|x-a|}=0.
-\]
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Prueba que \(f\) admite una aproximación lineal en \(a\) si y sólo si \(f\) es
-diferenciable en \(a\).
-
-En cuyo caso además prueba que  \(m=f'(a)\), donde la \(m\)
-proviene de la aproximación lineal.
-
-<button class="respButton hvr-grow "> Prueba </button>
-<div class="resp-box">
-\(\Rightarrow]\) Notar que, para \(x\ne a\):
-\[
-f(x)=f(a)+m(x-a)+E_a(x-a) \Rightarrow \frac{f(x)-f(a)}{x-a}-m
-= \frac{E_a(x-a)}{x-a}
-\]
-Por lo tanto \(f'(a)=m\).
-
-\(\Leftarrow\) Si \(f\) es diferenciable en \(a\), tomar  \(m=f'(a)\) y
-\[E_a(x-a)=(x-a)\left( \frac{f(x)-f(a)}{x-a} - f'(a)\right)\]
-
-</div>
-
-
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Considera \(f(x)=\sqrt{9+x}\).
-<ol>
-<li>
-  Encuentra la aproximación lineal de \(f\) en \(0\).
-</li>
-<li>
-  Usa la aproximación lineal para estimar \(\sqrt{9.3}\).
-</li>
-<li>
-  Encuentra el intervalo donde la aproximación lineal tiene un error
-de a lo más 0.5.
-</li>
-
-</ol>
-
-<button class="respButton hvr-grow "> Prueba </button>
-<div class="resp-box">
-Inciso 1
-\(f'(x)=\frac{1}{2\sqrt{9+x}}\). Entonces
-\[
-L(h)=f(0)+f'(0)h=3+\frac{h}{6}
-\]
-
-Inciso 2
-
-Notar \(\sqrt{9.3}=f(0.3)\), por lo que
-\[
-\sqrt{9.3}=f(0+0.3)\approx 3+\frac{0.3}{6}=3+0.05=3.05.
-\]
-
-Inciso 3
-Necesitamos resolver
-\[
-|  \sqrt{9+h} - (3+\frac{h}{6}   )  | < 0.5
-\]
-Geométricamente se puede ver que \(3+h/6 \geq \sqrt{9+h}\),
-por lo que debemos resolver
-\[0.5=3+\frac{h}{6}-\sqrt{9+h}\]
-
-Tomamos \(u=\sqrt{9+h}\), por lo que  \(u^2=9+h\) y podemos reescribir
-\begin{eqnarray*}
-0.5=3+\frac{u^2-9}{6} - u \Leftrightarrow  0
-&=& \frac{u^2}{6}- u +3- \frac{3}{2}-0.5 \\
-\Leftrightarrow 0
-&=& \frac{u^2}{6}-u +1
-\end{eqnarray*}
-
-Resoviendo obtenemos dos solcuiones, \(u_1= 3-\sqrt{3}\), \(u_2=3+\sqrt{3}\).
-Entonces
-\[h_1=u_1^2-9=9-6\sqrt{3}+3-9=3-6\sqrt{3} \approx  -7.3 \]
-
-\[h_2=u_2^2-9=9+2\sqrt{3}+3-9=3+6\sqrt{3} \approx   13.9\]
-</div>
-
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Considera \(f(x)=\sqrt{16+x}\).
-<ol>
-<li>
-  Encuentra la aproximación lineal de \(f\) en \(0\).
-</li>
-<li>
-  Usa la aproximación lineal para estimar \(\sqrt{4.2}\).
-</li>
-<li>
-  Encuentra el intervalo donde la aproximación lineal tiene un error
-de a lo más 0.5.
-</li>
-</ol>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Encuentra las aproximaciones lineales en los puntos dados y encuentra
-las aproximaciones requeridas.
-<ol>
-<li>
-  Para \(n \in \mathbb{N}\), \(f(x)=(1+x)^n\) en \(0\). Aproximar
-\((1.3)^3, (1+\frac{1}{100})^{100}\).
-</li>
-<li>
-  Para \(n\in \mathbb{N}\), \(f(x)=\frac{1}{(1+x)^n}\) en \(0\).
-Aproximar \(\frac{1}{(1.3)^3}, \frac{1}{(1+\frac{1}{100})^{100}}\)
-</li>
-</ol>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Prueba las aproximaciones dadas cerca del cero. Es decir  encuentra
-las aproximaciones lineales de las funciones dadas cerca del cero
-<ol>
-<li>
-   \(\sqrt{1-x}\approx 1-\frac{1}{2}x\).
-</li>
-<li>
-  \(\frac{1}{\sqrt{1-x^2}}\approx 1+\frac{1}{2}x^2\)
+<h2 class="number-title"> Definición </h2>
 <p>
-Sugerencia: usar \(f(u)=\frac{1}{\sqrt{1-u}}\) y tomar \(u=x^2\).
+Una sucesión de números reales es simplemente una función de
+\(\mathbb{N}\) a \(\mathbb{R}\), es decir \(f:\mathbb{N} \to \mathbb{R}\).
 </p>
-</li>
-<li>
-  \(\sqrt{c^2+x^2} \approx c + \frac{1}{2}x^2\)
-  <p>
-  Sugerencia: usar \(f(u)=\sqrt{c^2+u}\) y tomar \(u=x^2\).
+<p>
+Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
+\((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
 </p>
-</li>
-</ol>
 </div>
 
 
 <div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
-
-
-Escribimos \(f(x)=o(g(x))\) cuando \(x\to a\) si
+<h2 class="number-title"> Definición </h2>
+<p>
+Decimos que una sucesión \((a_n)_{n=1}^\infty\) converge al número
+\(L\in \mathbb{R}\), si, para toda \(\varepsilon\) existe \(N\)
+(que depende de \(\varepsilon\)), tal que para toda \(n \geq N\)
 \[
-\lim_{x\to a}\frac{f(x)}{g(x)}=0
+|a_n- L| <\varepsilon.
 \]
-Por ejemplo
+</p>
+<p>
+Denotamos \(L=\lim_{n\to \infty}a_n\).
+</p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que toda sucesión constante es convergente.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:PropiedadesLimitesSucesiones"> Ejercicio </h2>
+  <p>
+  Sean
+  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\), dos sucesiones convergentes.
+  </p>
+  <p>
+  Demuestra
+  </p>
 <ol>
 <li>
-  \(f(x)=o(1)\) cuando \(x\to a\) significa \(\lim_{x\to a}f(x)=0\).
+  \(\lim_{n\to \infty}(a_n+b_n)=\lim_{n\to \infty}a_n + \lim_{n\to \infty}b_n\).
 </li>
 <li>
-  \(f(x)=o(x)\) cuando \(x\to a\) significa \(\lim_{x\to a}\frac{f(x)}{x}=0\).
+  dada \(\alpha\in \mathbb{R}\), fija y arbitraria,
+  \(\lim_{n\to \infty} \alpha a_n=\alpha \lim_{n\to \infty}a_n\).
 </li>
 </ol>
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
+  <p>
+  Considera la sucesión \((a_n)_{n=1}^\infty\) dada por \(a_n=(-1)^n\).
+  </p>
+  <p>
+  Demuestra que \((a_n)_{n=1}^\infty\) no es convergente.
+  </p>
 
-Comprueba
+  <p>
+  Sugerencia: procede por contradción.
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+  Decimos que una sucesión \((a_n)_{n=1}^\infty\) está acotada,
+  si existe \(M>0\) tal que \(|a_n| \leq M\), para toda
+  \(n\in \mathbb{N}\).
+  </p>
 <ol>
 <li>
-  \(\sen(x)=x+o(x)\) cuando \(x\to 0\).
+  Demuestra que si \((a_n)_{n=1}^\infty\) es convergente entonces también
+  está acotada.
 </li>
 <li>
-  \(\cos(x)=1+o(x)\) cuando \(x\to 0\).
-</li>
-<li>
-  Si \(f\) es diferenciable en \(a\),
-\[
-f(a+h)=f(a)+f'(a)h+o(h)
-\]
+  Da un ejemplo de una sucesión que esté acotada pero que no sea convergente.
 </li>
 </ol>
 </div>
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:DerivadaLittleo"> Ejercicio </h2>
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+<p>
+Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona decreciente si
+\[a_1 \geq a_2 \geq a_3 \geq \cdots \geq \cdots \geq a_{n} \geq a_{n+1} \geq \cdots\]
+</p>
 
- Si una función \(f\) satisface satisface
-\[
-f(a+h)=f(a)+mh + o(h)
-\]
-para \(h\) en una vecindad de \(0\), entonces \(f'(a)=m\).
+<p>
+Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
+\[a_1 \leq a_2 \leq a_3 \leq \cdots \leq \cdots \leq a_{n} \leq a_{n+1} \leq \cdots\]
+</p>
+
 </div>
 
 
+
+
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:PropiedadesLittleo"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio </h2>
 
 
- Prueba las siguientes propiedades
+  <p>
+  Sea \((a_n)_{n=1}^\infty\) una sucesión.
+  </p>
 <ol>
 <li>
-  \(o(g(x))+o(g(x))=o(g(x))\) cuando \(x\to a\).
+  si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
+  tal que \(a_n \leq M\) para toda \(n\), entonces
+\(\lim_{n \to \infty}a_n\) existe.
 </li>
 <li>
-  \(o(o(g(x)))=o(g(x))\) cuando \(x\to a\).
-</li>
-<li>
-  para \(c\ne 0\), \(o(cg(x))=o(g(x))\), cuando \(x\to a\).
-</li>
-<li>
-  si \(\lim_{x\to a} F(x)\) existe entonces
-
-\(F(x)o(g(x))=o(g(x))\) cuando \(x\to a\).
-</li>
-<li>
-  \(o(x)^2=o(x)\), cuando \(x\to 0\).
+  si \((a_n)_{n=1}^\infty\) es monótona decreciente  y existe \(m \in \mathbb{R}\)
+  tal que \(m \leq a_n \) para toda \(n\), entonces
+\(\lim_{n \to \infty}a_n\) existe.
 </li>
 </ol>
 
+
+<p>
+Sugerencia: para el caso monótono creciente  usa el
+<a href="./S2.html#Ejer:CaracterizacionSupremo">Ejercicio 2.8</a>
+  para probar que la serie converge a
+\(\sup_{n\in \mathbb{N}}\{ a_n\}\).
+</p>
 </div>
-
-
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
+  <p>
+  Demuestra que \(\lim_{n\to \infty} \frac{1}{n}=0\).
+  </p>
 
-Eleva al cuadrado la aproximación lineal
-\[
-f(a+h)=f(a)+f'(a)h+o(h)
-\]
-usa las propiedades de \(o\)  y el <a href="#Ejer:DerivadaLittleo"> Ejercicio 10.21 </a>
-para dar otra prueba de que \((f^2(a))'=2f(a)f'(a)\).
-
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Multiplica las aproximaciones lineales
-\begin{eqnarray*}
-f(a+h)&=&f(a)+f'(a)h+o(h)\\
-g(a+h)&=&g(a)+g'(a)h+o(h)
-\end{eqnarray*}
-usa el <a href="#Ejer:DerivadaLittleo">Ejercicio 10.21</a> y  las propiedades de \(o\)
-para probar la regla de Leibnitz para la derivada de un producto.
+  <p>
+  Sugerencia: usa el <a href="#Ejer:TeoremaConvergenciaMonotonaSucesiones">Ejercicio anterior</a>
+  y <a href="./S2.html#Ejer:LemaInfimo1/n"> Ejercicio 2.13</a>
+  </p>
 </div>
 
 
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LemaTeoSandiwch"> Ejercicio </h2>
+  <p>
+  Sean \((a_n)_{n=1}^\infty\) una sucesión
+  y \(\alpha \in \mathbb{R}\).
+  </p>
+  <p>
+  Supon que exsite  una sucesión \((z_n)_{n=1}^\infty\)
+  tal que \(\lim_{n\to \infty}z_n=0\) y que satisface \(|a_n-L| \leq |z_n|\),
+  para todo \(n\).
+  </p>
+  <p>
+  Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
+  </p>
+</div>
+
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Ejercicio (Teorema del
+    Sandwich para sucesiones) </h2>
+  <p>
+  Sean
+  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
+  tres sucesiones que satisfacen:
+  </p>
+<ol>
+<li>
+  \(a_n \leq b_n \leq c_n\), para toda \(n\).
+</li>
+<li>
+  los limites \(\lim_{n\to \infty}a_n\)  y \(\lim_{n\to \infty}c_n\)
+  existen y son iguales. Denotamos
+\(L=\lim_{n\to \infty}a_n=\lim_{n\to \infty}c_n\).
+</li>
+</ol>
+<p>
+Demuestra que \(\lim_{n\to \infty}b_n =L\).
+</p>
+<p>
 
-  Si \(C(q)\) representa el costo de producir \(q\) artículos, el costo
-  marginal se define como la derivada
+Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7</a>  para obtener
+\(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
+<a href="#Ejer:PropiedadesLimitesSucesiones">Ejercicio 10.4</a> junto  con el
+<a href="#Ejer:LemaTeoSandiwch">Ejercicio anterior </a>.
+</p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
+  <p>
+  Sean
+  \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
+  </p>
+  <p>
+  Demuestra que
+  \[\lim_{n\to \infty} (a_nb_n)=
+  \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
+  </p>
+  <p>
+  Sugerencia: usa la desigualdad del triángulo para probar  que
+  \(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
+  sucesión \((a_n)_{n=1}^\infty\) y luego usa el
+  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 10.10 </a>.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:ConvergenciaSerieRecorridaDerecha"> Ejercicio </h2>
+  <p>
+  Supongamos que la
+  sucesión \((a_n)_{n=1}^\infty\) es convergente con \(L=\lim_{n\to \infty}a_n\).
+  </p>
+
+<ol>
+<li>
+  Demuestra que
   \[
-  \frac{dC}{dq}
+  L=\lim_{n\to \infty} a_{n+1}.
   \]
-
-
-
-  <ul>
-  <li>
-    La idea es que el promedio describe el pasado y la marginal el futuro.
-  </li>
-  <li>
-    De la misma manera se definen otra marginales (i.e. ingreso marginal).
-  </li>
-
-</ul>
-
-
-Supon que el costo de producir \(q\) artículos está modelado
-por la función \(C(q)\).
-<ol>
+</li>
 <li>
-  Da una interpretación para la cantida \(C(q+1)-C(q)\).
+  Más en general, toma \(p\in \mathbb{N}\) fijo y defne una nueva sucesión
+  \(b_n=a_{n+p}\). Demuestra que la sucesión \((b_n)_{n=1}^\infty\) converge si
+  y sólo si \((a_n)_{n=1}^\infty\) converge y que ambas tienen el mismo limite.
 </li>
-<li> Usando una aproximación lineal prueba
-\[
-C(q+1)-C(q)=C'(q)+E_q(1)
-\]
-</li>
-La ecuación anterior justifica la idea de que el costo marginal es
-<i>el costo de producir el siguiente artículo</i>.
 </ol>
 </div>
-
-
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass">
+    Teorema: Bolzano-Weirestrass  </h2>
 
-Supon que el costo  de producir \(q\) artículos  es \(C(q)=q^2+1\). Calcula
-<ol>
-<li>
-  El costo promedio de cambiar el nivel de producción de \(20\) a
-\(60\) artículos.
-
-</li>
-<li>
-Encuentra la cantidad \(q_0 \in [20,60]\), a partir de la cual
-el costo de producir el artículo \(q_0+1\)
-es mayor o igual a \(80\).
-</li>
-
-</ol>
-
-<button class="respButton hvr-grow "> Prueba </button>
-<div class="resp-box">
-
-
-\[
-\frac{\Delta C}{\Delta q}=\frac{60^2-20^2}{60-20}=80
-\]
-
-Tenemos que resolver
-\[
-\frac{dC(q_0)}{dq} \geq 80
-\]
-es decir \(2q_0=80\), lo cual da \(q_0\geq 40\). Asi pues, a partir del
-objeto \(41\), el costo de producir cada uno
-es mayor al costo promedio.
-
-
+  <p>
+  Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
+  </p>
+  <p>
+  Demuestra que existe \(x_0\in [a,b]\) y
+  \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
+  que \(\lim_{k\to \infty} x_{n_k}=x_0\).
+  </p>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
+   Demuestra \(\lim_{n\to \infty} \frac{n}{2^n}=0\).
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
+  <p>
+   Sea \(t>0\). Demuestra que
+  \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
+  </p>
+
+  <p>
+  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
+  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>p\), factoriza
+  \[
+  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{x^{m-k}}{(k+1)(k+2)\cdots m}
+  \]
+  después, con esta factorización, prueba la desigualdad
+  \[
+  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
+  \]
+  con \(C=\frac{t^k}{k!}\).
+  </p>
+</div>
+
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+<p>
+Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
+todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
+para todos \(n,m \geq N\)
+\[
+|x_n-x_m|<\varepsilon
+\]
+</p>
 </div>
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
 
-Supon que el costo de producir \(q\) objetos es \(C(q)=q^{1/2}+1\). Calcula
-<ol>
-<li>
-  Tomar \(q_1< q_2\). Prueba que el costo promedio de cambiar el
-nivel de producción de \(q_1\) a \(q_2\) artículos es:
+  <h2 class="number-title"> Teorema: Completez de \(\mathbb{R}\) </h2>
 
-\[
-\frac{\Delta C}{\Delta q}=\frac{1}{\sqrt{q_1}+\sqrt{q_2}}
-\]
-</li>
-<li>
-Encuentra el subintervalo  \([q_1',q_2'] \subset [q_1,q_2]\),
-a partir de la cual el costo de producir el artículo \(q+1\),
-para \(q\in [q_1',q_2']\) es mayor o igual a \(\frac{1}{\sqrt{q_1}+\sqrt{q_2}}\).
-</li>
-<li>
-  Probar que costo marginal tiende a \(0\) cuando \(q\to \infty\).
-</li>
-</ol>
+  Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
+  satisface el criterio de Cauchy.
 
 </div>
-
 
 
 

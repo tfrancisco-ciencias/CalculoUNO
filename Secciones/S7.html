@@ -4,11 +4,8 @@
 
   <head>
     <!-- Following part is mathjax, for latex-->
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!--<script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
-    </script>-->
 
 
     <!-- This part is for jQuery -->
@@ -31,9 +28,6 @@
         }
       };
     </script>
-
-
-
 
     <!-- CSS -->
 
@@ -74,313 +68,424 @@
 
     <div class="flexbox">
 
-      <h1 class="number-title "> Sucesiones  </h1>
+      <h1 class="number-title "> La derivada </h1>
 
 
+<div class="info-box">
+<h2 class="number-title"> Introducción </h2>
 
+</div>
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
+
+
 <p>
-Una sucesión de números reales es simplemente una función de
-\(\mathbb{N}\) a \(\mathbb{R}\), es decir \(f:\mathbb{N} \to \mathbb{R}\).
+Supongamos que una cantidad \(y\) depende de otra \(x\). Si \(y\) es una
+función de \(x\) y escribimos \(y=f(x)\), la razón de cambio promedio de
+\(y\) conrespecto a \(x\), en el intevalo \([x_1,x_2]\) se define como
+\begin{equation}\label{Eqn:CocienteDiferencial}
+\frac{\Delta y}{\Delta x} = \frac{f(x_2)-f(x_1)}{x_2-x_2}
+\end{equation}
 </p>
 <p>
-Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
-\((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
+A un cociente de la forma  \eqref{Eqn:Ejem2CocienteDiferencial} se le llama
+cociente diferencial. Los cocientes diferenciales aparecen en múltiples areas.
+</p>
+
+<ul>
+<li>
+  Si \(x:[0,T]\to \mathbb{R}\) denota la posición de una partícula al
+  tiempo \(t\) sobre una recta, la velocidad promedio en el intervalo
+  \([t_1,t_2]\) está dada por
+  \begin{equation}\label{Eqn:Ejem1CocienteDiferencial}
+  \frac{x(t_2)-x(t_1)}{x_2-x_1}
+  \end{equation}
+</li>
+<li>
+  Supon que la función \(Q(t)\) modela la cantidad de objetos producidos al
+  tiempo \(t\). La cantidad promedio de objetos
+  producidos en el intervalo de tiempo \([t_1,t_2]\) está dada por:
+  \begin{equation}\label{Eqn:Ejem2CocienteDiferencial}
+  \frac{Q(t_2)-Q(t_1)}{t_2-t_1}
+  \end{equation}
+</li>
+<li>
+  Si \(f:[a,b]\to \mathbb{R}\) es una función, la pendiente de la secante a
+  la gráfica de \(f\), que une los puntos
+  \((c,f(c))\) y \((d,f(d))\) es
+  \begin{equation}\label{Eqn:Ejem3CocienteDiferencial}
+  \frac{f(d)-f(c)}{d-c}
+  \end{equation}
+  Nota que:
+  \[
+  \frac{f(d)-f(c)}{d-c}=\frac{f(c)-f(d)}{c-d}
+  \]
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Encuentra la velocidad promedio de una partícula cuya
+posición está dada por la función
+\(x(t)=mt+b\).
 </p>
 </div>
 
 
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
+<div class="ejercicio-box">
+  <h2 class="number-title" id ="Ejer:PendientesSecantesParabola"> Ejercicio </h2>
+
 <p>
-Decimos que una sucesión \((a_n)_{n=1}^\infty\) converge al número
-\(L\in \mathbb{R}\), si, para toda \(\varepsilon\) existe \(N\)
-(que depende de \(\varepsilon\)), tal que para toda \(n \geq N\)
+Supón que la
+posición de una partícula está dada por \(x(t)=t^2\), \(t\geq 0\).
+Prueba que la velocidad promedia en el intervalo \([t_1,t_2]\) está dada por
 \[
-|a_n- L| <\varepsilon.
+t_1+t_2
 \]
 </p>
 <p>
-Denotamos \(L=\lim_{n\to \infty}a_n\).
+Sugerencia: usa diferencia de cuadrados.
 </p>
 </div>
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  Demuestra que toda sucesión constante es convergente.
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:PropiedadesLimitesSucesiones"> Ejercicio </h2>
-  <p>
-  Sean
-  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\), dos sucesiones convergentes.
-  </p>
-  <p>
-  Demuestra
-  </p>
-<ol>
-<li>
-  \(\lim_{n\to \infty}(a_n+b_n)=\lim_{n\to \infty}a_n + \lim_{n\to \infty}b_n\).
-</li>
-<li>
-  dada \(\alpha\in \mathbb{R}\), fija y arbitraria,
-  \(\lim_{n\to \infty} \alpha a_n=\alpha \lim_{n\to \infty}a_n\).
-</li>
-</ol>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-  Considera la sucesión \((a_n)_{n=1}^\infty\) dada por \(a_n=(-1)^n\).
-  </p>
-  <p>
-  Demuestra que \((a_n)_{n=1}^\infty\) no es convergente.
-  </p>
-
-  <p>
-  Sugerencia: procede por contradción.
-  </p>
-</div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  <p>
-  Decimos que una sucesión \((a_n)_{n=1}^\infty\) está acotada,
-  si existe \(M>0\) tal que \(|a_n| \leq M\), para toda
-  \(n\in \mathbb{N}\).
-  </p>
-<ol>
-<li>
-  Demuestra que si \((a_n)_{n=1}^\infty\) es convergente entonces también
-  está acotada.
-</li>
-<li>
-  Da un ejemplo de una sucesión que esté acotada pero que no sea convergente.
-</li>
-</ol>
-</div>
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
 <p>
-Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona decreciente si
-\[a_1 \geq a_2 \geq a_3 \geq \cdots \geq \cdots \geq a_{n} \geq a_{n+1} \geq \cdots\]
-</p>
-
-<p>
-Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
-\[a_1 \leq a_2 \leq a_3 \leq \cdots \leq \cdots \leq a_{n} \leq a_{n+1} \leq \cdots\]
-</p>
-
-</div>
-
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio </h2>
-
-
-  <p>
-  Sea \((a_n)_{n=1}^\infty\) una sucesión.
-  </p>
-<ol>
-<li>
-  si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
-  tal que \(a_n \leq M\) para toda \(n\), entonces
-\(\lim_{n \to \infty}a_n\) existe.
-</li>
-<li>
-  si \((a_n)_{n=1}^\infty\) es monótona decreciente  y existe \(m \in \mathbb{R}\)
-  tal que \(m \leq a_n \) para toda \(n\), entonces
-\(\lim_{n \to \infty}a_n\) existe.
-</li>
-</ol>
-
-
-<p>
-Sugerencia: para el caso monótono creciente  usa el
-<a href="./S2.html#Ejer:CaracterizacionSupremo">Ejercicio 2.8</a>
-  para probar que la serie converge a
-\(\sup_{n\in \mathbb{N}}\{ a_n\}\).
-</p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-  Demuestra que \(\lim_{n\to \infty} \frac{1}{n}=0\).
-  </p>
-
-  <p>
-  Sugerencia: usa el <a href="#Ejer:TeoremaConvergenciaMonotonaSucesiones">Ejercicio anterior</a>
-  y <a href="./S2.html#Ejer:LemaInfimo1/n"> Ejercicio 2.13</a>
-  </p>
-</div>
-
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LemaTeoSandiwch"> Ejercicio </h2>
-  <p>
-  Sean \((a_n)_{n=1}^\infty\) una sucesión
-  y \(\alpha \in \mathbb{R}\).
-  </p>
-  <p>
-  Supon que exsite  una sucesión \((z_n)_{n=1}^\infty\)
-  tal que \(\lim_{n\to \infty}z_n=0\) y que satisface \(|a_n-L| \leq |z_n|\),
-  para todo \(n\).
-  </p>
-  <p>
-  Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
-  </p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Ejercicio (Teorema del
-    Sandwich para sucesiones) </h2>
-  <p>
-  Sean
-  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
-  tres sucesiones que satisfacen:
-  </p>
-<ol>
-<li>
-  \(a_n \leq b_n \leq c_n\), para toda \(n\).
-</li>
-<li>
-  los limites \(\lim_{n\to \infty}a_n\)  y \(\lim_{n\to \infty}c_n\)
-  existen y son iguales. Denotamos
-\(L=\lim_{n\to \infty}a_n=\lim_{n\to \infty}c_n\).
-</li>
-</ol>
-<p>
-Demuestra que \(\lim_{n\to \infty}b_n =L\).
-</p>
-<p>
-
-Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7</a>  para obtener
-\(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
-<a href="#Ejer:PropiedadesLimitesSucesiones">Ejercicio 7.4</a> junto  con el
-<a href="#Ejer:LemaTeoSandiwch">Ejercicio anterior </a>.
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
-  <p>
-  Sean
-  \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
-  </p>
-  <p>
-  Demuestra que
-  \[\lim_{n\to \infty} (a_nb_n)=
-  \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
-  </p>
-  <p>
-  Sugerencia: usa la desigualdad del triángulo para probar  que
-  \(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
-  sucesión \((a_n)_{n=1}^\infty\) y luego usa el
-  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 7.10 </a>.
-  </p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:ConvergenciaSerieRecorridaDerecha"> Ejercicio </h2>
-  <p>
-  Supongamos que la
-  sucesión \((a_n)_{n=1}^\infty\) es convergente con \(L=\lim_{n\to \infty}a_n\).
-  </p>
-
-<ol>
-<li>
-  Demuestra que
-  \[
-  L=\lim_{n\to \infty} a_{n+1}.
-  \]
-</li>
-<li>
-  Más en general, toma \(p\in \mathbb{N}\) fijo y defne una nueva sucesión
-  \(b_n=a_{n+p}\). Demuestra que la sucesión \((b_n)_{n=1}^\infty\) converge si
-  y sólo si \((a_n)_{n=1}^\infty\) converge y que ambas tienen el mismo limite.
-</li>
-</ol>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass">
-    Teorema: Bolzano-Weirestrass  </h2>
-
-  <p>
-  Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
-  </p>
-  <p>
-  Demuestra que existe \(x_0\in [a,b]\) y
-  \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
-  que \(\lim_{k\to \infty} x_{n_k}=x_0\).
-  </p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
-   Demuestra \(\lim_{n\to \infty} \frac{n}{2^n}=0\).
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
-  <p>
-   Sea \(t>0\). Demuestra que
-  \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
-  </p>
-
-  <p>
-  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
-  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>p\), factoriza
-  \[
-  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{x^{m-k}}{(k+1)(k+2)\cdots m}
-  \]
-  después, con esta factorización, prueba la desigualdad
-  \[
-  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
-  \]
-  con \(C=\frac{t^k}{k!}\).
-  </p>
-</div>
-
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-<p>
-Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
-todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
-para todos \(n,m \geq N\)
+Asume que, en una fábrica, la cantidad de bienes producidos, al
+tiempo \(t\), está dada por \(\sqrt{t+1}\). Prueba que el promedio de objetos
+producidos en el intervalo  \([t_1,t_2]\) es:
 \[
-|x_n-x_m|<\varepsilon
+\frac{t_2-t_2}{\sqrt{t_1+1}+\sqrt{t_2+1}}.
 \]
 </p>
 </div>
 
 
+
 <div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Considera la función \(f:[-1,1]\to \mathbb{R} \) dada por \(f(x)=|x|\).
+Prueba que las pendientes de las rectas secantes a la gráfica de \(f\) caen
+en el intervalo \([-1,1]\).
+</p>
+</div>
 
-  <h2 class="number-title"> Teorema: Completez de \(\mathbb{R}\) </h2>
 
-  Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
-  satisface el criterio de Cauchy.
-
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Sea \(f:[a,b]\to \mathbb{R}\) una función. Demuestra que la ecuación
+de la recta secante a la gráfica de \(f\) que pasa por los puntos \((c,f(c))\)
+y \((d, f(d))\) está dada por
+\[
+y-f(c)=\left( \frac{f(d)-f(c)}{d-c}\ \right) (x-c)
+\]
+</p>
 </div>
 
 
 
-    </div>
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Considera la función \(f(x)=x^3\). Demuestra que la ecuación de la
+recta secante a la gráfica de \(f\) que pasa por los puntos \((a, a^3)\) y
+\((b,b^3)\) está dada por
+\[
+y=mx-c
+\]
+donde \(m=a^2+ab+b^2 \) y \(c=a(a^2+ab+b^2)\).
+</p>
+</div>
+
+
+
+
+<div class="nota-box">
+<h2 class="number-title"> Funciones diferenciables</h2>
+</div>
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+<p>
+Sea \(f\) una función definida en una vecindad de \(a\). Decimos que \(f\) es
+diferenciable en \(x\) si
+el siguiente límite existe
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+\]
+</p>
+<p>
+Tal límite se llama la derivada de \(f\) en \(a\) y se denota
+\[
+f'(a) \quad \textrm{ó} \quad  \frac{df}{dx}(a)
+\]
+</p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Demuestra que  \(f\) es diferenciable en \(a\) si el siguiente límite
+existe
+\[
+\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+\]
+</p>
+<p>
+Notación: \(\Delta f=f(a+h)-f(a), \Delta x=(a+h)-a=h \), por lo que se puede
+denotar
+\[
+\lim_{\Delta x \to 0} \frac{\Delta f}{\Delta x}
+\]
+</p>
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Si \(f(x)=c\),  \(f\) es diferenciable en todo punto y \(f'(a)=0\)
+para toda \(a\).
+</p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Si \(f(x)=mx+b\), \(f\) es diferenciable en todo punto y \(f'(a)=m\)
+para toda \(a\).
+</p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Encuentra cuales de las fórmulas son ciertas y cuales son falsas.
+</p>
+<ol>
+<li> \(f'(a)=\lim_{h\to a} \frac{f(h)-f(a)}{h-a}\)</li>
+<li> \(f'(a)=\lim_{h\to 0} \frac{f(a)-f(a-h)}{h}\)</li>
+<li> \(f'(a)=\lim_{t\to 0} \frac{f(a+2t)-f(a)}{t}\)</li>
+<li> \(f'(a)=\lim_{t\to 0} \frac{f(a+2t)-f(a+t)}{2t}\)</li>
+<li> \(f'(a)=\lim_{t\to 0} \frac{f(a+t^2)-f(a)}{t^2}\)</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Si \(f(x)=\frac{1}{x}\), \(x\ne 0\), probar que para \(a\ne 0\),
+\(f'(a)=-\frac{1}{a^2}\).
+</p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Considera \(f:\mathbb{R} \to \mathbb{R}\) la función potencia.
+Probar que para toda \(a\)
+\[
+f'(a)=na^{n-1}.
+\]
+</p>
+<p>
+Sugerencia: usa
+\[
+b^n-a^n=(b-a)\left(\sum_{k=0}^{n-1} b^ka^{n-1-k}  \right)
+\]
+</p>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Considera \(f:[0,\infty) \to \mathbb{R}\) la función
+\(f(x)=\sqrt[n]{x}=x^{1/n}\), \(n\geq 2\).
+</p>
+<ol>
+<li>
+<p>
+Probar que para toda \(a>0\)
+\[
+f'(a)=\frac{1}{n}a^{\frac{1}{n}-1}
+\]
+</p>
+<p>
+Sugerencia: usar
+\[
+\sqrt[n]{b}-\sqrt[n]{a}= \frac{b-a}{\sum_{k=0}^{n-1}b^{k/n}a^{(n-1-k)/n}}
+\]
+</p>
+</li>
+<li>
+  \(f\) no es diferenciable en \(a=0\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Sean \(f\) y \(g\) funciones definidas en una vecindad de \(a\),
+ambas diferenciables en \(a\). Demuestra
+</p>
+<ol>
+<li> \(f+g\) es diferenciable en \(a\) y  \((f+g)'(a)=f'(a)+g'(a)\).</li>
+<li> Si \(c\in \mathbb{E}\), \(cf\) es diferenciable en \(a\) y
+  \((cf)'(a)=cf'(a)\).</li>
+<li> \(fg\) es diferenciable en \(a\) y \((fg)'(a)=f(a)g'(a)+f'(a)g(a)\).</li>
+<li> Si \(g(a)\ne 0\), \(\frac{1}{g}\) es diferenciable y
+  \(\left( \frac{1}{g}\right)'(a)=\frac{-g'(a)}{g^2(a)}\)</li>
+<li> Si \(g(a)\ne 0\), \(\frac{f}{g}\) es diferenciable y
+  \(\left( \frac{f}{g}\right)'(a)=\frac{f'(a)g(a)-f(a)g'(a)}{g^2(a)}\)</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Si \(p(x)=\sum_{k=0}^n a_kx^k\), demuestra que \(p\) es diferenciable en
+todo \(\mathbb{R}\) y
+\[
+p'(x)=\sum_{k=1}^{n} a_kkx^{k-1}
+\]
+</p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Sea \(p\) un polinomio, \(a\in \mathbb{R}\) fijo y arbitrario  y sea
+\(n\in \mathbb{N}\). Demuestra que \(p^n\) es diferenciable en  \(a\) con
+\[
+\frac{dp^n}{dx}(a)=np^{n-1}(a)p'(a)
+\]
+</p>
+
+<p>
+Sugerencia: usa que, para cualesquiera \(c, d \in \mathbb{R}\), se cumple
+\[
+p^n(c)-p^n(c)=(p(c)-p(d))\left( \sum_{k=0}^{n-1}p(c)^kp^{n-k-1}(d)\right)
+\]
+</p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Encuentra los puntos \(c\in \mathbb{R}\) tales que \(p'(c)=0\) para:
+<ol>
+<li>\(p(x)=x^3-\frac{x^2}{2}-\frac{x^4}{2}\).</li>
+<li> \(p(x)=(4+x)^3-3(x+3)\).</li>
+<li> \(p(x)=6x-(1+x)^3\).</li>
+<li> \(p(x)=(1+x)^n-1-nx\).</li>
+<li> \(p(x)=ax^2+bx+c\), donde \(a,b,c\in \mathbb{R}\) son parámetros
+  fijos.</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Dada la fórmula
+\[
+1+x+x^2+\cdots +x^n= \frac{x^{n+1}-1}{x-1}, \quad \textrm{para \(x\ne 1\)}
+\]
+determina, diferenciando, fórmulas para
+</p>
+<ol>
+<li> \(1+2x+3x^2+\cdots +nx^{n-1}\).</li>
+<li> \(1^2x+2^2x^2+3^2x^3+\cdots + n^2x^2\).</li>
+<li> \(\frac{1}{x}+\frac{2}{x^2}+\cdots + \frac{n}{x^{n}}\).</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+La función \(f(x)=\frac{1}{x^n}=x^{-n}\) es diferenciable
+para \(x\ne 0\) y
+\[
+f'(x)=-\frac{n}{x^{n+1}}=(-n)x^{-n-1}
+\]
+</p>
+</div>
+
+
+
+<div class="ejercicio-box">
+<h2 class="number-title"> Ejercicio </h2>
+Supon que la altura de un proyectil se modela con la función \(f(t)\),
+donde \(t\) representa los segundos despúes de que el proyectil se dispara de
+manera vertical desde el suelo. La velocidad inicial del proyectil es \(v_0\)
+y \(f\) está dada por
+\[
+f(t)=v_0t-5t^2
+\]
+<ol>
+<li>
+    Encuentra la velocidad instantánea el tiempo \(t\).
+</li>
+<li>
+  Calcula, en términos de \(v_0\), el tiempo requerido para que la
+velocidad sea cero.
+</li>
+<li>
+  ¿ Cuál es la velocidad cuando regresa al suelo ?
+</li>
+<li>
+  ¿ Cuál es la velocidad inicial requerida para que
+el proyectil regrese después de 1 segundo, 10 segundos ?
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+El costo de fabricación de \(q\) automóbiles eléctricos es
+\(C(q)=5q^3+13q^2+14\), medido en miles de dólares, mientras que el
+ingreso correspondiente es \(I(q)=q^4-5q\) miles de dólares.
+<ol>
+<li> Demuestra que existe un valor de \(q\), entre 2 y 10, en el que
+la fabrica sale a mano, es decir la utilidad es igual a \(0\).
+Sugerencia: usa el teorema de Bolzano.
+</li>
+<li>
+  Encuentra la razón de cambio instantánea de \(C\) y encuentra
+los puntos \(q_0\) para los cuales \(C'(q_0)=0\).
+</li>
+</ol>
+</div>
+
+
+
+
+</div>
+
 </body>
 
   </html>

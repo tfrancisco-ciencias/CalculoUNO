@@ -68,424 +68,282 @@
 
     <div class="flexbox">
 
-      <h1 class="number-title "> La derivada </h1>
+      <h1 class="number-title "> Recta tangente, derivada de funciones trigonométricas </h1>
 
 
-<div class="info-box">
-<h2 class="number-title"> Introducción </h2>
-
-</div>
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-
-
-<p>
-Supongamos que una cantidad \(y\) depende de otra \(x\). Si \(y\) es una
-función de \(x\) y escribimos \(y=f(x)\), la razón de cambio promedio de
-\(y\) conrespecto a \(x\), en el intevalo \([x_1,x_2]\) se define como
-\begin{equation}\label{Eqn:CocienteDiferencial}
-\frac{\Delta y}{\Delta x} = \frac{f(x_2)-f(x_1)}{x_2-x_2}
-\end{equation}
-</p>
-<p>
-A un cociente de la forma  \eqref{Eqn:Ejem2CocienteDiferencial} se le llama
-cociente diferencial. Los cocientes diferenciales aparecen en múltiples areas.
-</p>
-
-<ul>
-<li>
-  Si \(x:[0,T]\to \mathbb{R}\) denota la posición de una partícula al
-  tiempo \(t\) sobre una recta, la velocidad promedio en el intervalo
-  \([t_1,t_2]\) está dada por
-  \begin{equation}\label{Eqn:Ejem1CocienteDiferencial}
-  \frac{x(t_2)-x(t_1)}{x_2-x_1}
-  \end{equation}
-</li>
-<li>
-  Supon que la función \(Q(t)\) modela la cantidad de objetos producidos al
-  tiempo \(t\). La cantidad promedio de objetos
-  producidos en el intervalo de tiempo \([t_1,t_2]\) está dada por:
-  \begin{equation}\label{Eqn:Ejem2CocienteDiferencial}
-  \frac{Q(t_2)-Q(t_1)}{t_2-t_1}
-  \end{equation}
-</li>
-<li>
-  Si \(f:[a,b]\to \mathbb{R}\) es una función, la pendiente de la secante a
-  la gráfica de \(f\), que une los puntos
-  \((c,f(c))\) y \((d,f(d))\) es
-  \begin{equation}\label{Eqn:Ejem3CocienteDiferencial}
-  \frac{f(d)-f(c)}{d-c}
-  \end{equation}
-  Nota que:
-  \[
-  \frac{f(d)-f(c)}{d-c}=\frac{f(c)-f(d)}{c-d}
-  \]
-</li>
-
-</ul>
-
-
-</div>
-
-
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Encuentra la velocidad promedio de una partícula cuya
-posición está dada por la función
-\(x(t)=mt+b\).
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id ="Ejer:PendientesSecantesParabola"> Ejercicio </h2>
-
-<p>
-Supón que la
-posición de una partícula está dada por \(x(t)=t^2\), \(t\geq 0\).
-Prueba que la velocidad promedia en el intervalo \([t_1,t_2]\) está dada por
-\[
-t_1+t_2
-\]
-</p>
-<p>
-Sugerencia: usa diferencia de cuadrados.
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Asume que, en una fábrica, la cantidad de bienes producidos, al
-tiempo \(t\), está dada por \(\sqrt{t+1}\). Prueba que el promedio de objetos
-producidos en el intervalo  \([t_1,t_2]\) es:
-\[
-\frac{t_2-t_2}{\sqrt{t_1+1}+\sqrt{t_2+1}}.
-\]
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Considera la función \(f:[-1,1]\to \mathbb{R} \) dada por \(f(x)=|x|\).
-Prueba que las pendientes de las rectas secantes a la gráfica de \(f\) caen
-en el intervalo \([-1,1]\).
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Sea \(f:[a,b]\to \mathbb{R}\) una función. Demuestra que la ecuación
-de la recta secante a la gráfica de \(f\) que pasa por los puntos \((c,f(c))\)
-y \((d, f(d))\) está dada por
-\[
-y-f(c)=\left( \frac{f(d)-f(c)}{d-c}\ \right) (x-c)
-\]
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Considera la función \(f(x)=x^3\). Demuestra que la ecuación de la
-recta secante a la gráfica de \(f\) que pasa por los puntos \((a, a^3)\) y
-\((b,b^3)\) está dada por
-\[
-y=mx-c
-\]
-donde \(m=a^2+ab+b^2 \) y \(c=a(a^2+ab+b^2)\).
-</p>
-</div>
-
-
-
-
-<div class="nota-box">
-<h2 class="number-title"> Funciones diferenciables</h2>
-</div>
 
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
-<p>
-Sea \(f\) una función definida en una vecindad de \(a\). Decimos que \(f\) es
-diferenciable en \(x\) si
-el siguiente límite existe
+La línea tangente a la gráfica \(y=f(x)\), en el punto \((a,f(a))\), es
+la recta con ecuación:
 \[
-\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+y-f(a)=f'(a)(x-a)
 \]
-</p>
-<p>
-Tal límite se llama la derivada de \(f\) en \(a\) y se denota
-\[
-f'(a) \quad \textrm{ó} \quad  \frac{df}{dx}(a)
-\]
-</p>
+siempre y cuando \(f'(a)\) exista.
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-<p>
-Demuestra que  \(f\) es diferenciable en \(a\) si el siguiente límite
-existe
+Encuentra la recta tangente a \(\cos\) en el punto \((0,1)\). Este ejercicio
+muestra que la recta tangente puede tocar a la graáfica en una infinidad
+de puntos.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Definimos
 \[
-\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+f(x)=\left\{
+\begin{array}{cc}
+x^2\sen(\frac{1}{x}) & x \ne 0 \\
+0 & x=0
+\end{array}
+\right.
 \]
-</p>
-<p>
-Notación: \(\Delta f=f(a+h)-f(a), \Delta x=(a+h)-a=h \), por lo que se puede
-denotar
-\[
-\lim_{\Delta x \to 0} \frac{\Delta f}{\Delta x}
-\]
-</p>
-</div>
 
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Si \(f(x)=c\),  \(f\) es diferenciable en todo punto y \(f'(a)=0\)
-para toda \(a\).
-</p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Si \(f(x)=mx+b\), \(f\) es diferenciable en todo punto y \(f'(a)=m\)
-para toda \(a\).
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Encuentra cuales de las fórmulas son ciertas y cuales son falsas.
-</p>
 <ol>
-<li> \(f'(a)=\lim_{h\to a} \frac{f(h)-f(a)}{h-a}\)</li>
-<li> \(f'(a)=\lim_{h\to 0} \frac{f(a)-f(a-h)}{h}\)</li>
-<li> \(f'(a)=\lim_{t\to 0} \frac{f(a+2t)-f(a)}{t}\)</li>
-<li> \(f'(a)=\lim_{t\to 0} \frac{f(a+2t)-f(a+t)}{2t}\)</li>
-<li> \(f'(a)=\lim_{t\to 0} \frac{f(a+t^2)-f(a)}{t^2}\)</li>
-</ol>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Si \(f(x)=\frac{1}{x}\), \(x\ne 0\), probar que para \(a\ne 0\),
-\(f'(a)=-\frac{1}{a^2}\).
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Considera \(f:\mathbb{R} \to \mathbb{R}\) la función potencia.
-Probar que para toda \(a\)
-\[
-f'(a)=na^{n-1}.
-\]
-</p>
-<p>
-Sugerencia: usa
-\[
-b^n-a^n=(b-a)\left(\sum_{k=0}^{n-1} b^ka^{n-1-k}  \right)
-\]
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Considera \(f:[0,\infty) \to \mathbb{R}\) la función
-\(f(x)=\sqrt[n]{x}=x^{1/n}\), \(n\geq 2\).
-</p>
-<ol>
+<li> Haz un bosquejo de la gráfica.</li>
+<li> Demuestra que \(f\) es diferenciable en \(0\).</li>
 <li>
-<p>
-Probar que para toda \(a>0\)
-\[
-f'(a)=\frac{1}{n}a^{\frac{1}{n}-1}
-\]
-</p>
-<p>
-Sugerencia: usar
-\[
-\sqrt[n]{b}-\sqrt[n]{a}= \frac{b-a}{\sum_{k=0}^{n-1}b^{k/n}a^{(n-1-k)/n}}
-\]
-</p>
+  Encuentra la recta tangente en \(0\). Este ejercicio muestra que la recta
+  tangente en un \(a\)
+  puede tocar a la gráfica en una infindad de puntos en cualquier vecindad
+  el punto \(a\).
 </li>
-<li>
-  \(f\) no es diferenciable en \(a=0\).
-</li>
-</ol>
-</div>
 
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Sean \(f\) y \(g\) funciones definidas en una vecindad de \(a\),
-ambas diferenciables en \(a\). Demuestra
-</p>
-<ol>
-<li> \(f+g\) es diferenciable en \(a\) y  \((f+g)'(a)=f'(a)+g'(a)\).</li>
-<li> Si \(c\in \mathbb{E}\), \(cf\) es diferenciable en \(a\) y
-  \((cf)'(a)=cf'(a)\).</li>
-<li> \(fg\) es diferenciable en \(a\) y \((fg)'(a)=f(a)g'(a)+f'(a)g(a)\).</li>
-<li> Si \(g(a)\ne 0\), \(\frac{1}{g}\) es diferenciable y
-  \(\left( \frac{1}{g}\right)'(a)=\frac{-g'(a)}{g^2(a)}\)</li>
-<li> Si \(g(a)\ne 0\), \(\frac{f}{g}\) es diferenciable y
-  \(\left( \frac{f}{g}\right)'(a)=\frac{f'(a)g(a)-f(a)g'(a)}{g^2(a)}\)</li>
 </ol>
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-<p>
-Si \(p(x)=\sum_{k=0}^n a_kx^k\), demuestra que \(p\) es diferenciable en
-todo \(\mathbb{R}\) y
-\[
-p'(x)=\sum_{k=1}^{n} a_kkx^{k-1}
-\]
-</p>
+Considera la función \(f(x)=\frac{1}{x}\), \(x>0\).
+Demuestra que el area del triángulo formado
+por la intersección de la recta tangente a la gráfica de \(f\) en el
+punto \((a,\frac{1}{a})\) y los ejes ordenados, es independiente del punto
+\(a\) que se tome.
 </div>
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-<p>
-Sea \(p\) un polinomio, \(a\in \mathbb{R}\) fijo y arbitrario  y sea
-\(n\in \mathbb{N}\). Demuestra que \(p^n\) es diferenciable en  \(a\) con
-\[
-\frac{dp^n}{dx}(a)=np^{n-1}(a)p'(a)
-\]
-</p>
-
-<p>
-Sugerencia: usa que, para cualesquiera \(c, d \in \mathbb{R}\), se cumple
-\[
-p^n(c)-p^n(c)=(p(c)-p(d))\left( \sum_{k=0}^{n-1}p(c)^kp^{n-k-1}(d)\right)
-\]
-</p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-Encuentra los puntos \(c\in \mathbb{R}\) tales que \(p'(c)=0\) para:
+Encuentra las rectas tangentes a las gráficas de las funciones, en los
+puntos dados:
 <ol>
-<li>\(p(x)=x^3-\frac{x^2}{2}-\frac{x^4}{2}\).</li>
-<li> \(p(x)=(4+x)^3-3(x+3)\).</li>
-<li> \(p(x)=6x-(1+x)^3\).</li>
-<li> \(p(x)=(1+x)^n-1-nx\).</li>
-<li> \(p(x)=ax^2+bx+c\), donde \(a,b,c\in \mathbb{R}\) son parámetros
-  fijos.</li>
+<li> \(f(x)=\sqrt{x}\), en \((1,1)\).</li>
+<li> \(f(x)=x(x-1)\) en \((0,1)\) y \((1,0)\).</li>
 </ol>
 </div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-<p>
-Dada la fórmula
-\[
-1+x+x^2+\cdots +x^n= \frac{x^{n+1}-1}{x-1}, \quad \textrm{para \(x\ne 1\)}
-\]
-determina, diferenciando, fórmulas para
-</p>
-<ol>
-<li> \(1+2x+3x^2+\cdots +nx^{n-1}\).</li>
-<li> \(1^2x+2^2x^2+3^2x^3+\cdots + n^2x^2\).</li>
-<li> \(\frac{1}{x}+\frac{2}{x^2}+\cdots + \frac{n}{x^{n}}\).</li>
-</ol>
+Sea \(f(x)=\frac{1}{3}x^3-2x^2+3x+1\). Encuentra los puntos de la gráfica
+de \(f\) en dónde la recta tangente es
+horizontal.
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-<p>
-La función \(f(x)=\frac{1}{x^n}=x^{-n}\) es diferenciable
-para \(x\ne 0\) y
-\[
-f'(x)=-\frac{n}{x^{n+1}}=(-n)x^{-n-1}
-\]
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-<h2 class="number-title"> Ejercicio </h2>
-Supon que la altura de un proyectil se modela con la función \(f(t)\),
-donde \(t\) representa los segundos despúes de que el proyectil se dispara de
-manera vertical desde el suelo. La velocidad inicial del proyectil es \(v_0\)
-y \(f\) está dada por
-\[
-f(t)=v_0t-5t^2
-\]
-<ol>
-<li>
-    Encuentra la velocidad instantánea el tiempo \(t\).
-</li>
-<li>
-  Calcula, en términos de \(v_0\), el tiempo requerido para que la
-velocidad sea cero.
-</li>
-<li>
-  ¿ Cuál es la velocidad cuando regresa al suelo ?
-</li>
-<li>
-  ¿ Cuál es la velocidad inicial requerida para que
-el proyectil regrese después de 1 segundo, 10 segundos ?
-</li>
-</ol>
+Sea \(f(x)=x^2+ax+b\). Encuentra los valores de \(a\) y \(b\) para los
+cuales la recta \(y=2x\) es tangente a la gráfica en el punto
+\((2,4)\).
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-
-El costo de fabricación de \(q\) automóbiles eléctricos es
-\(C(q)=5q^3+13q^2+14\), medido en miles de dólares, mientras que el
-ingreso correspondiente es \(I(q)=q^4-5q\) miles de dólares.
+Una rayo de luz llega perpendicularmente al espejo parabólico
+\(y=x^2\) en el punto \(P=(a,a^2)\).
 <ol>
-<li> Demuestra que existe un valor de \(q\), entre 2 y 10, en el que
-la fabrica sale a mano, es decir la utilidad es igual a \(0\).
-Sugerencia: usa el teorema de Bolzano.
+<li> Encuentra la recta tangente a la parábola en \(P\).</li>
+<li> Encuentra \(Q\), la intersección de la recta tangente con el eje \(y\).</li>
+<li> Denotemos \(F=(0,\frac{1}{4})\) al fóco de la parábola. Prueba que la
+  distancia de \(F\) a \(Q\) y la distancia
+de \(F\) a \(P\) es la misma.
 </li>
-<li>
-  Encuentra la razón de cambio instantánea de \(C\) y encuentra
-los puntos \(q_0\) para los cuales \(C'(q_0)=0\).
-</li>
+<li> Prueba que los ánguos \(\sphericalangle PQF= \sphericalangle QPF\).</li>
+<li> ¿ Qué ley de la física dice que los rayos de luz se
+  concentran en el foco?</li>
 </ol>
 </div>
 
 
 
-
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Considera la recta \(L\), con ecuación \(y=m(x-a)+b\), con \(m\ne 0\).
+Demuestra que la recta con ecuación \(y=\frac{-1}{m}(x-a)+b\) es
+perpendicular a \(L\).
 </div>
 
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Encuentra las rectas tangentes y normal en los puntos dados.
+<ol>
+<li> \(y=\sen(x)\) en \(\frac{\pi}{2}\). </li>
+<li> \(y=x^2\) en \((a,a^2)\), donde \(a\in \mathbb{R}\) es fijo y arbitrario.</li>
+<li> \(y=x^2+x+1\) en \((1,3)\).</li>
+</ol>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Considera la parábola \(f(x)=x^2\). Demuestra que toda recta tangente
+a la gráfica de la parábola toca a ésta en un sólo punto.
+Sugerencia: usa el <a href="./S7.html#Ejer:PendientesSecantesParabola"> Ejercicio 7.4 </a>.
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Fija \(c\in \mathbb{R}\), \(c\ne 0\) y considera la parábola \(y=cx^2\).
+Demuestra que de todas las rectas de la forma \(y=mx\), la única que es
+tangente a la parábola es cuando \(m=0\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Considera la función \(f(x)=\sqrt{x}\), \(x>0\). Demuestra que toda recta
+tangente a la gráfica de \(f\) toca a ésta en un sólo punto.
+
+Sugerencia: primero prueba que la pendiente de la recta que une los puntos
+\((a,\sqrt{a}) \) y \((b,\sqrt{b})\) es \(\frac{1}{\sqrt{a}+\sqrt{b}}\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Determina \(c\), de tal forma que la recta que une \((0,4)\) con \((10,-6)\),
+es tangente a \(y=\frac{c}{x+1}\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Construye una función, no constante,  cuyas pendientes de las rectas
+tangentes en \(x=1\) y \(x=3\) sean las mismas.
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+La  forma de un espejo está modelada por la curva \(y=\frac{4}{x}\).
+Un rayo de luz, perpendicular al eje \(x\), cae  al espejo en el punto
+\((a,4/a)\) y es reflejajo horizontalmente. Cálcula  \(a\).
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Si una función diferenciable \(f\) satisface \(|f(c)-f(d)| \leq M|c-d|\)
+(es decir, Lipschitz), para cualesquiera \(c\) y \(d\) en el dominio de \(f\),
+demuestra que \(|f'(x)| \leq M\) para todo \(x\).
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+
+Demuestra:
+<ol>
+<li>
+\[
+\lim_{\alpha \to 0} \frac{\sen(\alpha)}{\alpha}=1
+\]
+</li>
+
+<li>
+\[
+\lim_{\alpha \to 0} \frac{\cos(\alpha)-1}{\alpha}=0
+\]
+</li>
+
+<p>
+Sugerencia:
+
+\[
+\frac{\cos(\alpha)-1}{\alpha}= \frac{\cos(\alpha)-1}{\alpha}
+\frac{\cos(\alpha)+1}{\cos(\alpha)+1}
+\]
+</p>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Encuentra los siguientes límites
+<ol>
+<li>
+  \(\lim_{x \to  0 } \frac{\sen(7x)}{x}\).
+</li>
+<li>
+  Para \(a, b\in \mathbb{R}^+\) fijos y arbitrarios,
+   \(\lim_{x\to 0} \frac{\sen(ax)}{bx}\).
+</li>
+<li>
+  \(\lim_{x\to 0} \frac{\sen(5x)}{\sen(10x)}\).
+</li>
+<li>
+  \(\lim_{x\to 0} \frac{\cos(2x)-1}{x}\).
+</li>
+<li>
+  Para \(a, b \in \mathbb{R}^+\) fijos y arbitrarios,
+  \(\lim_{x\to 0} \frac{\cos(ax)-1}{bx}\).
+</li>
+<li>
+ \(\lim_{x\to 0}\frac{\cos(x)-1}{\sen(x)}\).
+</li>
+<li>
+  \(\lim_{x\to 0} \frac{\sen(x^3)}{x}\).
+</li>
+<li>
+  \(\lim_{x\to 1} \frac{\sen(x-1)}{x^2+2x-3} \).
+</li>
+<li>
+  \(\lim_{x\to 2} \frac{\sen(x-2)}{x^2-x-2}\).
+</li>
+<li>
+  Para \(a\in \mathbb{R}^+\) fijo y arbitrario,
+  \(\lim_{x\to a} \frac{\sen(x-a)}{x^2-a^2}\).
+</li>
+<li>
+Sean \(p\) y \(q\) dos polinomios con \(p(0)=q(0)=0\). Encuentra
+\[
+\lim_{x\to 0} \frac{\sen(p(x))}{q(x)}.
+\]
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+Demuestra
+\[
+\frac{d\sen(x)}{dx}=\cos(x), \quad \frac{d \cos (x)}{dx}=-\sen(x)
+\]
+Usando la fórmula para la derivada de un cociente, demuestra
+\[
+\frac{d \tan (x)}{dx}=\sec^2(x)
+\]
+para \(x\) con \(\cos(x)\ne 0\).
+</div>
+
+
+</div>
 </body>
 
   </html>
