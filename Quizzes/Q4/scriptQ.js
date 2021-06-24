@@ -141,42 +141,41 @@ function clearStatusClass(element) {
 /// para cada quiz
 const questions = [
   {
-    question: "Resuelve la desigualdad $|4x-2| \\leq 10$",
+    question: "Sean $f,g:\\mathbb{R}\\to \\mathbb{R}$ dos funciones impares. La funci\\'on producto h(x):=f(x)g(x) es:" ,
     answers: [
-      { text: '$ [-10,10] $', correct: false },
-      { text: '$ [-2,3] $', correct: true },
-      { text: '$ [-4,6] $', correct: false }
+      { text: 'impar', correct: false },
+      { text: 'par', correct: true },
+      { text: 'puede ser par o impar', correct: false }
     ],
     solutionLines:[
-      {text: "Abriendo la desigualdad $|4x-2|\\leq 10$ obtenemos"},
-      {text: "$-10\\leq 4x-2 \\leq 10 \\Rightarrow -8 \\leq 4x \\leq 12$"},
-      {text: "Finalmente, dividiendo entre 4 llegamos"},
-      {text: "$-2 \\leq x \\leq 3$"},
+      {text: " "},
+      {text: " "},
+      {text: " "},
+      {text: " "},
     ]
   },
   {
-    question: 'La desigualdad de Cauchy-Schwartz dice que $(\\sum_{i=1}^na_i^2)^{1/2}(\\sum_{i=1}^n b_i^2)^{1/2})$ es mayor a',
+    question: "Encuentra todos los polinomios de grado a lo m\'as dos, $p(x)$, que satisfafan la condici\'on : $p(1) > p(2)$",
     answers: [
-      { text: "$\\sum_{i=1}^n a_ib_i$ ", correct: true},
-      { text: "$\\sum_{i=1}^n a_i^2b_i^2$", correct: false}
+      { text: "$p(x)=a_0+a_1x+a_2x^2$, con $a_1+3a_2$ positivo ", correct: true},
+      { text: "$p(x)=a_0+a_1x+a_2x^2$, con $2 a_1+ a_2$ negativo ", correct: false},
+      { text: "$p(x)=2+2x-3x^2$", correct: false}
     ],
     solutionLines:[
-      {text:"$ \\sum_{i=1}^n a_ib_i \\leq (a_1^2+\\\cdots+a_n^2)^{1/2}(b_1^2+\\cdots+a_n^2)^{1/2}  $"}
+      {text:" "},
+      {text:" "},
     ]
   },
   {
-    question: 'Si $x,y\\geq 0$ y $xy=4$ entonces ' ,
+    question: 'Si $f:\\mathbb{R}\\to \\mathbb{R}$ es c\'oncava hacia abajo y $f \\geq 0$ entonces:' ,
     answers: [
-      { text: '$ x+y \\geq 4$', correct: true },
-      { text: '$ x+y \\geq 8 $', correct: false },
-      { text: '$x+y \\geq 6 $', correct: false }
+      { text: '$ \\sqrt{f}$ es c\'oncava hacia abajo', correct: true },
+      { text: '$ \\sqrt{f}$ es c\'oncava hacia arriba', correct: false },
+      { text: 'ninguna de las anteriores', correct: false }
     ],
     solutionLines:[
-      {text:" De $xy=4$  se sigue $(x/2)(y/2)=1$."},
-      {text:" Aplicando la desigualdad de Korovkin tenemos"},
-      {text:" $x/2+y/2 \\geq 2$."},
-      {text:" Multiplicando por 4 la desigualdad anterior concluimos"},
-      {text:" $x+y \\geq 4$."},
+      {text:" "},
+      {text:" "},
     ]
   }
 ]
