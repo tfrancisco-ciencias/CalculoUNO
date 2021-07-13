@@ -117,7 +117,7 @@ function selectAnswer(e) {
   } else {
     startButton.innerText = 'Reiniciar'
     startButton.classList.remove('hide')
-    //solutionsButton.classList.remove("hide")
+    solutionsButton.classList.remove("hide")
     }
   }
 
