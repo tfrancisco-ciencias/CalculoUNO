@@ -1030,6 +1030,60 @@
               </ol>
             </div>
 
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              <p>
+                Sean \(I,J\subseteq \mathbb{R}\) dos intervalos y
+                 \(g:I \to \mathbb{R}\) y \(f:J\to \mathbb{R}\) dos funciones
+                tales que:
+                <ul>
+                  <li> la composición \(g\circ f\) tiene sentido,
+                  </li>
+                  <li> \(g\) es cóncava hacia abajo y monótona creciente,
+                  </li>
+                  <li>
+                    \(f\) es cóncava hacia abajo.
+                  </li>
+                </ul>
+                Prueba que \(g\circ f\) es cóncava hacia abajo.
+              </p>
+              <button class="respButton hvr-grow "> Prueba</button>
+              <div class="resp-box">
+              <p>
+                Usamos la definición para probar directamente que
+                \(f\circ g\) es cóncava hacia abajo.
+              </p>
+              <p>
+                Tomamos \(x_0,x_1\in J\) con \(x_0< x_1\). Debemos de
+                probar que
+                \begin{equation}\label{Eqn:AuxEjerCompoConcavas}
+                (1-t)(g\circ f)(x_0)+t (g\circ f)(x_1) \leq (g\circ f)((1-t)x_0+tx_1).
+                \end{equation}
+              </p>
+              <p>
+                Usando que \(f\) es cóncava hacia abajo tenemos
+                \[
+                (1-t)f(x_0)+tf(x_1) \leq f((1-t)x_0+tx_1).
+                \]
+                Aplicando \(g\) a ambos lados de la desigualdad y tomando en
+                cuenta de que es monótona creciente llegamos a
+                \[
+                g((1-t)f(x_0)+tf(x_1)) \leq g(f((1-t)x_0+tx_1)).
+                \]
+                Pero, al ser \(g\) cóncava hacia abajo
+                \[
+                (1-t)g(f(x_0))+ tg(f(x_1)) \leq  g((1-t)f(x_0)+tf(x_1)),
+                \]
+                por lo tanto se concluye de las dos desigualdades anteriores que
+                \[
+                (1-t)g(f(x_0))+ tg(f(x_1)) \leq g(f((1-t)x_0+tx_1)),
+                \]
+                lo cual prueba \eqref{Eqn:AuxEjerCompoConcavas}.
+              </p>
+            </div>
+            </div>
+
+
 
 
             <div class="quiz-box">

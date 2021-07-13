@@ -148,22 +148,28 @@ const questions = [
       { text: 'puede ser par o impar', correct: false }
     ],
     solutionLines:[
-      {text: " "},
-      {text: " "},
-      {text: " "},
-      {text: " "},
+      {text: "La funci\\'on $h$ es par pues: "},
+      {text: "$h(-x)=f(-x)g(-x)$"},
+      {text: "$=(-1)f(x)(-1)g(x)$"},
+      {text: "$=f(x)g(x)$"},
+      {text: "$=h(x)$"},
+      {text: "en la segunda igualdad es donde se usa  "},
+      {text: "que tanto $f$ como $g$ son impares. "},
     ]
   },
   {
-    question: "Encuentra todos los polinomios de grado a lo m\'as dos, $p(x)$, que satisfafan la condici\'on : $p(1) > p(2)$",
+    question: "Encuentra todos los polinomios de grado a lo m\'as dos, $p(x)$, que satisfacen la condici\'on : $p(1) > p(2)$",
     answers: [
-      { text: "$p(x)=a_0+a_1x+a_2x^2$, con $a_1+3a_2$ positivo ", correct: true},
-      { text: "$p(x)=a_0+a_1x+a_2x^2$, con $2 a_1+ a_2$ negativo ", correct: false},
+      { text: "$p(x)=a_0+a_1x+a_2x^2$, con $a_1+3a_2$ negativo ", correct: true},
+      { text: "$p(x)=a_0+a_1x+a_2x^2$, con $2 a_1+ a_2$ positivo ", correct: false},
       { text: "$p(x)=2+2x-3x^2$", correct: false}
     ],
     solutionLines:[
-      {text:" "},
-      {text:" "},
+      {text:"Denotamos $p(x)=a_0+a_1x+a_2x^2$."},
+      {text:"La condici\\'on $p(1)>p(2)$  se traduce a:"},
+      {text:"$a_0+a_1+a_2 > a_0+2a_1+4a_2$ "},
+      {text:"Cancelando ambos lados la desigualdad se simplifica a:"},
+      {text:"$0> a_1+3a_2$."},
     ]
   },
   {
@@ -171,11 +177,12 @@ const questions = [
     answers: [
       { text: '$ \\sqrt{f}$ es c\'oncava hacia abajo', correct: true },
       { text: '$ \\sqrt{f}$ es c\'oncava hacia arriba', correct: false },
-      { text: 'ninguna de las anteriores', correct: false }
+      { text: 'ninguna de las anteriores', correct: false },
     ],
     solutionLines:[
-      {text:" "},
-      {text:" "},
+      {text:"La funci\'on ra\'iz cuadrada es c\'oncava hacia abajo."},
+      {text:"Por suposici\'on $f$  tambi\'en es c\'oncava hacia abajo y mon\'otona creciente."},
+      {text:"Usando el ejercicio 4.26 resulta que $\\sqrt{f}$ tambi\'en es c\'oncava hacia abajo."}
     ]
   }
 ]
