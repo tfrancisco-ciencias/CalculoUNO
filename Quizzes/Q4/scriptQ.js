@@ -117,7 +117,7 @@ function selectAnswer(e) {
   } else {
     startButton.innerText = 'Reiniciar'
     startButton.classList.remove('hide')
-    //solutionsButton.classList.remove("hide")
+    solutionsButton.classList.remove("hide")
     }
   }
 
@@ -180,8 +180,8 @@ const questions = [
       { text: 'ninguna de las anteriores', correct: false },
     ],
     solutionLines:[
-      {text:"La funci\'on ra\'iz cuadrada es c\'oncava hacia abajo."},
-      {text:"Por suposici\'on $f$  tambi\'en es c\'oncava hacia abajo y mon\'otona creciente."},
+      {text:"La funci\'on ra\'iz cuadrada es c\'oncava hacia abajo y mon\'otona creciente."},
+      {text:"Por suposici\'on $f$  tambi\'en es c\'oncava hacia abajo."},
       {text:"Usando el ejercicio 4.26 resulta que $\\sqrt{f}$ tambi\'en es c\'oncava hacia abajo."}
     ]
   }
