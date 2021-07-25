@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UFT-8">
+ <meta nema="viewport" content="width-device-width,
+  initial-scale=1,0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<!-- This part is for jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!-- Following part is mathjax, for latex -->
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<!-- allows use of $ and $$ for latex -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+
+
+<!-- this part is for style css -->
+<link href="../style.css" rel="stylesheet">
+
+<!--this part is for js, defer tag is for
+     indicate to a browser that the script is meant to be executed
+     after the document has been parsed, but before firing DOMContentLoaded  -->
+<script defer src="scriptQ-2.js"> </script>
+
+
+
+
+
+<title> Quiz </title>
+</head>
+
+<body >
+
+<div class="container" id="quiz-container">
+    <div id="question-container" class="hide">
+      <div id="question">
+      </div>
+
+
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1 </button>
+        <button class="btn ">Answer 2</button>
+        <button class="btn ">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+
+    </div>
+
+    <div class="controls">
+      <button id="start-button" class="start-button btn"> Iniciar </button>
+      <button id="next-button" class="next-button btn hide"> Siguiente </button>
+      <button id="solutions-button" class="solution-button btn hide "> Soluciones  </button>
+    </div>
+
+
+    <div class="hide" id="results-container">
+      <div id="question-text">
+      </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
