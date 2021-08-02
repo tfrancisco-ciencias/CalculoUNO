@@ -144,8 +144,8 @@ const questions = [
     question: "Calcula $\\lim_{x\\to 7^+} \\frac{|x-7|}{x^2-5x-14}$. Justifica tu respuesta." ,
     answers: [
       { text: 'no existe', correct: false },
-      { text: '1/9', correct: false },
-      { text: '-1/9', correct: true },
+      { text: '1/9', correct: true },
+      { text: '-1/9', correct: false },
     ],
     solutionLines:[
       {text: " "},
