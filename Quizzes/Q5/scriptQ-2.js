@@ -148,8 +148,8 @@ const questions = [
       { text: '-1/9', correct: false },
     ],
     solutionLines:[
-      {text: " "},
-      {text: " "},
+      {text: "Ya que el l\'imite es por la derecha, tenemos que $|x-7|=x-7$ ."},
+      { text: " <a href="https://youtu.be/-KOSLr2ZCvw" target="_blank"> Video </a> "},
       {text: " "},
     ]
   },
