@@ -89,7 +89,7 @@ función de \(x\) y escribimos \(y=f(x)\), la razón de cambio promedio de
 \end{equation}
 </p>
 <p>
-A un cociente de la forma  \eqref{Eqn:Ejem2CocienteDiferencial} se le llama
+A un cociente de la forma  \eqref{Eqn:CocienteDiferencial} se le llama
 cociente diferencial. Los cocientes diferenciales aparecen en múltiples areas.
 </p>
 
@@ -181,6 +181,39 @@ Considera la función \(f:[-1,1]\to \mathbb{R} \) dada por \(f(x)=|x|\).
 Prueba que las pendientes de las rectas secantes a la gráfica de \(f\) caen
 en el intervalo \([-1,1]\).
 </p>
+<button class="respButton hvr-grow "> Solución </button>
+  <div class="resp-box flexbox">
+<p>
+  Las pendientes de las rectas secantes son de la forma
+  \[
+  \frac{f(d)-f(c)}{d-c}=\frac{|d|-|c|}{d-c}
+  \]
+  donde \(c\) y \(d\) corren en el intervalo \([-1,1]\), con \(c\ne d\).
+</p>
+<p>
+Observamos que siempre podemos suponer que \(c< d\) pues
+\[
+  \frac{f(d)-f(c)}{d-c}=\frac{-(f(c)-f(d))}{-(c-d)}=\frac{f(c)-f(d)}{c-d}
+\]
+así que no importa cual de los \(c\) ó \(d\) es mayor o menor.
+</p>
+<p>
+  Así suponemos que \(c>d\). Entonces por la otra desigualdad del
+  triángulo:
+  \[
+  ||d|-|c|| \leq |d-c|=d-c.
+  \]
+  Dividiendo entre \(d-c\) llegamos a que
+  \[
+  \frac{||d|-|c||}{d-c} \leq 1.
+  \]
+  Finalmente, el cociente anterior es el valor absoluto del cociente diferencial
+  por lo tanto concluimos que
+  \[
+  -1 \leq \frac{|d|-|c|}{d-c} \leq 1.
+  \]
+</p>
+</div>
 </div>
 
 
@@ -202,13 +235,36 @@ y-f(c)=\left( \frac{f(d)-f(c)}{d-c}\ \right) (x-c)
   <h2 class="number-title"> Ejercicio </h2>
 <p>
 Considera la función \(f(x)=x^3\). Demuestra que la ecuación de la
-recta secante a la gráfica de \(f\) que pasa por los puntos \((a, a^3)\) y
-\((b,b^3)\) está dada por
+recta secante a la gráfica de \(f\) que pasa por los puntos \((a, f(a))\) y
+\((b,f(b))\) está dada por
 \[
-y=mx-c
+y=mx-(a^2b+ab^2)
 \]
-donde \(m=a^2+ab+b^2 \) y \(c=a(a^2+ab+b^2)\).
+donde \(m=a^2+ab+b^2 \).
 </p>
+<button class="respButton hvr-grow "> Solución </button>
+  <div class="resp-box flexbox">
+<p>
+La ecuación general de la recta tangente que pasa por \((a,f(a))\)
+y \((b,f(b))\) es:
+\[
+y-f(a)=m(x-a)
+\]
+donde la pendiente es \(m=\frac{f(b)-f(a)}{b-a}\). Simplificando
+la pendiente usando diferencia de cubos tenemos
+\[
+  m=\frac{b^3-a^3}{b-a}=\frac{(b-a)(a^2+ab+b^2)}{b-a}=a^2+ab+b^2
+\]
+Por lo que la ecuación de la recta secante  se simplifica a:
+\begin{eqnarray*}
+y&=&(a^2+ab+b^2)(x-a)+a^3 \\
+  &=&(a^2+ab+b^2)x-(a^2+ab+b^2)a +a^3\\
+  &=&(a^2+ab+b^2)x-a^3-a^2b-ab^2+a^3 \\
+  &=& mx-(a^2b+ab^2)
+\end{eqnarray*}
+
+</p>
+</div>
 </div>
 
 
@@ -301,18 +357,48 @@ Si \(f(x)=\frac{1}{x}\), \(x\ne 0\), probar que para \(a\ne 0\),
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 <p>
-Considera \(f:\mathbb{R} \to \mathbb{R}\) la función potencia.
+Considera \(f:\mathbb{R} \to \mathbb{R}\) la función potencia \(f(x)=x^n\).
 Probar que para toda \(a\)
 \[
 f'(a)=na^{n-1}.
 \]
 </p>
 <p>
-Sugerencia: usa
+Sugerencia: por el <a href="./S1.html#Eqn:Resolvent">Ejercicio 1.18</a>,
 \[
 b^n-a^n=(b-a)\left(\sum_{k=0}^{n-1} b^ka^{n-1-k}  \right)
 \]
+para todos \(a.b\in \mathbb{R}\).
 </p>
+<button class="respButton hvr-grow "> Solución </button>
+  <div class="resp-box flexbox">
+<p>
+  Usando directamente la sugerencia tenemos que para
+  toda \(x\ne a\), el cociente diferencial de \(f\)
+  se puede escribir como
+  \[
+  \frac{x^n-a^n}{x-a}=\sum_{k=1}^{n-1}x^ka^{n-1-k}
+  \]
+</p>
+<p>
+  Tomando límite cuando \(x\) tiende a \(a\) tenemos
+  \[
+  f'(a)=\lim_{x\to a}\frac{x^n-a^n}{x-a}=\lim_{x\to a}\left(\sum_{k=0}^{n-1}x^ka^{n-1-k}\right)
+  \]
+  Finalmente, usando que \(\sum_{k=0}^{n-1}x^ka^{n-1-k}\) es
+  un polinomio en la variable \(x\), por el
+  <a href="./S5.html#Ejer:LimitLawPoly">Ejercicio 5.15</a> tenemos
+  \[
+\lim_{x\to a}\left(\sum_{k=0}^{n-1}x^ka^{n-1-k}\right)=\sum_{k=0}^{n-1-k}a^ka^{n-1-k}
+  \]
+  el cual se simplifica a
+  \begin{eqnarray*}
+  \sum_{k=0}^{n-1-k}a^ka^{n-1-k}&=&\sum_{k=0}^{n-1}a^{k+n-1-k} \\
+  &=&\sum_{k=0}^{n-1}a^{n-1} \\
+  &=& n a^{n-1}.
+  \end{eqnarray*}
+</p>
+</div>
 </div>
 
 
@@ -332,16 +418,62 @@ f'(a)=\frac{1}{n}a^{\frac{1}{n}-1}
 \]
 </p>
 <p>
-Sugerencia: usar
+Sugerencia: usa el <a href="./S4.html#Ejer:DiferenciaRaices">Ejercicio 4.17</a> para obtener
 \[
 \sqrt[n]{b}-\sqrt[n]{a}= \frac{b-a}{\sum_{k=0}^{n-1}b^{k/n}a^{(n-1-k)/n}}
 \]
+para todos \(a,b \geq 0\).
 </p>
 </li>
 <li>
   \(f\) no es diferenciable en \(a=0\).
 </li>
 </ol>
+<button class="respButton hvr-grow "> Solución </button>
+  <div class="resp-box flexbox">
+<p>
+  Inciso 1.
+</p>
+<p>
+  Usando la sugerencia podemos escribir el cociente
+  diferencial como
+  \[
+  \frac{\sqrt[n]{x}-\sqrt[n]{a}}{x-a}=\frac{1}{\sum_{k=0}^{n-1}x^{k/n}a^{(n-1-k)/n}}
+  \]
+  donde \(x\ne a\).
+</p>
+<p>
+  Ahora analizamos el límite del denominador en el cociente anterior. Usando las leyes de los límites
+  y la nota en el <a href="./S5.html#Ejer:LeyLimiteRaiz">Ejercicio 5.22</a> obtenemos
+  \begin{eqnarray*}
+\lim_{x\to a} \left(\sum_{k=0}^{n-1}x^{k/n}a^{(n-1-k)/n} \right)&=&\sum_{k=0}^{n-1}a^{k/n}a^{(n-1-k)/n} \\
+&=& \sum_{k=0}^{n-1}a^{(n-1)/n} \\
+&=& \sum_{k=0}^{n-1}a^{1-\frac{1}{n}} \\
+&=& na^{1-\frac{1}{n}}>0.
+  \end{eqnarray*}
+</p>
+<p>
+  Finalmente, usando la ley del límite para el cociente al tomar
+  límite en el cociente diferencial llegamos a
+  \begin{eqnarray*}
+  f'(a)&=&\lim_{x\to a}\left(  \frac{1}{\sum_{k=0}^{n-1}x^{k/n}a^{(n-1-k)/n}} \right) \\
+  &=& \frac{1}{na^{1-\frac{1}{n}}} \\
+  &=& \frac{1}{n}a^{\frac{1}{n}-1}.
+  \end{eqnarray*}
+</p>
+<p>
+  Inciso 2.
+</p>
+<p>
+  Si tomamos el cociente diferncial para la derivada en \(a=0\) obtenemos
+  \[
+  \frac{f(x)-f(0)}{x-0}=\frac{\sqrt[n]{x}}{x}=\frac{x^{\frac{1}{n}}}{x}=\frac{1}{x^{1-\frac{1}{n}}}.
+  \]
+  Ya que \(n\geq 2\), \(\lim_{x\to 0}x^{1-\frac{1}{n}}=0\), por lo que
+  el límite del cociente  \(\frac{1}{x^{1-\frac{1}{n}}}\), cuando \(x\to 0\),
+  no existe.
+</p>
+</div>
 </div>
 
 
