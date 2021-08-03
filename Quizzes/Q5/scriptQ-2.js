@@ -117,7 +117,7 @@ function selectAnswer(e) {
   } else {
     startButton.innerText = 'Reiniciar'
     startButton.classList.remove('hide')
-    //solutionsButton.classList.remove("hide")
+    solutionsButton.classList.remove("hide")
     }
   }
 
@@ -149,8 +149,10 @@ const questions = [
     ],
     solutionLines:[
       {text: "Ya que el l\'imite es por la derecha, tenemos que $|x-7|=x-7$ ."},
-      { text: " <a href="https://youtu.be/-KOSLr2ZCvw" target="_blank"> Video </a> "},
-      {text: " "},
+      { text: " Por lo tanto, para $x$ en una vecindad a la derecha del 7 tenemos"},
+      {text: "$ \\frac{|x-7|}{x^2-5x-14} = \\frac{x-7}{(x-7)(x+2)}=\\frac{1}{x+2}$"},
+      {text:"Por la ley del cociente tenemos"},
+      {text:"$\\lim_{x\\to 7^+}\\frac{1}{x+2}=\\frac{1}{9}$"}
     ]
   },
   {
@@ -161,9 +163,12 @@ const questions = [
       { text: "$25$", correct: false},
     ],
     solutionLines:[
-      {text:" "},
-      {text:" "},
-      {text:"$ "},
+      {text:" Restando $\\lim_{x\\to 25} x $ a ambos lados de la igualdad obtenemos"},
+      {text:"$\\lim_{x\\to25 }\\left( \\frac{2f(x)-3}{\\sqrt{x}-5} \\right)=2+25=27$."},
+      {text:"Multiplicando ambos lados de la \'ultima identidad por $\\lim_{x\\to 25}(\\sqrt{x}-5)$ y usando la ley del product llegamos a"},
+      {text:"$\\lim_{x\\to 25}(2f(x)-3)=25\\cdot 0=0$"},
+      {text:"Finalmente depejamos usando las propiedades de los l\'imites y las constantes para llegar"},
+      {text:"$\\lim_{x\\to 25} f(x)=\\frac{3}{2}$."}
     ]
   },
 ]
