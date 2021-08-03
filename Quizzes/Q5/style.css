@@ -1,0 +1,139 @@
+*, *::before, *::after{
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+
+:root{
+  --hue-neutral:20;
+  --hue-wrong:0;
+  --hue-correct:145;
+}
+
+body{
+  --hue: var(--hue-neutral);
+  padding:50px;
+  margin:50px;
+  display:flex;
+  width:auto;
+  height:auto;
+  justify-content:center;
+  align-items:center;
+  background-color:hsl(var(--hue),100%,93.9%);
+}
+
+body.correct{
+  --hue: var(--hue-correct);
+}
+
+body.wrong{
+  background-color:hsl(var(--hue-wrong),100%,70%);
+}
+
+.container{
+  width:800px;
+  max-width:80%;
+  background-color:rgb( 255, 249, 205 );
+  border-radius:5px;
+  padding:10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid{
+  display:grid;
+  gap:10px;
+  margin:20px 0;
+}
+
+.btn{
+  --hue:var(--hue-neutral);
+  border: 2px solid hsl(var(--hue), 100%, 50%);
+  background-color: hsl(var(--hue), 100%, 93.9%);
+  border-radius:10px;
+  padding: 2px 2px;
+  border-color:#F4D03F;
+  outline:none;
+  font-size:20px;
+}
+
+.btn:hover{
+  border-color:black;
+}
+
+.btn.correct{
+  --hue:var(--hue-correct);
+}
+
+.btn.wrong{
+  background-color:hsl(var(--hue-wrong),100%,70%);
+}
+.start-button , .next-button{
+  font-size:1.5rem;
+  font-weight:bold;
+  padding:10px 20px;
+}
+
+.solution-button{
+  font-size:1.5rem;
+  font-weight:bold;
+  padding:10px 20px;
+  margin: 20px;
+}
+
+
+.controls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hide{
+  display:none;
+}
+
+
+.flexbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.resp-box{
+    background:  rgb( 255, 249, 205 );
+    border-radius: 25px;
+    padding: 20px;
+    border: 10px solid rgb( 82, 190, 128 ,0.5);
+    margin: 20px;
+    font-size: 20px;
+}
+
+.ejercicio-box{
+  background:  rgb( 255, 249, 205 ) ;
+  border-radius: 25px;
+  padding: 20px;
+  border: 10px solid rgba(92,213,241,0.5);
+  margin: 20px;
+  font-size: 20px;
+  width: 70%;
+}
+
+.ejercicio-box-right{
+  background: green ;
+  border-radius: 25px;
+  padding: 20px;
+  border: 10px solid rgba(92,213,241,0.5);
+  margin: 20px;
+  font-size: 20px;
+  width: 70%;
+}
+
+.ejercicio-box-wrong{
+  background:  red ;
+  border-radius: 25px;
+  padding: 20px;
+  border: 10px solid rgba(92,213,241,0.5);
+  margin: 20px;
+  font-size: 20px;
+  width: 70%;
+}

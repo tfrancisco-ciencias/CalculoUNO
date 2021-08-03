@@ -81,7 +81,8 @@ function showSolutions(){
   clearStatusClass(document.body)
   console.log("solutions")
   resultsElement.classList.remove("hide")
-  questionContainerElement.classList.add('hide')
+  window.location.href = 'Q5-Sol.html'
+  //questionContainerElement.classList.add('hide')
 }
 
 
@@ -117,7 +118,7 @@ function selectAnswer(e) {
   } else {
     startButton.innerText = 'Reiniciar'
     startButton.classList.remove('hide')
-    //solutionsButton.classList.remove("hide")
+    solutionsButton.classList.remove("hide")
     }
   }
 

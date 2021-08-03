@@ -180,8 +180,8 @@ const questions = [
       { text: 'ninguna de las anteriores', correct: false },
     ],
     solutionLines:[
-      {text:"La funci\'on ra\'iz cuadrada es c\'oncava hacia abajo y mon\'otona creciente."},
-      {text:"Por suposici\'on $f$  tambi\'en es c\'oncava hacia abajo."},
+      {text:"La funci\'on ra\'iz cuadrada es c\'oncava hacia abajo y monotona creciente."},
+      {text:"Por suposici\'on $f$  tambi\'en es c\'oncava hacia abajo y mon\'otona creciente."},
       {text:"Usando el ejercicio 4.26 resulta que $\\sqrt{f}$ tambi\'en es c\'oncava hacia abajo."}
     ]
   }
