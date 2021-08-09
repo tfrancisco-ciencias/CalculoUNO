@@ -117,7 +117,7 @@ function selectAnswer(e) {
   } else {
     startButton.innerText = 'Reiniciar'
     startButton.classList.remove('hide')
-    //solutionsButton.classList.remove("hide")
+    solutionsButton.classList.remove("hide")
     }
   }
 
@@ -148,9 +148,12 @@ const questions = [
       { text: '$\\frac{1}{\\sqrt{x_2}-\\sqrt{x_1}}$', correct: false }
     ],
     solutionLines:[
-      {text: " "},
-      {text: " "},
-      {text: " "},
+      {text: "El cociente diferencial, para $x_1\\ne x_2$ es"},
+      {text: "$ \\frac{\\sqrt{x_2}-\\sqrt{x_1}}{x_2-x_1} $ "},
+      {text: "Multiplicando y dividiendo por el conjugado del numerador tenemos"},
+      {text:"$ \\frac{\\sqrt{x_2}-\\sqrt{x_1}}{x_2-x_1}\\frac{\\sqrt{x_1}+\\sqrt{x_2}}{\\sqrt{x_2}+\\sqrt{x_1}} $"},
+      {text: "despu\'es de simplificar llegamos a"},
+      {text: "$\\frac{(\\sqrt{x_2})^2-(\\sqrt{x_1})^2}{(x_2-x_1)(\\sqrt{x_2}+\\sqrt{x_1})}=\\frac{(x_2-x_1)}{(x_2-x_1)(\\sqrt{x_2}+\\sqrt{x_1})}=\\frac{1}{\\sqrt{x_1}+\\sqrt{x_1}}$" }
     ]
   },
   {
@@ -161,9 +164,10 @@ const questions = [
       { text: "$\\pm \\sqrt{3}$", correct: false},
     ],
     solutionLines:[
-      {text:" "},
-      {text:" "},
-      {text:"$ "},
+      {text:"Usando la regla para la suma de la derivada y la regla para la potencia (ejercicio 7.10) tenemos"},
+      {text:"$p'(x)=6-3(x+1)^2$ "},
+      {text:"Igualando a cero y resolviendo tenemos "},
+      {text:"$6=3(x+1)^2\\Rightarrow 2=(x+1)^2 \\Rightarrow \\pm \\sqrt{2}=x+1 \\Rightarrow x = -1\\pm \\sqrt{2}$"}
     ]
   },
 ]
