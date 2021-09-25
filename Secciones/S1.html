@@ -84,6 +84,7 @@
 
       <div class="nota-box">
         <h2 > Nota </h2>
+        <h3> Conjuntos </h3>
         <p>
           La noción de conjunto no la vamos a definir, simplemente vamos a
           pensar a los conjuntos como determinados por sus elementos.
@@ -119,9 +120,16 @@
           crear un nuevo conjunto seleccionando sólo los elementos de \(X\)
           que cumplen \(P\), esto se denota como:
           \[
-            A=\{x\in X: \textrm{\(x\) satisface \(P\)} \}.
+            A=\{x\in X: \textrm{\(x\) satisface \(P\)} \}
           \]
+          pero hay que hacer una advertencia sobre ésta manera de definir
+          un conjunto. En nuestro caso por lo regular \(X=\mathbb{R}\)
+          y la propiedad \(P\) está dada en términos de operaciones de los
+          números reales y en este caso este tipo de descripciones sí dan un
+          conjunto. Para casos más generales se pueden tener problemas, por ejemplo ver
+          la paradoja de Russell más adelante.
         </p>
+
 
       </div>
 
@@ -159,22 +167,103 @@
                   Otro conjunto que se puede obtener a partir de un conjunto dado es
                   el conjunto potencia. Si \(X\) es un conjunto el conjunto potencia,
                   denotado \(\mathcal{P}(X)\), es el conjunto formado por
-                  todos los subconjuntos de \(X\).
+                  todos los subconjuntos de \(X\). Es decir, \(A\in \mathcal{P}(X)\)
+                  si y sólo si \(A \subseteq X\).
                   <p>
                   <p>
                   Por ejemplo si \(X=\emptyset\)
-                  entonces \(\mathcal{P}(X)=\{ \emptyset\}\)., pues el conjunto vacío
-                  es subconjunto de cualquier otro conjunto. Otro ejemplo,
-                  si \(X=\{1,2\}\) entonces \(\mathcal{P}(X)=\{\emptyset, \{1\},\{2\},\{1,2\}\}\).
+                  entonces \(\mathcal{P}(X)=\{ \emptyset\}\).
+                  </p>
+                <p>
+                  Razón:
+                  tenemos que ver las dos contenciones \(\{\emptyset \} \subseteq \mathcal{P}(\emptyset)\)
+                  y \(\mathcal{P}(\emptyset)\subseteq \{\emptyset\}\).
+                </p>
+                <p>
+                  Para \(\{\emptyset \} \subseteq \mathcal{P}(\emptyset)\) debemos de probar
+                  que \(\emptyset \in \mathcal{P}(X)\), es decir, \(\emptyset \subseteq \emptyset\). Pero
+                  ésto último es cierto pues el conjunto vacío siempre es subconjunto de cualquier
+                  conjunto.
+                </p>
+                <p>
+                  Para \(\mathcal{P}(\emptyset)\subseteq \{\emptyset\}\) debemos de probar que
+                  todo \(A\in \mathcal{P}(\emptyset)\) pertenece a \(\{\emptyset\}\), es decir
+                  \(A=\emptyset\). Pero, si \(A\in \mathcal{P}(\emptyset)\) entonces
+                  \(A\subseteq \emptyset\) lo cual implica \(A=\emptyset\).
                 </p>
 
                 </div>
 
 
                 <div class="nota-box">
+                  <h2> Nota </h2>
+                  <h3> La paradoja de Russell </h3>
+                  <p>
+                    La idea de definir conjuntos de la forma
+                    \[
+                    A=\{x\in X: \textrm{\(x\) satisface \(P\)}\}
+                    \]
+                    es muy útil pero puede llegar a contradicciones si no se
+                    tiene cuidado en el contexto en el que se trabaja. El ejemplo
+                    más famoso de esto es la paradoja de Russell.
+                  </p>
 
+                  <p>
+                    Imagina que tienes el conjunto \(X\), formado por
+                    todos los conjuntos. Ahora a Russell
+                    se le ocurrió proponer el siguiente conjunto
 
-
+                    \[
+                    A=\{x\in X: x\notin x\}
+                    \]
+                    Parece un conjunto totalmente legítimo. La propiedad que lo define
+                    está clara, por ejemplo \(\emptyset \in A\) pues
+                    \(\emptyset \notin \emptyset\).
+                  <p>
+                    <p>
+                     Ahora, al ser \(A\) un conjunto, \(A\in X\) y por lo tanto
+                     nos podemos preguntar si \(A\) pertenece o no a \(A\). Recuerda
+                     que la relación de pertenencia es abosoluta, en elemento pertence
+                     o no pertenece.
+                    </p>
+                    <p>
+                      Ahora, si \(A \in A\) entonces \(A\) debe de satisfacer
+                      la propiedad que define a \(A\), de lo cual se sigue que
+                      \(A\notin A\). Pero entonces acabamos de ver,
+                      \(A\in A\) implica \(A\notin A\),
+                      una contradicción.
+                    </p>
+                    <p>
+                      Bueno, a lo mejor \(A\notin A\). Pero en este caso
+                      \(A\) no debe de satisfacer la condición que define a \(A\)
+                      por lo que \(A\notin A\) NO debe de ser cierta por lo que
+                      \(A\in A\). Pero entonces acabamos de probar
+                      \(A\notin A\) implica \(A\in A\).
+                    </p>
+                    <p>
+                      Esta es la paradoja de Russell. ¿De donde viene la
+                      paradoja? Russell se dio cuenta de que la médula del problema
+                      es \(X\), el conjunto de todos los conjuntos. Resulta que
+                      el conjunto de todos los conjuntos NO es un conjunto, el "conjunto"
+                      de todos los conjuntos es un objeto que se sale de la teoría de
+                      conjuntos.
+                    </p>
+                    <p>
+                      Afortunadamente en nuestro caso casi todos los conjuntos
+                      que veamos son subconjuntos de \(\mathbb{R}\) y la teoría
+                      de conjuntos sí prueba que los números reales
+                      es un conjunto y por lo tanto, en nuestro caso, conjuntos
+                      de la forma
+                      \[
+                      A=\{x\in \mathbb{R}: \textrm{\(x\) satisface \(P\)}\}
+                      \]
+                      !sí son conjuntos!
+                    </p>
+                    <p>
+                      Para ver más sobre
+                      la paradoja de Russell puedes ver
+                      <a href="https://youtu.be/J-voJm6tNJY" target="_blank">este video.</a>
+                    </p>
 
                 </div>
 
