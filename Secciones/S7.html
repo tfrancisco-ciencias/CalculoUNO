@@ -100,9 +100,17 @@ función de \(x\) y escribimos \(y=f(x)\), la razón de cambio promedio de
 </p>
 <p>
 A un cociente de la forma  \eqref{Eqn:CocienteDiferencial} se le llama
-cociente diferencial. Los cocientes diferenciales aparecen en múltiples areas.
+cociente diferencial. Para especificar el intervalo donde se toma el
+cociente diferencial se puede usar la notación
+\[
+  \left. \frac{\Delta y}{\Delta x}  \right|_{[x_1,x_2]}=\frac{f(x_2)-f(x_1)}{x_2-x_2}
+\]
 </p>
 
+
+<p>
+  Los cocientes diferenciales aparecen en múltiples areas.
+</p>
 <ul>
 <li>
   Si \(x:[0,T]\to \mathbb{R}\) denota la posición de una partícula al
@@ -290,6 +298,37 @@ y&=&(a^2+ab+b^2)(x-a)+a^3 \\
 </div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(f,g: I\to \mathbb{R}\) y toma \(a,b\in I\). Prueba las siguientes identidades.
+  </p>
+  <ol>
+    <li>
+      \[
+      \left. \frac{\Delta(f+g)}{\Delta x} \right|_{[a,b]}=
+      \left. \frac{\Delta f}{\Delta x} \right|_{[a,b]}+
+      \left. \frac{\Delta g}{\Delta x} \right|_{[a,b]}
+      \]
+    </li>
+    <li>
+      \[
+      \left. \frac{\Delta(fg)}{\Delta x} \right|_{[a,b]}=
+      f(b)\left. \frac{\Delta g}{\Delta x} \right|_{[a,b]}+
+      g(a) \left. \frac{\Delta f}{\Delta x} \right|_{[a,b]}
+      \]
+    </li>
+    <li>
+      Si \(g(a)\ne 0, g(b)\ne 0\),
+      \[
+      \left. \frac{\Delta(\frac{1}{g})}{\Delta x} \right|_{[a,b]}=
+      \left(-\frac{1}{g(a)g(b)} \right) \left. \frac{\Delta g}{\Delta x}\right|_{[a,b]}
+      \]
+    </li>
+  </ol>
+</div>
+
+
 
 
 <div class="nota-box">
@@ -311,7 +350,7 @@ y&=&(a^2+ab+b^2)(x-a)+a^3 \\
   <h2 class="number-title"> Definición </h2>
 <p>
 Sea \(f\) una función definida en una vecindad de \(a\). Decimos que \(f\) es
-diferenciable en \(x\) si
+diferenciable en \(a\) si
 el siguiente límite existe
 \[
 \lim_{x\to a}\frac{f(x)-f(a)}{x-a}
@@ -523,6 +562,21 @@ para todos \(a,b \geq 0\).
 </div>
 
 
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  <p>
+    Sea \(g\) una función definida en una vecindad de \(a\) y supón que \(g\) es diferenciable en \(a\).
+  </p>
+  <p>
+    Si \(g(a)\ne 0\) prueba que existe \(V\), una vecindad alrededor de \(a\), tal que
+    \(g(x)\ne 0\) para toda \(x\in V\).
+  </p>
+</div>
+
+
+
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 <p>
@@ -660,7 +714,7 @@ los puntos \(q_0\) para los cuales \(C'(q_0)=0\).
 
 
       <div class="quiz-box">
-        <h2  class="number-title">  Cuestionario  </h2>
+        <h2  >  Quiz  </h2>
           <button class="respButton hvr-grow">
             <a href="../Quizzes/Q7/Q7.html" target="_blank"> Click me </a>
           </button>
@@ -669,7 +723,7 @@ los puntos \(q_0\) para los cuales \(C'(q_0)=0\).
 
 
               <div class="quiz-box">
-                <h2  class="number-title">  Cuestionario 2  </h2>
+                <h2> Quiz </h2>
                   <button class="respButton hvr-grow">
                     <a href="../Quizzes/Q7/Q7-2.html" target="_blank"> Click me </a>
                   </button>
