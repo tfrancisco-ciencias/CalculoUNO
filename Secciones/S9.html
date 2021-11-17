@@ -85,7 +85,7 @@
 
 
 <div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
+  <h2 class="number-title" id="Def:AproxLineal"> Definición </h2>
 Sea \(f\) una función definida en una vecindad de \(a\).
 
 Decimos que \(f\) admite una aproximación lineal en \(a\) si existe
@@ -145,24 +145,68 @@ Además
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-
-Prueba que \(f\) admite una aproximación lineal en \(a\) si y sólo si \(f\) es
-diferenciable en \(a\).
-
-En cuyo caso además prueba que  \(m=f'(a)\), donde la \(m\)
-proviene de la aproximación lineal.
-
+<p>
+  Sea \(f:I\to \mathbb{R}\) una función definida en un intervalo abierto \(I\)
+  y un punto \(a\in I\).
+</p>
+<p>
+  Prueba que \(f\) admite una aproximación lineal en \(a\) si y sólo si \(f\) es
+  diferenciable en \(a\).  
+</p>
+<p>
+  En cuyo caso además prueba que  \(m=f'(a)\), donde la \(m\)
+  proviene de la aproximación lineal en la <a href="#Def:AproxLineal">Definición 9.2</a>.  
+</p>
 <button class="respButton hvr-grow "> Prueba </button>
 <div class="resp-box">
-\(\Rightarrow]\) Notar que, para \(x\ne a\):
-\[
-f(x)=f(a)+m(x-a)+E_a(x-a) \Rightarrow \frac{f(x)-f(a)}{x-a}-m
-= \frac{E_a(x-a)}{x-a}
-\]
-Por lo tanto \(f'(a)=m\).
+<p>\(\Rightarrow]\)</p> 
+<p>
+  Suponemos que \(f\) admite una aproximación lineal. Por lo tanto
+  existe \(V\), una vecindad perforada de \(0\), tal que para \(h \in V\):
+  \[
+  f(a+h)=f(a)+m h +E_a(h) 
+  \]
+  De lo cual se sigue que 
+  \[
+  \frac{f(a+h)-f(a)}{h}-m
+  = \frac{E_a(h)}{h}
+  \]
+  Tomando límite cuando \(h \to 0\) y utilizando la propiedad del error
+  en la aproximación lineal llegamos a 
+  \[
+  \lim_{h\to 0} \left(  \frac{f(a+h)-f(a)}{h}-m \right)
+  =\lim_{h\to 0} \left( \frac{E_a(h)}{h} \right)=0,
+  \]
+  de lo cual concluimos 
+  \[
+  \lim_{h\to a} \frac{f(a+h)-f(a)}{h}=m.
+  \]
+  Es decir, \(f\) es diferenciable en \(a\) y \(f'(a)=m\).
+</p>
 
-\(\Leftarrow\) Si \(f\) es diferenciable en \(a\), tomar  \(m=f'(a)\) y
-\[E_a(x-a)=(x-a)\left( \frac{f(x)-f(a)}{x-a} - f'(a)\right)\]
+<p>\(\Leftarrow\)</p> 
+<p>
+  Supongamos que \(f\) es diferenciable en \(a\) y tomemos \(m:=f'(a)\). Ahora
+  definimos la función \(E_a(h)\) como
+  \[
+    E_a(h)= f(a+h)-f(a)-f'(a)h 
+  \]
+  donde \(h\ne 0\) y está en una vecindad suficientemente chica
+  para que \(a+h\) pretenezca al dominio de \(f\).
+</p>
+<p>
+  Despejando \(f(a+h)\) en la definición de \(E_a\) se sigue inmediatamente que 
+  \[
+    f(a+h)=f(a)+m h +E_a(h) 
+  \]
+  y teniendo en cuanta de que \(f\) es diferenciable en \(a\) también tenemos
+  \[
+  \lim_{h\to 0} \frac{E_a(h)}{h}=\lim_{h\to 0} \left( \frac{f(a+h)-f(a)}{h}-m \right)=f'(a)-m=0.
+  \]
+</p>
+<p>
+  Por lo tanto, \(f\) admite una aproximación lineal en \(a\).
+</p>
 
 </div>
 
