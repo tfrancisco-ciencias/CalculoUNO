@@ -73,6 +73,58 @@
 
 <div class="info-box">
 <h2 class="number-title"> Introducción </h2>
+<p>
+  El concepto de aproximación lineal básicamente es el mismo que el
+  de recta tangente pero con un punto de vista distinto. El énfasis
+  que se hace al estudiar la recta tangente es geométrico, en la aproximación 
+  lineal es más algebráico y ananlítico, pues involucra dos aspectos 
+  muy importantes: una función lineal y el comportamiento de un error. 
+</p>
+<p>
+  Si \(f\) es una función diferenciable en \(a\), tenemos que la ecuación 
+  de la recta tangente en \((a,f(a))\) es 
+  \[
+    y-f(a)=f'(a)(x-a)
+  \]
+  pero ésta recta también es la gráfica de la función 
+  \[
+    L(x)=f(a)+f'(a)(x-a).
+  \]
+</p>
+<p>
+  Geométricamente la recta tangente se parece a la gráfica de \(f\), cerca 
+  del punto \((a,f(a))\). Lo anterior lo podemos pensar como 
+  \[
+    f = \textrm{rectan tangente} + \textrm{error}
+  \]
+  La recta tangente está representada por la función \(L\) y el error
+  lo vamos a representar con otra función, que vamos a denotar \(E_a\) 
+  (para enfatizar que estamos analizando a la recta tangente en \(a\)). No sabemos
+  mucho sobre \(E_a\) excepto que debe hacerse cero cerca de \(a\), es decir,
+  si \(x-a\) es chico \(E_a(x-a)\) debe ser chico. Entonces podemos escribir 
+   
+  \[
+    f(x)= L(x)  + E_a(x-a)=f(a)+f'(a)(x-a)+E_a(x-a)
+  \]
+  para \(x\) es una vecindad perforada de \(a\).
+</p>
+<p> 
+  Esto completa la 
+  parte algebráica. La parte analítica viene de cómo la función \(E_a\) tiende
+  a cero, lo cual se especifica en <a href="#Def:AproxLineal"> Definición 9.2</a>.
+</p>
+<p>
+  Nota: hay otra forma de expresar la ecuación anterior. Los puntos \(x\) en una 
+  vecindad perforada de \(a\) se pueden expresar como \(x=a+h\), donde \(h\)
+  es cercana a cero. Asi podemos reescribir la ecuación anterior como 
+  \[
+    f(a+h)= f(a)+f'(a)h+ E_a(h).
+  \]
+</p>
+<p>
+
+</p>
+
 </div>
 
 
@@ -97,7 +149,7 @@ f(a+h)=f(a)+mh+E_a(h)
 \]
 donde \(E_a\) es una función que satisfce
 \[
-\lim_{h\to 0}\frac{|E_a(h)|}{|h|}=0
+\lim_{h\to 0}\frac{E_a(h)}{h}=0
 \]
 Notas:
 <ol>
@@ -138,7 +190,7 @@ con \(x\) en una vecindad perforada de \(a\).
 
 Además
 \[
-\lim_{x\to a}\frac{|E_a(x-a)|}{|x-a|}=0.
+\lim_{x\to a}\frac{E_a(x-a)}{x-a}=0.
 \]
 </div>
 
@@ -184,7 +236,7 @@ Además
   Es decir, \(f\) es diferenciable en \(a\) y \(f'(a)=m\).
 </p>
 
-<p>\(\Leftarrow\)</p> 
+<p>\(\Leftarrow ]\)</p> 
 <p>
   Supongamos que \(f\) es diferenciable en \(a\) y tomemos \(m:=f'(a)\). Ahora
   definimos la función \(E_a(h)\) como
@@ -213,6 +265,22 @@ Además
 
 </div>
 
+<div class="ejercicio-box">
+  <h2 > Ejercicio </h2>
+  <p>
+    Sea \(f:I\to \mathbb{R}\) una función definida en un intervalo 
+    abierto y diferenciable en el punto \(a\). Además supón que  \(f(x)> 0\)
+    en una vecindad de \(a\), incluyendo \(a\).
+  </p>
+  <p>
+    Prueba que la función \(g(x)=\sqrt{f(x)}\) es diferenciable en \(a\) y 
+    \[
+      g'(a)=\frac{f'(a)}{2\sqrt{f(a)}}
+    \]
+
+  </p>
+</div>
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
@@ -234,41 +302,59 @@ de a lo más 0.5.
 
 <button class="respButton hvr-grow "> Prueba </button>
 <div class="resp-box">
-Inciso 1
-\(f'(x)=\frac{1}{2\sqrt{9+x}}\). Entonces
+<p>
+  Inciso (1).
+</p>
+<p>
+Por el ejercicio anterior 
+\[ f'(x)=\frac{1}{2\sqrt{9+x}}
+\]
+Entonces
 \[
 L(h)=f(0)+f'(0)h=3+\frac{h}{6}
 \]
+</p>
+<p>
+  Inciso (2).
+</p>
 
-Inciso 2
-
+<p>
 Notar \(\sqrt{9.3}=f(0.3)\), por lo que
 \[
 \sqrt{9.3}=f(0+0.3)\approx 3+\frac{0.3}{6}=3+0.05=3.05.
 \]
+</p>
+<p>
+  Inciso (3).
+</p>
+<p>
+  Necesitamos resolver
+  \[
+  \left|  \sqrt{9+h} - (3+\frac{h}{6}   )  \right| < 0.5
+  \]
+  Geométricamente y usando el <a href="./S8.html#Ejer:RectaTangenteRaiz">Ejercicio  8.10</a> 
+  (con la función raíz trasladada horizontalmente), tenemos que  
+  \[ 
+  3+h/6 \geq \sqrt{9+h}
+  \]
+  por lo que debemos resolver
+  \[0.5=3+\frac{h}{6}-\sqrt{9+h}\]
+  
+  Tomamos \(u=\sqrt{9+h}\), por lo que  \(u^2=9+h\) y podemos reescribir
+  \begin{eqnarray*}
+  0.5=3+\frac{u^2-9}{6} - u \Leftrightarrow  0
+  &=& \frac{u^2}{6}- u +3- \frac{3}{2}-0.5 \\
+  \Leftrightarrow 0
+  &=& \frac{u^2}{6}-u +1
+  \end{eqnarray*}
+  
+  Resoviendo obtenemos dos solcuiones, \(u_1= 3-\sqrt{3}\), \(u_2=3+\sqrt{3}\).
+  Entonces
+  \[h_1=u_1^2-9=9-6\sqrt{3}+3-9=3-6\sqrt{3} \approx  -7.3 \]
+  
+  \[h_2=u_2^2-9=9+2\sqrt{3}+3-9=3+6\sqrt{3} \approx   13.9\]
 
-Inciso 3
-Necesitamos resolver
-\[
-|  \sqrt{9+h} - (3+\frac{h}{6}   )  | < 0.5
-\]
-Geométricamente se puede ver que \(3+h/6 \geq \sqrt{9+h}\),
-por lo que debemos resolver
-\[0.5=3+\frac{h}{6}-\sqrt{9+h}\]
-
-Tomamos \(u=\sqrt{9+h}\), por lo que  \(u^2=9+h\) y podemos reescribir
-\begin{eqnarray*}
-0.5=3+\frac{u^2-9}{6} - u \Leftrightarrow  0
-&=& \frac{u^2}{6}- u +3- \frac{3}{2}-0.5 \\
-\Leftrightarrow 0
-&=& \frac{u^2}{6}-u +1
-\end{eqnarray*}
-
-Resoviendo obtenemos dos solcuiones, \(u_1= 3-\sqrt{3}\), \(u_2=3+\sqrt{3}\).
-Entonces
-\[h_1=u_1^2-9=9-6\sqrt{3}+3-9=3-6\sqrt{3} \approx  -7.3 \]
-
-\[h_2=u_2^2-9=9+2\sqrt{3}+3-9=3+6\sqrt{3} \approx   13.9\]
+</p>
 </div>
 
 </div>
