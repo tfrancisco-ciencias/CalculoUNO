@@ -266,20 +266,61 @@ Además
 </div>
 
 <div class="ejercicio-box">
-  <h2 > Ejercicio </h2>
+  <h2 class="number-title"> Ejercicio </h2>
   <p>
     Sea \(f:I\to \mathbb{R}\) una función definida en un intervalo 
     abierto y diferenciable en el punto \(a\). Además supón que  \(f(x)> 0\)
     en una vecindad de \(a\), incluyendo \(a\).
   </p>
   <p>
-    Prueba que la función \(g(x)=\sqrt{f(x)}\) es diferenciable en \(a\) y 
-    \[
-      g'(a)=\frac{f'(a)}{2\sqrt{f(a)}}
-    \]
-
+    <ol>
+      <li>
+        Prueba que la función \(g(x)=\sqrt{f(x)}\) es diferenciable en \(a\) y 
+        \[
+          g'(a)=\frac{f'(a)}{2\sqrt{f(a)}}
+        \]
+      </li>
+      <li>
+        Más en general, prueba que la función \(g(x)=\sqrt[n]{f(x)}\)
+        es diferenciable en \(a\) y 
+        \[
+        g'(a)=\frac{1}{n}(f(a))^{\frac{1}{n}-1}f'(a)
+        \]
+       </li>
+    </ol>
   </p>
+
+  <button class="respButton hvr-grow "> Prueba inciso 1 </button>
+  <div class="resp-box">
+  
+  <p>
+    Usando el <a href="./S4.html#Ejer:DiferenciaRaices"> Ejercicio 4.17</a> podemos 
+    simplificar el cociente diferencial de \(g\) para obtener
+    \[
+    \frac{g(x)-g(a)}{x-a}=\frac{\sqrt{f(x)}-\sqrt{f(a)}}{x-a}=
+    \frac{1}{x-a}\frac{f(x)-f(a)}{\sqrt{f(x)}-\sqrt{f(a)}},
+    \]
+    el cual podemos reescribir como
+    \[
+    \frac{g(x)-g(a)}{x-a}= 
+    \left(\frac{1}{\sqrt{f(x)}+\sqrt{f(a)}} \right) \left( \frac{f(x)-f(a)}{x-a} \right).
+    \]
+    Ahora, el límite de cada uno de los factores es
+    \begin{eqnarray*}
+      \lim_{x\to a} \frac{1}{\sqrt{f(x)}+\sqrt{f(a)}}&=&\frac{1}{2\sqrt{f(a)}}\\
+      \lim_{x\to a} \frac{f(x)-f(a)}{x-a}&=&f'(a)
+    \end{eqnarray*}
+    Por lo tanto concluimos que 
+    \[
+      \lim_{x\to a} \frac{g(x)-g(a)}{x-a}=\frac{f'(a)}{2\sqrt{f(a)}}
+    \]
+  </p>
+  <p>
+    Nota: la prueba del inciso 2 sigue las mismas ideas.
+  </p>
+  </div>
 </div>
+
 
 
 <div class="ejercicio-box">
