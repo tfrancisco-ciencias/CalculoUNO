@@ -489,6 +489,39 @@ Por ejemplo
   \(f(x)=o(x)\) cuando \(x\to a\) significa \(\lim_{x\to a}\frac{f(x)}{x}=0\).
 </li>
 </ol>
+<p>
+  La notación \(o\) (la cual se lee "o chiquita") trata de capturar
+  una <i>relación</i> entre dos funciones. Más en específico trata de dar información   
+  de cómo una función está creciendo o decreciendo una con respecto a otra. Por ejemplo, 
+  la expresión \(x^2=o(x)\) cuando \(x\to 0\) (igualdad cierta pues 
+  \(\lim_{x\to 0}\frac{x^2}{x}=\lim_{x\to 0}x=0\)) no dice que, cerca del cero, 
+  la función \(x\mapsto x^2\) decrece más rápido que la función \(x \mapsto x\), 
+  lo cual se puede ver directamente de las gráficas.
+</p>
+
+  <p> Por lo tanto igualdades 
+  como  \(f(x)=o(g(x))\) se leen de manera difierente a como se leería una  igualdad de funciones
+  común y corriente, pues más que igualdad de funciones nos indica una 
+  relación entre las funciones que aparecen. Lo anterior da como resultado expresiones 
+  poco comúnes  como \(o(g(x))+o(g(x))=o(g(x))\)
+  ó \(o(x)o(x)=o(x)\), las cuales deben leerse cómo relaciones entre las funciones que aparecen de un lado 
+  y del otro del signo igual.   
+</p>
+
+<p>
+  Otra manera de pensar la notación \(o\) es mediante conjuntos (lo cual tiene la ventaja de 
+  formalizar la notación). Dada una función \(g\), definida en una vecindad de \(a\), denotamos 
+  \[
+    o(g(x))=\left\{   h : \textrm{\(h\) es una función definida en una vecindad de \(a\) 
+      y } \lim_{x\to a} \frac{h(x)}{g(x)}=0 \right\}
+  \]
+      Con esta notación expresiones como \(o(g(x))+o(g(x))=o(g(x))\) se pueden pensar como:
+      si \(h_1,h_2 \in o(g(x))\) entonces \(h_1+h_2 \in o(g(x))\).
+</p>
+<p>
+  Más adelante se verá que una de las ventajas de la notación \(o\) es que simplifica mucho las cuentas pues ésta
+  notación hace énfasis en las partes relevantes en el cálculo de  límites. 
+</p>
 </div>
 
 <div class="ejercicio-box">
@@ -520,11 +553,12 @@ f(a+h)=f(a)+f'(a)h+o(h)
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:DerivadaLittleo"> Ejercicio </h2>
 
- Si una función \(f\) satisface satisface
+ Sea \(f\) una función definida en una vecindad de \(a\).  Si \(f\) satisface
 \[
 f(a+h)=f(a)+mh + o(h)
 \]
-para \(h\) en una vecindad de \(0\), entonces \(f'(a)=m\).
+para \(h\) en una vecindad de \(0\), entonces \(f\) es diferenciable en \(a\) y 
+\(f'(a)=m\).
 </div>
 
 
@@ -659,18 +693,29 @@ es mayor o igual a \(80\).
 <button class="respButton hvr-grow "> Prueba </button>
 <div class="resp-box">
 
+<p>
+  Inciso 1. 
+</p>
+<p>
+  Por definción del valor promedio en el intervalo \([20, 60]\) tenemos 
 
 \[
-\frac{\Delta C}{\Delta q}=\frac{60^2-20^2}{60-20}=80
+\frac{\Delta C}{\Delta q}=\frac{C(60)-C(20)}{60-20}=\frac{60^2-20^2}{60-20}=80
 \]
-
-Tenemos que resolver
-\[
-\frac{dC(q_0)}{dq} \geq 80
-\]
-es decir \(2q_0=80\), lo cual da \(q_0\geq 40\). Asi pues, a partir del
-objeto \(41\), el costo de producir cada uno
-es mayor al costo promedio.
+Entonces, en promedio, cada artículo producido desde el 20 al 60 cuesta \(80\).
+</p>
+<p>
+  Inciso 2.
+</p>
+<p>
+  Interpretando a la marginal como el costo del "siguiente artículo", tenemos que resolver
+  \[
+  \frac{dC(q_0)}{dq} \geq 80
+  \]
+  es decir \(2q_0=80\), lo cual da \(q_0\geq 40\). Asi pues, a partir del
+  objeto \(41\), el costo de producir cada uno
+  es mayor al costo promedio.
+</p>
 
 
 </div>
@@ -681,7 +726,7 @@ es mayor al costo promedio.
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-Supon que el costo de producir \(q\) objetos es \(C(q)=q^{1/2}+1\). Calcula
+Supon que el costo de producir \(q\) objetos es \(C(q)=q^{1/2}+1\). 
 <ol>
 <li>
   Tomar \(q_1< q_2\). Prueba que el costo promedio de cambiar el
