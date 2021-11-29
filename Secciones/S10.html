@@ -81,8 +81,54 @@
 <div class="info-box">
   <h2 class="number-title">Introducción </h2>
   <p>
-    
+    Las sucesiones son una herramienta importante cuando tratamos
+    de aproximar una cantidad mediante un precedimiento que 
+    involucra pasos bien ordenados. 
   </p>
+  <p>
+    Por ejemplo, los Babilonios tenían un procedimiento o receta para 
+    calcular la raíz cuadrada. Digamos que queremos calcular la raíz de 
+    un número \(A >0\). El primer paso es tratar de adivinar dando una 
+    aproximación inicial. Por ejemplo, para \(A=20\) una 
+    primera aproximación a la raíz es  \(8\) (pues \(8^2=16\)). Fijemos
+    dicha primera  aproximación a la raíz de \(A\) y denotémosla por \(a_0\).  
+    El siguiente paso es aplicar la fórmula 
+    \[
+      a_1=\frac{1}{2}(a_0+\frac{A}{a_0})
+    \]
+    En el ejemplo, si \(a_0=8\) entonces 
+    \(a_1=\frac{1}{2}(8+\frac{20}{8})=\frac{21}{4}\), que también es
+    una  aproximación de \(\sqrt{20}\).
+
+  </p>
+  <p>
+    Continuando con la receta, si tenemos dado el paso \(a_n\) el 
+    siguiente paso es 
+    \[
+      a_{n+1}=\frac{1}{2}(a_n+ \frac{A}{a_n}).
+    \]
+    Lo que los Babilonios sabían es que si se repetían estos pasos una 
+    cantidad  grande de veces el número resultante es una mejor aproximación 
+   al valor \(\sqrt{A}\) que con la que empezaron inicialmente (el \(a_0\) ).
+  </p>
+   <p>
+     Con este procedimiento obtenemos una lista o sucesión de 
+     números, \(a_1,a_2,\dots,  \) y la idea es que si tomamos 
+     números más adelante en la lista obtenemos una mejor aproximación
+     a \(\sqrt{A}\), es decir, los números \(a_n\) tienden a \(\sqrt{A}\)
+     cuando \(n\) va creciendo. Esto se denota como 
+     \[
+      \lim_{n\to \infty} a_n= \sqrt{A}
+     \]
+   </p>
+   <p>
+     Lo importante es que muchas veces, al tratar de encontrar soluciones 
+     a ecuaciones, se obtienen recetas o algoritmos que vienen dados por pasos
+     los cuales generan sucesiones de números que tienden a la solución que se 
+     busca. Por éste tipo de ejemplos (y muchos otros) las sucesiones son 
+     importantes. En este sección se estudian algunas propiedades básicas
+     sobre sucesiones y sus límites.
+   </p>
 </div>
 
 
