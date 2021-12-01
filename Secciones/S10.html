@@ -379,6 +379,74 @@ Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7<
 </ol>
 </div>
 
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+  <p>
+    Una subsucesión de una sucesión dada es componer la sucesión 
+    original con una función estrictamente  creciete. Más específicamente,
+    si \(f:\mathbb{N}\to \mathbb{R} \) es una sucesión una subsucesión
+    de \(f\) es una función de la forma \(f \circ g  \)
+    donde \(g:\mathbb{N} \to \mathbb{N}\) es estrictamente creciente. 
+  </p>
+  <p>
+    La idea de las subsucesiones es que sólo vamos a seleccionar ciertos 
+    elementos de la sucesión original pero queremos hacer dicha selección 
+    tomando en consideración que lo importante de las sucesiones es "lo que 
+    pasa al final". Por eso se debe de pedir que la función que selecciona 
+    (la \(g\) en la definición ) sea estrictamente creciente (para que 
+    no se quede "atorada").
+  </p>
+  <p>
+    Con la notación \((a_n)_{n=1}^\infty\), \(a_n=f(n)\), una subcusesión 
+    se denota como \((a_{n_k})_{k=1}^\infty\) donde \(a_{n_k}=f(g(k))\).
+  </p>
+  <p>
+    Dada una sucesión \((a_n)_{n=1}^\infty\) los siguientes son 
+    ejemplos de subsucesiones:
+    <ul>
+      <li>
+        \((a_{2k})_{k=1}^\infty\), pues 
+        está dada mediante la función \(g(k)=2k\), la cual 
+        es estrictamente creciente. 
+      </li>
+      <li>
+        \((a_{k+1})_{k=1}^\infty\), pues está dada 
+        mediante la función \(g(k)=k+1\), la cual es 
+        estrictamente creciente.
+      </li>
+      <li>
+        \((a_{k^2})_{k=1}^\infty\), pues está dada 
+        por la función \(g(k)=k^2\), la cual es 
+        estrictamente creciente.
+      </li>
+    </ul>
+  </p>
+  <p>
+    Casos  que no dan subsucesiones son:
+     <ul>
+      <li>
+        \((a_1,a_1,a_1,\dots)\), es decir, repetir el mismo
+        elemento; no es subsucesión pues se obtiene con 
+        la función \(g(k)=1\), la cual no es estrictamente 
+        creciente,
+      </li>
+      <li>
+        \((a_2,a_1,a_4,a_3,...)\), es decir, intercambiar los 
+        roles de los pares a impares; no es subsucesión 
+        pues la función que origina ésta lista satisface 
+        \(g(1)=2\), \(g(2)=1\), por lo que  
+        \(g\) no es estríctamente creciente.
+      </li>
+     </ul>
+
+    
+    
+
+  </p>
+</div>
+
+
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass">
     Teorema: Bolzano-Weirestrass  </h2>
