@@ -197,16 +197,16 @@
   Sea \(x\in \mathbb{R}\), fija y arbitraria.
 <ol>
 <li>
-  Para \(n,m\in \mathbb{R}\) con \(-x< m < n\) se satisface
+  Para \(n,m\in \mathbb{R}\) con \(-x< m < n\) se satisface:
 \[
-\left(1+\frac{x}{m}\right)^m \leq \left(1+\frac{x}{n}\right)^n
+\left(1+\frac{x}{m}\right)^m \leq \left(1+\frac{x}{n}\right)^n.
 \]
 donde la igualdad se da si y sólo si \(x=0\).
 </li>
 <li>
-Para \(n,m\in \mathbb{R}\) con \(x< m < n\) se satisface
+Para \(n,m\in \mathbb{R}\) con \(x< m < n\) se satisface:
 \[
-\left(1-\frac{x}{n}\right)^{-n} \leq \left(1-\frac{x}{m}\right)^{-m}
+\left(1-\frac{x}{n}\right)^{-n} \leq \left(1-\frac{x}{m}\right)^{-m}.
 \]
 donde la igualdad se da si y sólo si \(x=0\).
 </li>
@@ -229,11 +229,11 @@ a_1=\cdots=a_m=1-\frac{x}{m}, \quad a_{m+1}=\cdots=a_n=1
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:Exp2"> Ejercicio </h2>
 
-Sea \(x\in \mathbb{R}\) fijo y arbitrario.
-Para \(k\in \mathbb{N}\) con \(k > |x|\)
+Sea \(x\in \mathbb{R}\) fijo y arbitrario con \(x\ne 0\).
+Para \(k\in \mathbb{N}\) con \(k > |x|\):
 
 \[
-\left( 1+\frac{x}{k} \right)^k < \left( 1-\frac{x}{k} \right)^{-k}
+\left( 1+\frac{x}{k} \right)^k < \left( 1-\frac{x}{k} \right)^{-k}.
 \]
 </div>
 
@@ -243,26 +243,23 @@ Para \(k\in \mathbb{N}\) con \(k > |x|\)
 Sea \(x\in \mathbb{R}\) fijo y arbitrario. Entonces los
 siguientes límites existen
 \[
-\lim_{n}\left( 1+\frac{x}{n} \right)^n,
+\lim_{n \to \infty}\left( 1+\frac{x}{n} \right)^n,
 \quad
-\lim_{m} \left( 1- \frac{x}{m} \right)^{-m}
+\lim_{n \to \infty } \left( 1- \frac{x}{n} \right)^{-n}.
 \]
 
 
-Sugerencia: Considera los conjuntos
+Sugerencia: Considera las sucesiones 
 \[
-A=\left\{  \left(  1+ \frac{x}{n}\right)^{n} \right\}_{n \in \mathbb{N}},
-B=\left\{  \left(  1- \frac{x}{m}\right)^{-m} \right\}_{m \in \mathbb{N}}
+a_n= \left( 1+\frac{x}{n} \right)^n, \quad 
+b_n=\left( 1- \frac{x}{n} \right)^{-n}.
 \]
-Usa  <a href="#Ejer:Exp1">Ejercicio 11.2-1</a> y <a href="#Ejer:Exp2">Ejercicio 11.3</a>
-para demostrar que están
-acotados superior e inferiormente, respectivamente. Sean \(\alpha\) y \(\beta\)
-el supremo e infimo respectivamente. Probar
-
-\[
-\alpha= \lim_n \left(  1+ \frac{x}{n}\right)^{n} \quad \beta
-=\lim_m \left(  1- \frac{x}{m}\right)^{-m}
-\]
+Usa   <a href="#Ejer:Exp1">Ejercicio 11.3</a>
+para demostrar que  \((a_n)_{n=1}^\infty\) es monótona 
+creciente y \((b_n)_{n=1}^\infty\) es monótona decreciente. Después 
+prueba que \((a_n)_{n=1}^\infty\) está acotada superiormente y 
+que \((b_m)_{m=1}^\infty\) está acotada inferiormente. Finalmente 
+concluye usando el <a href="./S10.html#Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio 10.9</a>.
 </div>
 
 
@@ -271,8 +268,8 @@ el supremo e infimo respectivamente. Probar
 
 Demuestra que
 \[
-\lim_n \left(  1+ \frac{x}{n}\right)^{n} \quad
-=\lim_m \left(  1- \frac{x}{m}\right)^{-m}
+\lim_{n\to \infty} \left(  1+ \frac{x}{n}\right)^{n} \quad
+=\lim_{n\to \infty}\left(  1- \frac{x}{n}\right)^{-n}
 \]
 
 Sugerencia:  con \(n>|x|\), toma \(b=(1-x/n)^{-1}, a=(1+x/n)\); usa el
@@ -289,8 +286,8 @@ Finalmente toma  límite \(n\to \infty\).
 Definimos la función exponencial, denotada \(exp(x)\) o simplemente \(e^x\) como
 la función \(exp:\mathbb{R}\to \mathbb{R}\) dada por 
 \[
-e^x:=\lim_{n}\left( 1+\frac{x}{n} \right)^n
-= \lim_{n} \left( 1- \frac{x}{n} \right)^{-n}
+e^x:=\lim_{n \to \infty}\left( 1+\frac{x}{n} \right)^n
+= \lim_{n \to \infty} \left( 1- \frac{x}{n} \right)^{-n}
 \]
 Nota: por el <a href="#Ejer:IgualdadLimitesExponencial">Ejercicio 11.6</a> ambos 
 límites que aparecen en esta definición son iguales.
