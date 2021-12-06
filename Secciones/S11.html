@@ -71,6 +71,122 @@
       <h1 class="number-title "> La función exponencial </h1>
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
+  <p>
+    La función exponencial es tal vez una de las funciones más importantes en las 
+    matemáticas pues tiene montones de aplicaciones: interés compuesto, 
+    crecimiento de poblaciones (personas, bacterias, virus etc.), sistemas de ecuaciones diferenciales,
+    gometría diferencial, teoría de números, análisis funcional. Para una lista de algunos temas donde 
+    aparece funciones de tipo exponencial (por que hay varias) puede visitarse 
+    <a href="https://en.wikipedia.org/wiki/List_of_exponential_topics">esta lista en  wikipedia</a>.
+
+
+  </p>
+  <p>
+    Para introducir a la función exponencial vamos a considerar el siguiente ejemplo de 
+    interés compuesto.
+
+  </p>
+
+
+</div>
+
+
+  <div class="nota-box">
+    <h2 class="number-title"> Ejemplo </h2>
+    <h3> Interés compuesto </h3>
+  <p>
+    Por \(P_0\) denotamos cierta cantidad de dinero (llamado principal)
+    el cual se invertirá anualmete con una tasa de interés del \(100 r\)
+    porciento, con \(0< r < 1\). Por ejemplo, si el interés es el 5% entonces  \(r=0.05\).
+    Al final del año el principal arroja una ganancia de \((0.05)P_0\) y el 
+    total de la inversión tendrá un valor de 
+    \[
+      P_0+(0.05)P_0=P_0(1+0.05).
+    \]
+    Para un interés arbitrario \(r\), al final del año el total de la inversión es 
+    \[
+      P_0+rP_0=P_0(1+r)
+    \]
+  </p> 
+
+  <p>
+   Ahora veamos qué pasa cuando se reinvierte el principal inicial junto con la 
+   ganancia a los seis meses. El valor total de la inversión inicial  a los  seis meses 
+   es 
+  \begin{equation}\label{Eqn:InteresCompAux1}
+    P_1:=P_0\left(1+\frac{r}{2}\right).  
+  \end{equation}
+  Nota: debe ser \(\frac{r}{2}\) pues originalmente \(r\) representa el interés anual y 
+  sólo se invierte por seis meses. 
+  </p>
+  <p>
+    Ahora vamos a usar a \(P_1\)  como principal y reinvertirlo por los seis meses restantes. 
+    Al final del año el valor total de la inversión es
+    \begin{equation}\label{Eqn:InteresCompAux2}
+    P_2:=P_1\left(1+\frac{r}{2}\right)=P_0 \left( 1+ \frac{r}{2}\right)^2
+    \end{equation}
+  </p>
+  <p>
+    Comparando \eqref{Eqn:InteresCompAux1} y \eqref{Eqn:InteresCompAux2} vamos que el principal 
+    sólo se ve afectado por  los factores \((1+r)\) y \((1+r/2)^2\) y tenemos que 
+    \[
+    1+r < \left(1+\frac{r}{2} \right)^2=1+r+\frac{r^2}{4}
+    \]
+    lo cual tiene sentido pues al reinvertir a los seis meses se espera una ganancia mayor.
+  </p>
+  <p>
+    Siguiendo con un análisis similar, si el valor total de la inversión se reinvierte 
+    cada 4 meses (es decir, 3 veces al año) tenemos que la inversión original va creciendo 
+    como 
+    \begin{eqnarray*}
+     P_0 & \rightarrow P_1=P_0\left(1+\frac{r}{3} \right)\\
+         &  \rightarrow P_2:=P_1\left( 1+\frac{r}{3}\right)  \\
+        & \rightarrow P_3:=P_2\left(1+\frac{r}{3} \right) 
+    \end{eqnarray*}
+    Por lo tanto, al final del año la inversión total vale 
+    \[
+      P_3=P_2\left(1+\frac{r}{3} \right) =P_1\left(1+\frac{r}{3} \right)^2=P_0\left(1+\frac{r}{3} \right)^3.  
+    \]
+  </p>
+
+  <p>
+  Más en general, si el valor total de la inversión  (principal más ganancia) se reinvierte \(n\)-veces al año 
+  el valor total al final de año es
+  \[
+  P_n=P_0\left(1+\frac{r}{n}\right)^n.
+  \]
+  </p>
+
+  <p>
+  En teoría, si el valor total de la inversión se reinvirtiera cada instante del año,
+  el capital al final del año tendería a 
+  \[
+  \lim_{n\to \infty} P_0\left(1+\frac{r}{n}\right)^n.
+  \]
+  </p>
+
+  <p>
+    Lo sorprendente es que el límite 
+    \[
+    \lim_{n\to \infty} \left(1+\frac{r}{n}\right)^n
+    \]
+    siempre existe para todo \(r\in \mathbb{R}\) y es más, existe un número, denotado 
+    \(e\) (llamado la constante de Euler) para el cual 
+    \[
+    \lim_{n\to \infty} \left(1+\frac{r}{n}\right)^n=e^r.
+    \]
+    Nota: a pesar que \(e\) se llama el número de Euler, este ejemplo del interés compuesto
+    se debe a Jacob Bernoulli.
+  </p>
+  <p>
+    En los ejercicios que siguen se exploran las propiedades de las
+    expresiones 
+    \[
+      \left( 1+\frac{r}{n} \right)^n.
+    \]
+    Advertencia: esta sección es bastante técnica pero al ser la función exponencial 
+    tal importante creemos que es importante presentar todos los detalles.
+  </p>
 
 </div>
 
@@ -151,7 +267,7 @@ el supremo e infimo respectivamente. Probar
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:IgualdadLimitesExponencial"> Ejercicio </h2>
 
 Demuestra que
 \[
@@ -169,11 +285,15 @@ Finalmente toma  límite \(n\to \infty\).
 
 
 <div class="definicion-box">
-Definimos
+  <h2 class="number-title"> Definición </h2>
+Definimos la función exponencial, denotada \(exp(x)\) o simplemente \(e^x\) como
+la función \(exp:\mathbb{R}\to \mathbb{R}\) dada por 
 \[
-e^x=\lim_{n}\left( 1+\frac{x}{n} \right)^n
+e^x:=\lim_{n}\left( 1+\frac{x}{n} \right)^n
 = \lim_{n} \left( 1- \frac{x}{n} \right)^{-n}
 \]
+Nota: por el <a href="#Ejer:IgualdadLimitesExponencial">Ejercicio 11.6</a> ambos 
+límites que aparecen en esta definición son iguales.
 </div>
 
 
@@ -223,7 +343,36 @@ e^{x}e^y=e^{x+y}
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Demuestra que \(e^{-x}=\frac{1}{e^{x}}\).
+  <p>
+    Prueba las siguientes propiedades de la función exponencial.
+    <ol>
+      
+      <li>
+        \(e^0=1\).
+      </li>
+      <li>
+        Para todo \(x\in \mathbb{R}\), \(e^x >0\).
+      </li>
+      <li>
+        Si \(x < 0\) entonces \(e^x < 1 \). Si \( x > 0\) entonces \(e^x >1 \).
+      </li>
+      
+      <li>
+        Para todo \(x\in \mathbb{R}\), \(e^{-x}=\frac{1}{x}\).
+      </li>
+      <li>
+        Para todos \(x,y\in \mathbb{R}\), \(\frac{e^x}{e^y}=e^{x-y}\).
+      </li>
+      <li>
+        Si \(x < y\) entonces \(e^x < e^y\). Es decir, la función exponencial es 
+        estrictamente creciente. Sugerencia: usare el inciso anterior y el inciso 3.
+      </li>
+      <li>
+        Para todo \(x\in \mathbb{R}\) y todo \(r \in \mathbb{Q}\),
+        \((e^x)^q=e^{xq}\).
+      </li>
+    </ol>
+  </p>
 
 </div>
 
@@ -269,74 +418,29 @@ punto de \(\mathbb{R}\) con
 \]
 </div>
 
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Por \(P_0\) denotamos cierta cantidad de dinero (llamado principal)
-el cual se invertirá anualmete con una tasa de interés del \(100 r\)
-porciento, con \(0< r < 1\). Es decir, a final del año el principal crece a
-\[
-P_1=P_0+rP_0=P_0(1+r)
-\]
-<ol>
-<li>
-Si el principal  se reinvierte de manera semestral entonces el
-capital al final de año es
-\[
-P_1=P_0\left(1+\frac{r}{2}\right)^2
-\]
-y después de \(t\) años prueba que el principal es
-\[
-P_t=P_0\left(1+\frac{r}{2}\right)^{2t}
-\]
-</li>
-<li>
-Si el principal  se reinvierte \(n\)-veces al año prueba el
-capital al final de año es
-\[
-P_1=P_0\left(1+\frac{r}{n}\right)^n
-\]
-y después de \(t\) años prueba que el principal es
-\[
-P_t=P_0\left(1+\frac{r}{n}\right)^{nt}
-\]
-</li>
-
-<li>
-En teoría, si el principal se reinvirtiera cada instante del año,
-el capital al final del año será
-\[
-P_1=\lim_{n\to \infty} P_0\left(1+\frac{r}{n}\right)^n=P_0e^r
-\]
-esto se como conoce como interés continuo.
-
-Prueba que  después de \(t\) años el principal será
-\[
-P_t=P_0e^{rt}
-\]
-</li>
-
-</ol>
-</div>
-
 <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:ODEMasImportante"> Ejercicio </h2>
 
 
+<p>
+  Sea \(f:[a,b] \to \mathbb{R}\) una
+  función continua en \([a,b]\) y diferenciable en \((a,b)\) que satisface
+  \[
+  f'(x)=f(x), \quad \forall x\in (a,b).
+  \]
+  Demuestra que existe una constante \(c\) tal que \(f(x)=ce^x\), para todo \(x\in (a,b)\).
+  
+</p>
+<p>
+  Sugerencia: deriva la función \(\frac{f(x)}{e^x}\).
+</p>
+<p>
+  Este ejercicio se puede pensar en términos de ecuaciones diferenciales.
+  El ejercicio dice que, excepto por  constantes, la única función
+  \(f\) que satisface \(f'=f\) (una ecuación diferencial) es la exponencial.
+</p>
 
-Sea \(f:[a,b] \to \mathbb{R}\) una
-función continua en \([a,b]\) y diferenciable en \((a,b)\) que satisface
-\[
-f'(x)=f(x), \quad \forall x\in (a,b).
-\]
-Demuestra que existe una constante \(c\) tal que \(f(x)=ce^x\), para todo \(x\in (a,b)\).
 
-Este ejercicio se puede pensar en términos de ecuaciones diferenciales.
-El ejercicio dice que, excepto por  constantes, la única función
-\(f\) que satisface \(f'=f\) (una ecuación diferencial) es la exponencial.
-
-Sugerencia: deriva la función \(\frac{f(x)}{e^x}\).
 </div>
 
 

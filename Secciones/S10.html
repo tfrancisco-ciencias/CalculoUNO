@@ -142,6 +142,39 @@ Una sucesión de números reales es simplemente una función de
 Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
 \((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
 </p>
+<p>
+  Ejemplos.
+  <ul>
+    <li>
+      \((n)_{n=1}^\infty\), está dada por la función \(f(n)=n\).
+    </li>
+    <li>
+      \((\frac{1}{n})_{n=1}^\infty\), está dada por la función \(f(n)=\frac{1}{n}\).
+    </li>
+    <li>
+      \((\frac{\pi}{\sqrt{n}})_{n=1}^\infty\), está dada por la función \(f(n)=\frac{\pi}{\sqrt{n}}\).
+    </li>
+  </ul>
+
+</p>
+<p>
+  Otra forma de pensar a las sucesiones es pensarlas como un vector 
+  infinito \((a_1,a_2,\dots)\). Esta forma de pensar a las sucesiones tiene la ventaja que nos 
+  dice como se suman y se multiplican las sucesiones por un escalar (entrada por entrada):
+  \begin{eqnarray*}
+  (a_n)_{n=1}^\infty+(b_n)_{n=1}^\infty&=& (a_n+b_n)_{n=1}^\infty \\
+  \alpha (a_n)_{n=1}^\infty&=&(\alpha a_n)_{n=1}^\infty
+  \end{eqnarray*}
+</p>
+
+<p>
+  Uno de los aspectos más importantes de las sucesiones es "lo que pasa al final". Ya que los 
+  naturales nunca se terminan no exsite formalmente "lo que pasa al final", pero tomando la idea 
+  del algoritmo que se presentó al principio, la idea es ver el comportamiento de los elementos 
+  de  la sucesión cuando tomamos el indice cada vez más grande.  Esto se formaliza 
+  con la definición de límite de una sucesión. 
+</p>
+
 </div>
 
 
@@ -326,9 +359,10 @@ Sugerencia: para el caso monótono creciente  usa el
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Ejercicio (Teorema del
-    Sandwich para sucesiones) </h2>
+<div class="teorema-box">
+  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Teorema 
+    <h3 >Teorema del Sandwich para sucesiones </h3>
+  </h2>
   <p>
   Sean
   \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
@@ -472,9 +506,34 @@ Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7<
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass">
-    Teorema: Bolzano-Weirestrass  </h2>
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <h3> De los intervalos cerrados anidados de Cantor</h3>
+  <p>
+    Sea \(([a_n,b_n])_{n=1}^\infty\) una sucesión de intervalos en \(\mathbb{R}\) que satisface: 
+    <ol>
+      <li>
+        Para toda \(n\), \([a_{n+1}, b_{n+1}] \subseteq [a_n,b_n]\) (están anidados).
+      </li>
+      <li>
+        Las longitudes de los intervalos tienden a cero, es decir 
+        \[
+          \lim_{n\to \infty} (b_n-a_n) = 0.
+        \]
+      </li>
+    </ol>
+  </p>
+  <p>
+    Entonces existe un número real \(x_0\) tal que 
+    \[
+      \cap_{n=1}^\infty [a_n,b_n]=\{x_0\}
+    \]
+  </p>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass"> Teorema </h2>
+  <h3 > Bolzano-Weirestrass  </h3>
 
   <p>
   Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
@@ -523,12 +582,31 @@ para todos \(n,m \geq N\)
 |x_n-x_m|<\varepsilon
 \]
 </p>
+<p>
+  La idea de las sucesiones de Cauchy es que son sucesiones para las 
+  cuales los elementos de la sucesión se van hacercando entre sí. 
+</p>
+</div>
+  
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \((a_n)_{n=1}^\infty\) una sucesión de Cauchy. Supón que existe 
+    una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente de \((a_n)_{n=1}^\infty\).
+    Denotemos \(L=\lim_{k\to \infty}a_{n_k}\). Prueba que \((a_n)_{n=1}^\infty\)
+    también es convergente con 
+    \[
+    \lim_{n\to \infty} a_n=L.
+    \]
+  </p>
 </div>
 
 
-<div class="ejercicio-box">
+<div class="teorema-box">
 
-  <h2 class="number-title"> Teorema: Completez de \(\mathbb{R}\) </h2>
+  <h2 class="number-title"> Teorema </h2>
+  <h3 > Completez de \(\mathbb{R}\) </h3>
 
   Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
   satisface el criterio de Cauchy.
