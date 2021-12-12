@@ -663,7 +663,50 @@ f'(x)=-\frac{n}{x^{n+1}}=(-n)x^{-n-1}
 \]
 </p>
 </div>
+<div class="ejercicio-box">
+  <h2  class="number-title" id="Ejer:DifImplicaConti"> Ejercicio </h2>
 
+<p>
+  Sea \(f\) una función definida en una vecindad de \(a\) y supón que 
+  \(f\) es diferenciable en \(a\). Prueba que 
+  \[
+    \lim_{x\to a} f(x)=f(a)
+  \]
+</p>
+<button class="respButton hvr-grow "> Solución </button>
+  <div class="resp-box flexbox">
+<p>
+  Por la definición de diferenciabilidd tenemos el siguiente límite 
+  \[
+    \lim_{x\to a} \frac{f(x)-f(a)}{x-a}=f'(a).
+  \]
+</p>
+<p>
+  También sabemos (<a href="./S5.html#Ejer:LimiteIdentidad"> Ejercicio 5.9</a>) que 
+  \[
+    \lim_{x\to a} (x-a)=0.
+  \]
+</p>
+<p>
+  Multiplicando los dos últimos límites y usando 
+  la ley del producto para límites 
+  \[
+  0=f'(a)0=\lim_{x\to a} \left( \frac{f(x)-f(a)}{x-a}\right)\lim_{x\to a}(x-a)=
+  \lim_{x\to a} \left( \frac{f(x)-f(a)}{x-a}(x-a)\right) 
+  \]
+  Simplificando la expresión dentro del límite  
+  tenemos \( \left(\frac{f(x-a)}{x-a}\right)(x-a)=f(x)-f(a) \). Por lo tanto 
+  \[
+  0=\lim_{x\to a} (f(x)-f(a))
+  \]
+  y al ser \(f(a)\) una constante concluimos
+  \[
+  0= \lim_{x\to a} (f(x)-f(a))=\lim_{x\to a}f(x)- f(a) \Rightarrow f(a)=\lim_{x\to a}f(x).
+  \]
+</p>
+</div>
+
+</div>
 
 
 <div class="ejercicio-box">
