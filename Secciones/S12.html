@@ -257,10 +257,47 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   Sea \(f\) una función definida en una vecindad de \(a\). Demuestra que
-\(f\) es continua en \(a\) si y sólo si
-\[
-\lim_{h\to 0} f(a+h)=f(a)
-\]
+  \(f\) es continua en \(a\) si y sólo si
+  \[
+  \lim_{h\to 0} f(a+h)=f(a)
+  \]
+
+
+ <button class="respButton hvr-grow "> Solución  </button>
+            <div class="resp-box flexbox">
+              
+                <p>
+                  Este ejercicio es simplemente una forma diferente de escribir el límite 
+                  \(\lim_{x\to a} f(x)=f(a)\). Iniciamos escribiendo los límites relevantes usando la notación 
+                  de \(\varepsilon, \delta\). 
+                </p>
+                <p>
+                  Para  \(\lim_{x\to a} f(x)=f(a)\) tenemos que para toda 
+                  \(\varepsilon >0\) existe \(\delta > 0\) tal que 
+                    \begin{equation}\label{Ejer:EqnEquivNotacionContinuidad1}
+                       0<|x-a |<\delta \Rightarrow |f(x)-f(a)| < \varepsilon.
+                    \end{equation}  
+                </p>
+                
+                
+                <p>
+                  Para \(\lim_{h\to 0} f(a+h)=f(a)\) tenemos que para toda 
+                  \(\varepsilon > 0\) existe \(\delta >0\) tal que 
+                  \begin{equation}\label{Ejer:EqnEquivNotacionContinuidad2}
+                     0<|h|<\delta \Rightarrow |f(a+h)-f(a)| < \varepsilon.
+                  \end{equation}
+                </p>
+                
+                <p>
+                  Sólo notamos que para pasar de \eqref{Ejer:EqnEquivNotacionContinuidad1}
+                  a \eqref{Ejer:EqnEquivNotacionContinuidad2} tomamos \(h=x-a\) y 
+                  para pasar de \eqref{Ejer:EqnEquivNotacionContinuidad2} a 
+                  \eqref{Ejer:EqnEquivNotacionContinuidad1} tomamos \(x=a+h\).
+                </p>
+                
+              
+            </div>
+
 </div>
 
 
@@ -269,7 +306,12 @@
   Demuestra que la función \(f:\mathbb{R}\to \mathbb{R}\) dada por 
   \(f(x)=|x|\) es continua
   en todo punto de \(\mathbb{R}\) pero no es diferenciable en \(x=0\).
+<P>
+  Nota: este ejercicio muestra que continuidad no implica diferenciabilidad.
+</P>
+ <p>
 
+ </p>
 </div>
 
 
@@ -393,7 +435,12 @@ Sea \(f\) una función continua en el punto \(b\). Si \(g\) es una
 función definida en una vecindad agujereada de \(a\) tal que
 \(\lim_{x\to a}g(x)=b\) entonces
 \[
-\lim_{x\to a}f(g(x))=f(\lim_{x\to a}g(x))=f(b)
+\lim_{x\to a}f(g(x))=f(b)
+\]
+Es decir, podemos "meter el límite" para funciones continuas 
+(¡siempre y cuando el límite exista!)
+\[
+  \lim_{x\to a} f(g(x))=f(\lim_{x\to a} g(x))
 \]
 </div>
 
