@@ -444,17 +444,25 @@ Sugerencia: primero demuestra la identidad \(\cos(2\alpha)=1-2\sen^2(\alpha)\).
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-Sea \(f\) una función continua en el punto \(b\). Si \(g\) es una
-función definida en una vecindad agujereada de \(a\) tal que
-\(\lim_{x\to a}g(x)=b\) entonces
-\[
-\lim_{x\to a}f(g(x))=f(b)
-\]
-Es decir, podemos "meter el límite" para funciones continuas 
-(¡siempre y cuando el límite exista!)
-\[
+<p>
+  Sea \(f\) una función definida en una vecindad del punto  \(L\) y continua \(L\). 
+  Sea \(g\)  una función definida en una vecindad agujereada de \(a\) tal que
+  \(\lim_{x\to a}g(x)=L\) 
+</p>
+<p>
+  Prueba que 
+  \[
+  \lim_{x\to a}f(g(x))=f(L)
+  \]
+</p>
+<p>
+  Lo cual se puede escribir como 
+  \[ 
   \lim_{x\to a} f(g(x))=f(\lim_{x\to a} g(x))
-\]
+  \]
+  es decir, podemos "meter el límite" para funciones continuas 
+  (¡siempre y cuando el límite de adentro exista!).
+</p>
 </div>
 
 
@@ -462,9 +470,12 @@ Es decir, podemos "meter el límite" para funciones continuas
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-Sea \(f\) una función definida en una vecindad de \(a\) y continua en
-\(a\) con \(b=f(a)\). Sea \(g\) una función definida en una vecindad de \(b\)
-y continua en \(b\). Demuestra que la composición \(g\circ f\) es continua en \(a\).
+Sea \(g\) una función definida en una vecindad de \(x_0\) y continua en
+\(x_0\). Sea \(f\) una función definida en una vecindad de \(g(x_0)\)
+y continua en \(g(x_0)\). Demuestra que la composición \(f \circ g\) es continua en \(x_0\).
+<p>
+  Sugerencia: aplica directamente el ejercicio anterior.
+</p>
 </div>
 
 
