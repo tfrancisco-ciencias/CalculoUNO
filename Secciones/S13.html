@@ -74,7 +74,61 @@
 
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
+  <p>
+    La regla de la cadena nos dice que composición de funciones diferenciables es 
+    diferenciable y además nos da una fórmula para calcular la derivada. Para iniciar 
+    vamos a ver un ejemplo.
+  </p>
 
+  <p>
+    Supongamos que tenemos una partícula que se mueve sobre el eje real y que \(f_1(t)\)
+    representa la posición de la partícula (respecto al origen) al tiempo \(t\). Si \(v_1\)
+    representa la velocidad de la partícula sabemos que \(v_1=f_1'\). 
+  </p>
+
+  <p>
+    Ahora supongamos que tenemos otra partículo que sigue la misma trayectoria que la primera 
+    pero con el doble de velocidad. Si \(f_2(t)\) representa la posición de la segunda partícula 
+    la relación entra \(f_1\) y \(f_2\) es que \(f_2(t)=f_1(2t)\) (pues al tiempo \(t\) la segunda 
+    partícula ha recorrido el doble de la primera partícula). Ahora denotemos por 
+    \(v_2\) a la valocidad de la segunda partícula, de manera intuitiva tenemos \(v_2=2v_1\), pero 
+    también sabemos que \(v_2'=f_2\), por lo que llegamos a la relación 
+    \[
+    f_2'(t)=v_2(t)=2v_1(2t)=2f'(2t).
+    \] 
+    En resumen tenemos una formula para la derivada de la composición \(f_1(2t)\). Denotando 
+    \(g(t)=2t\) y notando que \(g'(t)=2\) podemos escribilr la relación anterior como
+    \[
+    (f_1\circ g)'(t)=g'(t)f_1'(2t)
+    \] 
+  </p>
+
+  <p>
+    Es importante notar el factor \(g'(t)=2\) que aparece en  la derivada de la 
+    composición. Es decir, la derivada de la composición NO es simplemente la derivada de la 
+    función que está "más afuera" sino que 
+    hay un factor enfrente, dicho factor es el que toma en cuenta la derivada de la función 
+    que está "más adentro". Por cierto, de aqui también viene el nombre de "regla de la cadena"
+    pues una composición puede pensarse como "dos eslabones":  la función de "adentro" 
+    y la función de "afuera "; la regla une estos dos "eslabones" al multiplicar 
+    las dos derivadas correspondientes.
+  </p>
+  <p>
+    Para terminar vamos a comprobar la fórmula \(f_2'(t)=2f_1'(2t)\) directamente usando la 
+    definición de derivada. Primero calculamos el cociente diferencial de \(f_2\) en términos del de 
+    \(f_1\):
+    \[
+    \frac{f_2(t+h)-f_2(t)}{h}=\frac{f_1(2(t+h))-f_1(2t)}{h}=\frac{f_1(2t+2h)-f(2t)}{h}.
+    \]
+    Tomando el cambio de variable \(k=2h\) tenemos que podemos reescribir lo anterior como 
+    \[
+    \frac{f_2(t+h)-f_2(t)}{h}=\frac{f_1(2t+k)-f(2t)}{k/2}=2\left(\frac{f(2t+k)-f(2t)}{k}\right).
+    \]
+    Finalmente notando que \(h\to 0\) si y sólo si \(k\to 0\) conlcuimos 
+    \[
+      f_2'(t)=\lim_{h\to 0}\frac{f_2(t+h)-f_2(t)}{h}=\lim_{k\to 0}2\left(\frac{f(2t+k)-f(2t)}{k}\right)=2f_1'(2t).
+    \]
+  </p>
 </div>
 
 
