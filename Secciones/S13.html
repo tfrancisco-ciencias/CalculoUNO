@@ -81,50 +81,57 @@
 
 <div class="teorema-box">
   <h2 class="number-title"> Teorema </h2>
-  Este ejercicio da una demostración de la regla de la cadena.
+  <h3>La regla de la cadena </h3>
 
-Sea \(f\) una función definida en una vecindad de \(a\) y sea \(g\) una función
-definida en una vecindad de \(f(a)\). Si \(f\) es diferenciable
-en \(a\) y \(g\) es
-diferenciable en \(f(a)\) entonces la composición
-\(g\circ f\) es diferenciable en \(a\) y
-\[
-(g\circ f)'(a)=g'(f(a))f'(a)
-\]
+  <p>
+   Sea \(f\) una función definida en una vecindad de \(a\) y sea \(g\) una función
+   definida en una vecindad de \(f(a)\). Si \(f\) es diferenciable
+   en \(a\) y \(g\) es
+   diferenciable en \(f(a)\) entonces la composición
+   \(g\circ f\) es diferenciable en \(a\) y
+   \[
+   (g\circ f)'(a)=g'(f(a))f'(a)
+   \]
+ </p>
+  <p>
+    Este ejercicio da una demostración de la regla de la cadena.
+  </p>
 
 
-Supongamos que \(f(x)\) está definida para \(x\) en una vecindad de
-\(a\) y \(g(u)\)
-está definida para \(u\) en una vecindad \(f(a)\).
 
+  <p>
+    Supongamos que \(f(x)\) está definida para \(x\in (a-\delta, a+\delta)\) y \(g(u)\)
+    está definida para \(u\in (f(a)-\eta, f(a)+\eta)\).
+  </p>
+  
 <ol>
 <li>
-  Para \(h\) cercana a cero define \(k=k(h)=f(a+h)-f(a)\). Demuestra que
-\[\lim_{h\to 0}k=0, \quad \lim_{h\to 0} \frac{k}{h}=f'(a)\]
+  Para \(h\in (-\delta, \delta)\) define \(k(h)=f(a+h)-f(a)\). Demuestra que
+\[\lim_{h\to 0}k(h)=0, \quad \lim_{h\to 0} \frac{k(h)}{h}=f'(a)\]
 </li>
 <li>
- Denota \(u_0=f(a)\). Demuestra que para \(t\) cercano a cero
+ Denota \(u_0=f(a)\). Para  \(t\in (-\eta, \eta)\) define 
 \[
-g(u_0+t)= g(u_0)+ g'(u_0)t+E(t)
+G(t)= \left\{ 
+  \begin{array}{cc}
+  \frac{g(u_0+t)-g(u_0)}{t} -g'(u_0)& t\ne 0 \\
+  0 & t=0
+  \end{array}
+  \right.
 \]
-con \(\lim_{t\to 0} \frac{E(t)}{t}=0\).
+prueba que \(G\) es una función continua en \(0\).
 </li>
 
 <li>
-  Define \(G(t)=\frac{E(t)}{t}\) para \(t \ne 0\) y \(G(0)=0\). Demuestra que
-\(G\) es una función continua en cero.
-</li>
-
-
-
-<li>
-  Demuestra que, para \(t\) cercana a cero,
+  Prueba que para toda \(t\in (-\eta, \eta)\):
 \[
-g(u_0+t)-g(u_0)= t(G(t)+g'(u_0))
+t(G(t)+g'(u_0))= g(u_0+t)-g(u_0).
 \]
+
 </li>
+
 <li>
-  Con ayuda del incisco anterior prueba que, para \(h\ne 0\) y cercana a cero:
+  Con ayuda del incisco anterior prueba que, para \(h\in (-\delta, \delta)\), \(h\ne 0\):
 \[
 \frac{(g\circ f)(a+h)-(g\circ f)(a)}{h}=\frac{k(h)}{h}[G(k(h))+g'(u_0)].
 \]
