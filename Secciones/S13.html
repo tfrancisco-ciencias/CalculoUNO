@@ -139,7 +139,8 @@
 
   <p>
    Sea \(f\) una función definida en una vecindad de \(a\) y sea \(g\) una función
-   definida en una vecindad de \(f(a)\). Si \(f\) es diferenciable
+   definida en una vecindad de \(f(a)\) (así la composición 
+   \(g\circ f\) está definida en una vecindad de \(a\)). Si \(f\) es diferenciable
    en \(a\) y \(g\) es
    diferenciable en \(f(a)\) entonces la composición
    \(g\circ f\) es diferenciable en \(a\) y
@@ -204,57 +205,119 @@ t(G(t)+g'(u_0))= g(u_0+t)-g(u_0).
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  Este ejercicio da otra demostración de la regla de la cadena.
+  Este ejercicio da otra demostración de la regla de la cadena, esta vez usando aproximaciones lineales.
 <ol>
+  <p>
+    Sea \(f(x)\) y \(g(u)\) funciones tales que podemos tomar la 
+    composición \(g(f(x))\). Supongamos que \(f(x)\) diferenciable en \(x=a\) y \(g(u)\) una función diferenciable en 
+    \(u=f(a)\). En lo que sigue vamos a denotar \(f(a)=u_0\).
+  </p>
 <li>
-  Supon que \(g(u)\) es una función diferenciable en \(u_0\).
-Usando aproximaciones lineales podemos escribir:
-\[
-g(u)=g(u_0)+g'(u_0)(u-u_0)+o(u-u_0)
-\]
-para \(u\) cercana a \(u_0\).
+  Usando una aproximación lineale prueba que existe \(r_1>0\) tal que 
+  para \(u \in (u_0-r_1, u_0+r_1)\):
+  \[
+  g(u)=g(u_0)+g'(u_0)(u-u_0)+E(u-u_0)
+  \]
+  con \(E:(-r_1,r_1)\to \mathbb{R}\), \(E(0)=0\) y \(E(u-u_0)=o(u-u_0)\).
 </li>
 <li>
-  Supon que \(f(x)\) es una función diferenciable en \(a\), con \(f(a)=u_0\).
-
-Demuestra que para \(x\) cercana  a \(a\)
-\begin{equation*}
-g(f(x))=g(f(a))+g'(f(a))(f(x)-f(a))+o(f(x)-f(a))
-\end{equation*}
+  Usando el inciso anterior y la continuidad de \(f(x)\) en \(x=a\) prueba que existe una \(r_2>0\)
+  tal que para  \(x\in (a-r_2, a+r_2)\):
+  \begin{equation*}
+  g(f(x))=g(u_0)+g'(u_0)(f(x)-u_0)+E(f(x)-u_0).
+  \end{equation*}
+  
 </li>
 
 <li>
-   Usando aproximaciones lineales, prueba que para \(x\) cercana a \(a\):
-\[
-f(x)-f(a)=f'(x)(x-a)+o(x-a)
-\]
-</li>
-<li>
-  Usa las aproximaciones anteriores para probar que,
-
-\begin{eqnarray*}
-g(f(x))&=&g(f(a))+g'(f(a))(f'(a)(x-a)+o(x-a))\\
-&+&o(f'(a)(x-a)+o(x-a))
-\end{eqnarray*}
-para \(x\) cercana a \(a\).
+   Usando una aproximación lineal  prueba que existe una \(r_3>0\) tal que 
+   para \(x\in (a-r_3,a+r_3)\):
+  \[
+  f(x)-f(a)=f'(x)(x-a)+F(x-a)
+  \]
+  con \(F:(-r_3,r_3)\to \mathbb{R}\), \( F(0)=0\) y \(F(x-a)=o(x-a)\).
 </li>
 
+<li>
+  Usa las aproximaciones anteriores para probar que existe una \(r>0\) tal que 
+  para \(x \in (a-r,a+r)\): 
+  \begin{eqnarray*}
+  g(f(x))&=&g(f(a))+g'(f(a))f'(a)(x-a)+g'(f(a))F(x-a)\\
+  &+& E(f(x)-f(a)).
+  \end{eqnarray*}
+  
+</li>
 
 <li>
- Usa el <a href="./S9.html#Ejer:PropiedadesLittleo">Ejercicio 9.12</a>
- para deducir que para
-\(x\in I'\):
-\[
-g(f(x))=g(f(a))+g'(f(a))f'(a)(x-a)+o(x-a)
-\]
+  Prueba que \(E(f(x)-u_0)=o(x-a)\).
+</li>
+
+<li>
+ Usa el <a href="./S9.html#Ejer:PropiedadesLittleo">Ejercicio 9.13</a>
+ para deducir que para \(x\in (a-r,a+r)\):
+  \[
+  g(f(x))=g(f(a))+g'(f(a))f'(a)(x-a)+o(x-a)
+  \]
 </li>
 <li>
-  Usa el <a href="./S9.html#Ejer:DerivadaLittleo">Ejercicio 9.11</a>
+  Usa el <a href="./S9.html#Ejer:DerivadaLittleo">Ejercicio 9.12</a>
   para concluir que \(g\circ f\)
-es diferenciable en \(a\) y \((g\circ f)'(a)=g'(f(a))f'(a)\).
+  es diferenciable en \(a\) y \((g\circ f)'(a)=g'(f(a))f'(a)\).
 </li>
 </ol>
 </div>
+
+
+
+<div class="nota-box">
+  <h2 class="number-title"> Nota </h2>
+  <p>
+    Hasta ahora las familias de funciones a las cuales podemos calcular sus derivadas 
+    son limitadas. Hagamos una lista.
+  </p>
+  <ul>
+    <li>
+      Funciones lineales: \(f(x)=mx+b\), \(f'(x)=m\). 
+    </li>
+    <li>
+      Funciones polinomiales: \(p(x)=\sum_{k=0}^{n} a_kx^k\), \(p'(x)=\sum_{k=1}^n ka_{k}x^{k-1} \).
+    </li>
+    <li>
+      Raíces: \(f(x)=\sqrt[n]{x}\), \(f'(x)=\frac{1}{n}x^{\frac{1}{n}-1}\).
+    </li>
+    <li>
+      Funciones trigonométricas.
+    </li>
+    <li>
+      Función exponencial: \(f(x)=e^x\), \(f'(x)=e^x\).
+    </li>
+    <li>
+      Usando la regla del producto y el cociente, productos y cocientes de las funciones
+      anteriores.
+    </li>
+  </ul>
+ <p>
+   Sin embargo no tenemos reglas para funciones tan sencillas como \(\cos(x^2)\), 
+   \(e^{3x+1}\) ó más complicadas como \(e^{-\frac{1}{x^2}}\). La regla de la cadena 
+   es la herramienta que nos ayuda a calcular dichas derivadas o otras más complicadas.
+ </p>
+ <p>
+  Por ejemplo, para \(h(x)=\cos(x^2)\), tomamos \(f(x)=x^2, g(u)=\cos(u)\), para que entonces
+  \(h(x)=g(f(x))\) así que por la regla de la cadena:
+  \[
+    h'(x)=g'(f(x))f'(x)=-\sen(f(x))f'(x)=-\sen(x^2)f'(x)=-\sen(x^2)(2x).
+  \] 
+ </p>
+ <p>
+   Para \(h(x)=e^{-\frac{1}{x^2}}\) tomamos \(f(x)=-\frac{1}{x^2}, g(u)=e^u\), para que 
+   \(h(x)=g(f(x))\) y aplicando la regla de la cadena resulta:
+   \[
+   h'(x)=g'(f(x))f'(x)=e^{f(x)}=e^{-\frac{1}{x^2}}f'(x)=(e^{-\frac{1}{x^2}})\left( \frac{2}{x^3} \right).
+   \]
+ </p>
+
+</div>
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
@@ -299,16 +362,65 @@ Encuentra las siguientes derivadas
 </div>
 
 
+<div class="nota-box">
+  <h2 class="number-title"> Nota </h2>
+  <p>
+    La regla de la cadena puede aplicarse para funciones que son 
+    composiciones de más de dos funciones, simplemente se aplica 
+    varias veces consecutivas. 
+  </p>
+  <p>
+    Por ejemplo, digamos que queremos diferenciar la función 
+    \(k(x)=\sqrt{(\cos(x))^2+1}\). Empezamos a leer la 
+    función desde "adentro hacia afuera" para definir las 
+    funciones 
+    \[
+      f(x)=\cos(x), g(u)=u^2+1, h(t)=\sqrt{t}
+    \]
+    y obtener que \(k(x)=h(g(f(x)))\). Ahora, para ponernos en la 
+    situación de la regla de la cadena también denotamos \(F(x)=g(f(x))\), para 
+    que \(k(x)=h(F(x))\), la cual, aplicando la regla de la cadena tiene derivada 
+    \[
+      k'(x)=h'(F(x))F'(x).
+    \]
+    Asu vez, al ser \(F\) una composición \(F(x)=g(f(x))\), podemos aplicar la regla de 
+    la cadena para obtener 
+    \[
+      F'(x)=g'(f(x))f'(x).
+    \]
+    Combinando las dos ecuaciones anteriores resulta 
+    \[
+    k'(x)=h'(F(x))g'(f(x))f'(x)
+    \]
+    (¡ nota que la expresión a la derecha del parentesis parece una cadena !).
+  </p>
+  <p>
+    Finalmente, sabiendo que las derivadas de las funciones son 
+    \[
+      f'(x)=-\sen(x), g'(u)=2u, h'(t)=\frac{1}{2}t^{-1/2}
+    \]
+    concluimos 
+    \begin{eqnarray*}
+      k'(x)&=& \frac{1}{2}\left( (\cos(x))^2+1 \right)^{-1/2}2(\cos(x) )(-\sen(x)) \\
+          &=& - \frac{\sen(x)\cos(x)}{\sqrt{(\cos(x)^2+1)}}.
+    \end{eqnarray*}
+  </p>
+</div>
+
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
   Encuentra las derivadas de las siguientes funciones
 <ol>
+
 <li>
-  \(\sqrt{x^2-1}\), \(-1< x < 1\).
+  \(\cos(\sen(x^2+1))\), \(x\in \mathbb{R}\).
 </li>
 <li>
-  \(\sqrt{x^2+1}\), \(x\in \mathbb{R}\).
+  \(\cos(1-(\sen(x))^2)\), \( x \in \mathbb{R}\).
+</li>
+<li>
+  \( \sqrt{\sqrt{\sqrt{x}}}\), \(x>0\).
 </li>
 <li>
   \(\sqrt{(x-2)(x+1)^2}\), \(2 < x\).
@@ -316,9 +428,7 @@ Encuentra las siguientes derivadas
 <li>
   \(\sqrt{\frac{1+x^2}{1-x^2}}\), \(|x|< 1\).
 </li>
-<li>
-  \( \sqrt{\sqrt{x}}\), \(x>0\).
-</li>
+
 <li>
   \(\sqrt[4]{\sqrt[3]{\sqrt[2]{x}}}\), \(x>0\).
 </li>
@@ -328,14 +438,44 @@ Encuentra las siguientes derivadas
 </ol>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(f:(a,b)\to \mathbb{R}\) una función diferenciable en todo \((a,b)\). Usa la 
+    regla de la cadena para porbar la siguiente regla de la potencia 
+    \[
+      \frac{df^n(x)}{dx}= nf^{n-1}(x)\frac{df(x)}{dx}
+    \]
+    donde \(n\geq 2\) es un natural.
+  </p>
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(f:(a,b)\to \mathbb{R}\) una función diferenciable en todo \((a,b)\) tal que 
+    \(f(x)>0\) para toda \(x\in (a,b)\). Usa la 
+    regla de la cadena para porbar la siguiente regla de la potencia 
+    \[
+      \frac{df^{\frac{1}{n}}(x)}{dx}= \frac{1}{n}f^{\frac{1}{n}-1}(x)\frac{df(x)}{dx}
+    \]
+    donde \(n\geq 2\) es un natural.
+  </p>
+
+</div>
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Sea \(f\) una función diferrenciable con \(f(x)\ne 0\). Usa la regla de
+  Sea \(f:(a,b)\to \mathbb{R}\) una función diferrenciable cen todo \((a,b)\) con  
+  \(f(x)\ne 0\) para toda \(x\in (a,b)\). Usa la regla de
 la cadena para dar otra prueba de que
 \[
-\left( \frac{1}{f(x)} \right)'=\frac{-f'(x)}{f^2(x)}
+\frac{d}{dx}\left(\frac{1}{f(x)} \right)= - \frac{1}{f^2(x)} \frac{df(x)}{dx}.
 \]
 
 </div>
