@@ -214,52 +214,61 @@ para \(u\in (u_0-\eta, u_0+\eta)\):
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  Este ejercicio da otra demostración de la regla de la cadena, esta vez usando aproximaciones lineales.
-<ol>
   <p>
-    Sea \(f(x)\) y \(g(u)\) funciones tales que podemos tomar la 
-    composición \(g(f(x))\). Supongamos que \(f(x)\) diferenciable en \(x=a\) y \(g(u)\) una función diferenciable en 
-    \(u=f(a)\). En lo que sigue vamos a denotar \(f(a)=u_0\).
+    Este ejercicio da otra demostración de la regla de la cadena, esta vez usando aproximaciones lineales.
   </p>
+  <p>
+    Supongamos que \(f(x)\) está definida para \(x\in (a-\delta, a+\delta)\) y \(g(u)\)
+    está definida para \(u\in (f(a)-\eta, f(a)+\eta)\). 
+  </p>
+  <p>
+    Si \(f\) es diferenciable
+   en \(a\) y \(g\) es
+   diferenciable en \(f(a)\) entonces la composición
+   \(g\circ f\) es diferenciable en \(a\) y
+   \[
+   (g\circ f)'(a)=g'(f(a))f'(a)
+   \]
+  </p>
+  <p>
+    Denotamos \(u_0=f(a)\).
+  </p>
+<ol>
+  
 <li>
-  Usando una aproximación lineale prueba que existe \(r_1>0\) tal que 
-  para \(u \in (u_0-r_1, u_0+r_1)\):
+  Usando la continuidad de \(f\) en \(a\) prueba que existe una \(\delta' >0\) tal que 
+  para todo \(x\in (a-\delta', a+\delta')\) se cumple que 
+  \(f(x)\in (u_0-\eta, u_0+\eta)\). Por lo tanto, la composición 
+  \((g\circ f)(x)\) está bien definida para todo \(x\in (a-\delta', a+\delta')\).
+</li>
+<li>
+  Usando una aproximación lineal prueba que se puede escribir:
   \[
   g(u)=g(u_0)+g'(u_0)(u-u_0)+E(u-u_0)
   \]
-  con \(E:(-r_1,r_1)\to \mathbb{R}\), \(E(0)=0\) y \(E(u-u_0)=o(u-u_0)\).
+  con \(u \in (u_0-r_1, u_0+r_1)\) (para alguna \(r_1>0\)) y la función error  
+  satisface \(E:(-r_1,r_1)\to \mathbb{R}\), \(E(0)=0\) y \(E(u-u_0)=o(u-u_0)\).
 </li>
 <li>
-  Usando el inciso anterior y la continuidad de \(f(x)\) en \(x=a\) prueba que existe una \(r_2>0\)
-  tal que para  \(x\in (a-r_2, a+r_2)\):
+  Usando los incisos anteriores prueba que se puede expresar: 
   \begin{equation*}
   g(f(x))=g(u_0)+g'(u_0)(f(x)-u_0)+E(f(x)-u_0).
   \end{equation*}
-  
+  con \(x\in (a-r_2, a+r_2)\) (para alguna \(r_2 >0\)) y además \(E(f(x)-u_0)=o(x-a)\).
 </li>
 
-<li>
-   Usando una aproximación lineal  prueba que existe una \(r_3>0\) tal que 
-   para \(x\in (a-r_3,a+r_3)\):
-  \[
-  f(x)-f(a)=f'(x)(x-a)+F(x-a)
-  \]
-  con \(F:(-r_3,r_3)\to \mathbb{R}\), \( F(0)=0\) y \(F(x-a)=o(x-a)\).
-</li>
 
 <li>
-  Usa las aproximaciones anteriores para probar que existe una \(r>0\) tal que 
-  para \(x \in (a-r,a+r)\): 
+  Usa una aproximación lineal para \(f\) y los incisos anteriores para probar que se puede 
+  escribir:
   \begin{eqnarray*}
   g(f(x))&=&g(f(a))+g'(f(a))f'(a)(x-a)+g'(f(a))F(x-a)\\
   &+& E(f(x)-f(a)).
   \end{eqnarray*}
-  
+  para \(x \in (a-r,a+r)\) (para alguna \(r>0\)) con la función error que satisface
+  \(F:(-r,r)\to \mathbb{R}\), \( F(0)=0\) y \(F(x-a)=o(x-a)\).
 </li>
 
-<li>
-  Prueba que \(E(f(x)-u_0)=o(x-a)\).
-</li>
 
 <li>
  Usa el <a href="./S9.html#Ejer:PropiedadesLittleo">Ejercicio 9.13</a>
@@ -267,12 +276,10 @@ para \(u\in (u_0-\eta, u_0+\eta)\):
   \[
   g(f(x))=g(f(a))+g'(f(a))f'(a)(x-a)+o(x-a)
   \]
+  y concluye usando el <a href="./S9.html#Ejer:DerivadaLittleo">Ejercicio 9.12</a>
+  que \(g\circ f\) es diferenciable en \(a\) y \((g\circ f)'(a)=g'(f(a))f'(a)\).
 </li>
-<li>
-  Usa el <a href="./S9.html#Ejer:DerivadaLittleo">Ejercicio 9.12</a>
-  para concluir que \(g\circ f\)
-  es diferenciable en \(a\) y \((g\circ f)'(a)=g'(f(a))f'(a)\).
-</li>
+
 </ol>
 </div>
 
