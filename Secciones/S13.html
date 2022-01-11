@@ -477,6 +477,33 @@ Encuentra las siguientes derivadas
     donde \(n\geq 2\) es un natural.
   </p>
 
+  <button class="respButton hvr-grow "> Solución </button> 
+  <div class="resp-box flexbox">
+    
+      
+
+      <p>
+        Definimos  \(h(x)=f^n(x)\), para \(x\in (a,b)\). Entonces \(h(x)=g(f(x))\)
+        donde \(g(u)=u^n\).
+      </p> 
+       <p>
+        Ya que  \(f\) es diferenciable en todo \((a,b)\) y 
+        \(g\) es diferenciable en todo \(\mathbb{R}\), por la regla de la cadena 
+        \(g\circ f\) es diferenciable en todo \((a,b)\) y 
+        \[
+        (g\circ f)'(x)=g'(f(x))f'(x)
+        \]
+        Finalmente, sabemos que \(g'(u)=nu^{n-1}\), por lo tanto 
+        \[
+          h'(x)=(g\circ f)'(x)=nf^{n-1}(x)f'(x).
+        \]
+        </p>
+    
+      
+
+  
+  </div>
+  
 </div>
 
 
@@ -492,6 +519,7 @@ Encuentra las siguientes derivadas
     \]
     donde \(n\geq 2\) es un natural.
   </p>
+
 
 </div>
 
@@ -510,6 +538,63 @@ la cadena para dar otra prueba de que
 
 <div class="nota-box">
   <h2 class="number-title"> Diferenciación implícita </h2>
+  <p>
+    Una función puede venir de manera explícita o de manera implícita.
+  </p>
+  <p>
+    Una función es explícita si su regla de correspondencia está dada 
+    explícitamente. En otras palabras tenemos una fórmula para  \(f(x)\), por 
+    ejemplo 
+    \[
+      f(x)=\sqrt{x^2-1}.
+    \]
+  </p>
+  <p>
+    Una función es implícita si su regla de correspondencia no está dada 
+    explícitamente, si no que está dada en términos de otras relaciones. Por 
+    ejemplo, podemos considerar la función  \(f(x)\) que satisface la ecuación 
+    \[
+      f^2(x)+1=x^2.
+    \]
+  </p>
+  <p>
+    A veces podemos pasar de una función implícita a una explícita y la manera de 
+    hacerlo es despejando (si es que es posible). En el ejemplo anterior, si despejamos  \(f(x)\)
+    \(f^2(x)+1=x^2\) obtenemos dos soluciones: si \(f>0\)
+    entonces \(f(x)=\sqrt{x^2-1}\), si \(f< 0 \) entonces \(f(x)=-\sqrt{x^2-1}\).
+  </p>
+  <p>
+    La diferenciación implícita consiste en derivar funciones que están dadas de manera 
+    implícita. Para derivar estas funciones se procede a derivar ambos lados 
+    de la ecuación que define a la función implícitamente. En el ejemplo anterior debemos derivar 
+    ambos lados de \(f^2(x)+1=x^2\) para obtener 
+    \begin{eqnarray*}
+     & & \frac{d}{dx}\left(f^2(x)+1 \right) = \frac{d}{dx}(x^2) \\
+     & \Rightarrow & \frac{dx}{dx}(f^2(x))+\frac{d}{dx}(1) = 2x \\
+     & \Rightarrow & 2f(x)\frac{df(x)}{dx}+0 =2x \\
+     & \Rightarrow & \frac{df(x)}{dx}=\frac{x}{f(x)}
+    \end{eqnarray*}
+    donde en la primera implicación usamos que la derivada de una suma es la suma de las 
+    derivadas y en el segunda implicación la fórmula para la derivada de una potencia. Así pues, 
+    siempre y cuando \(f(x) \ne 0\) tenemos que 
+    \[
+      \frac{df(x)}{dx}=\frac{x}{f(x)}.
+    \]
+    Hay que notar que la derivada también está dada de manera implícita, pues de antemano no tenemos 
+    una fórmula explícita para \(f(x)\).
+  </p>
+  <p>
+    Nota: muchas ecuaciones llevan a definir funciones de manera implícita. Por ejemplo
+    las siguientes ecuaciones 
+    \[
+      x^3+y^3-xy=1, \quad \cos(x)+\cos(y^2)=\cos(xy), \quad e^{xy}=1+xy 
+    \]
+    si consideramos a la variable \(x\) como independiente esto lleva a que la variable 
+    \(y\) defina una función  (\(y=f(x)\)) implícitamente, pero hay que tener cuidado pues tal vez 
+    se requieran condiciones adicionales (como \(f>0\) o \(f< 0 \) en el ejemplo anterior)
+    para poder garantizar que \(y\) sea realmente una función y tal vez aún así no sea 
+    posible despejar a la \(y\) para obtener una fórmula explícita en términos de la \(x\).
+  </p>
 </div>
 
 
