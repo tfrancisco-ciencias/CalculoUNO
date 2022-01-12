@@ -777,6 +777,40 @@ my^{m-1}\frac{dy}{dx}=n f^{n-1}\frac{df}{dx}
 
 <div class="nota-box">
   <h2 class="number-title"> Tazas relacionadas </h2>
+  <p>
+    Una aplicación de la diferenciación implícita es analizar las
+    derivadas de dos funciones que están relacionadas. En varias situaciones
+    se tienen que dos funciones que están relacionadas, por ejemplo si el precio 
+    aumente la demanda disminuye; si la valocidad aumentan el tiempo 
+    de traslado disminuye etc. Si dichas relaciones se pueden expresar de manera
+    algebráica se puede diferenciar dicha expresión para encontrar una relación 
+    entre las derivadas (tazas de crecimiento) de las funciones.   
+  </p>
+  <p>
+    El ejemplo más sencillo es la relación 
+    \[
+      xy=1.
+    \]
+    Esta define una hipérbola en el plano de la cual se puede ver que si 
+    \(x\) aumenta entonces \(y\) disminuye. Para ver esta relación con 
+    derivadas imaginamos que un punto 
+    se mueve sobre esta hipérbola, digamos parametrizamos su posición con las
+    coordenadas \(x(t),y(t)\), donde \(t\) representa el tiempo. Así pues 
+    debemos de tener \(x(t)y(t)=1\), para todo \(t\).  Si  derivamos implícitamente 
+    la relación anterior obtenemos 
+    \[
+    x(t) \frac{dy(t)}{dt}+\frac{dx(t)}{dt} y(t)=0 
+    \]
+    multiplicando la relación anterior por \(x\ne 0\) y usando \(xy=1\) obtenemos 
+    \[
+      x^2(t) \frac{dy(t)}{dt}=-\frac{dx(t)}{dt}
+    \]
+    la cual da una relación muy precisa entre las dos derivadas (tazas de cambio) y de 
+    la cual se puede obtener información. Por ejemplo,
+    ya que \(x^2>0\) es directo ver que el signo de las derivadas \(\frac{dx}{dt}\)
+    y \(\frac{dy}{dt}\) siempre son distintos. Por lo tanto, si  \(x\)
+    aumenta \(y\) disminuye y viceversa.
+  </p>
 </div>
 
 
