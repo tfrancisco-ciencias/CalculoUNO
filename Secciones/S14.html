@@ -72,7 +72,27 @@
 
 
 
-
+<div class="info-box">
+  <h2 class="number-title">Introducción </h2>
+  <p>
+    En numerosas aplicaciones es importante calcular máximos o mínimos de funciones, por ejemplo:
+    encontrar la distancia mínima entre un punto y una curva en el plano; encontrar el nivel de 
+    producción óptimo para maximiar las ganancias por la venta de cierto producto;
+    calcular la temperatura máxima que el recubrimiento del transbordador espacial puede soportar
+    antes de dañar la nave. 
+  </p>
+  <p>
+    En esta sección nos enfocamos al aspecto más básicos de este tipo de problemas, el cual consiste en dar 
+    condiciones bajo las cuales el problema tiene solución, es decir, garantizar la existencia del máximo o del mínimo
+    de una función dada. No toda función tiene máximo o mínimo, por ejemplo la 
+    función \(f(x)=\frac{1}{x}\), \(x\in (0,1)\), no  tiene máximo pues \(\lim_{x\to 0^+}f(x)=+\infty\). 
+  </p>
+  <p>
+    El objetivo principal de ésta sección es probar que toda función continua en un intervalo 
+    cerrado y acotado tiene máximo y mínimo. El segundo objetivo es usar la derivada para dar un método 
+    más estructurado para encontrar máximos y mínimos. Como siempre iniciamos con las definiciones básicas.  
+  </p>
+</div>
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
 Sea \(f:D \to \mathbb{R}\) una función.
@@ -110,9 +130,22 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
+<p>
   Demuestra que \(f:(0,1) \to \mathbb{R}\) dada por \(f(x)=1/x\) está
-acotada inferiormente
-pero no superiormente en \((0,1)\).
+  acotada inferiormente pero no superiormente en \((0,1)\).
+</p>
+<p>
+  Probar que la función está acotada inferiormente es sencillo pues 
+  sabemos que \(0< \frac{1}{x}\) para todo \(x>0\). Así tomando 
+  \(m=0\) concluimos que \(m < f(x)\) para todo \(x\in (0,1)\).
+</p>
+<p>
+  Finalmente, la función no está acotada superiomente pues de estarlo
+  existiría una constante \(M\) tal que \(\frac{1}{x} \leq M\) para todo 
+  \(x\in (0,1)\). Por otro lado usando \(\lim_{x\to 0^+ }\frac{1}{x}=+\infty\)  
+  existe una \(x_0\in (0,1)\) tal que \(\frac{1}{x_0} > M\), contradiciendo lo 
+  anterior.
+</p>
 </div>
 
 
@@ -339,23 +372,124 @@ no tiene mínimo.
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  Sea \(f:\mathbb{R} \to \mathbb{R}\) una función continua en \(\mathbb{R}\)
-que satisface:
-\[
-\lim_{x\to \infty} f(x)=\lim_{x\to - \infty}f(x)=0
-\]
-Demuestra que \(f\) tiene una máximo absoluto o un mínimo absoluto,
-pero no ambos.
+  <p>
+    Sea \(f:\mathbb{R} \to \mathbb{R}\) una función continua en \(\mathbb{R}\)
+    que satisface:
+    \begin{equation}\label{Eqn:limitesCeroAlInfinito}
+    \lim_{x\to +\infty} f(x)=\lim_{x\to - \infty}f(x)=0
+    \end{equation}
+    
+  </p>
+  <ol>
+    <li>
+      Demuestra que \(f\) tiene  máximo absoluto o mínimo absoluto.
+    </li>
+    <li>
+      Da un ejemplo de una función \(f:\mathbb{R}\to \mathbb{R}\) 
+      que satisfaga \eqref{Eqn:limitesCeroAlInfinito} y que 
+      \(f\) tenga un máximo absoluto pero no un mínimo absoluto.
+    </li>
+    <li>
+      Da un ejemplo de una función \(f:\mathbb{R}\to \mathbb{R}\) 
+      que satisfaga \eqref{Eqn:limitesCeroAlInfinito} y que 
+      \(f\) tenga un máximo absoluto y mínimo absoluto.
+    </li>
+  </ol>
+
+  <p>
+    Prueba de 1.
+  </p>
+
+  <p>
+    Si la función \(f\) es idénticamente \(0\) hemos terminado. Así pues podemos suponer
+    que existe \(x_0\) con \(f(x_0) \ne 0\). Además sin pérdida de generalidad podemos suponer 
+    \(f(x_0)>0\) (si \(f(x_0)< 0\) podemos cambiar \(f\) por \(-f\) y entonces \(f\) tiene 
+    máximo absoluto sii \(-f\) tiene mínimo absoluto).
+  </p>
+  <p>
+    Usando \eqref{Eqn:limitesCeroAlInfinito} podemos asegurar que existe \(M\in \mathbb{R}\)
+    tal que \(|f(x)|< f(x_0)\) para todo \(x \) con \(|x| > M\).
+  </p>
+  <p>
+    Ahora consideramos la función \(f\) restringida a \([-M,M]\). Por el Teorema Min/Max 
+    \(f\) alcanza su máximo absoluto en \([-M,M]\), por lo tanto existe \(\tilde{x}\in [-M,M]\) tal que 
+    \(f(x)\leq f(\tilde{x})\) para todo \(x\in [-M,M]\)
+  </p>
+  <p>
+    Afirmamos que \(\max\{f(x_0), f(\tilde{x})\}\) es el máximos absoluto de \(f\) en \(\mathbb{R}\). Para 
+    probarlo sea \(x\in \mathbb{R}\) arbitrario. 
+  </p>
+  <p>
+    Si \(|x|> M\) entonces
+    \[
+    f(x)\leq |f(x)| < f(x_0) \leq \max\{f(x_0), f(\tilde{x})\}.
+    \]
+    Si \(|x|\leq M\) entonces \(x\in [-M,M]\) y por lo tanto 
+    \[
+      f(x)\leq f(\tilde{x})\leq \max\{ f(x_0), f(\tilde{x})\}.
+    \]
+  </p>
+  <p>
+    En cualquiera de los casos tenemos \(f(x)\leq \max\{f(x_0), f(\tilde{x})\}\). 
+  </p>
+  <p>
+    Prueba de 2.
+  </p>
+  <p>
+    Considera la función \(f:\mathbb{R}\to \mathbb{R}\) dada por 
+    \[
+      f(x)=\left\{
+        \begin{array}{cc}
+          1 &  |x|\leq 1, \\
+          \frac{1}{|x|} & |x| > 1. 
+        \end{array}
+        \right.
+    \]
+    Nota que 
+    \[
+    \lim_{x\to +\infty} f(x)=0=\lim_{x\to -\infty} f(x).
+    \]
+    Además el máximo absoluto de \(f\) en \(\mathbb{R}\) es 1 pero 
+    \(f\) no tiene mínimo absoluto pues los valores de la función \(f\) 
+    se aproximan tanto al cero como queramos sin tocarlo ya que \(f(x) >0\) para toda \(x\)
+    y \(\lim_{x\to \pm \infty} f(x)=0\).
+  </p>
+  <p>
+    Prueba de 3.
+  </p>
+  <p>
+    Considera la función \(f:\mathbb{R}\to \mathbb{R}\) dada por 
+    \[
+      f(x)=\left\{
+        \begin{array}{cc}
+           -2-x &   -2\leq x  \leq -1 
+          x &  |x|\leq 1, \\
+          2-x &    1\leq x \leq 2 \\
+           0 & |x| > 2. 
+        \end{array}
+        \right.
+    \]
+    Entonces 
+    \[
+    \lim_{x\to +\infty} f(x)=0=\lim_{x\to -\infty} f(x)
+    \]
+    y de la gráfica podemos ver que el máximo absoluto de 
+    \(f\) en \(\mathbb{R}\) es \(1\) y su mínimo absoluto es \(-1\).
+  </p>
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Sea \(f: \mathbb{R} \to \mathbb{R}\) una función periodica, en el
-sentido de que  exsite \(p\in \mathbb{R}\) tal que
-\(f(x+p)=f(x)\), para toda \(x\in \mathbb{R}\). Si \(f\) es continua en \(\mathbb{R}\)
-muestra que \(f\) tiene un máximo y un mínimo absolutos.
+  <p>
+    Una función \(f: \mathbb{R} \to \mathbb{R}\) se llama  periódica si existe  \(p\in \mathbb{R}\)  tal que 
+    \(f(x+p)=f(x)\), para toda \(x\in \mathbb{R}\). El número \(p\) se llama un periodo de la función.
+  </p>
+  <p>
+    Prueba que si \(f:\mathbb{R} \to \mathbb{R}\) es continua en todo \(\mathbb{R}\) y 
+    periódica entonces \(f\) alcanza su máximo y mínimo absoluto.
+  </p>
 </div>
 
 <div class="nota-box">
