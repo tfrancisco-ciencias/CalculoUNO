@@ -178,10 +178,31 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Sea \(f:[a,b]\to \mathbb{R}\), \(f(x)=mx+c\). Demuestra
-\[
-|f(x)| \leq |m|\max\{|a|,|b|\}+|c|, \quad \forall x\in [a,b]
-\]
+  <p>
+    Sea \(f:[a,b]\to \mathbb{R}\), \(f(x)=mx+c\). Demuestra 
+    \[
+      |f(x)| \leq |m|\max\{|a|,|b|\}+|c|, \quad \forall x\in [a,b].
+    \] 
+    Conclusión: todo polinomio de grado 1 es acotado en intervalos de la forma 
+    \([a,b]\). 
+  </p>
+
+<button class="respButton hvr-grow "> Prueba  </button>
+<div class="resp-box flexbox">
+<p>
+  Usando directamente la desigualdad del triángulo tenemos 
+  \[
+    |f(x)|=|mx+c|\leq |mx|+|c|=|m||x|+|c|.
+  \]
+  Además sabemos que \(x\in [a,b]\), es decir \(a\leq x \leq b\), por lo que 
+  tomando casos cuando \(x\geq 0\) ó \(x\leq 0\) obtenemos 
+  \(|x| \leq \max\{|a|,|b|\}\). Por lo tanto 
+  \[
+  |m||x|+|c| \leq |m|\max\{|a|,|b|\} +|c|
+  \]
+  lo cual conluye la solución.
+</p>
+</div>
 
 </div>
 
@@ -190,20 +211,67 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Este ejercicio muestra que todo polinomio es acotado en un intervalo
-cerrado.
-
-Sea \(M>0\) y  \(p:[-M,M] \to \mathbb{R}\) un polinomio
-\(p(x)=\sum_{k=0}^na_kx^k\) de grado \(n\). Demuestra
-<ol>
-<li>
-  Si \(M \leq 1\), \(|p(x)| \leq \sum_{k=0}^n|a_k|\).
-</li>
-<li>
-  Si \(M>1\), \(|p(x)| \leq \left( \sum_{k=0}^n |a_k| \right)M^n\).
-</li>
-</ol>
+<p>
+  Este ejercicio generaliza el anterior pues muestra que todo polinomio es acotado en un intervalo
+  cerrado y acotado.
+</p>
+<p>
+  Sea \(M>0\) y  \(p:[-M,M] \to \mathbb{R}\) un polinomio
+  \(p(x)=\sum_{k=0}^na_kx^k\) de grado \(n\). Demuestra
+  <ol>
+    <li>
+      Si \(M \leq 1\), \(|p(x)| \leq \sum_{k=0}^n|a_k|\).
+    </li>
+    <li>
+      Si \(M>1\), \(|p(x)| \leq \left( \sum_{k=0}^n |a_k| \right)M^n\).
+    </li>
+  </ol>
+</p>
 </div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(f\) una función definida en una vecindad de \(x_0\) y continua en \(x_0\).
+  </p>
+  <p>
+    Prueba que existe un intervalo cerrado centrado en \(x_0\) en el cual la función 
+    \(f\) está acotada.
+  </p>
+  <button class="respButton hvr-grow "> Prueba  </button>
+  <div class="resp-box flexbox">
+  <p>
+   Supongamos que \(f\) está definida en la vecindad \(x_0-r,x_0+r\), con \(r\) un número 
+   positivo. 
+  </p>
+  <p>
+    Por la continuidad de \(f\) en \(x_0\) para \(\varepsilon =1\) existe 
+   \( \delta >0   \) tal que \(|x-x_0| < \delta\) entonces \(|f(x)-f(x_0)| < 1\). Nota que 
+   podemos suponer que \( \delta < r\) (pues si es necesario podemos reemplazar \(\delta\)
+   por un \(\min\{r,\delta\}\)). 
+  </p>
+  <p>
+    Por la otra desigualdad del triángulo tenemos 
+    \[
+      ||f(x)|-|f(x_0)|| \leq |f(x)-f(x_0)|,
+    \]
+    de lo cual se sigue que para toda \(x\) con \(|x-x_0|<\delta \):
+    \[
+    ||f(x)|-|f(x_0)|| \leq |f(x)-f(x_0)|< 1 \Rightarrow |f(x)|-|f(x_0)|< 1 \Rightarrow |f(x)|< 1+|f(x_0)|.
+    \]
+  </p>
+  <p>
+    Por lo tanto, tomando \(M=1+|f(x_0)|\) y el intervalo cerrado \([x_0-\delta/2,x_0+\delta/2]\), 
+    concluimos 
+    \[
+      |f(x)| \leq M, \quad \textrm{para toda \(x\in [x_0-\delta/2,x_0+\delta/2]\)}.
+    \]
+  </p>
+</div>
+</div> 
+
+
 
 
 
