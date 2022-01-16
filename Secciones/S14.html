@@ -225,28 +225,49 @@ Sea \(f:D\to \mathbb{R}\) una función.
 <li>
   Decimos que \(f\) alcanza su máximo absoluto en \(D\) si existe \(x^*\in D\) tal
   que
-\[
-f(x) \leq f(x^*), \quad \textrm{ para todo \(x\in D\)}
-\]
+  \[
+  f(x) \leq f(x^*), \quad \textrm{ para todo \(x\in D\).}
+  \]
+  Nota: el máximo absoluto (o simplemente el máximo) de los valores de la función en 
+  \(D\) es el valor \(f(x^*)\) pero decimos que el máximo se <b>alcanza</b> en el punto \(x^*\). 
+  Si la función alcanza su máximo éste es único sin embargo pueden existir muchos puntos 
+  donde la función alcanza su máximo, ver <a href="#Ejer:MinMasSeAlcanzaVariosPuntos">Ejercicio 14.9</a>  
 </li>
 <li>
   Decimos que \(f\) alcanza su mínimo absoluto en \(D\) si existe \(x_*\in D\)
   tal que
 \[
-f(x_*) \leq f(x), \quad \textrm{ para todo \(x\in D\)}
+f(x_*) \leq f(x), \quad \textrm{ para todo \(x\in D\).}
 \]
+Nota: pasa lo mismo que con el máximo, el mínimo absoluto (o simplemente el máximo) de los valores de la función en 
+  \(D\) es el valor \(f(x_*)\) pero decimos que el mínimo se alcanza en el punto \(x_*\). 
+  El mínimo de una función es único pero el mínimo puede alcanzarse en más de 
+  un punto, ver <a href="#Ejer:MinMasSeAlcanzaVariosPuntos">Ejercicio 14.9</a> . 
 </li>
 </ol>
+<p>
+  Observación: si una función \(f:D\to \mathbb{R}\) está acotada superiormente en \(D\) entonces 
+  por el axioma del supremo existe \(\alpha=\sup_{x\in D}\{f(x)\}\). Ya que el supremo satisface 
+  \[
+  f(x) \leq \alpha
+  \]
+  se sigue que la función \(f\) alcanza su máximo absoluto en \(D\) si y sólo si existe un 
+  \(x_0\in D\) tal que \(f(x_0)=\alpha\). Por lo tanto, para funciones acotadas superiormente, 
+  una función alcanza su máximo absoluto si y sólo si hay un punto del domino cuyo valor sea 
+  igual al supremo de los valores de la función. Algo similar pasa con el mínimo absoluto y el 
+  ínfimo de los valores de la función.
+</p>
 </div>
 
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:MinMasSeAlcanzaVariosPuntos"> Ejercicio </h2>
 
-  Este ejercicio muestra que los puntos donde se alcanzan máximos o
-mínimos absolutos no son necesariamente únicos.
-
+  <p>
+    Este ejercicio muestra que los puntos donde se alcanzan máximos o
+    mínimos absolutos no son necesariamente únicos.
+  </p>
 <ol>
 <li>
   Para la función \(\sen\),  \( \sen( 3\pi/2 +2\pi k )
@@ -271,19 +292,23 @@ Prueba que \(f\) alcanza su máximo en \(1/2\) y en \(3/2\).
 </div>
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema (Max/Min)</h2>
- El siguiente ejercicio esboza una demostración del siguiente teorema.
+  <h2 class="number-title"> Teorema </h2>
+  <h3> Existencia de mínimos/máximos (Min/Max) </h3>
+ 
 
-Sea \(f:[a,b]\to \mathbb{R}\) una función continua. Entonces \(f\) alcanza
-su valor máximo y mínimo en \([a,b]\).
+<p>
+  Sea \(f:[a,b]\to \mathbb{R}\) una función continua. Entonces \(f\) alcanza
+  su valor máximo y mínimo en \([a,b]\).
 
-Es decir, existen puntos \(x_*,x^* \in [a,b]\) tal que
-\[
-f(x)  \leq f(x^*) , \quad  f(x_*) \leq f(x), \quad \forall x\in [a,b].
-\]
-En este caso  escribimos \(\max_{[a,b]} f=f(x^*), \min_{[a,b]} f=f(x_*)\).
-
-
+  Es decir, existen puntos \(x_*,x^* \in [a,b]\) tal que
+  \[
+  f(x)  \leq f(x^*) , \quad  f(x_*) \leq f(x), \quad \forall x\in [a,b].
+  \]
+  En este caso  escribimos \(\max_{[a,b]} f=f(x^*), \min_{[a,b]} f=f(x_*)\).
+</p>
+<p>
+  Los siguintes incisos dan una demostración de éste teorema.
+</p>
 
 <ol>
 <li>
@@ -317,28 +342,64 @@ superior de \(f\). Esto lleva a una contradicción.
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Este ejercicio muestra que no se pueden quitar las hipótesis de
-continuidad e intervalo cerrado en el Teorema Min/Max.
-
-Prueba que
+  <p>
+    Este ejercicio muestra que no se pueden quitar las hipótesis de
+    continuidad o intervalo cerrado en el Teorema Min/Max. Prueba:
+  </p>
 <ol>
-<li>
+  <li>
+    La función \(f:[-1,1]\to \mathbb{R}\) dada por
+  \[
+  f(x)=\left\{
+  \begin{array}{cc}
+  |x| &  \textrm{si \(x\ne 0\),}\\
+  1 & x=0
+  \end{array}
+  \right.
+  \]
+  no tiene mínimo.
+  
+  <li>
   La función \(f(x)=\frac{x}{1-x^2}\), \(x\in (-1,1)\) no tiene ni máximo ni
-  mínimo.
+  mínimo absoluto en \((-1,1)\).
 </li>
-<li>
-  La función \(f:[-1,1]\to \mathbb{R}\) dada por
-\[
-f(x)=\left\{
-\begin{array}{cc}
-|x| &  \textrm{si \(x\ne 0\),}\\
-0 & x=0
-\end{array}
-\right.
-\]
-no tiene mínimo.
 </li>
 </ol>
+<button class="respButton hvr-grow "> Prueba  </button>
+  <div class="resp-box flexbox">
+<p>
+  Prueba de 1.
+</p>
+<p>
+  La función no tiene mínimo pues para todo \(x\in [-1,1]\) podemos tomar 
+  existe \(x'\in [-1,1]\) tal que \(f(x') < f(x)\). En efecto, si \(x\ne 0\)
+  simplemente tomamos \(x'=\frac{x}{2}\) para tener
+  \[
+  f(x')=\frac{|x|}{2} < |x|=f(x)
+  \]
+  y si \(x=0\) tomamos \(x'=1/2\) para llegar a 
+  \[
+   f(x')=\frac{1}{2} < 1 = f(x). 
+  \]
+</p>
+<p>
+  Otra forma de ver que la función no tiene mínimo es notando que \(f(x)>0\) para todo 
+  \(x\in [-1,1]\) además de que \(\lim_{x\to 0}f(x)=0\), por lo que 
+  \(\inf_{x\in [-1,1]}\{f(x)\}=0\) y sin embargo no existe un punto \(x\in [-1,1]\) para 
+  el cual \(f(x)=0\).
+</p>
+<p>
+  Prueba de 2.
+</p>
+<p>
+  Usando la versión de <a href="./S6.html#Ejer:LimiteInfinitoUnoSobreCero">Ejercicio 6.8</a> para límites laterales obtenemos 
+  \[
+    \lim_{x\to 1^-} \frac{x}{1-x^2}=+\infty, \quad \lim_{x\to -1^+} \frac{x}{1-x^2}=-\infty
+  \]
+  Por lo tanto no existen puntos \(x_*,x^*\in (-1,1)\) tales que 
+  \(f(x)\leq f(x^*)\) y \(f(x_*)\leq f(x)\) para todo \(x\in (-1,1)\).
+</p>
+</div>
 </div>
 
 <div class="ejercicio-box">
@@ -353,6 +414,7 @@ no tiene mínimo.
   El mínimo de \(f(x)=x^2+5x-2\sqrt{5x(x^2+6)}\), \(x \in [0,4]\).
 </li>
 </ol>
+
 </div>
 
 
@@ -432,6 +494,13 @@ no tiene mínimo.
   </p>
   <p>
     En cualquiera de los casos tenemos \(f(x)\leq \max\{f(x_0), f(\tilde{x})\}\). 
+  </p>
+  <p>
+    Nota: la misma demostración prueba que si una función \(f:\mathbb{R}\to \mathbb{R}\) es continua en 
+    todo \(\mathbb{R}\) y satisface 
+    \eqref{Eqn:limitesCeroAlInfinito} entonces: si exsite \(x_0\) con \(f(x_0)>0 \), 
+    \(f\) alcanza su máximo absoluto y si existe \(x_1\) con \(f(x_1)< 0 \), \(f\) alcanza  
+    su mínimo absoluto.
   </p>
   <p>
     Prueba de 2.
