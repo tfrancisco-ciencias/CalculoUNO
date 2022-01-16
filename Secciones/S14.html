@@ -231,7 +231,7 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio</h2>
+  <h2 class="number-title" id="Ejer:ContinuaAcotadaLocal"> Ejercicio</h2>
   <p>
     Sea \(f\) una función definida en una vecindad de \(x_0\) y continua en \(x_0\).
   </p>
@@ -276,7 +276,7 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:ContinuaAcotada"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:ContinuaAcotadaGlobal"> Ejercicio </h2>
 
 
 <p>
@@ -289,6 +289,69 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
   Nota que \(f\) debe de ser no acotada en al menos uno de ellos. Procede por
   el método de bisecciones sucecivas.
 </p>
+<p>
+  Primera hacemos la siguiente observación:
+</p>
+<p>
+  Si una función \(g\) no está acotada en el intervalo \([c,d]\) entonces 
+  su restricción a alguna de las mitades, \([c,\frac{c+d}{2}]\) ó \([\frac{c+d}{2},d]\),
+  tampoco está acotada. Razón: supongamos lo contrario y sean \(M_1\) y \(M_2\)  cotas 
+  para \(g\) en \([c,\frac{c+d}{2}]\) y en \([\frac{c+d}{2},d]\) respectivamente. Entonces 
+  \(M=\max\{M_1,M_2\}\) es una cota para \(g\) en todo \([c,d]\), contradiciendo el hecho de que 
+  \(g\) no está acotada en \([c,d]\).
+</p>
+<p>
+  Le prueba del ejercicio consiste en aplicar esta observación consecutivamente.
+</p>
+<p>
+  Supongamos que \(f\) no está acotada en \([a,b]\). Por la observación la restricción de \(f\)  a  
+  alguna de las mitades, \([a,\frac{a+b}{2}]\) ó \([\frac{a+b}{2},b]\), no está acotada. Sea 
+  \([a_1,b_1]\) dicha mitad. Nota que \(\textrm{longitud}([a_1,b_1])=\frac{\textrm{longitud}([a,b])}{2}\)
+  y \([a_1,b_1]\subset [a,b]\).
+</p>
+<p>
+  Ahora aplicamos la misma observación a \(f \) restringida a \([a_1,b_1]\). Se sigue que 
+  debe de existir una mitad de \([a_1,b_1]\) para la cual \(f\) no está acotada, sea 
+  \([a_2,b_2]\) dicha mitad. Nota que \(\textrm{longitud}([a_2,b_2])=\frac{\textrm{longitud}([a,b])}{2^2}\)
+  y \([a_2,b_2]\subset [a_1,b_1]\).
+</p>
+<p>
+  Continuando con este proceso podemos encontrar una sucesión de intervalos 
+  \(([a_n,b_n])_{n=1}^\infty\) tales que, para toda \(n\geq 1\): 
+  <ul>
+    <li>
+      \(f\) no está acotada en \([a_n,b_n]\),
+    </li>
+    <li>
+      \(\textrm{longitud}([a_n,b_n])=\frac{\textrm{longitud}([a,b])}{2^n} \),
+    </li>
+    <li>
+      \([a_{n+1},b_{n+1}] \subset  [a_n,b_n]\).
+    </li>
+  </ul>
+    
+ </p>
+ <p>
+  Por el 
+  <a href="./S10.html#Teo:IntervalosCerradosAnidados">Teorema de los intervalos cerrados anidados</a>
+  podemos asegurar que \(\cap_{n=1}^\infty [a_n,b_n]=\{x_0\}\).
+ </p>
+ <p>
+   Nota que hasta ahora no hemos usado la suposición de que \(f\) es continua en todo 
+   el intervalo \([a,b]\), éste es el momento de usarla. Ya que \(f\) es continua en 
+   \(x_0\), por el <a href="#Ejer:ContinuaAcotadaLocal">Ejercicio 14.7</a> existe un 
+   intervalo centrado en \(x_0\), denotemoslos \([x_0-\eta, x_0+\eta]\), tal que 
+   \(f\) es acotada  en dicho intervalo.
+ </p>
+ <p>
+   Ya que la longitud de los intervalos \([a_n,b_n]\) tiende  cero podemos tomar un \(m\) tal que 
+   \(\textrm{longitud}([a_m,b_m]) < \eta/2 \) y aunado a 
+   \(x_0\in \cap_{n=1}^\infty[a_n,b_n] \subset [a_m,b_m]\) se sigue que 
+   \( [a_m,b_m] \subseteq [x_0-\eta, x_0+\eta]\). Pero si esto pasa, usando que 
+   \(f\) está acotada en \([x_0-\eta, x_0+\eta]\) obtenemos que 
+   \(f\) también está acotada en \([a_m,b_m]\), contradiciendo la construcción de los intervalos
+   \([a_m,b_m]\).
+ </p>
 </div>
 
 <div class="definicion-box">
