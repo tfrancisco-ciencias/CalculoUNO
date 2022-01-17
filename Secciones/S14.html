@@ -289,6 +289,9 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
   Nota que \(f\) debe de ser no acotada en al menos uno de ellos. Procede por
   el método de bisecciones sucecivas.
 </p>
+
+<button class="respButton hvr-grow "> Prueba  </button>
+<div class="resp-box flexbox">
 <p>
   Primera hacemos la siguiente observación:
 </p>
@@ -352,6 +355,7 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
    \(f\) también está acotada en \([a_m,b_m]\), contradiciendo la construcción de los intervalos
    \([a_m,b_m]\).
  </p>
+</div>
 </div>
 
 <div class="definicion-box">
@@ -449,30 +453,39 @@ Prueba que \(f\) alcanza su máximo en \(1/2\) y en \(3/2\).
 
 <ol>
 <li>
-  Demuestra que si \(f\) alcanza su máximo en \([a,b]\) entonces
-\[\min_{[a,b]} (-f)=-\max_{x\in [a,b]}f\]
+  Demuestra que si una función continua \(g\) alcanza su máximo en \([a,b]\) entonces
+\[\min_{[a,b]} (-g)=-\max_{x\in [a,b]}g\]
 
 Por este incisco, es suficiente probar el teorema para máximos.
 </li>
 <li>
   Considera el conjunto  \(S=\{f(x): x\in [a,b]\}\).  Por el
   <a href="#Ejer:ContinuaAcotada">Ejercicio 14.6</a> , existe el supremo se
-\(S\). Denota \(M=\sup S\).
+\(S\). Denota \(\alpha=\sup(S)\).
 </li>
 <li>
-  Nota que es suficiente probar que existe \(x^*\) tal que \(f(x^*)=M\).
+  Nota que es suficiente probar que existe \(x^*\) tal que \(f(x^*)=\alpha\).
 </li>
 <li>
     Para terminar procede  por contradicción, es decir, supon que
 
-\[f(x) < M, \textrm{ para todo \(x\in [a,b]\)} \]
+\[f(x) < \alpha, \textrm{ para todo \(x\in [a,b]\)} \]
 
-Considera \(g:[a,b]\to \mathbb{R}\) dada por \(g(x)=M-f(x)\). Entonces
-\(g(x)>0\) para toda \(x\), la función \(1/g\) es continua y por lo tanto acotada
-superiormente. Si \(C=\sup_{[a,b]} 1/g\) demuestra que \(M-C\) es una conta
+Considera \(\tilde{f}]:[a,b]\to \mathbb{R}\) dada por \(\tilde{f}(x)=\alpha-f(x)\). Entonces
+\(\tilde{f}(x)>0\) para toda \(x\), la función \(1/\tilde{f}\) es continua y por lo tanto acotada
+superiormente. Si \(\beta=\sup_{[a,b]} (1/\tilde{f})\) demuestra que \(\alpha-\frac{1}{\beta}\) es una conta
 superior de \(f\). Esto lleva a una contradicción.
 </li>
 </ol>
+
+<button class="respButton hvr-grow "> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/G-yoh2V62qo" target="_blank" > Video </a>
+              </div>
+            </div>
+
+
 </div>
 
 
