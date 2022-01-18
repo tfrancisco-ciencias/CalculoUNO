@@ -121,7 +121,8 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
 <li>
   Decimos que \(f\) está acotada si existe \(M>0\) tal
   que \(|f(x)| \leq M\) para toda
-\(x\in D\).
+\(x\in D\). A un número \(M\) que satisface la condición anterior 
+se le llama una cota de \(f\).
 </li>
 </ol>
 <p>
@@ -248,7 +249,7 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
   <button class="respButton hvr-grow "> Prueba  </button>
   <div class="resp-box flexbox">
   <p>
-   Supongamos que \(f\) está definida en la vecindad \(x_0-r,x_0+r\), con \(r\) un número 
+   Supongamos que \(f\) está definida en la vecindad \((x_0-r,x_0+r)\), con \(r\) un número 
    positivo. 
   </p>
   <p>
@@ -263,9 +264,11 @@ Si \(f\) está acotada inferiormente en \(D\) escribimos
       ||f(x)|-|f(x_0)|| \leq |f(x)-f(x_0)|,
     \]
     de lo cual se sigue que para toda \(x\) con \(|x-x_0|<\delta \):
-    \[
-    ||f(x)|-|f(x_0)|| \leq |f(x)-f(x_0)|< 1 \Rightarrow |f(x)|-|f(x_0)|< 1 \Rightarrow |f(x)|< 1+|f(x_0)|.
-    \]
+    \begin{eqnarray*}
+    ||f(x)|-|f(x_0)|| &\leq & |f(x)-f(x_0)|< 1  \\
+    &\Rightarrow  & |f(x)|-|f(x_0)|< 1  \\
+    &\Rightarrow & |f(x)|< 1+|f(x_0)|.
+    \end{eqnarray*}
   </p>
   <p>
     Por lo tanto, tomando \(M=1+|f(x_0)|\) y el intervalo cerrado \([x_0-\delta/2,x_0+\delta/2]\), 
