@@ -875,7 +875,30 @@ y
 <p>
   Sea \(f:D \to \mathbb{R}\). Un punto \(c\in D\) se llama punto crítico de
 \(f\) si \(f'(c)\) no existe o si \(f'(c)=0\).
+</p>
+<p>
+  Ejemplos.
 </p> 
+<ul>
+  <li>
+    \(f(x)=|x|\), \(x\in \mathbb{R}\), tiene un punto crítico en \(x=0\) pues la función no es 
+    diferenciable en este punto.
+  </li>
+  <li>
+    \(f(x)=1-(x-1)^2\), \(x\in \mathbb{R}\), tiene un punto crítico en \(x=1\) pues 
+    \(f'(1)=0\).
+  </li>
+  <li>
+    \(f(x)=\sqrt{x}\), \(x\geq 0\), tiene un punto crítico en \(x=0\) pies 
+    la función no es diferenciable en este punto.
+  </li>
+</ul>
+<p>
+  La idea es que los puntos críticos son puntos que separan el 
+  "comportamiento" de la función. Por ejemplo, en el valor absoluto, antes del punto crítico 
+  la función es decreciente y es creciente después. En el caso de la raíz después 
+  del punto crítico la función es diferenciable y antes ni si quiera está definida.
+</p>
 <p>
   Con esta nomenclatura el Teorema de
 Fermat dice que si \(f\) tiene un extremo local en \(c\) entonces \(c\) es un
@@ -905,7 +928,7 @@ punto crítico.
   constantes con \(c>0\).
 </li>
 <li>
-  \(f(x)=\sqrt{r^2-x^2}\), \(-r< x < r\), donde \(r\in \mathbb{R}\) es una
+  \(f(x)=\sqrt{r^2-x^2}\), \(-r\leq x \leq r\), donde \(r\in \mathbb{R}\) es una
   constante \(r\ne 0\).
 </li>
 <li>
@@ -915,7 +938,7 @@ punto crítico.
   \(f(x)=e^{\frac{1}{2}x^2+x+1}\), \(x\in \mathbb{R}\).
 </li>
 <li>
-  \(f(x)=x^{3/4}-2x^{1/4}\), \(x>0\).
+  \(f(x)=x^{3/4}-2x^{1/4}\), \(x\geq 0\).
 </li>
 <li>
   \(f(x)=|3x-6|\), \(x\in \mathbb{R}\).
