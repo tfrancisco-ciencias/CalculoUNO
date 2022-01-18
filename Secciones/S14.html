@@ -735,18 +735,24 @@ Sea \(f: D\to \mathbb{R}\) una función.
 
 <ol>
 <li>
-  Decimos que \(f\) tiene un máximo relativo en el punto \(x^*\in  D\) si existe
-  \(I \subset D\), una vecindad de \(x^*\) tal que
+  Decimos que \(f\) tiene un máximo relativo en el punto \(x_0\in  D\) si existe
+  \(I \subset D\), una vecindad de \(x_0\) tal que
 \[
-f(x) \leq f(x^*), \quad \textrm{para todo \(x\in I\)}
+f(x) \leq f(x_0), \quad \textrm{para todo \(x\in I\)}
 \]
+<div class="flexbox">
+  <img src="./Images/MaxLocal.png" alt="MaxLocal" width="40%" height="auto">
+</div>
 </li>
 <li>
-  Decimos que \(f\) tiene un mínimo relativo en el punto \(x_*\in  D\) si existe
-  \(I \subset D\), una vecindad de \(x_*\) tal que
+  Decimos que \(f\) tiene un mínimo relativo en el punto \(x_0\in  D\) si existe
+  \(I \subset D\), una vecindad de \(x_0\) tal que
 \[
-f(x_*) \leq f(x), \quad \textrm{para todo \(x\in I\)}
+f(x_0) \leq f(x), \quad \textrm{para todo \(x\in I\)}
 \]
+<div class="flexbox">
+  <img src="./Images/MinLocal.png" alt="MinLocal" width="40%" height="auto">
+</div>
 </li>
 </ol>
 
@@ -782,7 +788,7 @@ mínimo local en \(x_0\).
 </div>
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema </h2>
+  <h2 class="number-title" id="Teo:FermatMaxMinLocal"> Teorema </h2>
   <h3>Teorema de Fermat sobre máximos/mínimos  locales</h3>
 
 <p>
@@ -819,19 +825,49 @@ y
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
+<p>
+  Da un ejemplo de una función \(f:[a,b]\to \mathbb{R}\),
+  continua en \([a,b]\), diferenciable en \((a,b)\) y un
+  \(c\in (a,b)\) tal que \(f'(c)=0\)  pero \(f\) no alcanza ni máximo ni
+  mínimo en \(c\).
+</p>
+<p>
+  Nota: este ejercicio muestra que el regreso del 
+  <a href="#Teo:FermatMaxMinLocal">Teorema 14.21</a> no es válido.
+</p>
 
-Da un ejemplo de una función \(f:[a,b]\to \mathbb{R}\),
-continua en \([a,b]\), diferenciable en \((a,b)\) y un
-\(c\in (a,b)\) tal que \(f'(c)=0\)  pero \(f\) no alcanza ni máximo ni
-mínimo en \(c\).
+<button class="respButton hvr-grow "> Solución  </button>
+<div class="resp-box flexbox">
+
+<p>
+  Proponemos \(f:[-1,1]\to\mathbb{R}\) dad por \(f(x)=x^3\). Entonces 
+  es claro que \(f'(0)=0\) pero \(f\) no tiene ni máximo  ni mínimo local en 
+  \(x=0\) pues para \(x\in (-1,0)\), \(f(x)< 0 = f(0)\) y para \(x\in (0,1)\), \(f(x)>0=f(0)\)
+</p>
+</div>
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  Da un ejemplo de una función continua \(f:[a,b]\to \mathbb{R}\)
-tal que \(f\) tiene un máximo o mínimo relativo
-en \(c\) pero \(f\) no es diferenciable en \(c\).
+  <p>
+    Da un ejemplo de una función continua \(f:[a,b]\to \mathbb{R}\)
+    tal que \(f\) tiene un máximo o mínimo relativo
+    en \(c\) pero \(f\) no es diferenciable en \(c\).
+  </p>
+  <p>
+    Nota: este ejercicio muestra que para aplicar el
+     <a href="#Teo:FermatMaxMinLocal">Teorema 14.21</a> necesariamente debemos 
+     de suponer que \(f\) es diferenciable en el extremo local.
+  </p>
+  <button class="respButton hvr-grow "> Solución  </button>
+  <div class="resp-box flexbox">
+  <p>
+    Proponemos \(f:[-1,1]\to \mathbb{R}\) dada por \(f(x)=|x|\). Es claro que 
+    \(f\) tiene un mínimo absoluto (y por lo tanto relativo) en \(x=0\) sin embargo 
+    la función no es diferenciable en \(x=0\).
+  </p>
+  </div>
 </div>
 
 <div class="definicion-box">
