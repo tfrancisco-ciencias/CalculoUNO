@@ -137,7 +137,7 @@
    
   </li>
   <li>
-    Prueba que \(f(c)=0\).  Para probarlo procede como sigue. 
+    Prueba que \(f(c)=0\).  Para probarlo procede por contradicción. 
   </li>
 
     <ol type="a">
@@ -192,6 +192,21 @@
       intervalo \([a,b]\). Demuestra que si \(f(a) \leq g(a)\) y \(g(b) \leq f(b)\),
       entonces existe almenos un punto  \(c \in [a,b]\) tal que \(f(c)=g(c)\).
     </p>
+    <p>
+      Consideramos la función \(h:[a,b]\to \mathbb{R}\) dada por 
+      \(h(x)=f(x)-g(x)\). Las desigualdades 
+      \(f(a)\leq g(a)\) y \( g(b)\leq f(b)\) implican que \(h(a) \leq 0\)
+       y \( 0\leq h(b)\). Si \(h(a)=0\) ó \(h(b)=0\) entonces \(f(a)=g(a)\) ó \(f(b)=g(b)\), por lo que 
+      podemos tomar \(c=a\) ó \(c=b\) y acabamos. Por lo tanto podemos suponer 
+      \(h(a)< 0\) y \(0< h(b)\).
+    </p>
+    <p>
+      Ahora, ya que \(f\) y \(g\) son continuas en \([a,b]\)
+      se sigue que \(h\) también es continua en \([a,b]\). Además como suponemos 
+      que \(h(a)< 0\) y \(0< h(b)\) si aplicamos directamente el Teorema de Bolzano 
+      conlcuimos que existe \(c\in (a,b)\) tal que \(h(c)=0\) lo cual implica que 
+      \(f(c)=g(c)\).
+    </p>
 </div>
 
 
@@ -213,8 +228,11 @@
     Sea \(f:[0,1]\to \mathbb{R}\) una función continua en  todo \([0,1]\).
     Supon que \(f\) que satisface \(0 \leq f(x) \leq 1\), para todo \( x\in [0,1].\)
     
-    Usa el Teorema de Bolzano para probar que existe \(d \in [0,1]\) tal que
+    Prueba que existe \(d \in [0,1]\) tal que
     \[f(d)=1-d\]
+  </p>
+  <p>
+    Sugerencia: considera la función \(g(x)=1-f(x)\) y prueba que tiene puntos fijos.
   </p>
 </div>
 
@@ -248,8 +266,28 @@
     que \(p(c)=0\).
   </p>
   <p>
-    Sugerencia: considera \(p(0)\) y \(\lim_{x\to +\infty} p(x)\).
+    Ya que \(p\) es una función continua en todo \(\mathbb{R}\) el Teorema de Bolzano 
+    no dice que para probar la existencia del punto \(c\) con \(p(c)=0\) es suficiente 
+    probar la existencia de puntos \(a\) y \(b\) con \(p(a)< 0\) y \(0< p(b) \), es decir, 
+    dos valores de \(p\) con signos opuestos.
   </p>
+  <p>
+    La única parte de las hipótesis que habla sobre signos dice que  
+    \(a_0\) y \(a_n\) tienen signos opuestos. Sín pérdida de generalidad podemos suponer 
+    \(a_0 < 0\)  y \(0< a_n\).
+  </p>
+  <p>
+    Notamos que \(p(0)=a_0 < 0\), por lo que podemos tomar \(a=0\). 
+  </p>
+  <p>
+    Por lo tanto nos falta un \(b\) tal que \(p(b)>0\). Para ésto último sí usamos que 
+    \(a_n>0\) y el <a href="./S6.html#Ejer:LimiteAlInfinitoPoly">Ejercicio 6.16</a> obtenemos que 
+    \[
+      \lim_{x\to +\infty} p(x)=+\infty
+    \]
+    y de éste límite se sigue que existe \(b\) tal que \(p(b)>0\), lo cual termina el ejercicio.
+  </p>
+ 
 </div>
 
 
@@ -264,6 +302,7 @@
       Con ayuda del teorema de Bolzano aisla cada una de las raíces de las
       siguientes ecuaciones (cada una tiene cuatro raíces).
     </p>
+    
 <ol>
 <li>
   \(3x^4-2x^3-36x^2+36x-8=0\).
@@ -285,6 +324,15 @@
     \]
     tiene almenos una solución en \((-1,1)\).
   </p>
+  <p>
+    Sugerencia: calcula los límites 
+    \[
+    \lim_{x\to -1^{+}}\left( \frac{a}{x^3+2x^2-1}+\frac{b}{x^3+x-2}\right)
+    \]
+    \[
+    \lim_{x\to 1^{-}} \left( \frac{a}{x^3+2x^2-1}+\frac{b}{x^3+x-2} \right)
+    \]
+  </p>
 </div>
 
 
@@ -302,30 +350,33 @@
       \(x^2-8x+2=\sen(2\pi x)\)
     </li>
   </ol>
+
+  <p>
+    
+  </p>
 </div>
 
 <div class="nota-box">
   <h2 class="number-title"> El Teorema del Valor Medio </h2>
+  Usando la definiición de recta secante y recta tangente, demuestra 
+      que para cualquier cuadrática \(f(x)=Ax^2+Bx+C\),
+      la secante que une los puntos \((a,f(a))\) y
+      \((b,f(b))\), es paralela a la recta tangente en el punto medio \(\frac{a+b}{2}\).
+
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  <oL>
-    <li>
-      Usando la definiición de recta secante y recta tangente, demuestra 
-      que para cualquier cuadrática \(f(x)=Ax^2+Bx+C\),
-      la secante que une los puntos \((a,f(a))\) y
-      \((b,f(b))\), es paralela a la recta tangente en el punto medio \(\frac{a+b}{2}\).
-    </li>
-    <li>
-      Con ayuda del inciso anterior demuestra que
-      \[
-      f(b)-f(a)=f'(c)(b-a) \Leftrightarrow c=\frac{a+b}{2}.
-      \]
-       
-    </li>
-  </oL> 
+    <p>
+      Considera una función cuadrática \(f(x)=Ax^2+Bx+C\). Prueba que un punto \(c\) 
+      satisface \(f(b)-f(a)=f'(c)(b-a)\) si y sólo si \(c=\frac{a+b}{2}\).
+    </p> 
+    <p>
+      Nota: este ejercicio nos dice que, en el caso de las funciones cuadráticas,
+      el punto que proveé el Teorema del Valor Medio se puede encontrar: es simplemente 
+      el punto medio. Para una función arbitraria casi núnca es posible dar explícitamente dicho punto.
+    </p>
 </div>
 
 
