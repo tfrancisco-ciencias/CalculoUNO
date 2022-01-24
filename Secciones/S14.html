@@ -742,7 +742,7 @@ superior de \(f\). Esto lleva a una contradicción.
 </div>
 
 <div class="nota-box">
-  <h2 class="number-title"> Extremos locales y puntos críticos</h2>
+  <h2 class="number-title"> Puntos críticos</h2>
   <p>
     Hasta este punto sólo hemos probado la existencia de máximos y mínimos absolutos 
     de funciones continuas definidas en intervalos cerrados y acotados. Sin embargo no 
@@ -772,11 +772,174 @@ superior de \(f\). Esto lleva a una contradicción.
   <p>
     Los puntos donde la derivada se anula o no existe son los que llamaremos puntos críticos.
   </p>
-  <p>
-    Para iniciar necesitamos introducir la noción de máximo/mínimo local pues 
-    la derivada es muy útil en cazar estos tipos de puntos.
-  </p>
+  
 </div>
+
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+<p>
+  Sea \(f:D \to \mathbb{R}\). Un punto \(c\in D\) se llama punto crítico de
+\(f\) si \(f'(c)\) no existe o si \(f'(c)=0\).
+</p>
+<p>
+  Ejemplos.
+</p> 
+<ul>
+  <li>
+    \(f(x)=|x|\), \(x\in \mathbb{R}\), tiene un punto crítico en \(x=0\) pues la función no es 
+    diferenciable en este punto.
+  </li>
+  <li>
+    \(f(x)=1-(x-1)^2\), \(x\in \mathbb{R}\), tiene un punto crítico en \(x=1\) pues 
+    \(f'(1)=0\).
+  </li>
+  <li>
+    \(f(x)=\sqrt{x}\), \(x\geq 0\), tiene un punto crítico en \(x=0\) pies 
+    la función no es diferenciable en este punto.
+  </li>
+</ul>
+<p>
+  La idea es que los puntos críticos son puntos que separan el 
+  "comportamiento" de la función. Por ejemplo, en el valor absoluto, antes del punto crítico 
+  la función es decreciente y es creciente después. En el caso de la raíz después 
+  del punto crítico la función es diferenciable y antes ni si quiera está definida.
+</p>
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Encuentras los puntos críticos de las siguientes funciones.
+<ol>
+<li>
+  \(f(x)=ax^2+bx+c\), \(x\in \mathbb{R}\), donde \(a,b,c\in \mathbb{R}\) son
+  constantes fijas con \(a\ne 0\).
+</li>
+<li>
+  \(f(x)=x^3+4x^2-21+13\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=x^4+2x^3-15x^2+3\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=x^4-cx^2+d\), \(x\in \mathbb{R}\), donde \(c,d\in \mathbb{R}\) son
+  constantes con \(c>0\).
+</li>
+<li>
+  \(f(x)=\sqrt{r^2-x^2}\), \(-r\leq x \leq r\), donde \(r\in \mathbb{R}\) es una
+  constante \(r\ne 0\).
+</li>
+<li>
+  \(f(x)=\frac{x-2}{x^2+2}\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=e^{\frac{1}{2}x^2+x+1}\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=x^{3/4}-2x^{1/4}\), \(x\geq 0\).
+</li>
+<li>
+  \(f(x)=|3x-6|\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(f(x)=|x(1-x)+1|\), \(x\in \mathbb{R}\).
+</li>
+</ol>
+<button class="respButton hvr-grow "> Solución de 10 </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/6QsTkxWgN64" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(p(x)\) un polinomio. Demuestra que todo punto crítico de \(p\) es
+también punto crítico de:
+<ol>
+<li>
+  \(\frac{p(x)+a}{p^2(x)+1}\), donde \(a\in \mathbb{R}\) es fijo y arbitrario.
+</li>
+<li>
+  \(\sqrt{p^2(x)+1}\).
+</li>
+<li>
+  \(e^{p(x)+a}\) donde \(a\in \mathbb{R}\) es fijo y arbitrario.
+</li>
+</ol>
+<button class="respButton hvr-grow "> Solución de 1 </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/1sDpUKndkbQ" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
+
+
+<div class="nota-box">
+  <h2 class="number-title"> Extremos locales </h2>
+  <p>
+    Ya mencionamos que encontrar los valores máximos y mínimos de una función es un problema 
+    importante. Al tratar de solucionar este problema surgen otros puntos que bajo cierta prespectiva
+    parecen resolver el problema pero vistos detalladamente realmente no lo hacen.
+    Estos puntos se conocen como máximos o mínimos locales.
+  </p>
+  <p>
+    Como ejemplo consideremos el polinomio  
+    \[
+    p(x)=(x-1)^2((x-5)^2-0.01), x\in [-1,7]
+    \]
+    y digamos que queremos encontrar su mínimo absoluto. Si graficamos 
+    el polinomio en el dominio dado obtenemos:
+  </p>
+  <div class="flexbox">
+    <img src="./Images/Img14-21-1.png" alt="EjemploExtlocales" width="40%" height="auto">
+  </div>
+  <p>
+    A simple vista parece que el mínimo de la función es \(0\) y existen dos 
+    puntos donde el mínimo se alcanza, \(x=1\) y \(x=5\). Sin embargo si graficamos la función 
+    cerca de los puntos \(x=1\) y \(x=5\) obtenemos 
+
+  </p>
+
+
+  <div >
+    <div class="flexbox absolute">
+      <img src="./Images/Img14-21-2.png" alt="ValorAbsoluto" width="40%" height="auto">
+    </div>
+
+    <div class="flexbox">
+      <img src="./Images/Img14-21-3.png" alt="ValorAbsoluto" width="40%" height="auto">
+    </div>
+  </div>
+
+  <p>
+    Desde este punto de vista es claro que \(x=1\) no es el mínimo absoluto y que 
+    el valor de la función en \(x=5\) es negativo, por lo que \(0\)  no es el 
+    mínimo absoluto.
+  </p>
+  <p>
+    Para tratar estos tipos de puntos es para lo que se introducen los máximos y mínimos locales.
+    En el ejemplo anterior ambos \(x=0\) y \(x=5\) van a resultar se mínimos locales, pues la gráfica cerca de ellos
+    forma un valle. Sin embargo de estos dos valles el más bajo es en \(x=5\) por lo que éste es el mímimo
+    absoluto.
+  </p>
+  <p>
+    En lo que sigue damos la definición de mínimos o máximos locales y vemos cómo la derivada 
+    nos ayuda a buscarlos.
+  </p>
+
+</div>
+
 
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
@@ -891,7 +1054,7 @@ y
 </p>
 <p>
   Nota: este ejercicio muestra que el regreso del 
-  <a href="#Teo:FermatMaxMinLocal">Teorema 14.21</a> no es válido.
+  <a href="#Teo:FermatMaxMinLocal">Teorema 14.24</a> no es válido.
 </p>
 
 <button class="respButton hvr-grow "> Solución  </button>
@@ -919,7 +1082,7 @@ y
   </p>
   <p>
     Nota: este ejercicio muestra que para aplicar el
-     <a href="#Teo:FermatMaxMinLocal">Teorema 14.21</a> necesariamente debemos 
+     <a href="#Teo:FermatMaxMinLocal">Teorema 14.24</a> necesariamente debemos 
      de suponer que \(f\) es diferenciable en el extremo local.
   </p>
   <button class="respButton hvr-grow "> Solución  </button>
@@ -935,114 +1098,32 @@ y
   </div>
 </div>
 
-<div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
-<p>
-  Sea \(f:D \to \mathbb{R}\). Un punto \(c\in D\) se llama punto crítico de
-\(f\) si \(f'(c)\) no existe o si \(f'(c)=0\).
-</p>
-<p>
-  Ejemplos.
-</p> 
-<ul>
-  <li>
-    \(f(x)=|x|\), \(x\in \mathbb{R}\), tiene un punto crítico en \(x=0\) pues la función no es 
-    diferenciable en este punto.
-  </li>
-  <li>
-    \(f(x)=1-(x-1)^2\), \(x\in \mathbb{R}\), tiene un punto crítico en \(x=1\) pues 
-    \(f'(1)=0\).
-  </li>
-  <li>
-    \(f(x)=\sqrt{x}\), \(x\geq 0\), tiene un punto crítico en \(x=0\) pies 
-    la función no es diferenciable en este punto.
-  </li>
-</ul>
-<p>
-  La idea es que los puntos críticos son puntos que separan el 
-  "comportamiento" de la función. Por ejemplo, en el valor absoluto, antes del punto crítico 
-  la función es decreciente y es creciente después. En el caso de la raíz después 
-  del punto crítico la función es diferenciable y antes ni si quiera está definida.
-</p>
-<p>
-  Con esta nomenclatura el Teorema de
-Fermat dice que si \(f\) tiene un extremo local en \(c\) entonces \(c\) es un
-punto crítico.
-</p>
-</div>
 
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
 
-  Encuentras los puntos críticos de las siguientes funciones.
-<ol>
-<li>
-  \(f(x)=ax^2+bx+c\), \(x\in \mathbb{R}\), donde \(a,b,c\in \mathbb{R}\) son
-  constantes fijas con \(a\ne 0\).
-</li>
-<li>
-  \(f(x)=x^3+4x^2-21+13\), \(x\in \mathbb{R}\).
-</li>
-<li>
-  \(f(x)=x^4+2x^3-15x^2+3\), \(x\in \mathbb{R}\).
-</li>
-<li>
-  \(f(x)=x^4-cx^2+d\), \(x\in \mathbb{R}\), donde \(c,d\in \mathbb{R}\) son
-  constantes con \(c>0\).
-</li>
-<li>
-  \(f(x)=\sqrt{r^2-x^2}\), \(-r\leq x \leq r\), donde \(r\in \mathbb{R}\) es una
-  constante \(r\ne 0\).
-</li>
-<li>
-  \(f(x)=\frac{x-2}{x^2+2}\), \(x\in \mathbb{R}\).
-</li>
-<li>
-  \(f(x)=e^{\frac{1}{2}x^2+x+1}\), \(x\in \mathbb{R}\).
-</li>
-<li>
-  \(f(x)=x^{3/4}-2x^{1/4}\), \(x\geq 0\).
-</li>
-<li>
-  \(f(x)=|3x-6|\), \(x\in \mathbb{R}\).
-</li>
-<li>
-  \(f(x)=|x(1-x)+1|\), \(x\in \mathbb{R}\).
-</li>
-</ol>
-<button class="respButton hvr-grow "> Solución de 10 </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <a href="https://youtu.be/6QsTkxWgN64" target="_blank" > Video </a>
-              </div>
-            </div>
-</div>
+  <div class="nota-box">
+    <h2 class="number-title"> Puntos y más puntos  </h2>
+    <p>
+       Veamos qué papel juegan todos los tipos de puntos en la solución del problema 
+       de encontrar máximos/mínimos absolutos. 
+    </p>
+    <p>
+      Usando las definiciones tenemos el siguiente diagrama de Venn.
+    </p>
+    <div class="flexbox absolute">
+      <img src="./Images/Img14-28.png" alt="ValorAbsoluto" width="50%" height="auto">
+    </div>
+    <p>
+      Los puntos que solucionan el problema son los extremos absolutos. Sin embargo usualmente 
+      éstos puntos son difíciles en encontrar. En el otro extremo se encuentran los puntos críticos 
+      que usualmente son más sencillos de calcular. La estrategia es pues iniciar  buscando los 
+      puntos críticos, estos no llevan a extremos locales y de éstos últimos se pueden extrar los 
+      extremos absolutos. El <a href="#AlgoritmoMaxMinFunContinuasEnCompactos"> Teorema 14.31</a> da un método para encontar los máximos/mínimos 
+      absolutos de funciones continuas definidas en intervalos cerrados y acotados.
+    </p>
 
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  Sea \(p(x)\) un polinomio. Demuestra que todo punto crítico de \(p\) es
-también punto crítico de:
-<ol>
-<li>
-  \(\frac{p(x)+a}{p^2(x)+1}\), donde \(a\in \mathbb{R}\) es fijo y arbitrario.
-</li>
-<li>
-  \(\sqrt{p^2(x)+1}\).
-</li>
-<li>
-  \(e^{p(x)+a}\) donde \(a\in \mathbb{R}\) es fijo y arbitrario.
-</li>
-</ol>
-<button class="respButton hvr-grow "> Solución de 1 </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <a href="https://youtu.be/1sDpUKndkbQ" target="_blank" > Video </a>
-              </div>
-            </div>
-</div>
+  </div>
 
 
 <div class="ejercicio-box">
@@ -1087,7 +1168,7 @@ donde \(a_k \geq 0\) para toda \(k\).
 </div>
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema </h2>
+  <h2 class="number-title"id="AlgoritmoMaxMinFunContinuasEnCompactos"> Teorema </h2>
 <p>
   Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y diferenciable en
 \((a,b)\), excepto en una cantidad finita de puntos. Entonces los puntos
