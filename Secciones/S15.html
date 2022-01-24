@@ -82,20 +82,29 @@
 
 <p>
   Sea \(f:(a,b) \to \mathbb{R}\) una función y \(c\in (a,b)\) tal que \(f\) es
-  continua en (c\) con \(f(c)\ne 0\). Prueba que existe \(I\), una  vecindad de
+  continua en \(c\) con \(f(c)\ne 0\). Prueba que existe \(I\), una  vecindad de
   \(c\), tal que \(f(x)\) siempre tiene el mismo signo para todo \(x \in I\).
 </p>
+
+<button class="respButton hvr-grow "> Prueba  </button>
+<div class="resp-box flexbox">
 <p>
   Ya que \(f(c)\ne 0\) tenemos dos casos: \(f(c)>0\)
   y \(f(c)< 0\). Ya que la prueba para cada uno de estos casos es similar sólo haremos 
   el caso \(f(c)< 0\).
 </p>
 <p>
-  Así pues, supongamos que \(f(c) < 0\). En este caso el número \(\varepsilon=-\frac{f(c)}{2}\)
+  Así pues, supongamos que \(f(c) < 0\). En este caso debemos de 
+  probar que existe \(I\), una vecindad  de \(c\), tal que \(f(x)< 0\) 
+  para toda \(x \in I\).
+</p>
+<p>
+  Ya que \(f(c)< 0\) el número \(\varepsilon=-\frac{f(c)}{2}\)
   es positivo y lo podemos usar en la definición de continuidad. Por lo tanto, al ser  \(f\) continua 
   en \(c\) existe una \(\delta >0\) tal que 
   \((c-\delta, c+\delta) \subset (a,b)\) y si \(|x-c|<\delta \) entonces 
-  \(|f(x)-f(c)|< \varepsilon\). Habriendo éste último valor absoluto tenemos 
+  \(|f(x)-f(c)|< \varepsilon\).
+  Habriendo éste último valor absoluto tenemos 
   \begin{eqnarray*}
    |f(x)-f(c)|< \varepsilon &\Rightarrow & -\varepsilon < f(x)-f(c)< \varepsilon \\
    &\Rightarrow & f(x)< f(c)+\varepsilon= f(c)-\frac{f(c)}{2}=\frac{f(c)}{2} \\
@@ -104,6 +113,10 @@
   Por lo tanto, tomando  \(I=(c-\delta, c+\delta) \) obtenemos que 
   \(f(x)< 0\) para todo \(x\in I\), lo que termina la prueba.
 </p>
+<div class="flexbox">
+  <img src="./Images/Img15-2.png" alt="EjerParaBolzano" width="45%" height="auto">
+</div>
+</div>
   
 </div>
 
@@ -116,7 +129,9 @@
   \(c\) en \([a,b]\) tal que \(f(c)=0\).
  </p>
 
-
+ <div class="flexbox">
+  <img src="./Images/Img15-3.png" alt="Bolzano" width="45%" height="auto">
+</div>
  <p>
   Nota: un punto \(c\) que satisface \(f(c)=0\), se le conoce como una raíz de \(f\).
  </p>
@@ -192,9 +207,18 @@
       intervalo \([a,b]\). Demuestra que si \(f(a) \leq g(a)\) y \(g(b) \leq f(b)\),
       entonces existe almenos un punto  \(c \in [a,b]\) tal que \(f(c)=g(c)\).
     </p>
+    <button class="respButton hvr-grow "> Prueba  </button>
+    <div class="resp-box flexbox">
     <p>
       Consideramos la función \(h:[a,b]\to \mathbb{R}\) dada por 
-      \(h(x)=f(x)-g(x)\). Las desigualdades 
+      \(h(x)=f(x)-g(x)\).
+    </p>
+
+    <div class="flexbox">
+      <img src="./Images/Img15-6.png" alt="EjerParaBolzano" width="45%" height="auto">
+    </div>
+      <p> 
+        Las desigualdades 
       \(f(a)\leq g(a)\) y \( g(b)\leq f(b)\) implican que \(h(a) \leq 0\)
        y \( 0\leq h(b)\). Si \(h(a)=0\) ó \(h(b)=0\) entonces \(f(a)=g(a)\) ó \(f(b)=g(b)\), por lo que 
       podemos tomar \(c=a\) ó \(c=b\) y acabamos. Por lo tanto podemos suponer 
@@ -207,6 +231,7 @@
       conlcuimos que existe \(c\in (a,b)\) tal que \(h(c)=0\) lo cual implica que 
       \(f(c)=g(c)\).
     </p>
+    </div>
 </div>
 
 
@@ -262,9 +287,11 @@
   <h2 class="number-title"> Ejercicio </h2>
   <p>
     Sea \(p(x)=\sum_{k=0}^n a_k x^k\) un polinomio de grado \(n\), tal que \(a_0\)
-    y \(a_n\) tienen signos opuestos. Prueba que existe almenos un \(c\) tal
+    y \(a_n\) tienen signos opuestos. Prueba que existe al menos un \(c\) tal
     que \(p(c)=0\).
   </p>
+  <button class="respButton hvr-grow "> Prueba  </button>
+  <div class="resp-box flexbox">
   <p>
     Ya que \(p\) es una función continua en todo \(\mathbb{R}\) el Teorema de Bolzano 
     no dice que para probar la existencia del punto \(c\) con \(p(c)=0\) es suficiente 
@@ -287,7 +314,12 @@
     \]
     y de éste límite se sigue que existe \(b\) tal que \(p(b)>0\), lo cual termina el ejercicio.
   </p>
- 
+  <div class="flexbox">
+    <img src="./Images/Img15-11.png" alt="EjerPolinomio" width="50%" height="auto">
+  </div>
+  </div>
+
+
 </div>
 
 
@@ -352,7 +384,7 @@
   </ol>
 
   <p>
-    
+
   </p>
 </div>
 
