@@ -382,10 +382,50 @@
       \(x^2-8x+2=\sen(2\pi x)\)
     </li>
   </ol>
-
+  <button class="respButton hvr-grow "> Prueba  inciso 1</button>
+  <div class="resp-box flexbox">
   <p>
-
+    Inciso 1.
   </p>
+  <p>
+    Pasamos el problema a un problema de encontrar ceros de funciones. Por lo cual tomamos la función 
+    \[
+      f(x)=x+1-\frac{1}{5+\cos(x)}.
+    \]
+    Encontes los ceros  de \(f\) coinciden con las soluciones de la ecuación inicial.
+  </p>
+  <p>
+    Antes que nada la función es continua en todo \(\mathbb{R}\), pues \(5+\cos(x)\ne 0\) 
+    para toda \(x\) (recuerda que \(|\cos(x)|\leq 1\) para toda \(x\in \mathbb{R}\)). Por lo tanto 
+    podemos usar el Teorema de Bolzano. Así pues, para asegurar la existencia de un cero de \(f\) sólo necesitamos 
+    encontrar dos puntos \(a\) y \(b\) tal que los signos de \(f(a)\) y \(f(b)\) son opuestos. Para 
+    encontrar \(a\) y \(b\) es simplemente prueba y error, pero para empezar casi cualquier valor 
+    va a servir. 
+  </p>
+  <p>
+      Proponemos \(a=0\) y en este caso 
+    \[
+      f(0)=0+1-\frac{1}{5+\cos(0)}=1-\frac{1}{6}=\frac{5}{6} >0.
+    \]
+  </p>
+  <p>
+    Para obtener un valor negativo usamos que \(-1\leq \cos(x)\leq 1\) para obtener 
+    \begin{eqnarray*}
+    4\leq 5+\cos(x)  &\Rightarrow&  \frac{1}{5+\cos(x)} \leq \frac{1}{4} \\
+    &\Rightarrow& x+1 +\frac{1}{5+\cos(x)} \leq x+\frac{5}{4}
+    \end{eqnarray*}
+    Por lo que si  \(b\) satisface \(b+\frac{5}{4} < 0\) se sigue que  \(f(b)< 0\). Por ejemplo si 
+    tomamos \(b=-\pi\) directamente tenemos 
+    \[
+      f(-\pi)=-\pi+1-\frac{1}{5+\cos(-\pi)}=-\pi+1-\frac{1}{4}=-\pi+\frac{3}{4} < 0.
+    \]
+  </p>
+  <p>
+    El Teorema de Bolzano asegura que en el intervalo \((-\pi,0)\) existe un cero de \(f\).
+  </p>
+ </div>
+    
+  
 </div>
 
 <div class="nota-box">
