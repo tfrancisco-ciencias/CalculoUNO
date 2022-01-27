@@ -454,47 +454,6 @@
   
 </div>
 
-<div class="nota-box">
-  <h2 class="number-title"> El Teorema del Valor Medio </h2>
-  Usando la definiición de recta secante y recta tangente, demuestra 
-      que para cualquier cuadrática \(f(x)=Ax^2+Bx+C\),
-      la secante que une los puntos \((a,f(a))\) y
-      \((b,f(b))\), es paralela a la recta tangente en el punto medio \(\frac{a+b}{2}\).
-
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-    <p>
-      Considera una función cuadrática \(f(x)=Ax^2+Bx+C\). Prueba que un punto \(c\) 
-      satisface \(f(b)-f(a)=f'(c)(b-a)\) si y sólo si \(c=\frac{a+b}{2}\).
-    </p> 
-    <p>
-      Nota: este ejercicio nos dice que, en el caso de las funciones cuadráticas,
-      el punto que proveé el Teorema del Valor Medio se puede encontrar: es simplemente 
-      el punto medio. Para una función arbitraria casi núnca es posible dar explícitamente dicho punto.
-    </p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <oL>
-      <li>
-        Considera la función \(f(x)=\frac{1}{x}\), \(x>0\). Demuestra que
-        la secante que une los puntos \((a,f(a))\)
-        y \((b,f(b))\) es paralela a la recta tangente en el punto \(\sqrt{ab}\).
-      </li>
-      <li>
-        Con ayuda del inciso anterior demuestra que
-        \[
-        f(b)-f(a)=f'(c)(b-a) \Leftrightarrow c=\sqrt{ab}.
-        \]
-      </li>
-  </oL>
-
-</div>
 
 <div class="teorema-box">
   <h2 class="number-title"> Teorema </h2>
@@ -557,6 +516,113 @@
   
 </div>
 
+
+
+<div class="nota-box">
+  <h2 class="number-title"> El Teorema del Valor Medio </h2>
+  <p>
+    El Teorema del Valor Medio es una generalización del Teorema de Rolle. Para ver 
+    cómo se generaliza es ilustrativo ver un ejemplo.
+  </p>
+  <p>
+    Consideremos la función cuadrática \(f:\mathbb{R}\to \mathbb{R}\)
+    dada por \(f(x)=\alpha(x-x_0)^2+\beta\), donde \(\alpha \ne 0\). El Teorema de Rolle
+    nos asegura que si \(f(x_1)=f(x_2)\) entonces existe un punto, entre \(x_1\) y 
+    \(x_2\) donde la derivada de \(f\) se anula. En nuestro ejemplo esto es claro pues
+    para que \(f(x_1)=f(x_2)\) los puntos \(x_1\) y \(x_2\) deben de estar opuestos
+    al eje de simetría de la parábola que pasa por el vértice, es decir \(x_1=x_0-r\)
+    y \(x_2=x_0+r\), para \(r>0\). En este caso es claro que el vértice, \(x_0\), está entre \(x_1\)
+    y \(x_2\) y que \(f'(x_0)=0\). 
+  </p>
+  <p>
+    El Teorema del Valor Medio responde la pregunta: ¿qué pasa si los puntos \(x_1\)
+    y \(x_2\) no se toman en lados opuestos del eje de  simetría? 
+  </p>
+  <p>
+    La observación crucial es que, en el caso simétrico es decir 
+    \(f(x_1)=f(x_2)\), la pendiente de la recta que une \((x_1,f(x_1))\) con \((x_2,f(x_2))\) es cero,
+    que coincide con la derivada en el punto \(x_0\). 
+    Cuando \(x_1\) y \(x_2\) no se toman simétricos la respuesta va a estar dada nuevamente 
+    por la pendiente de la recta  que une los puntos \((x_1,f(x_1))\) y \((x_2,f(x_2))\). 
+  </p>
+  
+  <p>
+    Sea \(m\) la pendiente de la recta que une \((x_1,f(x_1))\) y \((x_2,f(x_2))\), es decir 
+    \[
+      m=\frac{f(x_2)-f(x_1)}{x_2-x_1}.
+    \]
+    Un cálculo directo, usando diferencia de cuadrados, prueba que 
+    \begin{eqnarray*}
+      m&=& \frac{\alpha((x_2-x_0)^2-(x_1-x_0)^2) }{x_2-x_1}\\
+      &=&\frac{\alpha((x_2+x_1-2x_0)(x_1-x_2))}{x_2-x_1} \\
+      &=& \alpha(x_2+x_1)-2\alpha x_0.
+    \end{eqnarray*}
+    </p>
+    <p>
+    Por otro lado vamos a considerar el punto medio entre \(x_1\) y \(x_2\), \(c=\frac{x_1+x_2}{2}\) 
+    (nota que en el caso simétrico el punto medio era precisamente \(x_0\), pero no el 
+    caso general). Sabemos que \(f'(x)=2\alpha(x-x_0)\), por lo que 
+    \[
+      f'(c)=2\alpha \left(\frac{x_1+x_2}{2} -x_0 \right)=\alpha(x_1+x_2)-2\alpha x_0.
+    \]
+    Concluimos que 
+    \(f'(c)=m\).
+  </p>
+  <p>
+    En resumen, para cualesquiera puntos distintos \(x_1\) y \(x_2\) existe un punto entre \(x_1\) y 
+    \(x_2\) (en este caso el punto medio) para el cual 
+    \[
+    f'(c)=\frac{f(x_2)-f(x_1)}{x_2-x_1}.
+    \]
+  </p>
+  <p>
+    Utilizando la interpretación de la derivada como recta tangente podemos 
+    expresar lo anterior como: para cualquier recta \(L\), que une dos puntos distintos de la 
+    gráfica \((x_1,f(x_1))\), \((x_2,f(x_2))\), existe un punto \(c\), entre 
+    \(x_1\) y \(x_2\), de tal forma que la recta tangente por \((c,f(c))\)
+    es paralela a \(L\). Esto es la generalización de va a dar el  Teorema del Valor Medio.
+  </p>
+  <p>
+    <p style="color:red">Advertencia</p> Para un función en general el punto medio 
+    casí nunca va a funcionar como el punto del Teorema del Valor Medio. El 
+    teorema sólo va a asegurar la existencia del punto pero no lo calcula 
+    explícitamente. El caso de las cuadráticas es muy especial en ese aspecto.
+  </p>
+  
+</div>
+
+
+<!--<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      Considera una función cuadrática \(f(x)=Ax^2+Bx+C\). Prueba que un punto \(c\) 
+      satisface \(f(b)-f(a)=f'(c)(b-a)\) si y sólo si \(c=\frac{a+b}{2}\).
+    </p> 
+    <p>
+      Nota: este ejercicio nos dice que, en el caso de las funciones cuadráticas,
+      el punto que proveé el Teorema del Valor Medio se puede encontrar: es simplemente 
+      el punto medio. Para una función arbitraria casi núnca es posible dar explícitamente dicho punto.
+    </p>
+</div>-->
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <oL>
+      <li>
+        Considera la función \(f(x)=\frac{1}{x}\), \(x>0\). Demuestra que
+        la secante que une los puntos \((a,f(a))\)
+        y \((b,f(b))\) es paralela a la recta tangente en el punto \(\sqrt{ab}\).
+      </li>
+      <li>
+        Con ayuda del inciso anterior demuestra que
+        \[
+        f(b)-f(a)=f'(c)(b-a) \Leftrightarrow c=\sqrt{ab}.
+        \]
+      </li>
+  </oL>
+
+</div>
 
 <div class="teorema-box">
   <h2 class="number-title"> Teorema </h2> 
