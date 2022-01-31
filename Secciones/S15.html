@@ -204,7 +204,7 @@
   <h2 class="number-title"> Ejercicio </h2>
     <p>
       Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
-      Si \(f(a) \leq a\) y \(f(b) \geq b\), demuestra que \(f\) tiene almenos un
+      Si \(f(a) \leq a\) y \(f(b) \geq b\), demuestra que \(f\) tiene al menos un
       punto fijo en \([a,b]\).
     </p>
     <p>
@@ -218,7 +218,7 @@
     <p> 
       Sean \(f,g: [a,b] \to \mathbb{R}\) dos funciones continuas en el
       intervalo \([a,b]\). Demuestra que si \(f(a) \leq g(a)\) y \(g(b) \leq f(b)\),
-      entonces existe almenos un punto  \(c \in [a,b]\) tal que \(f(c)=g(c)\).
+      entonces existe al menos un punto  \(c \in [a,b]\) tal que \(f(c)=g(c)\).
     </p>
     <button class="respButton hvr-grow "> Prueba  </button>
     <div class="resp-box flexbox">
@@ -380,7 +380,7 @@
     \[
     \frac{a}{x^3+2x^2-1}+\frac{b}{x^3+x-2}=0
     \]
-    tiene almenos una solución en \((-1,1)\).
+    tiene al menos una solución en \((-1,1)\).
   </p>
   <p>
     Sugerencia: calcula los límites 
@@ -397,7 +397,7 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>
-    Demuestra que las siguientes ecuaciones tienen almenos una solución
+    Demuestra que las siguientes ecuaciones tienen al menos una solución
   </p>
 
   <ol>
@@ -468,8 +468,13 @@
           \(f\) es diferenciable en \((a,b)\).
         </li>
       </ol>
-      Si \(f(a)=f(b)\) entonces existe almenos un \(c\in (a,b)\) tal que \(f'(c)=0\).
+      Si \(f(a)=f(b)\) entonces existe al menos un \(c\in (a,b)\) tal que \(f'(c)=0\).
     </p>
+
+    <div class="flexbox">
+      <img src="./Images/Img15-15.png" alt="EjerParaBolzano" width="45%" height="auto">
+    </div>
+
      <p>
       Sugerencia: Sea \(x_*\) y \(x^*\) puntos en \([a,b]\) donde \(f\) alcanza su
       mínimo y  máximo absolutos  respectivamente; si  \(x_*\) o \(x^*\) están en
@@ -519,7 +524,7 @@
 
 
 <div class="nota-box">
-  <h2 class="number-title"> El Teorema del Valor Medio </h2>
+  <h2 class="number-title"> Ejemplo del Teorema del Valor Medio </h2>
   <p>
     El Teorema del Valor Medio es una generalización del Teorema de Rolle. Para ver 
     cómo se generaliza es ilustrativo ver un ejemplo.
@@ -534,6 +539,11 @@
     y \(x_2=x_0+r\), para \(r>0\). En este caso es claro que el vértice, \(x_0\), está entre \(x_1\)
     y \(x_2\) y que \(f'(x_0)=0\). 
   </p>
+
+  <div class="flexbox">
+    <img src="./Images/Img15-18-1.png" alt="EjerParaBolzano" width="45%" height="auto">
+  </div>
+
   <p>
     El Teorema del Valor Medio responde la pregunta: ¿qué pasa si los puntos \(x_1\)
     y \(x_2\) no se toman en lados opuestos del eje de  simetría? 
@@ -546,6 +556,10 @@
     por la pendiente de la recta  que une los puntos \((x_1,f(x_1))\) y \((x_2,f(x_2))\). 
   </p>
   
+  <div class="flexbox">
+    <img src="./Images/Img15-18-2.png" alt="EjerParaBolzano" width="45%" height="auto">
+  </div>
+
   <p>
     Sea \(m\) la pendiente de la recta que une \((x_1,f(x_1))\) y \((x_2,f(x_2))\), es decir 
     \[
@@ -584,8 +598,11 @@
   </p>
   <p>
     <p style="color:red">Advertencia</p> Para un función en general el punto medio 
-    casí nunca va a funcionar como el punto del Teorema del Valor Medio. El 
-    teorema sólo va a asegurar la existencia del punto pero no lo calcula 
+    entre los puntos extremos casí nunca va a funcionar como el punto del Teorema del Valor Medio (en ese aspecto 
+    el nombre es un poco desafortunado). El 
+    teorema sólo va a asegurar la existencia del punto "ENTRE" o "EN MEDIO" los 
+    los puntos extremos \(x_1,x_2\),  pero no dice que este exáctamente 
+    a la mitad ni lo calcula 
     explícitamente. El caso de las cuadráticas es muy especial en ese aspecto.
   </p>
   
@@ -621,7 +638,11 @@
         \]
       </li>
   </oL>
-
+  <p>
+    Nota que en este caso el punto que satisface el Teorema del Valor 
+    medio es \(\sqrt{ab}\) el cual no siempre es el punto  que está a la mitad 
+    entre \(a\) y \(b\).
+  </p>
 </div>
 
 <div class="teorema-box">
@@ -640,6 +661,10 @@
       f(b)-f(a)=f'(c)(b-a).
       \]      
     </p>
+
+    <div class="flexbox">
+      <img src="./Images/Img15-20.png" alt="EjerParaBolzano" width="45%" height="auto">
+    </div>
     <p>
       Sugerencia: considera la función \(L(x)=m(x-a)+f(a)\) donde
       \(m=\frac{f(b)-f(a)}{b-a}\). Aplica el Teorema de Rolle a la función
