@@ -82,33 +82,39 @@
 
 
 <div class="teorema-box">
-<h2 class="number-title"> Teorema del valor intermedio </h2>
-Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
-Si \(x_1< x_2\) son dos puntos en \([a,b]\), tales que
-\(f(x_1) \ne f(x_2)\) entonces todo valor entre \(f(x_1)\) y \(f(x_2)\)
-es alcanzado \(f\), en el intervalo \((x_1,x_2)\). Es decir
-\[
-\forall y, \textrm{entre \(f(x_1)\) y \(f(x_2)\), existe \(x \in (x_1,x_2)\),
-  tal que \(f(x)=y\)}
-\]
+<h2 class="number-title" id="Teo:ValorIntermedio"> Teorema </h2>
+<h3>Teorema del valor intermedio</h3>
+<p>
+  Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
+  Si \(x_1< x_2\) son dos puntos en \([a,b]\), tales que
+  \(f(x_1) \ne f(x_2)\) entonces todo valor entre \(f(x_1)\) y \(f(x_2)\)
+  es alcanzado \(f\), en el intervalo \((x_1,x_2)\). Es decir, para todo 
+  número \(y\) entre \(f(x_1)\) y \(f(x_2)\) existe \(x \in (x_1,x_2)\),
+  tal que \(f(x)=y\).
+</p>
+<p>
+  Sugerencia: si \(f(x_1)< f(x_2)\) y \(y\in (f(x_1),f(x_2))\), considera
+  \(g(x)=f(x)-y\). Aplica el Teorema de Bolzano a \(g\).  
+</p>
 
 
-Sugerencia: si \(f(x_1)< f(x_2)\) y \(y\in (f(x_1),f(x_2))\), considera
-\(g(x)=f(x)-y\). Aplica el Teorema de Bolzano a \(g\).
 </div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  (Existencia de raíces \(n\)-ésimas)
-  Si \(n\in \mathbb{Z}^+\) y si \(a>0\), existe un y sólo un
-  \(b \in \mathbb{R^+}\) que satisface \(b^n=a\).
+  <h3> Existencia de raíces \(n\)-ésimas</h3>
+  <p>
+    Si \(n\in \mathbb{Z}^+\) y si \(a>0\), existe un y sólo un
+    \(b \in \mathbb{R^+}\) que satisface \(b^n=a\).
+  </p>
+  <p>
+    Sugerencia:
+    Para la existencia, aplica el teorema del valor intermedio y el hecho de
+    que \(\lim_{x\to +\infty} x^n=+\infty\), para todo \(n\).
 
-Sugerencia:
-Para la existencia, aplica el teorema del valor intermedio y el hecho de
-que \(\lim_{x\to +\infty} x^n=+\infty\), para todo \(n\).
-
-Para la unicidad usa <a href="./S1.html#Eqn:Resolvent"> Ejercicio 1.18</a>.
+    Para la unicidad usa <a href="./S1.html#Eqn:Resolvent"> Ejercicio 1.18</a>.
+  </p>
 </div>
 
 <div class="ejercicio-box">
