@@ -543,6 +543,79 @@ Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7<
   \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
   que \(\lim_{k\to \infty} x_{n_k}=x_0\).
   </p>
+
+  <button class="respButton hvr-grow "> Prueba </button>
+      <div class="resp-box flexbox">
+    <p>
+      La idea de la prueba es dividir en mitades el intervalo \([a,b]\) de manera consecutiva para 
+      ir "cazando" el límite (\(x_0\) en la notación del teorema).
+    </p>
+    <p>
+      Por notación dado un intervalo cerrado \(J\) calquiera, denotamos \(J_i\) su mitad 
+      izquierda y \(J_d\) su mitad derecha. De manera precisa si \(J=[c,d]\) entonces 
+      \[J_i=[a,(a+b)/2], J_d=[(a+b)/2, b]\]
+      Nota que \(\textrm{longitud}(J_i)=\frac{1}{2}\textrm{longitud}(J)\)  
+      y \(\textrm{longitud}(J_d)=\frac{1}{2}\textrm{longitud}(J)\).
+    </p>
+    <p>
+      Denotemos \(I=[a,b]\). Ahora nos fijamos en los puntos de la sucesión que caen en cada uno de los lados
+      izquierdo y derecho. Para esto definimos 
+      \[
+      N(I_i)=\{n\in \mathbb{N}: x_n\in  I_i \}, \, N(I_d)=\{n\in \mathbb{N}: x_n\in  I_n \}
+      \]
+      Ya que \(\mathbb{N}=N(I_i)\cup N(I_d)\) alguno de los uniendos debe ser infinito. Denotemos 
+      por \(I^{(1)}\) la mitad para la cual \(N(I^{(1)})\) es infinito. Fijamos un \(n_1\in N(I^{(1)})\), 
+      éste será el primer elemento de nuestra subsucesión.
+    </p>
+    <p>
+      Ahora dividimos a \(I^{(1)}\) en dos partes y aplicamos el mismo procedimiento.
+      \[
+      N(I^{(1)}_i)=\{n\in \mathbb{N}: x_n\in  I_i^{(1)} \}, \, N(I^{(1)}_d)=\{n\in \mathbb{N}: x_n\in  I_n^{(1)} \}
+      \]
+      Ya que \(\mathbb{N}=N(I^{(1)}_i)\cup N(I^{(1)}_d)\) alguno de los uniendos debe ser infinito. Denotemos 
+      por \(I^{(2)}\) la mitad para la cual \(N(I^{(2)})\) es infinito. Puesto que 
+      \(N(I^{(2)})\) es infinito podemos tomar  \(n_2\in N(I^{(2)})\) y \(n_2 > n_1\). 
+      Este será el segundo  elemento de nuestra subsucesión.
+    </p>
+    <p>
+      Continuando de esta manera si tenemos elegido el intervalo \(I^{(k)}\) lo dividimos en dos 
+      y consideramos 
+      \[
+      N(I^{(k)}_i)=\{n\in \mathbb{N}: x_n\in  I_i^{(k)} \}, \, N(I^{(k)}_d)=\{n\in \mathbb{N}: x_n\in  I_n^{(k)} \}
+      \]
+      Ya que \(\mathbb{N}=N(I^{(k)}_i)\cup N(I^{(k)}_d)\) alguno de los uniendos debe ser infinito. Denotemos 
+      por \(I^{(k+1)}\) la mitad para la cual \(N(I^{(k+1)})\) es infinito. Puesto que 
+      \(N(I^{(k+1)})\) es infinito podemos tomar  \(n_{k+1}\in N(I^{(k+1)})\) y \(n_{k+1} > n_k\). 
+      Este será el \((k+1)\)-ésimo  elemento de nuestra subsucesión.
+    </p>
+    <p>
+      Por construcción es claro que \((x_{n_k})_{k=1}^\infty\) es una subsucesión de \((x_n)_{n=1}^\infty\).
+    </p>
+    <p>
+      Como dividimos en dos cada vez tenemos que 
+      \[
+      \textrm{longitud}(I^{(k)})=\frac{1}{2^k}\textrm{longitud}(I)
+      \]
+      y por construcción \(I^{(k+1)}\subseteq I^{(k)}\). Por el Teorema de Intervalos cerrados anidados 
+      tenemos que 
+      \[
+      \cap_{k=1}^\infty I^{(k)}=\{x_0\}
+      \]
+      Resta probar que \(\lim_{k\to \infty} x_{n_k}=x_0\). Para ésto notamos que 
+      para toda \(k\), \(x_{n_k}, x_0 \in I^{(k)} \) por lo que 
+      \[
+      |x_{n_k}-x_0|\leq \textrm{longitud}(I^{(k)})=\frac{1}{2^k}\textrm{longitud}(I)
+      \]
+      aplicando límite cuando \(k\to \infty\) en ambos lados de la desigualdad anterior concluimos 
+      \[
+      \lim_{k\to \infty}|x_{n_k}-x_0|=0
+      \]
+      lo que implica 
+      \[
+        \lim_{k\to \infty} x_{n_k}=x_0.
+      \]
+    </p>
+  </div>
 </div>
 
 <div class="ejercicio-box">
