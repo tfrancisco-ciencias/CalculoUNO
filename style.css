@@ -12,7 +12,7 @@ html, body{
 }
 
 .fondo-body{
-  background:  rgb(255, 232, 224);
+  background:  rgb(224, 243, 255);
   color: black;
 }
 
@@ -38,32 +38,58 @@ html, body{
 
 /* for top menu */
 .main-header{
-  top: 0;
-  background: solid rgb(248, 249, 249);
+  text-align: center;
   width: 100%;
+  margin-bottom: 50px;
+  }
+ 
+.small-nav{
+    padding: 10px;
   }
 
 .top-nav ul {
   margin:10px;
   padding: 10px;
+  border-radius: 25px;
+  background-color: rgb(191, 207, 243);
 }
+
+
+.top-nav-dark ul {
+    margin:10px;
+    padding: 10px;
+    border-radius: 25px;
+    background:  rgb(53, 93, 131);
+    color:    rgb(205, 173, 218);
+  }
 
 .top-nav li {
   display: inline;
-  border-radius:  20px  solid #AED6F1;
 }
 
 .top-nav a{
   padding: 10px;
   font-size: 30px;
   text-decoration: none;
-
 }
 
 .top-nav a:hover{
-  background-color: #D6EAF8;
-  border-radius:  20px  solid #AED6F1;
+  background-color: #d9f8d6;
 }
+
+.small-nav button{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: rgb(250, 239, 210);
+}
+
+
+.small-nav button:hover{
+    background-color:#aef1c8;
+    border-radius:  20px  solid #aef1c8;
+  }
 
 
 .calculo-title{
@@ -102,7 +128,7 @@ h1.number-title{
 }
 h1.number-title:before{
  counter-increment: sectionCounter;
- content:"Sección " counter(sectionCounter) "  ";
+ content:"Sección " counter(sectionCounter) " ";
  font-family: "Muli";
 }
 
@@ -125,7 +151,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid  rgba( 190, 236, 172 ,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -138,7 +166,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid  rgba( 190, 236, 172,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -149,7 +179,9 @@ h2.number-title:before{
   border-radius: 25px;
   padding: 20px;
   border: 10px  solid rgba(229,180,255,0.5);
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
   font-size: 20px;
   font-family:  "Lucida Console" Courier monospace;
   width: 70%;
@@ -163,7 +195,9 @@ h2.number-title:before{
   border-radius: 25px;
   padding: 20px;
   border: 10px  solid rgba(229,180,255,0.5);
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
   font-size: 20px;
   font-family:  "Lucida Console" Courier monospace;
   width: 70%;
@@ -176,7 +210,9 @@ h2.number-title:before{
   border-radius: 25px;
   padding: 20px;
   border: 10px solid rgba(92,213,241,0.5);
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
   font-size: 20px;
   width: 70%;
   box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -189,7 +225,9 @@ h2.number-title:before{
   border-radius: 25px;
   padding: 20px;
   border: 10px solid rgba(92,213,241,0.5);
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
   font-size: 20px;
   width: 70%;
   box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -202,7 +240,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgba(255,206,102,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -215,7 +255,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgba(255,206,102,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -227,7 +269,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgb(251,161,255,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -240,7 +284,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgb(251,161,255,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -274,7 +320,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgba(255,102,160,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -286,7 +334,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgba(255,102,160,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -299,7 +349,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgba(175,122,197,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -313,7 +365,9 @@ h2.number-title:before{
     border-radius: 25px;
     padding: 20px;
     border: 10px solid rgba(175,122,197,0.5);
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 20px;
     width: 70%;
     box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
@@ -327,6 +381,7 @@ h2.number-title:before{
     margin-right: auto;
     margin-left: auto;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .video{
@@ -380,7 +435,6 @@ h2.number-title:before{
     border: 10px black;
     font-size: 20px;
 }
-
 /*//// tables //////*/
 
 table {
