@@ -13,7 +13,9 @@ $(document).ready(function() {
   var elementResp=document.querySelectorAll("div.resp-box");
   var elementProp=document.querySelectorAll("div.prop-box");
   var elementQuiz=document.querySelectorAll("div.quiz-box");
+  var elementCoro=document.querySelectorAll("div.coro-box");
   document.body.classList.toggle("fondo-body-dark");
+  document.querySelector("nav.top-nav").classList.toggle("top-nav-dark");
   var i;
   for (i=0; i < elementInfo.length; i++ ){
   elementInfo[i].classList.toggle("info-box-dark");
@@ -39,4 +41,32 @@ $(document).ready(function() {
   for (i=0;i < elementQuiz.length;i++){
     elementQuiz[i].classList.toggle("quiz-box-dark");
   };
+  for (i=0;i < elementCoro.length;i++){
+    elementCoro[i].classList.toggle("coro-box-dark");
   };
+  };
+
+  /// 
+  
+  function nextS() {
+    var secString = document.getElementById("Sec");
+    var cleanSecString=secString.innerText.replace(/[§ ]/g,"")
+    var secNum= parseInt(cleanSecString);
+    //var secNum= parseInt(secString.innerText[3]);
+      var secNumNext=secNum+1
+      var secNextString=secNumNext.toString()
+      var addressNext= `./S${secNextString}.html`
+      window.location.assign(addressNext)
+    }
+    
+    function prevS() {
+      var secString = document.getElementById("Sec");
+      var cleanSecString=secString.innerText.replace(/[§ ]/g,"")
+      var secNum= parseInt(cleanSecString);
+      //var secNum= parseInt(secString.innerText[3]);
+        var secNumPrev=secNum-1
+        var secPrevString=secNumPrev.toString()
+        var addressPrev= `./S${secPrevString}.html`
+        window.location.assign(addressPrev)
+      }
+

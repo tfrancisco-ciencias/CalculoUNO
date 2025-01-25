@@ -11,7 +11,7 @@
 
 
     <!-- This part is to load main.js -->
-    <script type="text/javascript" src="../main2.js"></script>
+    <script type="text/javascript" src="../main.js"></script>
 
 
     <!-- Next part is for new coomands -->
@@ -27,7 +27,7 @@
       };
     </script>
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <!-- This part is for using single $ for latex input, instead of \(\) 
     <script>
         MathJax = {
         tex: {
@@ -37,7 +37,7 @@
             fontCache: 'global'
         }
     };
-    </script>
+    </script>-->
 
     <!-- CSS -->
 
@@ -67,13 +67,14 @@
               
             </ul>
           </nav>
-          <nav class="small-nav" align=right>
-            <button onclick="myFunction()">Claro/Obscuro 
-          </nav>
+          <label class="switch">
+            <input type="checkbox" onclick="myFunction()">
+            <span class="slider"></span>
+          </label>
         </header>
 
       <!-- This part is for title in tab-->
-      <title> § 2   </title>
+      <title id="Sec"> § 2   </title>
     
   </head>
   <!--    Contenido empiaza abajo
@@ -85,6 +86,10 @@
     <div class="flexbox">
 
       <h1 class="number-title ">: El axioma del supremo  </h1>
+      <!-- this part is for next and prev sections -->
+   <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
+   <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
+   
 
 
 <div class="info-box">

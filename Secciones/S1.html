@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC >
 
 <html lang="es">
@@ -11,7 +12,7 @@
 
 
     <!-- This part is to load main.js -->
-    <script type="text/javascript" src="../main2.js"></script>
+    <script type="text/javascript" src="../main.js"></script>
 
 
     <!-- Next part is for new coomands -->
@@ -22,13 +23,14 @@
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1]
           },
-          tags: "ams" /* this part is for numbered equations */
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
         }
       };
     </script>
 
     <!-- This part is for using single $ for latex input, instead of \(\) -->
-    <script>
+    <!--<script>
         MathJax = {
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']]
@@ -37,7 +39,7 @@
             fontCache: 'global'
         }
     };
-    </script>
+    </script>-->
 
     <!-- CSS -->
 
@@ -67,13 +69,17 @@
               
             </ul>
           </nav>
-          <nav class="small-nav" align=right>
-            <button onclick="myFunction()">Claro/Obscuro 
-          </nav>
+          <label class="switch">
+            <input type="checkbox" onclick="myFunction()">
+            <span class="slider"></span>
+          </label>
+          
+          
+
         </header>
 
       <!-- This part is for title in tab-->
-      <title> § 1   </title>
+      <title id="Sec"> § 1 </title>
     
   </head>
   <!--    Contenido empiaza abajo
@@ -82,6 +88,7 @@
 
  <body class="flexbox fondo-body" >
   <h1 class="number-title"> Preliminares </h1>
+  <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
 
 
     <div class="flexbox">
