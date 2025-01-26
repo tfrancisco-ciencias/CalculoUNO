@@ -85,7 +85,7 @@
 
     <div class="flexbox">
 
-      <h1 class="number-title ">: El axioma del supremo  </h1>
+      <h1 class="number-title flexbox">  El axioma del supremo  </h1>
       <!-- this part is for next and prev sections -->
    <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
    <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -153,7 +153,7 @@
     </p>
     <p>
       Sugerencia: primero, usa el
-      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.26</a>
+      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.27</a>
       para notar \(a<(1+a)^2\);
       después, para \(x\in S\), prueba \(0< (1+a)^2-x^2\); finalmente,
       usa diferencia de cuadrados para
@@ -161,7 +161,7 @@
     </p>
   </div>
 
-<div class="ejercicio-box">
+<!-- <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>Con un poco más de trabajo se puede generalizar
     el <a href="#Ejer:CotaExistenciaCuadrados">Ejercicio
@@ -173,11 +173,11 @@
   </p>
   <p>
     Sugerencia:
-    Primero usa el <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.26</a>
+    Primero usa el <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.27</a>
     para obtener \(a<(1+a)^n\); para
     probar \(x< 1+a\) usa el <a href="S1.html#Eqn:Resolvent">Ejercicio 1.18</a>.
   </p>
-</div>
+</div>-->
 
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
@@ -216,8 +216,8 @@
 
 </div>
 
-  <div class="ejercicio-box">
-    <h2 class="number-title"> Ejercicio </h2>
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición  </h2>
     <p>El supremo de un conjunto (de existir) es único, es decir, demuestra que si \(\alpha\) y \(\beta\) son dos
       números que satisfacen las dos condiciones de la
       definición del supremo entonces  \(\alpha=\beta\).
@@ -234,8 +234,8 @@
                 </div>
   </div>
 
-  <div class="ejercicio-box">
-    <h2 class="number-title" id="Ejer:CaracterizacionSupremo"> Ejercicio </h2>
+  <div class="prop-box">
+    <h2 class="number-title" id="Ejer:CaracterizacionSupremo"> Proposición  </h2>
     <p>Caracterización del supremo.</p>
     <p>
       Demuestra que \(\alpha\) es el supremo de \(S\) si y sólo si \(\alpha\)
@@ -287,12 +287,12 @@
     </p>
 
     <p>
-      Ver  <a href="#Ejer:RelacionSupInfimo">Ejercicio 2.15</a> más adelante.
+      Ver  <a href="#Ejer:RelacionSupInfimo">Ejercicio 2.14</a> más adelante.
     </p>
   </div>
 
-  <div class="ejercicio-box">
-    <h2 class="number-title"> Ejercicio </h2>
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición  </h2>
      <p>Usando el axioma del supremo  demuestra que \(\mathbb{N}\) no tiene
        cota superior.</p>
        <button class="respButton hvr-grow "> Respuesta </button>
@@ -310,7 +310,7 @@
        \(n\) que satisface \(x< n\).
      </p>
      <p>
-       Sugerencia: usa el ejercicio anterior.
+       Sugerencia: usa la proposición  anterior.
      </p>
   </div>
 
@@ -380,8 +380,8 @@ inferiormente y que
 </p>
 </div>
 
-<div class="ejercicio-box" >
-  <h2 class="number-title" id="Ejer:SupremoAdicionMultiplicacion"> Ejercicio </h2>
+<div class="prop-box" >
+  <h2 class="number-title" id="Ejer:SupremoAdicionMultiplicacion"> Proposición </h2>
   <p>Sea \(\emptyset \ne A \subseteq \mathbb{R}\) y
     sean \(\gamma \in \mathbb{R}\) y \(\beta \in \mathbb{R}^+\),
     fijos y arbitrarios. Define el siguiente conjunto
@@ -443,11 +443,11 @@ acotados superiormente y que
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>Cada número real no negativo tiene una única raíz cuadrada no negativa.
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema  </h2>
+  <p> Cada número real no negativo tiene una única raíz cuadrada no negativa.
   Es decir, para todo \(a>0\)
-existe \(\alpha >0\) tal que \(\alpha^2=a\).
+existe un único \(\alpha >0\) tal que \(\alpha^2=a\).
 </p>
 
 <p>Sugerencia: Fija \(a>0\). Define el conjunto </p>
@@ -459,6 +459,9 @@ Como \(0^2=0\), \(0\in S\) asi que \(S \ne \emptyset\), además por el
 <a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 2.4</a>,  \(S\) está acotado
 superiormente. Por el axioma del supremo existe \(\alpha:= \sup(S)\).
 Demuestra que \(\alpha^2=a\).
+</p>
+<p>
+  Para la unicidad ve el ejercicio que sigue.
 </p>
 <button class="respButton hvr-grow "> Demostración</button>
 <div class="resp-box flexbox">
@@ -624,6 +627,33 @@ parecido al <a href="#Ejer:SupremoYSeries">Ejercicio 2.23</a>.
     </p>
 </div>
 
+
+<div class="nota-box">
+  <h2 class="number-title">  Proyecto </h2>
+  <p>
+    En este proyecto se prueba la existencia de raíces \(n\)-ésimas. En lo que 
+    sigue se fija \(n\geq 2\) un número natural y \(a >0\) un real positivo.
+  </p>
+  <ul>
+    <li>
+      Define 
+      \[
+      S=\{x \geq 0 :  x^n \leq a \}
+      \]
+      Prueba que \(S\ne \emptyset\) y está acotado superiormente. Sugerencia: usa el 
+      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.27</a> y el 
+      <a href="S1.html#Ejer:CancelarRaices"> Ejercicio 1.28</a> también es útil.
+
+    </li>
+    <li>
+      Define \(\alpha:= \sup(S)\) y prueba que \(\alpha > 0 \)  y \(\alpha^n=a\).
+    </li>
+    <li>
+      Para la unicidad supón que existe \(\beta >0\) tal que \(\beta^n=a\) y prueba que 
+      \(\alpha=\beta\). Sugerencia: <a href="S1.html#Eqn:Resolvent"> Ejercicio 1.19</a>
+    </li>
+  </ul>
+</div>
 
 
     <div class="quiz-box">
