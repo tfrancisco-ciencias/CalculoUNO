@@ -954,10 +954,39 @@
         <h2 class="number-title"> Ejercicio  </h2>
         <p>
           Fija dos números positivo \(a,b>0\) y \(n\geq 1\) un número natural. Prueba que si 
-          \(a^n < b^n \) entonces \(a< b\). Sugerencia: usa el 
+          \(a < b \) entonces \(a^n < b^n \). Sugerencia: usa el 
           <a href="#Eqn:Resolvent"> Ejercicio 1.19</a>
         </p>
 
+        <button class="respButton hvr-grow"> Respuesta </button>
+
+        <div class="resp-box">
+          
+        <p>
+          Para probar que \(a^n < b^n \) necesitamos probar que \(b^n-a^n \in \mathbb{R}^+\). Ahora 
+          por <a href="#Eqn:Resolvent"> Ejercicio 1.19</a> podemos escribir 
+          \[
+          b^n-a^n = (b-a)\left( \sum_{k=0}^{n-1} b^ka^{n-1-k} \right),
+          \]
+          y ya que \(\mathbb{R}^+\) es cerrado bajo multiplicación es suficiente probar dos pretenencias:
+          \[
+          b-a \in \mathbb{R}^+ , \sum_{k=0}^{n-1} b^ka^{n-1-k} \in \mathbb{R}^+.
+          \]
+          La primera parte es fácil pues por hipótesis \(a< b\) lo cual no es otra cosa sino que 
+          \(b-a\in \mathbb{R}^+\).
+        </p>
+        <p>
+          Para la segunda, usando que \(\mathbb{R}^+\) es cerrado para la suma es suficiente probar que 
+          cada uno de los sumandos está en \(\mathbb{R}^+\), es decir, para toda \(k=0,\dots, n-1\)
+          \[
+          b^ka^{n-1-k} \in \mathbb{R}^+.
+          \]
+          Para probar lo anterior tenemos: \(a,b >0\) implica \(a,b\in \mathbb{R}^+\) y al ser 
+          \(\mathbb{R}^+\) cerrado bajo productos tenemos que 
+          \(a^{n-1-k},b^{k} \in \mathbb{R}^+\), para toda \(k=0,\dots, n-1\), y multiplicando éstos últimos concluimos 
+          \(b^ka^{n-1-k}\in \mathbb{R}^+\).
+        </p>
+        </div>
       </div>
 
 </div>
