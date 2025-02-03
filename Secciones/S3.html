@@ -20,17 +20,15 @@
         tex: {
           macros: {
             sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1],
-            id: "\\operatorname{id}",
+            seg: ["\\overrightarrow{#1}", 1]
           },
-          tags: "ams", /* this part is for numbered equations */
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          tags: "ams" /* this part is for numbered equations */
         }
       };
     </script>
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
-    <!--<script>
+    <!-- This part is for using single $ for latex input, instead of \(\) 
+    <script>
         MathJax = {
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']]
@@ -76,552 +74,599 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title id="Sec"> § 3 </title>
+      <title id="Sec"> § 3   </title>
     
   </head>
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
 
- <body class="fondo-body" >
 
-   <h1 class="number-title flexbox"> Desigualdades </h1> 
+<body class="flexbox fondo-body">
 
-   <!-- this part is for next and prev sections -->
+    <div class="flexbox">
+
+      <h1 class="number-title flexbox">  El axioma del supremo  </h1>
+      <!-- this part is for next and prev sections -->
    <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
    <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
+   
+
+
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
   <p>
-    De manera muy general, la idea de expresiones que involucren desigualdades
-    es muy importante. Por ejemplo, en un proceso productivo (de lo que uno se
-    imagine, autopartes, comida, etc.) donde se deben tener objetivos específicos para
-    su funcionamiento, no es siempre posible controlar exáctamente el resultado, pues
-    se presentan errores, los cuales deben tienen cierto límites, lo
-    que se expresan como: \(|\textrm{error}| \leq a \).
+    El axioma del supremo es lo que hace a los reales los reales.
+    Por ejemplo, los números racionales satisfacen todos los axiomas
+    de campo y de orden de la sección anterior, sin embargo, el cálculo
+    diferencial e integral usa a los números reales por que en éstos
+    se puede asegurar (entre otras muchas cosas):
+    la solución a un gran número de ecuaciones algebráicas,
+    la convergencia de límites y series, la existencia de derivadas. Otras
+    palabras que se usan para expresar lo anterior es que los números reales son
+    completos, lo que se pueden pensar como que la recta real no tiene hoyos.
+    Esta seccíon es muy importante pues trata al axioma del supremo, sus propiedades
+    y consecuencias.
   </p>
-  <p>
-    En cálculo las desigualdades juegan un papel muy importante pues permiten
-    estimar cantidades que de otra forma serían muy difíciles de obtener directamente.
-    En esta sección se presentan algunas de las expresiones que involucran
-    desigualdades más comunes y recurrentes en el cálculo, así como algunas
-    sencillas aplicaciones.
-  </p>
-
 </div>
 
 
-
-      <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-        <p>El valor absoluto de un número se define como
-          la distancia de dicho número al 0.
-        </p>
-          <div class="flexbox">
-            <img src="./Images/DistanciaValorAbs.png" alt="DistanciaValorAbs" width="40%" height="auto">
-          </div>
-          <p>
-          Usando éste punto de vista se tiene que dados \(a,b\in \mathbb{R}\),
-           \(|b-a|\) representa la distancia entre los puntos \(a\) y \(b\). Para
-           ver ésto  supongamos que
-            \(b \leq a \) y por \(d\) denotemos a la distancia entre \(a\) y \(b\).
-            Se sigue  que \(b+d=a\) lo que implica
-            \(d=a-b\), pero \(|b-a|=a-b\), pues \(b\leq a\), de donde
-            concluimos  \(d=|b-a|\).
-          </p>
-           <div class="imagen-box flexbox">
-             <img src="./Images/DistanciaEntreDosNum.png" alt="DistanciaEntreNum" width="40%" height="auto">
-           </div>
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+    Un conjunto no vacío \(A \subseteq \mathbb{R}\) se llama:
+<ol>
+<li> acotado superiormente si existe \(M\) tal que \(a \leq M\),
+  para toda \(a\in A\).</li>
+<li> acotado inferiormente si existe \(m\) tal que \(m \leq a\),
+  para toda \(a\in A\).</li>
+</ol>
 
 
-
-
-
-        <p> También se puede definir el valor absoluto como:
-          \[
-          |x|=\left\{
-            \begin{array}{cc}
-            -x & \textrm{ si \(x< 0\)}, \\
-            0 & \textrm{ si \(x=0\)}, \\
-            x & \textrm{ si \(x>0\)}.
-            \end{array}
-            \right.
-            \]
-        </p>
-
-        <p>
-          Gráfica de la función valor absoluto.
-
-
-          <div class="imagen-box flexbox">
-            <img src="./Images/GraficaValorAbs.png" alt="GraficaValorAbs" width="40%" height="auto">
-          </div>
-        </p>
-
-
-        <p>
-          Hay una observación muy útil con respecto a la gráfica de una
-          función y la gráfica de la misma función tomada con valor absoluto.
-          Ya que el valor absoluto deja igual a números positivos o cero
-          y cambia el signo de números negativos, dada una función
-          \(f: D\ \to \mathbb{R}\), para obtener la gráfica de
-          \(|f|\) se reflejan con respecto del eje \(x\) las porciones de
-          la gráfica que están debajo del mismo eje.
-
-          <div class="imagen-box flexbox">
-            <img src="./Images/GraficasConValAbs.png" alt="GraficasConValorAbs" width="50%" height="auto">
-          </div>
-        </p>
-      </div>
-
-
-
-
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Encuentra el conjunto solución de las siguientes desigualdades.
-      </p>
-
-      <ol>
-        <li> \(|x-1| < 3 \) .</li>
-        <li> \(|1+2x|\leq 1\) .</li>
-        <li> \(|x+2| \geq 5\)  .</li>
-        <li> \(|x-5| < |x+1|\) .</li>
-        <li> \(|x^2-2| \leq 1\) .</li>
-      </ol>
-      <button class="respButton hvr-grow "> Solución de 2 y 4 </button>
-<div class="resp-box flexbox">
-  <div class="video flexbox">
-    <a href="https://youtu.be/QO6W94i5irs" target="_blank" > Video </a>
-  </div>
-</div>
-    </div>
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Encuentra el conjunto solución de cada una de las siguientes desigualdades.
-      </p>
-      <ol>
-        <li> \( |-x^2+9| < 3 \) .</li>
-        <li> \(\frac{x^2-4}{3x}>1\) .</li>
-        <li>\(\frac{x}{2+x}\leq 2x\) .</li>
-      </ol>
-
-      <button class="respButton hvr-grow "> Solución de 2</button>
-<div class="resp-box flexbox">
-  <div class="video flexbox">
-    <a href="https://youtu.be/BQVDC6M7IU8" target="_blank" > Video </a>
-  </div>
-</div>
-    </div>
-
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title" id="Ejer:AbrirValorAbs"> Ejercicio </h2>
-      <p>
-        Este ejercicio a veces se refiere como "abrir" un valor absoluto.
-      </p>
-      <p>
-      Fija \(\varepsilon >0\). Demuestra:
-      </p>
-      <ol>
-        <li>\(|x|< \varepsilon\) si y sólo si se satisfacen
-          ambas desigualdades: \(-\varepsilon < x\) y \(x<\varepsilon\).
-        <p>
-        Lo anterior se resume
-        \[
-        |x|<\varepsilon \Leftrightarrow -\varepsilon
-        < x < \varepsilon.
-        \]
-        </p>
-        </li>
-        <li>
-          Demuestra: \(|x| > \varepsilon\) si y sólo si
-          \(x < -\varepsilon  \) ó \(x>\varepsilon\).
-        </li>
-      </ol>
-      <p>
-        Sugerencia: usar la fórmula en la definición de valor absoluto.
-      </p>
-      <p>
-        Nota: el mismo resultado se vale si se cambia \(<\) por \(\leq\).
-      </p>
-    </div>
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title" id="Ejer:DesigualdadTriangulo"> Ejercicio </h2>
-      <h3>
-        Desigualdad del triángulo.
-      </h3>
-      <p>
-        Esta es una de las desigualdades más utilizadas.
-      </p>
-      <p>
-        Para todos \(x,y\in \mathbb{R}\):
-        \[
-        |x+y| \leq |x|+|y|
-        \]
-      </p>
-      <button class="respButton hvr-grow "> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="video flexbox">
-          <a href="https://youtu.be/2gZXmDkIbRI" target="_blank" > Video </a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title" id="Ejer:SandwichDesigualdades"> Ejercicio </h2>
-      <p>
-        Sean \(a,b,c \in \mathbb{R}\) tales que \(a< b< c\). Demuestra que para todo
-        \(L\in \mathbb{R}\):
-      \[
-      |b-L| \leq |a-L|+|c-L|.
-      \]
-    </p>
-
-      <p>
-        Sugerencia: considera los casos \(L\leq a\),
-        \(a< L < c \) y \(c \leq L\) junto con la desigualdad del triángulo.
-      </p>
-      <button class="respButton hvr-grow "> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="video flexbox">
-          <a href="https://youtu.be/pcmgRNyOOtw" target="_blank" > Video </a>
-        </div>
-      </div>
-    </div>
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-        <p>
-          Sean \(a,b,\alpha, \beta\in \mathbb{R}\)
-          tales que \(a\leq \alpha \leq b\) y \(a\leq \beta \leq b \).
-          Demuestra que  \(|\alpha-\beta | \leq b-a\).
-        </p>
-        <p>
-          Nota: geométricamente ésta desigualdad es clara, pues dice que
-          la distancia entre dos puntos del intervalo \([a,b]\)
-          es, a lo más, b-a, la longitud del intervalo.
-        </p>
-      </div>
-
-
-
-             <div class="ejercicio-box">
-               <h2 class="number-title" id="Ejer:LaOtraDesTriang"> Ejercicio </h2>
-               <h3>
-                 La otra desigualdad del trángulo.
-               </h3>
-               <p>
-                 Demuestra que para todos \(x,y\in \mathbb{R}\):
-                 \[
-                 ||x|-|y|| \leq |x-y|
-                 \]
-               </p>
-
-               <p>
-                 Sugerencia: usa el <a href="#Ejer:AbrirValorAbs">Ejercicio 3.5</a>
-                 para abrir el valor absoluto en dos desigualdades y luego
-                 aplica la desigualdad del triángulo.
-               </p>
-             </div>
-
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-        <h3>
-          Desigualdad de Korovkin.
-        </h3>
-
-        <p>
-          Si \(x_1,\cdots, x_n \in \mathbb{R}^+\) satisfacen
-          \(x_1\cdots x_n=1\) entonces \(x_1+\cdots +x_n \geq n\).
-        </p>
-          <p>
-            La igualdad se da si y sólo si
-          \(x_1=\cdots=x_n=1\).
-        </p>
-
-
-        <button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-                <div class="video flexbox">
-                    <a href="https://youtu.be/OuuBI5CN5Eo" target="_blank" > Video </a>
-                </div>
-            </div>
-
-
-      </div>
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-        <h3>
-          Desigualdad aritmético-geométrica.
-        </h3>
-        <p>
-          Dados \(a_1,\dots a_n \in \mathbb{R}^+\), se cumple:
-          \[
-          \sqrt[n]{a_1\cdots a_n} \leq \frac{a_1+\cdots +a_n}{n}
-          \]
-        </p>
-          <p>
-            La igualdad se da si y sólo si \(a_1=\cdots =a_n\).
-        </p>
-
-        <p>
-          La desigualdad aritmético-geométrica es tan importante
-          que se presentan dos demostraciones.
-        </p>
-
-        <button class="respButton hvr-grow "> Demostración A </button>
-               <div class="resp-box flexbox">
-                   <div class="video flexbox">
-                     <a href="https://youtu.be/LQUHNfx6Om0 " target="_blank" > Video </a>
-                   </div>
-                </div>
-        <p>
-          La siguiente demostración es debida a Gauss.
-        </p>
-
-        <button class="respButton hvr-grow "> Demostración G </button>
+<button class="respButton hvr-grow "> Ejemplos </button>
             <div class="resp-box flexbox">
               <div class="video flexbox">
-                <a href="https://youtu.be/9g8CdwF7o3s" target="_blank" > Video </a>
+                <a href="https://youtu.be/KThyOO35Tjk" target="_blank" > Video </a>
               </div>
-           </div>
+            </div>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sea \(m>0\) y \(a,b\in \mathbb{R}\).
+  <ol>
+    <li>
+    Demuestra que el intervalo solución de
+    \(\{ x: mx+b \leq a \}\) siempre está acotado superiormente.
+    </li>
+    <li>
+      Demuestra que el intervalo solución de
+      \(\{x: x^2-3mx+2m^2 \leq 6m^2\}\) está acotado superior e
+      inferiormente.
+    </li>
+</div>
 
 
+ <div  class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:CotaExistenciaCuadrados"> Ejercicio </h2>
+    <p>Fija \(a>0\) y define \(S=\{ x \geq 0: x^2 \leq a \}\).
+      Demuestra que \(A\) está cotado superiormente.
+    </p>
+    <p>
+      Sugerencia: primero, usa el
+      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.27</a>
+      para notar \(a<(1+a)^2\);
+      después, para \(x\in S\), prueba \(0< (1+a)^2-x^2\); finalmente,
+      usa diferencia de cuadrados para
+      probar \(x< 1+a\), para toda \(x\in S\).
+    </p>
+  </div>
+
+<!-- <div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>Con un poco más de trabajo se puede generalizar
+    el <a href="#Ejer:CotaExistenciaCuadrados">Ejercicio
+    2.4</a>.
+  </p>
+  <p>Fija \(n\in \mathbb{N}\), \(n \geq 2\)  y
+  \(a>0\). Define  \(S=\{ x \geq 0: x^n \leq a\}\).
+  Demuestra que \(1+a\) es cota superior de \(S\).
+  </p>
+  <p>
+    Sugerencia:
+    Primero usa el <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.27</a>
+    para obtener \(a<(1+a)^n\); para
+    probar \(x< 1+a\) usa el <a href="S1.html#Eqn:Resolvent">Ejercicio 1.18</a>.
+  </p>
+</div>-->
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+  <p>El <i>supremo</i> de un conjunto \(S\) es la cota superior más chica. Es decir,
+    \(\alpha\)
+    es el supremo de \(S\) si satisface:
+  </p>
+    <ol>
+      <li>\(x \leq \alpha\), para todo \(x\in S\); </li>
+      <li> si \(M\) satisface \( x \leq M \), para todo \(x\in S\)
+        entonces \(\alpha \leq M \).</li>
+    </ol>
+
+    <p>El <i>ínfimo</i> de un conjunto \(S\) es la cota inferior más grande. Es decir,
+      \(\alpha\)
+      es el ínfimo de \(S\) si satisface:
+    </p>
+      <ol>
+        <li>\(\alpha \leq x\), para todo \(x\in S\); </li>
+        <li> si \(m\) satisface \( m \leq x \), para todo \(x\in S\)
+          entonces \(m \leq \alpha\).</li>
+      </ol>
+
+      <p>
+        Notación: por \(\sup(A)\), \(\inf(A)\), denotamos el supremo
+        e ínfimo del conjunto \(A\), respectivamente (siempre que éstos existan).
+      </p>
 
 
-      </div>
-
-       <div class="ejercicio-box">
-         <h2 class="number-title"> Ejercicio </h2>
-         <h3>
-           Desigualdad de Cauchy-Schwartz.
-         </h3>
-         <p>
-           Para cualesquiera \(a_1,\dots, a_n, b_1, \dots, b_n \in \mathbb{R}\):
-           \[
-           \left( \sum_{i=1}^n a_ib_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left( \sum_{i=1}^n b_i^2 \right)
-           \]
-         </p>
-
-
-         <button class="respButton hvr-grow "> Demostración </button>
-                <div class="resp-box flexbox">
+      <button class="respButton hvr-grow "> Ejemplos </button>
+                  <div class="resp-box flexbox">
                     <div class="video flexbox">
-                      <a href="https://youtu.be/tfXm3Qwvua0" target="_blank" > Video </a>
+                      <a href="https://youtu.be/3ZAtfSzla40" target="_blank" > Video </a>
                     </div>
-                 </div>
+                  </div>
+
+</div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición  </h2>
+    <p>El supremo de un conjunto (de existir) es único, es decir, demuestra que si \(\alpha\) y \(\beta\) son dos
+      números que satisfacen las dos condiciones de la
+      definición del supremo entonces  \(\alpha=\beta\).
+    </p>
+    <p>El ínfimo de un conjunto (de existir) es único, es decir, demuestra que si \(\alpha\) y \(\beta\) son dos
+      números que satisfacen las dos condiciones de la
+      definición del ínfimo entonces  \(\alpha=\beta\).
+    </p>
+    <button class="respButton hvr-grow "> Respuesta para el supremo </button>
+                <div class="resp-box flexbox">
+                  <div class="video flexbox">
+                    <a href="https://youtu.be/Q_pPfMeg_eI" target="_blank" > Video </a>
+                  </div>
+                </div>
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title" id="Ejer:CaracterizacionSupremo"> Proposición  </h2>
+    <p>Caracterización del supremo.</p>
+    <p>
+      Demuestra que \(\alpha\) es el supremo de \(S\) si y sólo si \(\alpha\)
+      satisface:
+    </p>
+    <ol>
+      <li>\(\alpha\) es cota superior de \(S\); </li>
+      <li>para todo \(\varepsilon>0\), exsite \(x_0 \in S\) tal que
+        \(\alpha- \varepsilon < x_0\).</li>
+    </ol>
+
+
+
+    <p>Caracterización del ínfimo.</p>
+    <p>
+      Demuestra que \(\alpha\) es el ínfimo de \(S\) si y sólo si \(\alpha\)
+      satisface:
+    </p>
+    <ol>
+      <li>\(\alpha\) es cota inferior de \(S\); </li>
+      <li>para todo \(\varepsilon>0\), exsite \(x_0 \in S\) tal que
+        \(\alpha + \varepsilon > x_0\).</li>
+    </ol>
+
+
+        <button class="respButton hvr-grow "> Respuesta para el supremo.</button>
+        <div class="resp-box flexbox">
+          <div class="video-box flexbox">
+            <a href="https://youtu.be/puIXyIPrNWQ" target="_blank"> Video </a>
+          </div>
         </div>
 
+  </div>
 
+  <div class="nota-box">
+    <h2 class="number-title"> Axioma del supremo</h2>
+    <p>
+      Todo subconjunto no vacío de reales, acotado superiormente tiene supremo.
+    </p>
+    <p>
+      Nota: una vez que se estipula el axioma del supremo, no
+      es necesario estipular el axioma del ínfimo, pues a partir
+      del axioma del supremo se puede probar la siguiente propiedad
+      (que sería el enunciado del axioma del ínfimo)
+    </p>
+    <p>
+      Todo subconjunto no vacío de reales, acotado inferiormente tiene un
+      ínfimo.
+    </p>
 
-             <div class="ejercicio-box">
-               <h2 class="number-title"> Ejercicio </h2>
-               <p>
-                 Demuestra que la igualdad en la desigualldad de
-                 Cauchy-Schwartz se da si y sólo si existe
-                 \(\lambda \in \mathbb{R}\) tal que \(a_i=\lambda b_i\),
-                 para todo \(i=1,\dots, n\).
-               </p>
-               <p>
-                 Sugerencia: en la prueba de la desigualdad de Cauchy-Schwartz se utilizó
-                 la función
-                 \[
-                 f(t)=\sum_{i=1}^n (a_i+tb_i)^2
-                 \]
-                 Prueba que si se da la igualdad en Cauchy-Schwartz entonces
-                 \[
-                 f(t)=(\sqrt{A}\pm t \sqrt{B})^2
-                 \]
-                 donde \(A:=\sum_{i=1}^n a_i^2, B:=\sum_{i=1}^n b_i^2\)
-                 y el signo \(+\) ó  \(-\) depende del signo
-                 de \(C:=\sum_{i=1}^n a_ib_i\). Ahora,
-                 para encontrar \(\lambda\),
-                 nota que  la expresión
-                 \((\sqrt{A}\pm t \sqrt{B})^2\) se hace cero si y sólo
-                 si todos los sumandos \(a_i+tb_i\), \(i=1,\dots, n\),
-                 se hacen cero.
-               </p>
-             </div>
+    <p>
+      Ver  <a href="#Ejer:RelacionSupInfimo">Ejercicio 2.14</a> más adelante.
+    </p>
+  </div>
 
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición  </h2>
+     <p>Usando el axioma del supremo  demuestra que \(\mathbb{N}\) no tiene
+       cota superior.</p>
+       <button class="respButton hvr-grow "> Respuesta </button>
+<div class="resp-box flexbox">
+  <div class="video flexbox">
+    <a href="https://youtu.be/NOLZOPFQYaY" target="_blank" > Video </a>
+  </div>
+</div>
+  </div>
 
+  <div class="teorema-box">
+     <h2 class="number-title"> Teorema.</h2>
+   <h3>El principio Arquimideano </h3>
+     <p> Sea \(x>0\) fijo y arbitrario. Demuestra que existe un natural
+       \(n\) que satisface \(x< n\).
+     </p>
+     <p>
+       Sugerencia: usa la proposición  anterior.
+     </p>
+  </div>
 
-
-       <div class="ejercicio-box">
-         <h2 class="number-title"> Ejercicio </h2>
-         <p>
-           Demuestra que si \(b_1, \cdots, b_n \in \mathbb{R}^+\) entonces
-
-           \[
-           \frac{b_1}{b_2}+\frac{b_2}{b_3}+\frac{b_3}{b_4}+ \cdots+ \frac{b_{n-1}}{b_n}+\frac{b_n}{b_1}\geq n
-           \]
-         </p>
-         <p>
-           Sugerencia: usa Korovkin.
-          </p>
-       </div>
-
-
-
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-
+    <div class="ejercicio-box">
+      <h2 class="number-title" id ="Ejer:LemaInfimo1/n"> Ejercicio</h2>
+      Sea \(x>0\) fijo y arbitrario. Demuestra que existe un natural que
+      satisface \(\frac{1}{n}< x\).
       <p>
-        Las estimaciones usando desigualdades pueden usarse
-        para resolver problemas de máximos y mínimos. La derivada
-        ayudará a resolver estos problemas de manera más ordenada,
-        pero este es una muestra de los problemas de que se
-        veran más adelante.
+        Sugerencia: aplica la propiedad Arquimideana a \(\frac{1}{x}\).
       </p>
-      <p>
-        Prueba:
-      </p>
-      <ol>
-        <li>
-          para todo \(x\in \mathbb{R}\)
-          \[
-          \frac{x^2}{1+x^4}\leq \frac{1}{2}
-          \]
-
-          Sugerencia: reescribir
-          \(\frac{x^2}{1+x^4} = \frac{1}{\frac{1}{x^2}+ x^2}\)
-          y usar la desigualdad de Korovkin en el denominador.
-        </li>
-
-        <li>
-          Considera la función
-          \(f:\mathbb{R} \to \mathbb{R}\) dada por
-          \(f(x)=\frac{x^2}{1+x^4}\). Encuentra los  punto
-          \(x_{0} \in \mathbb{R}\) donde la función alcanza su máximo,
-          es decir \(x_{0}\) debe de satisfacer
-          \[
-          f(x) \leq f(x_{0}) \quad \textrm{ para todo \(x\in \mathbb{R}\)}
-          \]
-
-          Sugerencia: recuerda cuando se da la igualdad en
-          la desigualdad de Korovkin.
-        </li>
-      </ol>
     </div>
 
 
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Considera el conjunto
+      </p>
+\[
+A=\left\{ \frac{1}{n}: n=1,2,\dots \right\}
+\]
 
-<div class="ejercicio-box" >
-  <h2 class="number-title" id="Ejer:DesigualdadBernoulli"> Ejercicio </h2>
-  <h3>
-    La desigualdad de Bernoulli.
-  </h3>
+Demuestra que \(\inf(A)=0\).
+
+Sugerencia: usa el <a href="#Ejer:LemaInfimo1/n">Ejercicio 2.12</a>.
+
+<p>
+
+</p>
+
+<button class="respButton hvr-grow "> Demostración</button>
+<div class="resp-box flexbox">
+  <div class="video flexbox">
+    <a href="https://youtu.be/niIVPTI8r3c" target="_blank" > Video </a>
+  </div>
+</div>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>Considera dos conjuntos no vacios, \(A,B \subseteq \mathbb{R}\) y supon
+    que \(A \subseteq B\). Demuestra:
+  </p>
+<ol>
+<li> Si \(B\) está acotado superiormente también \(A\) y \(\sup(A) \leq \sup(B)\).</li>
+<li> Si \(B\) está acotado inferiormente también \(A\) y \(\inf(B)\leq \inf(A).\)</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:RelacionSupInfimo"> Ejercicio </h2>
+    <p>Sea \(\emptyset \ne A \subseteq \mathbb{R}\). Define</p>
+\[
+B=\{-a: a\in A\}.
+\]
+<p>
+Demuestra que si \(A\) está acotado superiormente entonces \(B\) está acotado
+inferiormente y que
+</p>
+\[
+\inf(B)=-\sup(A).
+\]
+<p>
+  Usa lo anterior junto con el axioma del supremo para probar que
+  todo subconjunto no vacío y acotado inferiormente de \(\mathbb{R}\)
+  admite ínfimo.
+</p>
+</div>
+
+<div class="prop-box" >
+  <h2 class="number-title" id="Ejer:SupremoAdicionMultiplicacion"> Proposición </h2>
+  <p>Sea \(\emptyset \ne A \subseteq \mathbb{R}\) y
+    sean \(\gamma \in \mathbb{R}\) y \(\beta \in \mathbb{R}^+\),
+    fijos y arbitrarios. Define el siguiente conjunto
+  </p>
+\[
+B=\{\beta a : a\in A\}, \quad C=\{\gamma+a: a\in A\}.
+\]
+<p>
+Si \(A\) está acotado superiormente demuestra que \(B\) y \(C\) también están
+acotados superiormente y que
+</p>
+\[
+\sup(B)=\beta \sup(A), \quad \sup(C)=\gamma+\sup(A)
+\]
 
   <p>
-    Sean \(a_1, \dots, a_n\) números reales todos con el mismo
-    signo y que satisfacen \(a_i>-1\), para todo \(i=1,\dots, n\).
-    Demostrar por inducción que
+    Notación: por simplicidad denotamos
     \[
-    (1+a_1) \cdots (1+a_n)\geq 1+a_1+ \cdots + a_n
+    \beta A :=  \{\beta a : a\in A\}, \quad \gamma+ A:=\{\gamma +a : a\in A\}
     \]
-
-    En particular si \(a_1=\cdots = a_n=x>-1\) se concluye
+    Notar que esto es un abuso de notación, pues en \(\gamma +A\) por ejemplo,
+    \(\gamma\) es un escalar pero \(A\) es un conjunto y el "resultado",
+    \(\gamma+A\), es un conjunto.
+  </p>
+  <p>
+    Con ésta notación las fórmulas de éste ejercicio se pueden escribir
     \[
-    (1+x)^n\geq 1+nx
+    \sup(\beta A)= \beta\sup(A), \quad \sup(\gamma +A)=\gamma +\sup(A).
     \]
   </p>
   <p>
-    Esta última se llama la desigualdad de Bernoulli.
+    Hay fórmulas similares para el ínfimo:
+    \[
+    \inf(\beta A)= \beta\inf(A), \quad \inf(\gamma +A)=\gamma +\inf(A).
+    \]
   </p>
 
-  <button class="respButton hvr-grow "> Demostración de la primera parte</button>
-      <div class="resp-box flexbox">
-          <div class="video flexbox">
-              <a href="https://youtu.be/Q8FjOMMHlHc" target="_blank" > Video </a>
-          </div>
-      </div>
+<button class="respButton hvr-grow "> Respuesta</button>
+<div class="resp-box flexbox">
+  <div class="video-box flexbox">
+    <a href="https://youtu.be/KwY0uqrpHmM" target="_blank"> Video </a>
+  </div>
+</div>
+</div>
 
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(A\) y \(B\) dos conjuntos no vacíos acotados superiormente. Define el conjunto:
+    \[
+    A+B:=\{a+b| a\in A, b\in B\}
+    \]
+    Prueba que \(A+B\) está acotado superiormente y que
+    \[
+    \sup(A+B)=\sup(A)+\sup(B)
+    \]
+  </p>
+</div>
+
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema  </h2>
+  <p> Cada número real no negativo tiene una única raíz cuadrada no negativa.
+  Es decir, para todo \(a>0\)
+existe un único \(\alpha >0\) tal que \(\alpha^2=a\).
+</p>
+
+<p>Sugerencia: Fija \(a>0\). Define el conjunto </p>
+\[
+S=\{ x \geq 0: x^2 \leq a \}.
+\]
+<p>
+Como \(0^2=0\), \(0\in S\) asi que \(S \ne \emptyset\), además por el
+<a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 2.4</a>,  \(S\) está acotado
+superiormente. Por el axioma del supremo existe \(\alpha:= \sup(S)\).
+Demuestra que \(\alpha^2=a\).
+</p>
+<p>
+  Para la unicidad ve el ejercicio que sigue.
+</p>
+<button class="respButton hvr-grow "> Demostración</button>
+<div class="resp-box flexbox">
+  <div class="video flexbox">
+    <a href="https://youtu.be/EtfvdikwfPo" target="_blank" > Video </a>
+  </div>
+</div>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(a>0\). Demuestra que si \(\alpha, \beta \in \mathbb{R}^+\)
+    satsfacen \(\alpha^2=a\) y \(\beta^2=a\) entonces
+    \(\alpha=\beta\).
+  </p>
+<p>
+Sugerencia: usa diferencia de cuadrados.
+</p>
+</div>
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+
+<p>Dada \(a>0\) por \(\sqrt{a}\) denotamos al único número positivo cuyo
+  cuadrado es \(a\). Por los dos ejercicios anteriores
+  se asegura que, para toda \(a>0\), \(\sqrt{a}\) existe y es única.</p>
+  <p>
+    Usando ideas similares a los dos ejercicios anteriores,
+    se puede probar que para todo número \(a>0\) y
+    todo natural \(n\geq 2\), existe un único real positivo, denotado
+    \(\sqrt[n]{a}\), con la propiedad de que \((\sqrt[n]{a})^n=a\).
+  </p>
+
+  <p>
+    Una propiedad que es muy útil y que se probará más adelante es
+    que si \(0< a < b\) entonces \(0< \sqrt[n]{a} < \sqrt[n]{b}\).
+  </p>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(A\) un conjunto no vacío, acotado superiormente y
+    contenido en \([0,\infty)\). Define el conjunto
+    \[
+    A^2:=\{a^2: a\in A\}.
+    \]
+    Prueba que \(A^2\) está acotado superiormente y
+    \[
+    \sup(A^2)=(\sup(A))^2.
+    \]
+   </p>
+   <p>
+     Sugerencia: pudes usar que si \(0< a < b\) entonces \(0< a^2 < b^2\) y
+      \(0 < \sqrt{a}< \sqrt{b}\).
+   </p>
 </div>
 
 
   <div class="ejercicio-box">
     <h2 class="number-title"> Ejercicio </h2>
     <p>
-      Esta es otra demostración de la desigualdad de Bernoulli.
+    Fija \(a>0\). Si \(x\in \mathbb{R}\) satisface \(x^2=a\) demuestra
+    que \(x=\sqrt{a}\) o que  \(x=-\sqrt{a}\).
     </p>
-
-    <ol>
-      <li> Demuestra que para \(n\in \mathbb{N}\) y \(y>-1\)
-        \[
-        (1+y)^{1/n}\leq 1+\frac{y}{n}
-        \]
-        Sugerencia: en la desigualdad aritmético-geométrica
-        toma \(a_1=1+y\) y \(a_2=\cdots =a_n=1\).
-      </li>
-
-      <li>
-        Demostrar que si \(x>-\frac{1}{n}\) entonces
-        \[
-        (1+x)^n\geq 1+nx
-        \]
-
-        Sugerencia: considera \(y=nx\) en la desigualdad del inciso anterior,
-        además puedes usar que  si \(0 \leq a \leq b  \) entonces
-        \(a^n \leq b^n\).
-      </li>
-    </ol>
   </div>
 
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Demuestra que si \(a,b,c\in \mathbb{R}^+\) satisfacen \(abc=8\) entonces
-        \(a+b+ c\geq 6\) y \(ab+bc+ac\geq 12\).
-      </p>
-      <p>
-        Sugerencia: acomoda las suposiciones para que puedas aplicar
-        Korovkin.
-      </p>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:SupremoYSeries"> Ejercicio </h2>
+  <p>Considera el rectangulo de base \(b\) y altura \(h\). </p>
+
+  <p>En el primer paso divide el rectangulo en 4 rectangulos iguales y
+    denota por \(a_1\) al area del rectangulo inferior izquierdo.
+  </p>
+
+  <p>
+    En el segundo paso divide el rectangulo superior derecho en 4 partes
+    iguales y denota por \(a_2\) al area del rectangulo inferior izquierdo.
+  </p>
+
+  <p>Continua el proceso, como se ve en la figura.</p>
+
+<div class="flexbox">
+  <img src="./Images/SupremoAreas1.png" alt="SupremoAreas" width="40%" height="auto">
+</div>
+<p>Construye el conjunto
+
+\[
+A=\{ a_1, a_1+a_2, a_1+a_2+a_3, \dots \}
+\]
+</p>
+<p>Encuentra el supremo de \(A\).</p>
+
+<p>Sugerencia: Denota por \(a\) al area del rectángulo; usa un
+  argumento geométrico para notar que
+</p>
+\begin{eqnarray*}
+3a_1&=& a-\left(\frac{b}{2} \right) \left(\frac{h}{2}\right)\\
+3a_1+3a_2&=&a-\left(\frac{b}{2^2} \right) \left( \frac{h}{2^2} \right)\\
+3a_1+3a_2+3a_3&=&a-\left(\frac{b}{2^3}\right)\left(\frac{h}{2^3} \right)
+\end{eqnarray*}
+
+<button class="respButton hvr-grow "> Respuesta</button>
+<div class="resp-box flexbox">
+  <div class="video-box flexbox">
+    <a href="https://youtu.be/maM5ECoOyIs" target="_blank"> Video </a>
+  </div>
+</div>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:SerieGeoUnCuarto"> Ejercicio </h2>
+ Demuestra que
+\[
+\sup \left\{ \sum_{k=1}^n \frac{1}{4^k}: n=1,2,\dots \right\}=\frac{1}{3}
+\]
+
+Sugerencia: usa un método similar al <a href="#Ejer:SupremoYSeries">Ejercicio 2.23</a>,
+  usando un cuadrado de lado 1.
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>Considera un triángulo equilatero, de lado 1. </p>
+
+<p>
+En el primer paso divide el triángulo en 4 triángulos equilateros congruentes
+y denota por \(a_1\) el area de dichos triángulo.
+</p>
+<p>
+  En el segundo paso divide uno de los triángulos del paso anterior en 4 triángulos
+  congruentes y denota por \(a_2\) el area de dichos triángulos.
+</p>
+
+<p>Continua el proceso y construye el conjunto
+\[
+A=\{ a_1, a_1+a_2, a_1+a_2+a_3, \cdots \}
+\]
+</p>
+</p>Demuestra \(\sup(A)=\frac{\sqrt{3}}{12}\). </p>
+<p>
+Sugerencia: usa un método
+parecido al <a href="#Ejer:SupremoYSeries">Ejercicio 2.23</a>.
+</p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      Prueba que
+      \[
+      \sup\left( \left\{ 3-\frac{4}{n^2}+\frac{8}{n}: n=1,2,\dots \right\} \right)=7
+      \]
+    </p>
+</div>
+
+
+<div class="nota-box">
+  <h2 class="number-title">  Proyecto </h2>
+  <p>
+    En este proyecto se prueba la existencia de raíces \(n\)-ésimas. En lo que 
+    sigue se fija \(n\geq 2\) un número natural y \(a >0\) un real positivo.
+  </p>
+  <ul>
+    <li>
+      Define 
+      \[
+      S=\{x \geq 0 :  x^n \leq a \}
+      \]
+      Prueba que \(S\ne \emptyset\) y está acotado superiormente. Sugerencia: usa el 
+      <a href="S1.html#Ejer:LemaParaExistenciaRaices">Ejercicio 1.27</a> y el 
+      <a href="S1.html#Ejer:CancelarRaices"> Ejercicio 1.28</a> también es útil.
+
+    </li>
+    <li>
+      Define \(\alpha:= \sup(S)\) y prueba que \(\alpha > 0 \)  y \(\alpha^n=a\).
+    </li>
+    <li>
+      Para la unicidad supón que existe \(\beta >0\) tal que \(\beta^n=a\) y prueba que 
+      \(\alpha=\beta\). Sugerencia: <a href="S1.html#Eqn:Resolvent"> Ejercicio 1.19</a>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="quiz-box">
+      <h2  >  Quiz  </h2>
+      <button class="respButton hvr-grow">
+        <a href="../Quizzes/Q2/Q2.html" target="_blank"> Click me </a>
+      </button>
     </div>
 
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sean \(x_1,\dots, x_n \in \mathbb{R}^+\).
-        Si \(p>0\) es un entero, la media de potencias
-        \(p\)-ésimas se define como
-        \[
-        M_p:= \left( \frac{x_1^p+\cdots +x_n^p}{n} \right)^{1/p}
-        \]
-
-        Demostrar que \(M_p < M_{2p}\) cuando \(x_1,\dots, x_n\) no son todos iguales.
-      </p>
-
-      <p>
-        Sugerencia: usar la desigualdad de Cauchy-Schwartz con \(a_k=x_k^p\)
-        y \(b_k=1\).
-      </p>
-    </div>
+</div>
 
 
-
-        <div class="quiz-box">
-          <h2  > Quiz  </h2>
-          <button class="respButton hvr-grow">
-            <a href="../Quizzes/Q3/Q3.html" target="_blank"> Click me </a>
-          </button>
-        </div>
-
-
-    </div>
 </body>
-
-  </html>
+</html>
 
   <!--     //////////////////////////          --->
