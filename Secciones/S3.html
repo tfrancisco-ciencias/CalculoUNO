@@ -287,7 +287,7 @@
     </p>
 
     <p>
-      Ver  <a href="#Ejer:RelacionSupInfimo">Ejercicio 2.14</a> más adelante.
+      Ver  <a href="#Ejer:RelacionSupInfimo">Ejercicio 3.14</a> más adelante.
     </p>
   </div>
 
@@ -295,7 +295,7 @@
     <h2 class="number-title"> Proposición  </h2>
      <p>Usando el axioma del supremo  demuestra que \(\mathbb{N}\) no tiene
        cota superior.</p>
-       <button class="respButton hvr-grow "> Respuesta </button>
+       <button class="respButton hvr-grow "> Demostración </button>
 <div class="resp-box flexbox">
   <div class="video flexbox">
     <a href="https://youtu.be/NOLZOPFQYaY" target="_blank" > Video </a>
@@ -324,6 +324,46 @@
     </div>
 
 
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición  </h2>
+      <h3> Densidad de los racionales </h3>
+      <p>
+        Sean \(x,y\in \mathbb{R}\) con \(x< y\). Prueba que existe \(r\in \mathbb{Q}\)
+        tal que \(x< r < y\). 
+      </p>
+
+      <button class="respButton hvr-grow "> Demostración </button>
+      <div class="resp-box">
+      <p>
+        Por el ejercicio anterior existe un \(n_0\in \mathbb{N}\) tal que \(\frac{1}{n_0}< y-x\). 
+        Por la propiedad Arquimideana, aplicada a \(\frac{1}{n_0}\) y \(x\), existe un 
+        \(k \in \mathbb{N}\) tal que \(x< \frac{k}{n_0}\). Definimos
+        \[
+        S=\left\{ m \in \mathbb{N}: x< \frac{m}{n_0}  \right\}.
+        \]
+        Por lo anterior \(k \in S\) así que \(S\ne \emptyset\) por lo tanto  podemos aplicar el 
+        principio del buen orden de los naturales y podemos encontrar \(m_0=\min(S)\). Se sigue que 
+        \(x< \frac{m_0}{n_0}\).
+      </p>
+      <p>
+        Afirmamos que también se cumple \(\frac{m_0}{n_0} < y\). De no ser así 
+        \(\frac{m_0}{n_0} \geq y\). Además como \(m_0\) es el mínimo de \(S\), \(m_0-1\notin S\) 
+        por lo que \(\frac{m_0-1}{n_0} \leq x\). Sumando  las desigualdades 
+        \begin{eqnarray*} 
+        \frac{m_0}{n_0} & \geq & y  \\
+        -\frac{m_0-1}{n_0} & \geq &  - x
+        \end{eqnarray*}
+        obtenemos 
+        \[
+        \frac{1}{n_0}= \frac{m_0}{n_0}  
+        -\frac{m_0-1}{n_0} \geq y - x
+        \]
+        contradiciendo la desigualdad \( \frac{1}{n_0} < y- x\).
+      </p>
+    </div>
+    </div>
+
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
       <p>
@@ -335,7 +375,7 @@ A=\left\{ \frac{1}{n}: n=1,2,\dots \right\}
 
 Demuestra que \(\inf(A)=0\).
 
-Sugerencia: usa el <a href="#Ejer:LemaInfimo1/n">Ejercicio 2.12</a>.
+Sugerencia: usa el <a href="#Ejer:LemaInfimo1/n">Ejercicio 3.11</a>.
 
 <p>
 
@@ -456,7 +496,7 @@ S=\{ x \geq 0: x^2 \leq a \}.
 \]
 <p>
 Como \(0^2=0\), \(0\in S\) asi que \(S \ne \emptyset\), además por el
-<a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 2.4</a>,  \(S\) está acotado
+<a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 3.4</a>,  \(S\) está acotado
 superiormente. Por el axioma del supremo existe \(\alpha:= \sup(S)\).
 Demuestra que \(\alpha^2=a\).
 </p>
@@ -587,7 +627,7 @@ A=\{ a_1, a_1+a_2, a_1+a_2+a_3, \dots \}
 \sup \left\{ \sum_{k=1}^n \frac{1}{4^k}: n=1,2,\dots \right\}=\frac{1}{3}
 \]
 
-Sugerencia: usa un método similar al <a href="#Ejer:SupremoYSeries">Ejercicio 2.23</a>,
+Sugerencia: usa un método similar al <a href="#Ejer:SupremoYSeries">Ejercicio 3.23</a>,
   usando un cuadrado de lado 1.
 </div>
 
@@ -612,7 +652,7 @@ A=\{ a_1, a_1+a_2, a_1+a_2+a_3, \cdots \}
 </p>Demuestra \(\sup(A)=\frac{\sqrt{3}}{12}\). </p>
 <p>
 Sugerencia: usa un método
-parecido al <a href="#Ejer:SupremoYSeries">Ejercicio 2.23</a>.
+parecido al <a href="#Ejer:SupremoYSeries">Ejercicio 3.23</a>.
 </p>
 </div>
 
