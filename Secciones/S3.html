@@ -407,7 +407,7 @@ Sugerencia: usa el <a href="#Ejer:LemaInfimo1/n">Ejercicio 3.11</a>.
 B=\{-a: a\in A\}.
 \]
 <p>
-Demuestra que si \(A\) está acotado superiormente entonces \(B\) está acotado
+Demuestra que si \(A\) está acotado superiormente si y sólo si  \(B\) está acotado
 inferiormente y que
 </p>
 \[
@@ -490,24 +490,93 @@ acotados superiormente y que
 existe un único \(\alpha >0\) tal que \(\alpha^2=a\).
 </p>
 
-<p>Sugerencia: Fija \(a>0\). Define el conjunto </p>
-\[
-S=\{ x \geq 0: x^2 \leq a \}.
-\]
 <p>
-Como \(0^2=0\), \(0\in S\) asi que \(S \ne \emptyset\), además por el
-<a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 3.4</a>,  \(S\) está acotado
-superiormente. Por el axioma del supremo existe \(\alpha:= \sup(S)\).
-Demuestra que \(\alpha^2=a\).
+  
 </p>
-<p>
-  Para la unicidad ve el ejercicio que sigue.
-</p>
-<button class="respButton hvr-grow "> Demostración</button>
+<button class="respButton hvr-grow "> Demostración en video </button>
 <div class="resp-box flexbox">
   <div class="video flexbox">
     <a href="https://youtu.be/EtfvdikwfPo" target="_blank" > Video </a>
   </div>
+</div>
+
+<button class="respButton hvr-grow "> Demostración escrita </button>
+<div class="resp-box">
+  <p>Existencia.</p>
+  <p>
+   Fijamos  \(a>0\) y  definimos el conjunto 
+   \[
+   S=\{ x \geq 0: x^2 \leq a \}.
+   \]    
+   Ya que \(0^2=0< a\), \(0\in S\) y por lo tanto \(S\ne \emptyset\). Además por el 
+   <a href="#Ejer:CotaExistenciaCuadrados">Ejercicio 3.4</a> \(S\) está acotado superiormente.
+   Por lo tanto existe \(\alpha=\sup(S)\). 
+  </p>
+  <p>
+    Afirmamos que  \(\alpha >0\) y \(\alpha^2=a\). 
+  </p>
+  <p>
+    Primero probamos \(\alpha >0\). Por el <a href="#Ejer:LemaInfimo1/n">Ejercicio 3.11</a> existe \(n\in \mathbb{N}\) tal que \(\frac{1}{n}< a\) pero 
+    siempre si tiene que, para todo natural,  \(\frac{1}{n^2} \leq \frac{1}{n}\) 
+    (pues \(\frac{1}{n}-\frac{1}{n^2}=\frac{(n+1)(n-1)}{n} \geq 0\)) por lo tanto 
+    \(\frac{1}{n^2} < a \), que se traduce en \(\frac{1}{n}\in S\) de lo que concluimos 
+    \(0< \frac{1}{n} \leq \sup(S)=\alpha \).
+  </p>
+  <p>
+    Resta probar \(\alpha^2 =a \). Primero suponemos que \(\alpha^2 < a\) y llegamos a una contradicción.
+  </p>
+  <p>
+    Vamos a encontrar un natural \(m\in \mathbb{N}\) tal que \((\alpha+\frac{1}{m})^2 < a\). Ya que 
+    estamos suponiendo que \(\alpha^2< a\), por 
+    el <a href="#Ejer:LemaInfimo1/n">Ejercicio 3.11</a> existe \(m\in \mathbb{N}\) tal que 
+    \(\frac{1}{m}< \frac{a-\alpha^2}{2\alpha+1}\). Con esta \(m\) tenemos
+    \begin{eqnarray*} 
+    \left(\alpha + \frac{1}{m} \right)^2 &=& \alpha^2+ \frac{2\alpha}{m} + \frac{1}{m^2} \\
+    &\leq  & \alpha^2+ \frac{2\alpha}{m} + \frac{1}{m} \\
+    & < & \alpha^2+ \frac{2\alpha+1}{m}  \\
+    &<& \alpha^2 +a -\alpha^2\\
+    &=& a
+    \end{eqnarray*}
+  </p>
+  <p>
+    Por definición de \(S\), \(\alpha +\frac{1}{m} \in S\) de lo que se sigue \(\alpha+\frac{1}{m} \leq \sup(S)=\alpha\)
+    lo que implica \(\frac{1}{m}\leq 0\), una contradicción. La contradicción vino de suponer 
+    \(\alpha^2 < a \) por lo tanto tenemos que \(a\leq \alpha^2\).
+  </p>
+  <p>
+    Finalmente probamos \(\alpha^2=a\). Por la propiedad 
+    fundamental del supremo, para toda \(\varepsilon \in (0,\alpha)\) existe \(x\in S\) 
+    tal \(\alpha-\varepsilon < x \leq \alpha\). Elevando al cuadrado llegamos 
+    a \((\alpha-\varepsilon)^2 < x^2 \leq \alpha^2\) pero también sabemos que \(a\leq \alpha^2\), asi que tenemos 
+    la cadena de desigualdades
+    \[
+    (\alpha-\varepsilon)^2 < x^2 \leq a \leq \alpha^2
+    \]
+    por lo que llegamos a 
+    \begin{eqnarray*} 
+    \alpha^2-a & \leq &  \alpha^2-(\alpha -\varepsilon)^2\\
+    &=& \alpha^2-\alpha^2+2\alpha \varepsilon-  \varepsilon^2 \\
+    & < & 2\alpha \varepsilon 
+    \end{eqnarray*}
+    de lo cual obtenemos 
+    \[
+    0\leq \frac{\alpha^2 -a}{2\alpha} < \varepsilon
+    \]
+    para todo \(\varepsilon\in (0, \alpha)\) lo cual implica que \(\frac{\alpha^2 -a}{2\alpha}=0\)
+    y por lo tanto \(\alpha^2=a\).
+  </p>
+  <p>
+    Unicidad.
+  </p>
+  <p>
+    Supongasmos que existen \(\alpha>0 \) y \(\beta >0\) tal que \(\alpha^2=\beta^2=a\). Entonces 
+    por diferencia de cuadrados 
+    \[
+    \alpha^2-\beta^2=(\alpha-\beta)(\alpha+\beta)
+    \]
+    pero \(\alpha^2=\beta^2=a\) por lo que \(0=(\alpha-\beta)(\alpha+\beta)\) pero 
+    \(\alpha>0\) y \(\beta >0\) por lo que \(\alpha-\beta=0\), es decir \(\alpha=\beta\).
+  </p>
 </div>
 </div>
 
@@ -515,12 +584,13 @@ Demuestra que \(\alpha^2=a\).
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>
-    Sea \(a>0\). Demuestra que si \(\alpha, \beta \in \mathbb{R}^+\)
-    satsfacen \(\alpha^2=a\) y \(\beta^2=a\) entonces
-    \(\alpha=\beta\).
+    Sean \(a>0,b>0\) con \(a< b\). Prueba que \(\sqrt{a}< \sqrt{b}\).
   </p>
 <p>
-Sugerencia: usa diferencia de cuadrados.
+Sugerencia: 
+\[
+\sqrt{b}-\sqrt{a}=(\sqrt{b}-\sqrt{a})\left( \frac{\sqrt{b}+\sqrt{a}}{\sqrt{b}+\sqrt{a}}\right)
+\]
 </p>
 </div>
 
