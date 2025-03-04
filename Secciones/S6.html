@@ -250,11 +250,11 @@ Usando la definición anterior demuestra:
 
 <div class="ejercicio-box">
 <h2 class="number-title" id="Ejer:Limite(Positivo)(Infinito)"> Ejercicio </h2>
-Sea \(f \) y \(g\) dos funciones definidas en una vecindad agujereada de \(x_0\).
-Asume que \(\lim_{x\to x_0} f(x)=L\) con \(L>0\) y que
-\(\lim_{x\to x_0} g(x)=\infty\). Demuestra que
+Sea \(f \) y \(g\) dos funciones definidas en una vecindad agujereada de \(a\).
+Asume que \(\lim_{x\to a} f(x)=L\) con \(L>0\) y que
+\(\lim_{x\to a} g(x)=\infty\). Demuestra que
 \[
-\lim_{x\to x_0} f(x)g(x)=\infty.
+\lim_{x\to a} f(x)g(x)=\infty.
 \]
 </div>
 
@@ -280,11 +280,11 @@ Para \(a\in \mathbb{R}^+\) y \(p(x)\), \(q(x)\) dos polinomios encontrar:
 
 <div class="ejercicio-box">
 <h2 class="number-title" id="Ejer:LimiteInfinitoUnoSobreCero"> Ejercicio </h2>
-Sean \(f,g\) dos funciones definidas en una vecindad de \(x_0\) con \(g(x)>0\)
-para \(x\ne x_0\). Demuestra que si  \(\lim_{x\to x_0} f(x)= L >0\) y
-\(\lim_{x\to x_0} g(x)=0\) entonces
+Sean \(f,g\) dos funciones definidas en una vecindad perforada de \(a\) con \(g(x)>0\)
+para \(x\ne a\). Demuestra que si  \(\lim_{x\to a} f(x)= L >0\) y
+\(\lim_{x\to a} g(x)=0\) entonces
 \[
-\lim_{x\to x_0} \frac{f(x)}{g(x)}=\infty
+\lim_{x\to a} \frac{f(x)}{g(x)}=\infty
 \]
 </div>
 
@@ -319,7 +319,7 @@ Probar
   </p>
   <p>
     Geométricamente un límite de este tipo nos da información sobre
-    las asíntotas horizontales de la gráfica de \(f(x\).
+    las asíntotas horizontales de la gráfica de \(y=f(x)\).
   </p>
 </div>
 
@@ -571,6 +571,21 @@ Fija \(n\in \mathbb{N}\), impar.
 
 <div class="nota-box">
 <h2 class="number-title"> Existencia de límites</h2>
+<p>
+  En algunas ocasiones los límites simplemente no existen, es decir, la función no toma ninguna tendencia 
+  cuando la analizamos cerca de un punto fijo. Probar la no existencia de un límite no es sencilla. 
+
+</p>
+<p>
+  Una forma 
+  de ver la existencia o no de un límite es tratar de ver los límites laterales derecho e izquierdo: si no 
+  distintos el límite no existe, claro que para esto es primero necesario encontrar los límites laterales. 
+</p>
+<p>
+  Otros casos más complicados son donde no es claro si  los límites laterales existen o no. En estos casos 
+  una forma para tratar de probar que el límite no existe es por contradicción. En estos casos 
+  es muy importante usar las carácterísticas de la función para tratar de llegar a una contradicción.
+</p>
 </div>
 
 
@@ -622,14 +637,14 @@ Sean \(f\) y \(g\) dos funciones definidas en una vecindad agujereada de \(a\).
 <div class="ejercicio-box">
 <h2 class="number-title"> Ejercicio </h2>
 Sean \(f\) y \(g\) dos funciones definidas en una vecindad agujereada de
-\(x_0\) y supon que existe \(M>0\) tal que
+\(a\) y supon que existe \(M>0\) tal que
 \(|g(x) | \leq M\), para \(x\) en la vecindad agujereada.
 
-Si \(\lim_{x\to x_0} f(x)=0\) demuestra que:
+Si \(\lim_{x\to a} f(x)=0\) demuestra que:
 \[
-\lim_{x\to x_0}f(x)g(x)=0.
+\lim_{x\to a}f(x)g(x)=0.
 \]
-Nota: no se asume que el límite \(\lim_{x\to x_0}g(x)\) existe.
+Nota: no se asume que el límite \(\lim_{x\to a}g(x)\) existe.
 
 </div>
 
