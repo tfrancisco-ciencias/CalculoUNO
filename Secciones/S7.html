@@ -623,6 +623,23 @@ para todos \(a,b \geq 0\).
 </div>
 </div>
 
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+<p>
+Sean \(f\) y \(g\) funciones definidas en una vecindad de \(a\),
+ambas diferenciables en \(a\). Demuestra:
+</p>
+<ol>
+<li> \(f+g\) es diferenciable en \(a\) y  \((f+g)'(a)=f'(a)+g'(a)\).</li>
+<li> Si \(c\in \mathbb{E}\), \(cf\) es diferenciable en \(a\) y
+  \((cf)'(a)=cf'(a)\).</li>
+<li> \(fg\) es diferenciable en \(a\) y \((fg)'(a)=f(a)g'(a)+f'(a)g(a)\).</li>
+</ol>
+</div>
+
+
+
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
@@ -635,25 +652,21 @@ para todos \(a,b \geq 0\).
   </p>
 </div>
 
-
-
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-<p>
-Sean \(f\) y \(g\) funciones definidas en una vecindad de \(a\),
-ambas diferenciables en \(a\). Demuestra
-</p>
-<ol>
-<li> \(f+g\) es diferenciable en \(a\) y  \((f+g)'(a)=f'(a)+g'(a)\).</li>
-<li> Si \(c\in \mathbb{E}\), \(cf\) es diferenciable en \(a\) y
-  \((cf)'(a)=cf'(a)\).</li>
-<li> \(fg\) es diferenciable en \(a\) y \((fg)'(a)=f(a)g'(a)+f'(a)g(a)\).</li>
-<li> Si \(g(a)\ne 0\), \(\frac{1}{g}\) es diferenciable y
-  \(\left( \frac{1}{g}\right)'(a)=\frac{-g'(a)}{g^2(a)}\)</li>
-<li> Si \(g(a)\ne 0\), \(\frac{f}{g}\) es diferenciable y
-  \(\left( \frac{f}{g}\right)'(a)=\frac{f'(a)g(a)-f(a)g'(a)}{g^2(a)}\)</li>
-</ol>
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sean \(f\) y \(g\) funciones definidas en una vecindad de \(a\),
+    ambas diferenciables en \(a\) con \(g(a)\ne 0\). Demuestra:
+  </p>
+  <li> \(\frac{1}{g}\) es diferenciable y
+    \(\left( \frac{1}{g}\right)'(a)=\frac{-g'(a)}{g^2(a)}\)</li>
+  <li> \(\frac{f}{g}\) es diferenciable y
+    \(\left( \frac{f}{g}\right)'(a)=\frac{f'(a)g(a)-f(a)g'(a)}{g^2(a)}\)</li>
+  
+
+
 </div>
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
@@ -669,19 +682,25 @@ p'(x)=\sum_{k=1}^{n} a_kkx^{k-1}
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 <p>
-Sea \(p\) un polinomio, \(a\in \mathbb{R}\) fijo y arbitrario  y sea
-\(n\in \mathbb{N}\). Demuestra que \(p^n\) es diferenciable en  \(a\) con
-\[
-\frac{dp^n}{dx}(a)=np^{n-1}(a)p'(a)
-\]
+Sea \(f\) una función definida en una vecindad de \(a\) y diferenciable en \(a\). Sea
+\(n\in \mathbb{N}\). Demuestra que la potencia \(f^n\) es diferenciable en  \(a\) y 
+encuentra una fórmula para su derivada.
 </p>
 
-<p>
-Sugerencia: usa que, para cualesquiera \(c, d \in \mathbb{R}\), se cumple
-\[
-p^n(c)-p^n(c)=(p(c)-p(d))\left( \sum_{k=0}^{n-1}p(c)^kp^{n-k-1}(d)\right)
-\]
-</p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(f\) una función definida en una vecindad de \(a\), diferenciable en \(a\) y \(p(x)\) 
+    un polinomio. Define \(g(x)=p(f(x))\). Prueba que \(g\) es diferenciable en \(a\) y que 
+    \[
+    g'(x)=p'(f(x))f'(x).
+    \]
+    Notación: \(\frac{d}{dx}(p(f(x)))=\frac{dp}{dx}(f(x))\frac{f(x)}{dx}\)
+  </p>
+
 </div>
 
 <div class="ejercicio-box">
