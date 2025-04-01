@@ -211,7 +211,7 @@ Además
 
 
 <div class="prop-box">
-  <h2 class="number-title"> Proposición  </h2>
+  <h2 class="number-title" id="Ejer:EquivDerivada&AproxLineal"> Proposición  </h2>
 <p>
   Sea \(f:I\to \mathbb{R}\) una función definida en un intervalo abierto \(I\)
   y un punto \(a\in I\).
@@ -487,6 +487,58 @@ Sugerencia: usar \(f(u)=\frac{1}{\sqrt{1-u}}\) y tomar \(u=x^2\).
 </div>
 
 
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:DerivadaLittleo"> Ejercicio </h2>
+<p>
+  Sea \(f\) una función definida en una vecindad de \(a\) y diferenciable en \(a\).  
+  Eleva al cuadrado la aproximación lineal de \(f\) en a:
+ \[
+ f(a+h)=f(a)+ f'(a)h + E_a(h) 
+ \]
+para dar otra prueba de la fórmula 
+\((f^2)'=2ff'\).
+</p>
+ <p>
+  Hint: agrupa el cuadrado del lado derecho en dos partes, la parte lineal y el resto, después  
+  usa la  <a href="#Ejer:EquivDerivada&AproxLineal">Proposición 9.4.</a> 
+ </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sean \(f\) y \(g\) funciones definidas en una vecindad en \(a\), ambas 
+diferenciables en \(a\). Multiplica las aproximaciones lineales
+\begin{eqnarray*}
+f(a+h)&=&f(a)+f'(a)h+ E_a^f(h)\\
+g(a+h)&=&g(a)+g'(a)h+E_a^g(h)
+\end{eqnarray*}
+y usa la  <a href="#Ejer:EquivDerivada&AproxLineal">Proposición 9.4</a> 
+para probar la regla de Leibnitz para la derivada de un producto.
+<!-- <button class="respButton hvr-grow "> Demostración </button>
+            <div class="resp-box flexbox">
+              <div class="video flexbox">
+                <a href="https://youtu.be/joCP5OgMdgs" target="_blank" > Video </a>
+              </div>
+            </div>--> 
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(f\) una función definida en una vecindad de \(a\), diferenciable en \(a\) y supongamos que 
+    \(f>0\) en dicha vecindad. Divide ambos lados de la aproximación lineal 
+    \[
+    f(a+h)=f(a)+f'(a)h+ E_a(h)
+    \]
+    por \(f(a+h)\) y simplifica para dar otra prueba de la regal del cociente, \((1/f)'=-f'/f^2\).
+  </p>
+
+</div>
+
+
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
 
@@ -566,29 +618,6 @@ f(a+h)=f(a)+f'(a)h+o(h) \quad \textrm{cuando \(h\to 0\).}
             </div>
 </div>
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:DerivadaLittleo"> Ejercicio </h2>
-
- Sea \(f\) una función definida en una vecindad de \(a\).  Si \(f\) satisface
-\[
-f(a+h)=f(a)+mh + o(h)
-\]
-para \(h\) en una vecindad de \(0\), entonces \(f\) es diferenciable en \(a\) y 
-\(f'(a)=m\).
-<p>
-  Nota: junto con el ejercicio anterior este ejercicio prueba que una función 
-  \(f\) es diferenciable en \(a\) si y sólo si existe una constante \(m\) tal que 
-  \( f(a+h)=f(a)+ m h+o(h) \)  cuando \(h\to 0\). 
- </p>
-<button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="video flexbox">
-                <a href="https://youtu.be/qVgP-M8sF-w" target="_blank" > Video </a>
-              </div>
-            </div>
-
-
-</div>
 
 
 <div class="ejercicio-box">
@@ -626,37 +655,8 @@ para \(h\) en una vecindad de \(0\), entonces \(f\) es diferenciable en \(a\) y
 
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Eleva al cuadrado la aproximación lineal
-\[
-f(a+h)=f(a)+f'(a)h+o(h)
-\]
-usa las propiedades de \(o\)  y el <a href="#Ejer:DerivadaLittleo"> Ejercicio 9.11 </a>
-para dar otra prueba de que \((f^2(a))'=2f(a)f'(a)\).
-
-</div>
 
 
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Multiplica las aproximaciones lineales
-\begin{eqnarray*}
-f(a+h)&=&f(a)+f'(a)h+o(h)\\
-g(a+h)&=&g(a)+g'(a)h+o(h)
-\end{eqnarray*}
-usa el <a href="#Ejer:DerivadaLittleo">Ejercicio 9.11</a> y  las propiedades de \(o\)
-para probar la regla de Leibnitz para la derivada de un producto.
-<button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="video flexbox">
-                <a href="https://youtu.be/joCP5OgMdgs" target="_blank" > Video </a>
-              </div>
-            </div>
-</div>
 
 
 
