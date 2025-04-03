@@ -20,8 +20,10 @@
         tex: {
           macros: {
             sen: "\\operatorname{sen}",
+            cos: "\\operatorname{cos}",
             seg: ["\\overrightarrow{#1}", 1],
             id: "\\operatorname{id}",
+            senh:"\\operatorname{senh}"
           },
           tags: "ams", /* this part is for numbered equations */
           inlineMath: [['$', '$'], ['\\(', '\\)']]
@@ -81,7 +83,7 @@
   </head>
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> Sucesiones </h1> 
+    <h1 class="number-title flexbox"> Regla de la cadena </h1> 
 <!-- this part is for next and prev sections -->
 <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
 <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -91,608 +93,807 @@
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
   <p>
-    Las sucesiones son una herramienta importante cuando tratamos
-    de aproximar una cantidad mediante un precedimiento que 
-    involucra pasos bien ordenados. 
+    La regla de la cadena nos dice que composición de funciones diferenciables es 
+    diferenciable y además nos da una fórmula para calcular la derivada. Para iniciar 
+    vamos a ver un ejemplo.
   </p>
-  <p>
-    Por ejemplo, los Babilonios tenían un procedimiento o receta para 
-    calcular la raíz cuadrada. Digamos que queremos calcular la raíz de 
-    un número \(A >0\). El primer paso es tratar de adivinar dando una 
-    aproximación inicial. Por ejemplo, para \(A=20\) una 
-    primera aproximación a la raíz es  \(8\) (pues \(8^2=16\)). Fijemos
-    dicha primera  aproximación a la raíz de \(A\) y denotémosla por \(a_0\).  
-    El siguiente paso es aplicar la fórmula 
-    \[
-      a_1=\frac{1}{2}(a_0+\frac{A}{a_0})
-    \]
-    En el ejemplo, si \(a_0=8\) entonces 
-    \(a_1=\frac{1}{2}(8+\frac{20}{8})=\frac{21}{4}\), que también es
-    una  aproximación de \(\sqrt{20}\).
 
+  <p>
+    Supongamos que tenemos una partícula que se mueve sobre el eje real y que \(g_1(t)\)
+    representa la posición de la partícula (respecto al origen) al tiempo \(t\). Si \(v_1\)
+    representa la velocidad de la partícula sabemos que \(v_1=g_1'\). 
+  </p>
+
+  <p>
+    Ahora supongamos que tenemos otra partículo que sigue la misma trayectoria que la primera 
+    pero con el doble de velocidad. Si \(g_2(t)\) representa la posición de la segunda partícula 
+    la relación entre \(g_1\) y \(f_2\) es que \(g_2(t)=g_1(2t)\) (pues al tiempo \(t\) la segunda 
+    partícula ha recorrido el doble de la  distancia que la primera partícula). Ahora denotemos por 
+    \(v_2\) a la valocidad de la segunda partícula, de manera intuitiva tenemos \(v_2=2v_1\), pero 
+    también sabemos que \(v_2=g_2'\), por lo que llegamos a la relación 
+    \[
+    g_2'(t)=v_2(t)=2v_1(2t)=2g_1'(2t).
+    \] 
+    En resumen tenemos una formula para la derivada de la composición \(g_1(2t)\). Denotando 
+    \(f(t)=2t\) y notando que \(f'(t)=2\) podemos escribilr la relación anterior como
+    \[
+    (g_1\circ f)'(t)= f'(t)g_1'(f(t))
+    \] 
+  </p>
+
+  <p>
+    Es importante notar el factor \(f'(t)=2\) que aparece en  la derivada de la 
+    composición. Es decir, la derivada de la composición NO es simplemente la derivada de la 
+    función que está "más afuera" sino que 
+    hay un factor enfrente, dicho factor es el que toma en cuenta la derivada de la función 
+    que está "más adentro". Por cierto, de aqui también viene el nombre de "regla de la cadena"
+    pues una composición puede pensarse como "dos eslabones":  la función de "adentro" 
+    y la función de "afuera "; la regla une estos dos "eslabones" al multiplicar 
+    las dos derivadas correspondientes.
   </p>
   <p>
-    Continuando con la receta, si tenemos dado el paso \(a_n\) el 
-    siguiente paso es 
+    Para terminar vamos a comprobar la fórmula \(g_2'(t)=2g_1'(2t)\) directamente usando la 
+    definición de derivada. Primero calculamos el cociente diferencial de \(g_2\) en términos del de 
+    \(g_1\):
     \[
-      a_{n+1}=\frac{1}{2}(a_n+ \frac{A}{a_n}).
+    \frac{g_2(t+h)-g_2(t)}{h}=\frac{g_1(2(t+h))-g_1(2t)}{h}=\frac{g_1(2t+2h)-g_1(2t)}{h}.
     \]
-    Lo que los Babilonios sabían es que si se repetían estos pasos una 
-    cantidad  grande de veces el número resultante es una mejor aproximación 
-   al valor \(\sqrt{A}\) que con la que empezaron inicialmente (el \(a_0\) ).
+    Tomando el cambio de variable \(k=2h\) tenemos que podemos reescribir lo anterior como 
+    \[
+    \frac{g_2(t+h)-g_2(t)}{h}=\frac{g_1(2t+k)-g_1(2t)}{k/2}=2\left(\frac{g_1(2t+k)-g_1(2t)}{k}\right).
+    \]
+    Finalmente notando que \(h\to 0\) si y sólo si \(k\to 0\) conlcuimos 
+    \[
+      g_2'(t)=\lim_{h\to 0}\frac{g_2(t+h)-g_2(t)}{h}=\lim_{k\to 0}2\left(\frac{g_1(2t+k)-g_1(2t)}{k}\right)=2g_1'(2t).
+    \]
   </p>
-   <p>
-     Con este procedimiento obtenemos una lista o sucesión de 
-     números, \(a_1,a_2,\dots,  \) y la idea es que si tomamos 
-     números más adelante en la lista obtenemos una mejor aproximación
-     a \(\sqrt{A}\), es decir, los números \(a_n\) tienden a \(\sqrt{A}\)
-     cuando \(n\) va creciendo. Esto se denota como 
-     \[
-      \lim_{n\to \infty} a_n= \sqrt{A}
-     \]
-   </p>
-   <p>
-     Lo importante es que muchas veces, al tratar de encontrar soluciones 
-     a ecuaciones, se obtienen recetas o algoritmos que vienen dados por pasos
-     los cuales generan sucesiones de números que tienden a la solución que se 
-     busca. Por éste tipo de ejemplos (y muchos otros) las sucesiones son 
-     importantes. En este sección se estudian algunas propiedades básicas
-     sobre sucesiones y sus límites.
-   </p>
 </div>
 
 
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-<p>
-Una sucesión de números reales es simplemente una función de
-\(\mathbb{N}\) a \(\mathbb{R}\), es decir \(f:\mathbb{N} \to \mathbb{R}\).
-</p>
-<p>
-Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
-\((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
-</p>
-<p>
-  Ejemplos.
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <h3>La regla de la cadena </h3>
+
+  <p>
+   Sea \(f\) una función definida en una vecindad de \(a\) y sea \(g\) una función
+   definida en una vecindad de \(f(a)\) (así la composición 
+   \(g\circ f\) está definida en una vecindad de \(a\)). Si \(f\) es diferenciable
+   en \(a\) y \(g\) es
+   diferenciable en \(f(a)\) entonces la composición
+   \(g\circ f\) es diferenciable en \(a\) y
+   \[
+   (g\circ f)'(a)=g'(f(a))f'(a)
+   \]
+ </p>
+  <!-- <p>
+    Este ejercicio da una demostración de la regla de la cadena.
+  </p>
+
+
+
+  <p>
+    Supongamos que \(f(x)\) está definida para \(x\in (a-\delta, a+\delta)\) y \(g(u)\)
+    está definida para \(u\in (f(a)-\eta, f(a)+\eta)\). Denotamos \(f(a)=u_0\).
+  </p>
+  
+<ol>
+<li>
+  Usando la continuidad de \(f\) en \(a\) prueba que existe una \(\delta' >0\) tal que 
+  para todo \(x\in (a-\delta', a+\delta')\) se cumple que 
+  \(f(x)\in (u_0-\eta, u_0+\eta)\). Por lo tanto, la composición 
+  \((g\circ f)(x)\) está bien definida para todo \(x\in (a-\delta', a+\delta')\).
+</li>
+<li>
+ Para  \(u \in (u_0-\eta, u_0+\eta)\) define 
+\[
+G(u)= \left\{ 
+  \begin{array}{cc}
+  \frac{g(u)-g(u_0)}{u-u_0} -g'(u_0)& u\ne u_0 \\
+  0 & u=u_0
+  \end{array}
+  \right.
+\]
+prueba que \(G\) es una función continua en \((u_0-\eta, u_0+\eta)\) y que 
+para \(u\in (u_0-\eta, u_0+\eta)\): 
+\[
+(u-u_0)(G(u)+g'(u_0))= g(u)-g(u_0).
+\]
+</li>
+
+
+<li>
+  Con ayuda de los incisos anteriores prueba que, para \(x \in (a-\delta', a+\delta')\), 
+  \(x \ne a\):
+\[
+\frac{(g\circ f)(x)-(g\circ f)(a)}{x-a}=\left(\frac{f(x)-f(a)}{x-a}\right)[G(f(x))+g'(u_0)].
+\]
+</li>
+
+<li>
+  Toma límite cuando \(x\to a\) en el inciso anterior para concluir
+\[
+\lim_{h\to 0} \frac{(g\circ f)(a+h)-(g\circ f)(a)}{h}=f'(a) g'(f(a)).
+\]
+</li>
+</ol>-->
+
+
+
+<button class="respButton hvr-grow "> Demostración 1</button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/nns_jESVJ_A" target="_blank" > Video </a>
+              </div>
+            </div>
+
+
+ <p>
+
+ </p>           
+</div>
+
+
+
+<!-- <div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Este ejercicio da otra demostración de la regla de la cadena, esta vez usando aproximaciones lineales.
+  </p>
+  <p>
+    Supongamos que \(f(x)\) está definida para \(x\in (a-\delta, a+\delta)\) y \(g(u)\)
+    está definida para \(u\in (f(a)-\eta, f(a)+\eta)\). 
+  </p>
+  <p>
+    Si \(f\) es diferenciable
+   en \(a\) y \(g\) es
+   diferenciable en \(f(a)\) entonces la composición
+   \(g\circ f\) es diferenciable en \(a\) y
+   \[
+   (g\circ f)'(a)=g'(f(a))f'(a)
+   \]
+  </p>
+  <p>
+    Denotamos \(u_0=f(a)\).
+  </p>
+<ol>
+  
+<li>
+  Usando la continuidad de \(f\) en \(a\) prueba que existe una \(\delta' >0\) tal que 
+  para todo \(x\in (a-\delta', a+\delta')\) se cumple que 
+  \(f(x)\in (u_0-\eta, u_0+\eta)\). Por lo tanto, la composición 
+  \((g\circ f)(x)\) está bien definida para todo \(x\in (a-\delta', a+\delta')\).
+</li>
+<li>
+  Usando una aproximación lineal prueba que se puede escribir:
+  \[
+  g(u)=g(u_0)+g'(u_0)(u-u_0)+E(u-u_0)
+  \]
+  con \(u \in (u_0-r_1, u_0+r_1)\) (para alguna \(r_1>0\)) y la función error  
+  satisface \(E:(-r_1,r_1)\to \mathbb{R}\), \(E(0)=0\) y \(E(u-u_0)=o(u-u_0)\).
+</li>
+<li>
+  Usando los incisos anteriores prueba que se puede expresar: 
+  \begin{equation*}
+  g(f(x))=g(u_0)+g'(u_0)(f(x)-u_0)+E(f(x)-u_0).
+  \end{equation*}
+  con \(x\in (a-r_2, a+r_2)\) (para alguna \(r_2 >0\)) y además \(E(f(x)-u_0)=o(x-a)\).
+</li>
+
+
+<li>
+  Usa una aproximación lineal para \(f\) y los incisos anteriores para probar que se puede 
+  escribir:
+  \begin{eqnarray*}
+  g(f(x))&=&g(f(a))+g'(f(a))f'(a)(x-a)+g'(f(a))F(x-a)\\
+  &+& E(f(x)-f(a)).
+  \end{eqnarray*}
+  para \(x \in (a-r,a+r)\) (para alguna \(r>0\)) con la función error que satisface
+  \(F:(-r,r)\to \mathbb{R}\), \( F(0)=0\) y \(F(x-a)=o(x-a)\).
+</li>
+
+
+<li>
+ Usa el <a href="./S9.html#Ejer:PropiedadesLittleo">Ejercicio 9.13</a>
+ para deducir que para \(x\in (a-r,a+r)\):
+  \[
+  g(f(x))=g(f(a))+g'(f(a))f'(a)(x-a)+o(x-a)
+  \]
+  y concluye usando el <a href="./S9.html#Ejer:DerivadaLittleo">Ejercicio 9.12</a>
+  que \(g\circ f\) es diferenciable en \(a\) y \((g\circ f)'(a)=g'(f(a))f'(a)\).
+</li>
+
+</ol>
+</div>-->
+
+
+
+<div class="nota-box">
+  <h2 class="number-title"> Nota </h2>
+  <p>
+    Hasta ahora las familias de funciones a las cuales podemos calcular sus derivadas 
+    son limitadas. Hagamos una lista.
+  </p>
   <ul>
     <li>
-      \((n)_{n=1}^\infty\), está dada por la función \(f(n)=n\).
+      Funciones lineales: \(f(x)=mx+b\), \(f'(x)=m\). 
     </li>
     <li>
-      \((\frac{1}{n})_{n=1}^\infty\), está dada por la función \(f(n)=\frac{1}{n}\).
+      Funciones polinomiales: \(p(x)=\sum_{k=0}^{n} a_kx^k\), \(p'(x)=\sum_{k=1}^n ka_{k}x^{k-1} \).
     </li>
     <li>
-      \((\frac{\pi}{\sqrt{n}})_{n=1}^\infty\), está dada por la función \(f(n)=\frac{\pi}{\sqrt{n}}\).
+      Raíces: \(f(x)=\sqrt[n]{x}\), \(f'(x)=\frac{1}{n}x^{\frac{1}{n}-1}\).
+    </li>
+    <li>
+      Funciones trigonométricas.
+    </li>
+    <li>
+      Usando la regla del producto y el cociente, productos y cocientes de las funciones
+      anteriores.
     </li>
   </ul>
-
-</p>
-<p>
-  Otra forma de pensar a las sucesiones es pensarlas como un vector 
-  infinito \((a_1,a_2,\dots)\). Esta forma de pensar a las sucesiones tiene la ventaja que nos 
-  dice como se suman y se multiplican las sucesiones por un escalar (entrada por entrada):
-  \begin{eqnarray*}
-  (a_n)_{n=1}^\infty+(b_n)_{n=1}^\infty&=& (a_n+b_n)_{n=1}^\infty \\
-  \alpha (a_n)_{n=1}^\infty&=&(\alpha a_n)_{n=1}^\infty
-  \end{eqnarray*}
-</p>
-
-<p>
-  Uno de los aspectos más importantes de las sucesiones es "lo que pasa al final". Ya que los 
-  naturales nunca se terminan no exsite formalmente "lo que pasa al final", pero tomando la idea 
-  del algoritmo que se presentó al principio, la idea es ver el comportamiento de los elementos 
-  de  la sucesión cuando tomamos el indice cada vez más grande.  Esto se formaliza 
-  con la definición de límite de una sucesión. 
-</p>
-
-</div>
-
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-<p>
-Decimos que una sucesión \((a_n)_{n=1}^\infty\) converge al número
-\(L\in \mathbb{R}\), si, para toda \(\varepsilon\) existe \(N\)
-(que depende de \(\varepsilon\)), tal que para toda \(n \geq N\)
-\[
-|a_n- L| <\varepsilon.
-\]
-</p>
-<p>
-Denotamos \(L=\lim_{n\to \infty}a_n\).
-</p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  Demuestra que toda sucesión constante es convergente.
-  <button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="video flexbox">
-                <a href="https://youtu.be/bI5dQPUzHtA" target="_blank" > Video </a>
-              </div>
-            </div>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:PropiedadesLimitesSucesiones"> Ejercicio </h2>
-  <p>
-  Sean
-  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\), dos sucesiones convergentes.
-  </p>
-  <p>
-  Demuestra
-  </p>
-<ol>
-<li>
-  \(\lim_{n\to \infty}(a_n+b_n)=\lim_{n\to \infty}a_n + \lim_{n\to \infty}b_n\).
-</li>
-<li>
-  dada \(\alpha\in \mathbb{R}\), fija y arbitraria,
-  \(\lim_{n\to \infty} \alpha a_n=\alpha \lim_{n\to \infty}a_n\).
-</li>
-<li>
-  <p>
-    Supón que para toda \(n\), \(a_n \leq b_n\). Prueba que 
-    \(\lim_{n\to \infty}a_n \leq \lim_{n\to \infty}b_n\).
-  </p>
-  <p>
-    Da un ejemplo donde  \(a_n < b_n \) para toda \(n\) y sin embargo 
-    \(\lim_{n\to \infty} a_n = \lim_{n\to \infty} b_n\).
-
-  </p>
-</li>
-</ol>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-  Considera la sucesión \((a_n)_{n=1}^\infty\) dada por \(a_n=(-1)^n\).
-  </p>
-  <p>
-  Demuestra que \((a_n)_{n=1}^\infty\) no es convergente.
-  </p>
-
-  <p>
-  Sugerencia: procede por contradción.
-  </p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-  Decimos que una sucesión \((a_n)_{n=1}^\infty\) está acotada,
-  si existe \(M>0\) tal que \(|a_n| \leq M\), para toda
-  \(n\in \mathbb{N}\).
-  </p>
-<ol>
-<li>
-  Demuestra que si \((a_n)_{n=1}^\infty\) es convergente entonces también
-  está acotada.
-</li>
-<li>
-  Da un ejemplo de una sucesión que esté acotada pero que no sea convergente.
-</li>
-</ol>
-
-<button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="video flexbox">
-                <a href="https://youtu.be/vH-sjG_DbGQ" target="_blank" > Video </a>
-              </div>
-            </div>
-</div>
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-<p>
-Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona decreciente si
-\[a_1 \geq a_2 \geq a_3 \geq \cdots \geq \cdots \geq a_{n} \geq a_{n+1} \geq \cdots\]
-</p>
-
-<p>
-Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
-\[a_1 \leq a_2 \leq a_3 \leq \cdots \leq \cdots \leq a_{n} \leq a_{n+1} \leq \cdots\]
-</p>
-
-</div>
-
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio </h2>
-
-
-  <p>
-  Sea \((a_n)_{n=1}^\infty\) una sucesión.
-  </p>
-<ol>
-<li>
-  si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
-  tal que \(a_n \leq M\) para toda \(n\), entonces
-\(\lim_{n \to \infty}a_n\) existe.
-</li>
-<li>
-  si \((a_n)_{n=1}^\infty\) es monótona decreciente  y existe \(m \in \mathbb{R}\)
-  tal que \(m \leq a_n \) para toda \(n\), entonces
-\(\lim_{n \to \infty}a_n\) existe.
-</li>
-</ol>
-
-
-<p>
-Sugerencia: para el caso monótono creciente  usa el
-<a href="./S2.html#Ejer:CaracterizacionSupremo">Ejercicio 2.8</a>
-  para probar que la serie converge a
-\(\sup_{n\in \mathbb{N}}\{ a_n\}\).
-</p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-  Demuestra que \(\lim_{n\to \infty} \frac{1}{n}=0\).
-  </p>
-
-  <p>
-  Sugerencia: usa el <a href="#Ejer:TeoremaConvergenciaMonotonaSucesiones">Ejercicio anterior</a>
-  y <a href="./S2.html#Ejer:LemaInfimo1/n"> Ejercicio 2.13</a>
-  </p>
-</div>
-
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LemaTeoSandiwch"> Ejercicio </h2>
-  <p>
-  Sean \((a_n)_{n=1}^\infty\) una sucesión
-  y \(\alpha \in \mathbb{R}\).
-  </p>
-  <p>
-  Supon que existe  una sucesión \((z_n)_{n=1}^\infty\)
-  tal que \(\lim_{n\to \infty}z_n=0\) y que satisface \(|a_n-\alpha| \leq |z_n|\),
-  para todo \(n\).
-  </p>
-  <p>
-  Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
-  </p>
-  <button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="video flexbox">
-                <a href="https://youtu.be/Gm_8217yU9Q" target="_blank" > Video </a>
-              </div>
-            </div>
-</div>
-
-
-<div class="teorema-box">
-  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Teorema 
-    <h3 >Teorema del Sandwich para sucesiones </h3>
-  </h2>
-  <p>
-  Sean
-  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
-  tres sucesiones que satisfacen:
-  </p>
-<ol>
-<li>
-  \(a_n \leq b_n \leq c_n\), para toda \(n\).
-</li>
-<li>
-  los limites \(\lim_{n\to \infty}a_n\)  y \(\lim_{n\to \infty}c_n\)
-  existen y son iguales. Denotamos
-\(L=\lim_{n\to \infty}a_n=\lim_{n\to \infty}c_n\).
-</li>
-</ol>
-<p>
-Demuestra que \(\lim_{n\to \infty}b_n =L\).
-</p>
-<p>
-
-Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7</a>  para obtener
-\(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
-<a href="#Ejer:PropiedadesLimitesSucesiones">Ejercicio 10.4</a> junto  con el
-<a href="#Ejer:LemaTeoSandiwch">Ejercicio anterior </a>.
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
-  <p>
-  Sean
-  \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
-  </p>
-  <p>
-  Demuestra que
-  \[\lim_{n\to \infty} (a_nb_n)=
-  \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
-  </p>
-  <p>
-  Sugerencia: usa la desigualdad del triángulo para probar  que
-  \(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
-  sucesión \((a_n)_{n=1}^\infty\) y luego usa el
-  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 10.10 </a>.
-  </p>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:ConvergenciaSerieRecorridaDerecha"> Ejercicio </h2>
-  <p>
-  Supongamos que la
-  sucesión \((a_n)_{n=1}^\infty\) es convergente con \(L=\lim_{n\to \infty}a_n\).
-  </p>
-
-<ol>
-<li>
-  Demuestra que
+ <p>
+   Sin embargo no tenemos reglas para funciones tan sencillas como \(\cos(x^2)\), 
+   \(\sin(\sqrt{3x+1})\). La regla de la cadena 
+   es la herramienta que nos ayuda a calcular dichas derivadas o otras más complicadas.
+ </p>
+ <p>
+  Por ejemplo, para \(h(x)=\cos(x^2)\), tomamos \(f(x)=x^2, g(u)=\cos(u)\), para que entonces
+  \(h(x)=g(f(x))\) así que por la regla de la cadena:
   \[
-  L=\lim_{n\to \infty} a_{n+1}.
-  \]
+    h'(x)=g'(f(x))f'(x)=-\sen(f(x))f'(x)=-\sen(x^2)f'(x)=-\sen(x^2)(2x).
+  \] 
+ </p>
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Supon que \(f\) es una función diferenciable, en un intervalo adecuado.
+Encuentra las siguientes derivadas
+<ol>
+<li>
+  \(f(x+b)\), \(b\in \mathbb{R}\) fijo y arbitrario.
 </li>
 <li>
-  Más en general, toma \(p\in \mathbb{N}\) fijo y defne una nueva sucesión
-  \(b_n=a_{n+p}\). Demuestra que la sucesión \((b_n)_{n=1}^\infty\) converge si
-  y sólo si \((a_n)_{n=1}^\infty\) converge y que ambas tienen el mismo limite.
+  \(f(ax+b)\), \(a,b\in \mathbb{R}\) fijos y arbitrarios.
+</li>
+<li>
+  \(f(ax^2+bx+c)\), \(a,b,c \in \mathbb{R}\) fijos y arbitrarios.
+</li>
+<li>
+  \(\sen(f(x))\)
+</li>
+<li>
+  \(f(\sen(x))\)
+</li>
+<li>
+  \(\cos(f(x))\)
+</li>
+<li>
+  \(f(\cos(x))\)
+</li>
+<li>
+   \(f(\tan(x))\)
+</li>
+<li>
+   \(\tan(f(x))\)
 </li>
 </ol>
-<button class="respButton hvr-grow "> Demostración </button>
+<button class="respButton hvr-grow "> Solución 3 y 5  </button>
             <div class="resp-box flexbox">
-              <div class="video flexbox">
-                <a href="https://youtu.be/ljaj4OfP4mA" target="_blank" > Video </a>
+              <div class="flexbox">
+                <a href="https://youtu.be/V_cgtg38wjo" target="_blank" > Video </a>
               </div>
             </div>
 </div>
 
 
-<div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
+<div class="nota-box">
+  <h2 class="number-title"> Nota </h2>
   <p>
-    Una subsucesión de una sucesión dada es componer la sucesión 
-    original con una función estrictamente  creciete. Más específicamente,
-    si \(f:\mathbb{N}\to \mathbb{R} \) es una sucesión una subsucesión
-    de \(f\) es una función de la forma \(f \circ g  \)
-    donde \(g:\mathbb{N} \to \mathbb{N}\) es estrictamente creciente. 
+    La regla de la cadena puede aplicarse para funciones que son 
+    composiciones de más de dos funciones, simplemente se aplica 
+    varias veces consecutivas. 
   </p>
   <p>
-    La idea de las subsucesiones es que sólo vamos a seleccionar ciertos 
-    elementos de la sucesión original pero queremos hacer dicha selección 
-    tomando en consideración que lo importante de las sucesiones es "lo que 
-    pasa al final". Por eso se debe de pedir que la función que selecciona 
-    (la \(g\) en la definición ) sea estrictamente creciente (para que 
-    no se quede "atorada").
+    Por ejemplo, digamos que queremos diferenciar la función 
+    \(k(x)=\sqrt{(\cos(x))^2+1}\). Empezamos a leer la 
+    función desde "adentro hacia afuera" para definir las 
+    funciones 
+    \[
+      f(x)=\cos(x), g(u)=u^2+1, h(t)=\sqrt{t}
+    \]
+    y obtener que \(k(x)=h(g(f(x)))\). Ahora, para ponernos en la 
+    situación de la regla de la cadena también denotamos \(F(x)=g(f(x))\), para 
+    que \(k(x)=h(F(x))\), la cual, aplicando la regla de la cadena tiene derivada 
+    \[
+      k'(x)=h'(F(x))F'(x).
+    \]
+    Asu vez, al ser \(F\) una composición \(F(x)=g(f(x))\), podemos aplicar la regla de 
+    la cadena para obtener 
+    \[
+      F'(x)=g'(f(x))f'(x).
+    \]
+    Combinando las dos ecuaciones anteriores resulta 
+    \[
+    k'(x)=h'(F(x))g'(f(x))f'(x)
+    \]
+    (¡ nota que la expresión a la derecha del parentesis parece una cadena !).
   </p>
   <p>
-    Con la notación \((a_n)_{n=1}^\infty\), \(a_n=f(n)\), una subcusesión 
-    se denota como \((a_{n_k})_{k=1}^\infty\) donde \(a_{n_k}=f(g(k))\).
-  </p>
-  <p>
-    Dada una sucesión \((a_n)_{n=1}^\infty\) los siguientes son 
-    ejemplos de subsucesiones:
-    <ul>
-      <li>
-        \((a_{2k})_{k=1}^\infty\), pues 
-        está dada mediante la función \(g(k)=2k\), la cual 
-        es estrictamente creciente. 
-      </li>
-      <li>
-        \((a_{k+1})_{k=1}^\infty\), pues está dada 
-        mediante la función \(g(k)=k+1\), la cual es 
-        estrictamente creciente.
-      </li>
-      <li>
-        \((a_{k^2})_{k=1}^\infty\), pues está dada 
-        por la función \(g(k)=k^2\), la cual es 
-        estrictamente creciente.
-      </li>
-    </ul>
-  </p>
-  <p>
-    Casos  que no dan subsucesiones son:
-     <ul>
-      <li>
-        \((a_1,a_1,a_1,\dots)\), es decir, repetir el mismo
-        elemento; no es subsucesión pues se obtiene con 
-        la función \(g(k)=1\), la cual no es estrictamente 
-        creciente,
-      </li>
-      <li>
-        \((a_2,a_1,a_4,a_3,...)\), es decir, intercambiar los 
-        roles de los pares a impares; no es subsucesión 
-        pues la función que origina ésta lista satisface 
-        \(g(1)=2\), \(g(2)=1\), por lo que  
-        \(g\) no es estríctamente creciente.
-      </li>
-     </ul>
-
-    
-    
-
+    Finalmente, sabiendo que las derivadas de las funciones son 
+    \[
+      f'(x)=-\sen(x), g'(u)=2u, h'(t)=\frac{1}{2}t^{-1/2}
+    \]
+    concluimos 
+    \begin{eqnarray*}
+      k'(x)&=& \frac{1}{2}\left( (\cos(x))^2+1 \right)^{-1/2}2(\cos(x) )(-\sen(x)) \\
+          &=& - \frac{\sen(x)\cos(x)}{\sqrt{(\cos(x)^2+1)}}.
+    \end{eqnarray*}
   </p>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
 
-<div class="teorema-box">
-  <h2 class="number-title" id="Teo:IntervalosCerradosAnidados"> Teorema </h2>
-  <h3> De los intervalos cerrados anidados de Cantor</h3>
+  Encuentra las derivadas de las siguientes funciones
+<ol>
+
+<li>
+  \(\cos(\sen(x^2+1))\), \(x\in \mathbb{R}\).
+</li>
+<li>
+  \(\cos(1-(\sen(x))^2)\), \( x \in \mathbb{R}\).
+</li>
+<li>
+  \( \sqrt{\sqrt{\sqrt{x}}}\), \(x>0\).
+</li>
+<li>
+  \(\sqrt{(x-2)(x+1)^2}\), \(2 < x\).
+</li>
+<li>
+  \(\sqrt{\frac{1+x^2}{1-x^2}}\), \(|x|< 1\).
+</li>
+
+<li>
+  \(\sqrt[4]{\sqrt[3]{\sqrt[2]{x}}}\), \(x>0\).
+</li>
+<li>
+  \(\sqrt{x+\sqrt{x^2 + \sqrt{x^3+1}}}\), \(x>0\).
+</li>
+</ol>
+<button class="respButton hvr-grow "> Solución 1 y 3 </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/1LjN4jg-9ok" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
   <p>
-    Sea \(([a_n,b_n])_{n=1}^\infty\) una sucesión de intervalos en \(\mathbb{R}\) que satisface: 
-    <ol>
-      <li>
-        Para toda \(n\), \([a_{n+1}, b_{n+1}] \subseteq [a_n,b_n]\) (están anidados).
-      </li>
-      <li>
-        Las longitudes de los intervalos tienden a cero, es decir 
+    Sea \(f:(a,b)\to \mathbb{R}\) una función diferenciable en todo \((a,b)\). Usa la 
+    regla de la cadena para porbar la siguiente regla de la potencia 
+    \[
+      \frac{df^n(x)}{dx}= nf^{n-1}(x)\frac{df(x)}{dx}
+    \]
+    donde \(n\geq 2\) es un natural.
+  </p>
+
+  <button class="respButton hvr-grow "> Solución </button> 
+  <div class="resp-box flexbox">
+    
+      
+
+      <p>
+        Definimos  \(h(x)=f^n(x)\), para \(x\in (a,b)\). Entonces \(h(x)=g(f(x))\)
+        donde \(g(u)=u^n\).
+      </p> 
+       <p>
+        Ya que  \(f\) es diferenciable en todo \((a,b)\) y 
+        \(g\) es diferenciable en todo \(\mathbb{R}\), por la regla de la cadena 
+        \(g\circ f\) es diferenciable en todo \((a,b)\) y 
         \[
-          \lim_{n\to \infty} (b_n-a_n) = 0.
+        (g\circ f)'(x)=g'(f(x))f'(x)
         \]
-      </li>
-    </ol>
-  </p>
-  <p>
-    Entonces existe un número real \(x_0\) tal que 
-    \[
-      \cap_{n=1}^\infty [a_n,b_n]=\{x_0\}
-    \]
-  </p>
-</div>
+        Finalmente, sabemos que \(g'(u)=nu^{n-1}\), por lo tanto 
+        \[
+          h'(x)=(g\circ f)'(x)=nf^{n-1}(x)f'(x).
+        \]
+        </p>
+    
+      
 
-<div class="teorema-box">
-  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass"> Teorema </h2>
-  <h3 > Bolzano-Weirestrass  </h3>
-
-  <p>
-  Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
-  </p>
-  <p>
-  Demuestra que existe \(x_0\in [a,b]\) y
-  \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
-  que \(\lim_{k\to \infty} x_{n_k}=x_0\).
-  </p>
-
-  <button class="respButton hvr-grow "> Prueba </button>
-      <div class="resp-box flexbox">
-    <p>
-      La idea de la prueba es dividir en mitades el intervalo \([a,b]\) de manera consecutiva para 
-      ir "cazando" el límite (\(x_0\) en la notación del teorema).
-    </p>
-    <p>
-      Por notación dado un intervalo cerrado \(J\) calquiera, denotamos \(J_i\) su mitad 
-      izquierda y \(J_d\) su mitad derecha. De manera precisa si \(J=[c,d]\) entonces 
-      \[J_i=[a,(a+b)/2], J_d=[(a+b)/2, b]\]
-      Nota que \(\textrm{longitud}(J_i)=\frac{1}{2}\textrm{longitud}(J)\)  
-      y \(\textrm{longitud}(J_d)=\frac{1}{2}\textrm{longitud}(J)\).
-    </p>
-    <p>
-      Denotemos \(I=[a,b]\). Ahora nos fijamos en los puntos de la sucesión que caen en cada uno de los lados
-      izquierdo y derecho. Para esto definimos 
-      \[
-      N(I_i)=\{n\in \mathbb{N}: x_n\in  I_i \}, \, N(I_d)=\{n\in \mathbb{N}: x_n\in  I_n \}
-      \]
-      Ya que \(\mathbb{N}=N(I_i)\cup N(I_d)\) alguno de los uniendos debe ser infinito. Denotemos 
-      por \(I^{(1)}\) la mitad para la cual \(N(I^{(1)})\) es infinito. Fijamos un \(n_1\in N(I^{(1)})\), 
-      éste será el primer elemento de nuestra subsucesión.
-    </p>
-    <p>
-      Ahora dividimos a \(I^{(1)}\) en dos partes y aplicamos el mismo procedimiento.
-      \[
-      N(I^{(1)}_i)=\{n\in \mathbb{N}: x_n\in  I_i^{(1)} \}, \, N(I^{(1)}_d)=\{n\in \mathbb{N}: x_n\in  I_n^{(1)} \}
-      \]
-      Ya que \(\mathbb{N}=N(I^{(1)}_i)\cup N(I^{(1)}_d)\) alguno de los uniendos debe ser infinito. Denotemos 
-      por \(I^{(2)}\) la mitad para la cual \(N(I^{(2)})\) es infinito. Puesto que 
-      \(N(I^{(2)})\) es infinito podemos tomar  \(n_2\in N(I^{(2)})\) y \(n_2 > n_1\). 
-      Este será el segundo  elemento de nuestra subsucesión.
-    </p>
-    <p>
-      Continuando de esta manera si tenemos elegido el intervalo \(I^{(k)}\) lo dividimos en dos 
-      y consideramos 
-      \[
-      N(I^{(k)}_i)=\{n\in \mathbb{N}: x_n\in  I_i^{(k)} \}, \, N(I^{(k)}_d)=\{n\in \mathbb{N}: x_n\in  I_n^{(k)} \}
-      \]
-      Ya que \(\mathbb{N}=N(I^{(k)}_i)\cup N(I^{(k)}_d)\) alguno de los uniendos debe ser infinito. Denotemos 
-      por \(I^{(k+1)}\) la mitad para la cual \(N(I^{(k+1)})\) es infinito. Puesto que 
-      \(N(I^{(k+1)})\) es infinito podemos tomar  \(n_{k+1}\in N(I^{(k+1)})\) y \(n_{k+1} > n_k\). 
-      Este será el \((k+1)\)-ésimo  elemento de nuestra subsucesión.
-    </p>
-    <p>
-      Por construcción es claro que \((x_{n_k})_{k=1}^\infty\) es una subsucesión de \((x_n)_{n=1}^\infty\).
-    </p>
-    <p>
-      Como dividimos en dos cada vez tenemos que 
-      \[
-      \textrm{longitud}(I^{(k)})=\frac{1}{2^k}\textrm{longitud}(I)
-      \]
-      y por construcción \(I^{(k+1)}\subseteq I^{(k)}\). Por el Teorema de Intervalos cerrados anidados 
-      tenemos que 
-      \[
-      \cap_{k=1}^\infty I^{(k)}=\{x_0\}
-      \]
-      Resta probar que \(\lim_{k\to \infty} x_{n_k}=x_0\). Para ésto notamos que 
-      para toda \(k\), \(x_{n_k}, x_0 \in I^{(k)} \) por lo que 
-      \[
-      |x_{n_k}-x_0|\leq \textrm{longitud}(I^{(k)})=\frac{1}{2^k}\textrm{longitud}(I)
-      \]
-      aplicando límite cuando \(k\to \infty\) en ambos lados de la desigualdad anterior concluimos 
-      \[
-      \lim_{k\to \infty}|x_{n_k}-x_0|=0
-      \]
-      lo que implica 
-      \[
-        \lim_{k\to \infty} x_{n_k}=x_0.
-      \]
-    </p>
-  </div>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
-   Demuestra \(\lim_{n\to \infty} \frac{n}{2^n}=0\).
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
-  <p>
-   Sea \(t>0\). Demuestra que
-  \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
-  </p>
-
-  <p>
-  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
-  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>k\), factoriza
-  \[
-  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{t^{m-k}}{(k+1)(k+2)\cdots m}
-  \]
-  después, con esta factorización, prueba la desigualdad
-  \[
-  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
-  \]
-  con \(C=\frac{t^k}{k!}\).
-  </p>
-</div>
-
-
-<div class="definicion-box">
-<h2 class="number-title"> Definición </h2>
-<p>
-Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
-todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
-para todos \(n,m \geq N\)
-\[
-|x_n-x_m|<\varepsilon
-\]
-</p>
-<p>
-  La idea de las sucesiones de Cauchy es que son sucesiones para las 
-  cuales los elementos de la sucesión se van hacercando entre sí. 
-</p>
-</div>
   
+  </div>
+  
+</div>
+
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>
-    Sea \((a_n)_{n=1}^\infty\) una sucesión de Cauchy. Supón que existe 
-    una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente de \((a_n)_{n=1}^\infty\).
-    Denotemos \(L=\lim_{k\to \infty}a_{n_k}\). Prueba que \((a_n)_{n=1}^\infty\)
-    también es convergente con 
+    Sea \(f:(a,b)\to \mathbb{R}\) una función diferenciable en todo \((a,b)\) tal que 
+    \(f(x)>0\) para toda \(x\in (a,b)\). Usa la 
+    regla de la cadena para porbar la siguiente regla de la potencia 
     \[
-    \lim_{n\to \infty} a_n=L.
+      \frac{df^{\frac{1}{n}}(x)}{dx}= \frac{1}{n}f^{\frac{1}{n}-1}(x)\frac{df(x)}{dx}
     \]
+    donde \(n\geq 2\) es un natural.
+  </p>
+
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sea \(f:(a,b)\to \mathbb{R}\) una función diferrenciable cen todo \((a,b)\) con  
+  \(f(x)\ne 0\) para toda \(x\in (a,b)\). Usa la regla de
+la cadena para dar otra prueba de que
+\[
+\frac{d}{dx}\left(\frac{1}{f(x)} \right)= - \frac{1}{f^2(x)} \frac{df(x)}{dx}.
+\]
+
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> Diferenciación implícita </h2>
+  <p>
+    Una función puede venir de manera explícita o de manera implícita.
+  </p>
+  <p>
+    Una función es explícita si su regla de correspondencia está dada 
+    explícitamente. En otras palabras tenemos una fórmula para  \(f(x)\), por 
+    ejemplo 
+    \[
+      f(x)=\sqrt{x^2-1}.
+    \]
+  </p>
+  <p>
+    Una función es implícita si su regla de correspondencia no está dada 
+    explícitamente, si no que está dada en términos de otras relaciones. Por 
+    ejemplo, podemos considerar la función  \(f(x)\) que satisface la ecuación 
+    \[
+      f^2(x)+1=x^2.
+    \]
+  </p>
+  <p>
+    A veces podemos pasar de una función implícita a una explícita y la manera de 
+    hacerlo es despejando (si es que es posible). En el ejemplo anterior, si despejamos  \(f(x)\)
+    \(f^2(x)+1=x^2\) obtenemos dos soluciones: si \(f>0\)
+    entonces \(f(x)=\sqrt{x^2-1}\), si \(f< 0 \) entonces \(f(x)=-\sqrt{x^2-1}\).
+  </p>
+  <p>
+    La diferenciación implícita consiste en derivar funciones que están dadas de manera 
+    implícita. Para derivar estas funciones se procede a derivar ambos lados 
+    de la ecuación que define a la función implícitamente. En el ejemplo anterior debemos derivar 
+    ambos lados de \(f^2(x)+1=x^2\) para obtener 
+    \begin{eqnarray*}
+     & & \frac{d}{dx}\left(f^2(x)+1 \right) = \frac{d}{dx}(x^2) \\
+     & \Rightarrow & \frac{dx}{dx}(f^2(x))+\frac{d}{dx}(1) = 2x \\
+     & \Rightarrow & 2f(x)\frac{df(x)}{dx}+0 =2x \\
+     & \Rightarrow & \frac{df(x)}{dx}=\frac{x}{f(x)}
+    \end{eqnarray*}
+    donde en la primera implicación usamos que la derivada de una suma es la suma de las 
+    derivadas y en el segunda implicación la fórmula para la derivada de una potencia. Así pues, 
+    siempre y cuando \(f(x) \ne 0\) tenemos que 
+    \[
+      \frac{df(x)}{dx}=\frac{x}{f(x)}.
+    \]
+    Hay que notar que la derivada también está dada de manera implícita, pues de antemano no tenemos 
+    una fórmula explícita para \(f(x)\).
+  </p>
+  <p>
+    Nota: muchas ecuaciones llevan a definir funciones de manera implícita. Por ejemplo
+    las siguientes ecuaciones 
+    \[
+      x^3+y^3-xy=1, \quad \cos(x)+\cos(y^2)=\cos(xy), \quad e^{xy}=1+xy 
+    \]
+    si consideramos a la variable \(x\) como independiente esto lleva a que la variable 
+    \(y\) defina una función  (\(y=f(x)\)) implícitamente, pero hay que tener cuidado pues tal vez 
+    se requieran condiciones adicionales (como \(f>0\) o \(f< 0 \) en el ejemplo anterior)
+    para poder garantizar que \(y\) sea realmente una función y tal vez aún así no sea 
+    posible despejar a la \(y\) para obtener una fórmula explícita en términos de la \(x\).
   </p>
 </div>
 
 
-<div class="teorema-box">
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
 
-  <h2 class="number-title"> Teorema </h2>
-  <h3 > Completez de \(\mathbb{R}\) </h3>
+  La ecuación \(x^2+y^2=1\) describe el círculo de radio 1.
+<ol>
+<li>
+  Despeja \(y\) de \(x^2+y^2=1\) y encuentra \(\frac{dy}{dx}\).
+</li>
+<li>
+  Sin despejar \(y\), usa la regla de la cadena y las propiedades de la rerivada
+para derivar ambos lados de \(x^2+y^2=1\) y obtener una
+expresión para \(\frac{dy}{dx}\).
+</li>
+<li>
+  Encuentra la recta tagente a \(x^2+y^2=1\) en el punto
+\((1/\sqrt{2}, 1/\sqrt{2})\).
+</li>
+</ol>
 
-  Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
-  satisface el criterio de Cauchy.
+<button class="respButton hvr-grow "> Solución  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/2aYMzHuu4vQ" target="_blank" > Video </a>
+              </div>
+            </div>
+
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Fija \(\alpha\in \mathbb{R}^+\). La ecuación
+\[
+x^3+y^3=3\alpha xy
+\]
+define una curva en el plano llamada la hoja de Descartes.
+<ol>
+<li>
+  Dibuja la hoja de Descartes para \(\alpha=2\) (ayudate de una computadora).
+</li>
+<li>
+  Muestra que la hoja de Descartes es simétrica con respecto
+a la recta \(y=x\).
+</li>
+<li>
+  Demuestra que la hoja de Descartes tiene una asíntota en
+la recta \(x+y+\alpha=0\).
+</li>
+<li>
+  Diferencia la hoja de descartes implícitamente para encontrar
+una expresi'on para
+\(\frac{dy}{dx}\).
+</li>
+<li>
+  Encuentra la ecuación de la recta tangente a la hoja de Descartes
+en el punto \((3,3)\).
+</li>
+<li>
+  Ecuentra los puntos de la hoja de Descartes donde la recta tangente
+es horizontal.
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Diferenciando implícitamente encuentra las ecuaciones a las rectas
+tagentes a las cruvas en los puntos dados.
+
+<ol>
+<li>
+  Elipse: \(x^2+4xy+y^2=6\) en el punto \((1,1)\).
+</li>
+<li>
+  Hipérbola: \(x^2-y^2=9\) en el punto \((\sqrt{10},1)\).
+</li>
+<li>
+  Astroide: \(x^{2/3}+y^{2/3}=\frac{1}{2}\) en el punto \((1/2^3,1/2^3)\).
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Usando diferenciación implícita encuentra la forma general de
+la recta tangente a la elipse \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) en
+el punto \((x_0,y_0)\).
+<button class="respButton hvr-grow "> Solución  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/1LjN4jg-9ok" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Usando diferenciación implícita encuentra la forma general de la
+recta tangente a la hiperbola \(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\) en
+el punto \((x_0,y_0)\).
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Dos curvas en el plano son ortogonales si sus rectas tangentes son
+perpendiculares en cada punto de intersección. Demuestra que las siguientes
+familias de curvas son ortogonales, es decir cada curva en una familia es
+ortogonal a cada curva de la otra.
+<ol>
+<li>
+  \(x^2+y^2=r^2\), para \(r>0\); \(ax+by=0\),  con \(a\ne 0\) o \(b\ne 0\).
+</li>
+<li>
+  \(y=cx^2\), \(c\ne 0\); \(x^2+2y^2=k\), \(k\ne 0\).
+</li>
+<li>
+  Demuestra que las elipses \(x^2/a^2+y^2/b^2=1\) y las hiperbolas
+\(x^2/c^2-y^2/d^2=1\) son ortogonales si
+\(c^2 < a^2\) y \(a^2-b^2=c^2+d^2\).
+</li>
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+<h2 class="number-title" id="Ejer:DerivadasPotenciasRacionales"> Ejercicio </h2>
+
+
+  <p>
+    Ya hemos visto la regla de la
+    potencia,  para potencias de la forma \(n\) y \(
+    \frac{1}{n}\). A saber:
+    \begin{eqnarray*}
+    \frac{d f^n(x)}{dx}&=&nf^{n-1}(x)\frac{df(x)}{dx} \\
+    \frac{d f^{\frac{1}{n}}(x)}{dx}&=&\frac{1}{n}f^{\frac{1}{n}-1}(x)\frac{df(x)}{dx}
+    \end{eqnarray*}
+  </p>
+
+  <p>
+    Este ejercicio usa diferenciación implícita para generalizar la regla de
+    la potencia para potencias
+    racionales.
+  </p>
+
+  <p>
+    Tomemos \(p=\frac{n}{m}\), con \(n,m\in \mathbb{N}\), \(m\ne 0\).
+    Supongamos que \(f:(a,b)\to \mathbb{R}\)
+    es diferenciable en todo \((a,b)\) y que \(f>0\) en todo \((a,b)\).
+  </p>
+
+<ol>
+<li>
+  Define \(y(x):=f^p(x)\). Entonces \(y^m=f^n\)
+</li>
+<li> Diferencia implícitamente para obtener:
+\[
+my^{m-1}\frac{dy}{dx}=n f^{n-1}\frac{df}{dx}
+\]
+</li>
+<li>
+  Despeja \(\frac{dy}{dx}\) para concluir
+\[
+\frac{d f^p(x)}{dx}=pf^{p-1}(x)\frac{df(x)}{dx}
+\]
+</li>
+</ol>
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> Tazas relacionadas </h2>
+  <p>
+    Una aplicación de la diferenciación implícita es analizar las
+    derivadas de dos funciones que están relacionadas. En varias situaciones
+    se tienen que dos funciones que están relacionadas, por ejemplo si el precio 
+    aumente la demanda disminuye; si la valocidad aumentan el tiempo 
+    de traslado disminuye etc. Si dichas relaciones se pueden expresar de manera
+    algebráica se puede diferenciar dicha expresión para encontrar una relación 
+    entre las derivadas (tazas de crecimiento) de las funciones.   
+  </p>
+  <p>
+    El ejemplo más sencillo es la relación 
+    \[
+      xy=1.
+    \]
+    Esta define una hipérbola en el plano de la cual se puede ver que si 
+    \(x\) aumenta entonces \(y\) disminuye. Para ver esta relación con 
+    derivadas imaginamos que un punto 
+    se mueve sobre esta hipérbola, digamos parametrizamos su posición con las
+    coordenadas \(x(t),y(t)\), donde \(t\) representa el tiempo. Así pues 
+    debemos de tener \(x(t)y(t)=1\), para todo \(t\).  Si  derivamos implícitamente 
+    la relación anterior obtenemos 
+    \[
+    x(t) \frac{dy(t)}{dt}+\frac{dx(t)}{dt} y(t)=0 
+    \]
+    multiplicando la relación anterior por \(x\ne 0\) y usando \(xy=1\) obtenemos 
+    \[
+      x^2(t) \frac{dy(t)}{dt}=-\frac{dx(t)}{dt}
+    \]
+    la cual da una relación muy precisa entre las dos derivadas (tazas de cambio) y de 
+    la cual se puede obtener información. Por ejemplo,
+    ya que \(x^2>0\) es directo ver que el signo de las derivadas \(\frac{dx}{dt}\)
+    y \(\frac{dy}{dt}\) siempre son distintos. Por lo tanto, si  \(x\)
+    aumenta \(y\) disminuye y viceversa.
+  </p>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Sean \(u\) y \(v\) dos funciones diferenciables tal que podemos tomar
+\(u \circ v\). Denotemos \(y=v(x)\) y \(z=u(v(x))\). Usa la regla de la cadena
+para justificar la notación:
+\[
+\frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}.
+\]
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  En un tanque en forma de cono circular  recto invertido se vierte agua a
+la razón de 720 \(cm^3/min\). El tanque tiene una altura de 200 cm y el radio
+en la parte superior es de 60 cm. ¿Cuán rápido sube el nivel de agua cuando
+el tanque está a un octavo de su capacidad ?
+¿Cuanto se tarda en llenar el tanque? El volumen de un cono circular recto de
+altura \(h\) y de radio \(r\) es de \(V=\frac{1}{3}\pi r^3h\).
+<button class="respButton hvr-grow "> Solución  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/vnvlvCIbbIk" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Arena cae sobre una montículo de forma cónica a una tasa constante
+de 10 \(cm^3/s\). Si la altura del cono siempre es tres octavos del diámetro
+de la base determina:
+<ol>
+<li>
+  ¿Cómo cambia la altura del cono.?
+</li>
+<li>
+  ¿Cómo cambia la altura y el radio del cono en el instante en que la
+altura del cono ha alcanzado los 60 cm ?
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  Supón que la relación de demanda de  cierto producto es
+\(p+2q+pq=38\), donde \(q\) se mide en miles de unidades y \(p\) es el precio en
+dólares por unidad. Supón además que el precio \(p\) (y en consecuencia
+la demanda \(q\)) cambia semanalmente, es decir \(p\) es una función del tiempo.
+
+<ol>
+<li>
+  ¿A qué ritmo está cambiando la demanda si el precio está
+disminuyendo a razón de 0.40 dólares por semana, a un nivel de
+demanda de \(q=4\).
+</li>
+<li>
+  ¿Qué ocurre ahora si el precio está aumentando a razón de 0.20
+dólares por semana al mismo nivel de demanda ?
+</li>
+</ol>
+
+
+<button class="respButton hvr-grow "> Solución  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/m_6koEVB2os" target="_blank" > Video </a>
+              </div>
+            </div>
 
 </div>
 

@@ -22,7 +22,6 @@
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
             id: "\\operatorname{id}",
-            senh:"\\operatorname{senh}"
           },
           tags: "ams", /* this part is for numbered equations */
           inlineMath: [['$', '$'], ['\\(', '\\)']]
@@ -82,406 +81,624 @@
   </head>
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> La función exponencial </h1> 
-    <!-- this part is for next and prev sections -->
+    <h1 class="number-title flexbox"> Sucesiones </h1> 
+<!-- this part is for next and prev sections -->
 <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
 <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
+
 
 
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
   <p>
-    La función exponencial es tal vez una de las funciones más importantes en las 
-    matemáticas pues tiene montones de aplicaciones: interés compuesto, 
-    crecimiento de poblaciones (personas, bacterias, virus etc.), sistemas de ecuaciones diferenciales,
-    gometría diferencial, teoría de números, análisis funcional. Para una lista de algunos temas donde 
-    aparece funciones de tipo exponencial (por que hay varias) puede visitarse 
-    <a href="https://en.wikipedia.org/wiki/List_of_exponential_topics">esta lista en  wikipedia</a>.
-
+    Las sucesiones son una herramienta importante cuando tratamos
+    de aproximar una cantidad mediante un precedimiento que 
+    involucra pasos bien ordenados. 
+  </p>
+  <p>
+    Por ejemplo, los Babilonios tenían un procedimiento o receta para 
+    calcular la raíz cuadrada. Digamos que queremos calcular la raíz de 
+    un número \(A >0\). El primer paso es tratar de adivinar dando una 
+    aproximación inicial. Por ejemplo, para \(A=20\) una 
+    primera aproximación a la raíz es  \(8\) (pues \(8^2=16\)). Fijemos
+    dicha primera  aproximación a la raíz de \(A\) y denotémosla por \(a_0\).  
+    El siguiente paso es aplicar la fórmula 
+    \[
+      a_1=\frac{1}{2}(a_0+\frac{A}{a_0})
+    \]
+    En el ejemplo, si \(a_0=8\) entonces 
+    \(a_1=\frac{1}{2}(8+\frac{20}{8})=\frac{21}{4}\), que también es
+    una  aproximación de \(\sqrt{20}\).
 
   </p>
   <p>
-    Para introducir a la función exponencial vamos a considerar el siguiente ejemplo de 
-    interés compuesto.
-
+    Continuando con la receta, si tenemos dado el paso \(a_n\) el 
+    siguiente paso es 
+    \[
+      a_{n+1}=\frac{1}{2}(a_n+ \frac{A}{a_n}).
+    \]
+    Lo que los Babilonios sabían es que si se repetían estos pasos una 
+    cantidad  grande de veces el número resultante es una mejor aproximación 
+   al valor \(\sqrt{A}\) que con la que empezaron inicialmente (el \(a_0\) ).
   </p>
+   <p>
+     Con este procedimiento obtenemos una lista o sucesión de 
+     números, \(a_1,a_2,\dots,  \) y la idea es que si tomamos 
+     números más adelante en la lista obtenemos una mejor aproximación
+     a \(\sqrt{A}\), es decir, los números \(a_n\) tienden a \(\sqrt{A}\)
+     cuando \(n\) va creciendo. Esto se denota como 
+     \[
+      \lim_{n\to \infty} a_n= \sqrt{A}
+     \]
+   </p>
+   <p>
+     Lo importante es que muchas veces, al tratar de encontrar soluciones 
+     a ecuaciones, se obtienen recetas o algoritmos que vienen dados por pasos
+     los cuales generan sucesiones de números que tienden a la solución que se 
+     busca. Por éste tipo de ejemplos (y muchos otros) las sucesiones son 
+     importantes. En este sección se estudian algunas propiedades básicas
+     sobre sucesiones y sus límites.
+   </p>
+</div>
 
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+<p>
+Una sucesión de números reales es simplemente una función de
+\(\mathbb{N}\) a \(\mathbb{R}\), es decir \(f:\mathbb{N} \to \mathbb{R}\).
+</p>
+<p>
+Por costumbre, las sucesiones se denotan como \((a_n)_{n=1}^{\infty}\) o
+\((a_n)_{n\geq 1}\), donde \(a_n=f(n)\), para todo \(n\in \mathbb{N}\).
+</p>
+<p>
+  Ejemplos.
+  <ul>
+    <li>
+      \((n)_{n=1}^\infty\), está dada por la función \(f(n)=n\).
+    </li>
+    <li>
+      \((\frac{1}{n})_{n=1}^\infty\), está dada por la función \(f(n)=\frac{1}{n}\).
+    </li>
+    <li>
+      \((\frac{\pi}{\sqrt{n}})_{n=1}^\infty\), está dada por la función \(f(n)=\frac{\pi}{\sqrt{n}}\).
+    </li>
+  </ul>
+
+</p>
+<p>
+  Otra forma de pensar a las sucesiones es pensarlas como un vector 
+  infinito \((a_1,a_2,\dots)\). Esta forma de pensar a las sucesiones tiene la ventaja que nos 
+  dice como se suman y se multiplican las sucesiones por un escalar (entrada por entrada):
+  \begin{eqnarray*}
+  (a_n)_{n=1}^\infty+(b_n)_{n=1}^\infty&=& (a_n+b_n)_{n=1}^\infty \\
+  \alpha (a_n)_{n=1}^\infty&=&(\alpha a_n)_{n=1}^\infty
+  \end{eqnarray*}
+</p>
+
+<p>
+  Uno de los aspectos más importantes de las sucesiones es "lo que pasa al final". Ya que los 
+  naturales nunca se terminan no exsite formalmente "lo que pasa al final", pero tomando la idea 
+  del algoritmo que se presentó al principio, la idea es ver el comportamiento de los elementos 
+  de  la sucesión cuando tomamos el indice cada vez más grande.  Esto se formaliza 
+  con la definición de límite de una sucesión. 
+</p>
 
 </div>
 
 
-  <div class="nota-box">
-    <h2 class="number-title"> Ejemplo </h2>
-    <h3> Interés compuesto </h3>
-  <p>
-    Por \(P_0\) denotamos cierta cantidad de dinero (llamado principal)
-    el cual se invertirá anualmete con una tasa de interés del \(100 r\)
-    porciento, con \(0< r < 1\). Por ejemplo, si el interés es el 5% entonces  \(r=0.05\).
-    Al final del año el principal arroja una ganancia de \((0.05)P_0\) y el 
-    total de la inversión tendrá un valor de 
-    \[
-      P_0+(0.05)P_0=P_0(1+0.05).
-    \]
-    Para un interés arbitrario \(r\), al final del año el total de la inversión es 
-    \[
-      P_0+rP_0=P_0(1+r)
-    \]
-  </p> 
-
-  <p>
-   Ahora veamos qué pasa cuando se reinvierte el principal inicial junto con la 
-   ganancia a los seis meses. El valor total de la inversión inicial  a los  seis meses 
-   es 
-  \begin{equation}\label{Eqn:InteresCompAux1}
-    P_1:=P_0\left(1+\frac{r}{2}\right).  
-  \end{equation}
-  Nota: debe ser \(\frac{r}{2}\) pues originalmente \(r\) representa el interés anual y 
-  sólo se invierte por seis meses. 
-  </p>
-  <p>
-    Ahora vamos a usar a \(P_1\)  como principal y reinvertirlo por los seis meses restantes. 
-    Al final del año el valor total de la inversión es
-    \begin{equation}\label{Eqn:InteresCompAux2}
-    P_2:=P_1\left(1+\frac{r}{2}\right)=P_0 \left( 1+ \frac{r}{2}\right)^2
-    \end{equation}
-  </p>
-  <p>
-    Comparando \eqref{Eqn:InteresCompAux1} y \eqref{Eqn:InteresCompAux2} vamos que el principal 
-    sólo se ve afectado por  los factores \((1+r)\) y \((1+r/2)^2\) y tenemos que 
-    \[
-    1+r < \left(1+\frac{r}{2} \right)^2=1+r+\frac{r^2}{4}
-    \]
-    lo cual tiene sentido pues al reinvertir a los seis meses se espera una ganancia mayor.
-  </p>
-  <p>
-    Siguiendo con un análisis similar, si el valor total de la inversión se reinvierte 
-    cada 4 meses (es decir, 3 veces al año) tenemos que la inversión original va creciendo 
-    como 
-    \begin{eqnarray*}
-     P_0 & \rightarrow P_1=P_0\left(1+\frac{r}{3} \right)\\
-         &  \rightarrow P_2:=P_1\left( 1+\frac{r}{3}\right)  \\
-        & \rightarrow P_3:=P_2\left(1+\frac{r}{3} \right) 
-    \end{eqnarray*}
-    Por lo tanto, al final del año la inversión total vale 
-    \[
-      P_3=P_2\left(1+\frac{r}{3} \right) =P_1\left(1+\frac{r}{3} \right)^2=P_0\left(1+\frac{r}{3} \right)^3.  
-    \]
-  </p>
-
-  <p>
-  Más en general, si el valor total de la inversión  (principal más ganancia) se reinvierte \(n\)-veces al año 
-  el valor total al final de año es
-  \[
-  P_n=P_0\left(1+\frac{r}{n}\right)^n.
-  \]
-  </p>
-
-  <p>
-  En teoría, si el valor total de la inversión se reinvirtiera cada instante del año,
-  el capital al final del año tendería a 
-  \[
-  \lim_{n\to \infty} P_0\left(1+\frac{r}{n}\right)^n.
-  \]
-  </p>
-
-  <p>
-    Lo sorprendente es que el límite 
-    \[
-    \lim_{n\to \infty} \left(1+\frac{r}{n}\right)^n
-    \]
-    siempre existe para todo \(r\in \mathbb{R}\) y es más, existe un número, denotado 
-    \(e\) (llamado la constante de Euler) para el cual 
-    \[
-    \lim_{n\to \infty} \left(1+\frac{r}{n}\right)^n=e^r.
-    \]
-    Nota: a pesar que \(e\) se llama el número de Euler, este ejemplo del interés compuesto
-    se debe a Jacob Bernoulli.
-  </p>
-  <p>
-    En los ejercicios que siguen se exploran las propiedades de las
-    expresiones 
-    \[
-      \left( 1+\frac{r}{n} \right)^n.
-    \]
-    Advertencia: esta sección es bastante técnica pero al ser la función exponencial 
-    tal importante creemos que es importante presentar todos los detalles.
-  </p>
-
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+<p>
+Decimos que una sucesión \((a_n)_{n=1}^\infty\) converge al número
+\(L\in \mathbb{R}\), si, para toda \(\varepsilon\) existe \(N\)
+(que depende de \(\varepsilon\)), tal que para toda \(n \geq N\)
+\[
+|a_n- L| <\varepsilon.
+\]
+</p>
+<p>
+Denotamos \(L=\lim_{n\to \infty}a_n\).
+</p>
 </div>
 
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:Exp1"> Ejercicio </h2>
+  <h2 class="number-title"> Ejercicio </h2>
+  Demuestra que toda sucesión constante es convergente.
+  <button class="respButton hvr-grow "> Demostración </button>
+            <div class="resp-box flexbox">
+              <div class="video flexbox">
+                <a href="https://youtu.be/bI5dQPUzHtA" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
 
-
-  Sea \(x\in \mathbb{R}\), fija y arbitraria.
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:PropiedadesLimitesSucesiones"> Ejercicio </h2>
+  <p>
+  Sean
+  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\), dos sucesiones convergentes.
+  </p>
+  <p>
+  Demuestra
+  </p>
 <ol>
 <li>
-  Para \(n,m\in \mathbb{R}\) con \(-x< m < n\) se satisface:
-\[
-\left(1+\frac{x}{m}\right)^m \leq \left(1+\frac{x}{n}\right)^n.
-\]
-donde la igualdad se da si y sólo si \(x=0\).
+  \(\lim_{n\to \infty}(a_n+b_n)=\lim_{n\to \infty}a_n + \lim_{n\to \infty}b_n\).
 </li>
 <li>
-Para \(n,m\in \mathbb{R}\) con \(x< m < n\) se satisface:
-\[
-\left(1-\frac{x}{n}\right)^{-n} \leq \left(1-\frac{x}{m}\right)^{-m}.
-\]
-donde la igualdad se da si y sólo si \(x=0\).
+  dada \(\alpha\in \mathbb{R}\), fija y arbitraria,
+  \(\lim_{n\to \infty} \alpha a_n=\alpha \lim_{n\to \infty}a_n\).
+</li>
+<li>
+  <p>
+    Supón que para toda \(n\), \(a_n \leq b_n\). Prueba que 
+    \(\lim_{n\to \infty}a_n \leq \lim_{n\to \infty}b_n\).
+  </p>
+  <p>
+    Da un ejemplo donde  \(a_n < b_n \) para toda \(n\) y sin embargo 
+    \(\lim_{n\to \infty} a_n = \lim_{n\to \infty} b_n\).
+
+  </p>
+</li>
+</ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+  Considera la sucesión \((a_n)_{n=1}^\infty\) dada por \(a_n=(-1)^n\).
+  </p>
+  <p>
+  Demuestra que \((a_n)_{n=1}^\infty\) no es convergente.
+  </p>
+
+  <p>
+  Sugerencia: procede por contradción.
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+  Decimos que una sucesión \((a_n)_{n=1}^\infty\) está acotada,
+  si existe \(M>0\) tal que \(|a_n| \leq M\), para toda
+  \(n\in \mathbb{N}\).
+  </p>
+<ol>
+<li>
+  Demuestra que si \((a_n)_{n=1}^\infty\) es convergente entonces también
+  está acotada.
+</li>
+<li>
+  Da un ejemplo de una sucesión que esté acotada pero que no sea convergente.
 </li>
 </ol>
 
-Sugerencia: usar la desigualdad aritmética geométrica.
+<button class="respButton hvr-grow "> Demostración </button>
+            <div class="resp-box flexbox">
+              <div class="video flexbox">
+                <a href="https://youtu.be/vH-sjG_DbGQ" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
 
-Para la primera tomar
-\[
-a_1=\cdots=a_m= 1+\frac{x}{m}, \quad a_{m+1}=\cdots =a_n=1
-\]
-Para la segunda tomar
-\[
-a_1=\cdots=a_m=1-\frac{x}{m}, \quad a_{m+1}=\cdots=a_n=1
-\]
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+<p>
+Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona decreciente si
+\[a_1 \geq a_2 \geq a_3 \geq \cdots \geq \cdots \geq a_{n} \geq a_{n+1} \geq \cdots\]
+</p>
+
+<p>
+Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
+\[a_1 \leq a_2 \leq a_3 \leq \cdots \leq \cdots \leq a_{n} \leq a_{n+1} \leq \cdots\]
+</p>
+
 </div>
 
 
 
+
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:Exp2"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio </h2>
 
-Sea \(x\in \mathbb{R}\) fijo y arbitrario con \(x\ne 0\).
-Para \(k\in \mathbb{N}\) con \(k > |x|\):
 
-\[
-\left( 1+\frac{x}{k} \right)^k < \left( 1-\frac{x}{k} \right)^{-k}.
-\]
+  <p>
+  Sea \((a_n)_{n=1}^\infty\) una sucesión.
+  </p>
+<ol>
+<li>
+  si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
+  tal que \(a_n \leq M\) para toda \(n\), entonces
+\(\lim_{n \to \infty}a_n\) existe.
+</li>
+<li>
+  si \((a_n)_{n=1}^\infty\) es monótona decreciente  y existe \(m \in \mathbb{R}\)
+  tal que \(m \leq a_n \) para toda \(n\), entonces
+\(\lim_{n \to \infty}a_n\) existe.
+</li>
+</ol>
+
+
+<p>
+Sugerencia: para el caso monótono creciente  usa el
+<a href="./S2.html#Ejer:CaracterizacionSupremo">Ejercicio 2.8</a>
+  para probar que la serie converge a
+\(\sup_{n\in \mathbb{N}}\{ a_n\}\).
+</p>
 </div>
 
 <div class="ejercicio-box">
-<h2 class="number-title"> Ejercicio </h2>
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+  Demuestra que \(\lim_{n\to \infty} \frac{1}{n}=0\).
+  </p>
 
-Sea \(x\in \mathbb{R}\) fijo y arbitrario. Entonces los
-siguientes límites existen
-\[
-\lim_{n \to \infty}\left( 1+\frac{x}{n} \right)^n,
-\quad
-\lim_{n \to \infty } \left( 1- \frac{x}{n} \right)^{-n}.
-\]
+  <p>
+  Sugerencia: usa el <a href="#Ejer:TeoremaConvergenciaMonotonaSucesiones">Ejercicio anterior</a>
+  y <a href="./S2.html#Ejer:LemaInfimo1/n"> Ejercicio 2.13</a>
+  </p>
+</div>
 
 
-Sugerencia: Considera las sucesiones 
-\[
-a_n= \left( 1+\frac{x}{n} \right)^n, \quad 
-b_n=\left( 1- \frac{x}{n} \right)^{-n}.
-\]
-Usa   <a href="#Ejer:Exp1">Ejercicio 11.3</a>
-para demostrar que  \((a_n)_{n=1}^\infty\) es monótona 
-creciente y \((b_n)_{n=1}^\infty\) es monótona decreciente. Después 
-prueba que \((a_n)_{n=1}^\infty\) está acotada superiormente y 
-que \((b_m)_{m=1}^\infty\) está acotada inferiormente. Finalmente 
-concluye usando el <a href="./S10.html#Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio 10.9</a>.
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LemaTeoSandiwch"> Ejercicio </h2>
+  <p>
+  Sean \((a_n)_{n=1}^\infty\) una sucesión
+  y \(\alpha \in \mathbb{R}\).
+  </p>
+  <p>
+  Supon que existe  una sucesión \((z_n)_{n=1}^\infty\)
+  tal que \(\lim_{n\to \infty}z_n=0\) y que satisface \(|a_n-\alpha| \leq |z_n|\),
+  para todo \(n\).
+  </p>
+  <p>
+  Demuestra que \(\lim_{n\to \infty}a_n=\alpha\).
+  </p>
+  <button class="respButton hvr-grow "> Demostración </button>
+            <div class="resp-box flexbox">
+              <div class="video flexbox">
+                <a href="https://youtu.be/Gm_8217yU9Q" target="_blank" > Video </a>
+              </div>
+            </div>
+</div>
+
+
+<div class="teorema-box">
+  <h2 class="number-title" id="Ejer:TeoremaSandiwchSucesiones"> Teorema 
+    <h3 >Teorema del Sandwich para sucesiones </h3>
+  </h2>
+  <p>
+  Sean
+  \((a_n)_{n=1}^\infty\), \((b_n)_{n=1}^\infty\) y \((c_n)_{n=1}^\infty\)
+  tres sucesiones que satisfacen:
+  </p>
+<ol>
+<li>
+  \(a_n \leq b_n \leq c_n\), para toda \(n\).
+</li>
+<li>
+  los limites \(\lim_{n\to \infty}a_n\)  y \(\lim_{n\to \infty}c_n\)
+  existen y son iguales. Denotamos
+\(L=\lim_{n\to \infty}a_n=\lim_{n\to \infty}c_n\).
+</li>
+</ol>
+<p>
+Demuestra que \(\lim_{n\to \infty}b_n =L\).
+</p>
+<p>
+
+Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7</a>  para obtener
+\(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
+<a href="#Ejer:PropiedadesLimitesSucesiones">Ejercicio 10.4</a> junto  con el
+<a href="#Ejer:LemaTeoSandiwch">Ejercicio anterior </a>.
+</p>
 </div>
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:IgualdadLimitesExponencial"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
+  <p>
+  Sean
+  \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
+  </p>
+  <p>
+  Demuestra que
+  \[\lim_{n\to \infty} (a_nb_n)=
+  \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
+  </p>
+  <p>
+  Sugerencia: usa la desigualdad del triángulo para probar  que
+  \(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
+  sucesión \((a_n)_{n=1}^\infty\) y luego usa el
+  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 10.10 </a>.
+  </p>
+</div>
 
-Demuestra que
-\[
-\lim_{n\to \infty} \left(  1+ \frac{x}{n}\right)^{n} \quad
-=\lim_{n\to \infty}\left(  1- \frac{x}{n}\right)^{-n}
-\]
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:ConvergenciaSerieRecorridaDerecha"> Ejercicio </h2>
+  <p>
+  Supongamos que la
+  sucesión \((a_n)_{n=1}^\infty\) es convergente con \(L=\lim_{n\to \infty}a_n\).
+  </p>
 
-Sugerencia:  con \(n>|x|\), toma \(b=(1-x/n)^{-1}, a=(1+x/n)\); usa el
-<a href="./S1.html#Eqn:Resolvent">Ejercicio 1.18</a> para estimar \(b^n-a^n\) y obtener
-\[
-0\leq b^n-a^n \leq \frac{x^2}{n-x}\left( 1 -\frac{x}{n} \right)b^n.
-\]
-Finalmente toma  límite \(n\to \infty\).
+<ol>
+<li>
+  Demuestra que
+  \[
+  L=\lim_{n\to \infty} a_{n+1}.
+  \]
+</li>
+<li>
+  Más en general, toma \(p\in \mathbb{N}\) fijo y defne una nueva sucesión
+  \(b_n=a_{n+p}\). Demuestra que la sucesión \((b_n)_{n=1}^\infty\) converge si
+  y sólo si \((a_n)_{n=1}^\infty\) converge y que ambas tienen el mismo limite.
+</li>
+</ol>
+<button class="respButton hvr-grow "> Demostración </button>
+            <div class="resp-box flexbox">
+              <div class="video flexbox">
+                <a href="https://youtu.be/ljaj4OfP4mA" target="_blank" > Video </a>
+              </div>
+            </div>
 </div>
 
 
 <div class="definicion-box">
   <h2 class="number-title"> Definición </h2>
-Definimos la función exponencial, denotada \(exp(x)\) o simplemente \(e^x\) como
-la función \(exp:\mathbb{R}\to \mathbb{R}\) dada por 
-\[
-e^x:=\lim_{n \to \infty}\left( 1+\frac{x}{n} \right)^n
-= \lim_{n \to \infty} \left( 1- \frac{x}{n} \right)^{-n}
-\]
-Nota: por el <a href="#Ejer:IgualdadLimitesExponencial">Ejercicio 11.6</a> ambos 
-límites que aparecen en esta definición son iguales.
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Sean \(x,y\in \mathbb{R}\) fijos y arbitrarios y toma
-\(n\in \mathbb{N}\) tal que \(n>-x,-y,-(x+y)\).
-
-<ol>
-<li>
-Demuestra que
-\begin{eqnarray*}
-& \left| \left( 1+\frac{x}{n} \right)^n\left(1+\frac{y}{n} \right)^n-
-\left( 1+\frac{x+y}{n}\right)^n \right| \leq
-\\
-& \frac{|xy|}{n^2}
-\sum_{k=0}^{n-1} \left(\left( 1+\frac{|x|}{n}\right)
-\left( 1+\frac{|y|}{n}\right) \right)^k
-\left( 1+\frac{|x|+|y|}{n}\right)^{n-k-1}
-\end{eqnarray*}
-</li>
-<li>
-Demuestra que
-\[
-1+\frac{|x|+|y|}{n} \leq \left( 1+\frac{|x|}{n} \right)
-\left(1+\frac{|y|}{n} \right)
-\]
-</li>
-<li>
-Usando los dos ejercicios anteriores demuestra que
-\[
-\left| \left( 1+\frac{x}{n} \right)^n\left(1+\frac{y}{n} \right)^n
-- \left( 1+\frac{x+y}{n}\right)^n \right| \leq  \frac{|xy|}{n}e^{|x|}e^{|y|}
-\]
-</li>
-<li>
-Toma límites en el inciso anterior para concluir
-\[
-e^{x}e^y=e^{x+y}
-\]
-</li>
-
-<button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <a href="https://youtu.be/Bt8SdbNLtyw" target="_blank" > Video </a>
-              </div>
-            </div>
-
-</ol>
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
   <p>
-    Prueba las siguientes propiedades de la función exponencial.
+    Una subsucesión de una sucesión dada es componer la sucesión 
+    original con una función estrictamente  creciete. Más específicamente,
+    si \(f:\mathbb{N}\to \mathbb{R} \) es una sucesión una subsucesión
+    de \(f\) es una función de la forma \(f \circ g  \)
+    donde \(g:\mathbb{N} \to \mathbb{N}\) es estrictamente creciente. 
+  </p>
+  <p>
+    La idea de las subsucesiones es que sólo vamos a seleccionar ciertos 
+    elementos de la sucesión original pero queremos hacer dicha selección 
+    tomando en consideración que lo importante de las sucesiones es "lo que 
+    pasa al final". Por eso se debe de pedir que la función que selecciona 
+    (la \(g\) en la definición ) sea estrictamente creciente (para que 
+    no se quede "atorada").
+  </p>
+  <p>
+    Con la notación \((a_n)_{n=1}^\infty\), \(a_n=f(n)\), una subcusesión 
+    se denota como \((a_{n_k})_{k=1}^\infty\) donde \(a_{n_k}=f(g(k))\).
+  </p>
+  <p>
+    Dada una sucesión \((a_n)_{n=1}^\infty\) los siguientes son 
+    ejemplos de subsucesiones:
+    <ul>
+      <li>
+        \((a_{2k})_{k=1}^\infty\), pues 
+        está dada mediante la función \(g(k)=2k\), la cual 
+        es estrictamente creciente. 
+      </li>
+      <li>
+        \((a_{k+1})_{k=1}^\infty\), pues está dada 
+        mediante la función \(g(k)=k+1\), la cual es 
+        estrictamente creciente.
+      </li>
+      <li>
+        \((a_{k^2})_{k=1}^\infty\), pues está dada 
+        por la función \(g(k)=k^2\), la cual es 
+        estrictamente creciente.
+      </li>
+    </ul>
+  </p>
+  <p>
+    Casos  que no dan subsucesiones son:
+     <ul>
+      <li>
+        \((a_1,a_1,a_1,\dots)\), es decir, repetir el mismo
+        elemento; no es subsucesión pues se obtiene con 
+        la función \(g(k)=1\), la cual no es estrictamente 
+        creciente,
+      </li>
+      <li>
+        \((a_2,a_1,a_4,a_3,...)\), es decir, intercambiar los 
+        roles de los pares a impares; no es subsucesión 
+        pues la función que origina ésta lista satisface 
+        \(g(1)=2\), \(g(2)=1\), por lo que  
+        \(g\) no es estríctamente creciente.
+      </li>
+     </ul>
+
+    
+    
+
+  </p>
+</div>
+
+
+<div class="teorema-box">
+  <h2 class="number-title" id="Teo:IntervalosCerradosAnidados"> Teorema </h2>
+  <h3> De los intervalos cerrados anidados de Cantor</h3>
+  <p>
+    Sea \(([a_n,b_n])_{n=1}^\infty\) una sucesión de intervalos en \(\mathbb{R}\) que satisface: 
     <ol>
-      
       <li>
-        \(e^0=1\).
+        Para toda \(n\), \([a_{n+1}, b_{n+1}] \subseteq [a_n,b_n]\) (están anidados).
       </li>
       <li>
-        Para todo \(x\in \mathbb{R}\), \(e^x >0\).
-      </li>
-      <li>
-        Si \(x < 0\) entonces \(e^x < 1 \). Si \( x > 0\) entonces \(e^x >1 \).
-      </li>
-      
-      <li>
-        Para todo \(x\in \mathbb{R}\), \(e^{-x}=\frac{1}{x}\).
-      </li>
-      <li>
-        Para todos \(x,y\in \mathbb{R}\), \(\frac{e^x}{e^y}=e^{x-y}\).
-      </li>
-      <li>
-        Si \(x < y\) entonces \(e^x < e^y\). Es decir, la función exponencial es 
-        estrictamente creciente. Sugerencia: usare el inciso anterior y el inciso 3.
-      </li>
-      <li>
-        Para todo \(x\in \mathbb{R}\) y todo \(r \in \mathbb{Q}\),
-        \((e^x)^q=e^{xq}\).
+        Las longitudes de los intervalos tienden a cero, es decir 
+        \[
+          \lim_{n\to \infty} (b_n-a_n) = 0.
+        \]
       </li>
     </ol>
   </p>
-  <button class="respButton hvr-grow "> Demostración 1-4 </button>
-  <div class="resp-box flexbox">
-    <div class="video flexbox">
-      <a href="https://youtu.be/NLbJ1T9b_68" target="_blank" > Video </a>
-    </div>
+  <p>
+    Entonces existe un número real \(x_0\) tal que 
+    \[
+      \cap_{n=1}^\infty [a_n,b_n]=\{x_0\}
+    \]
+  </p>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title" id="Ejer:TeoremaBolzanoWeirestrass"> Teorema </h2>
+  <h3 > Bolzano-Weirestrass  </h3>
+
+  <p>
+  Sea \((x_n)_{n=1}^\infty\) una sucesión contenida en \([a,b]\).
+  </p>
+  <p>
+  Demuestra que existe \(x_0\in [a,b]\) y
+  \((x_{n_k})_{k=1}^\infty\) una subsucesión de \((x_n)_{n=1}^\infty\) tal
+  que \(\lim_{k\to \infty} x_{n_k}=x_0\).
+  </p>
+
+  <button class="respButton hvr-grow "> Prueba </button>
+      <div class="resp-box flexbox">
+    <p>
+      La idea de la prueba es dividir en mitades el intervalo \([a,b]\) de manera consecutiva para 
+      ir "cazando" el límite (\(x_0\) en la notación del teorema).
+    </p>
+    <p>
+      Por notación dado un intervalo cerrado \(J\) calquiera, denotamos \(J_i\) su mitad 
+      izquierda y \(J_d\) su mitad derecha. De manera precisa si \(J=[c,d]\) entonces 
+      \[J_i=[a,(a+b)/2], J_d=[(a+b)/2, b]\]
+      Nota que \(\textrm{longitud}(J_i)=\frac{1}{2}\textrm{longitud}(J)\)  
+      y \(\textrm{longitud}(J_d)=\frac{1}{2}\textrm{longitud}(J)\).
+    </p>
+    <p>
+      Denotemos \(I=[a,b]\). Ahora nos fijamos en los puntos de la sucesión que caen en cada uno de los lados
+      izquierdo y derecho. Para esto definimos 
+      \[
+      N(I_i)=\{n\in \mathbb{N}: x_n\in  I_i \}, \, N(I_d)=\{n\in \mathbb{N}: x_n\in  I_n \}
+      \]
+      Ya que \(\mathbb{N}=N(I_i)\cup N(I_d)\) alguno de los uniendos debe ser infinito. Denotemos 
+      por \(I^{(1)}\) la mitad para la cual \(N(I^{(1)})\) es infinito. Fijamos un \(n_1\in N(I^{(1)})\), 
+      éste será el primer elemento de nuestra subsucesión.
+    </p>
+    <p>
+      Ahora dividimos a \(I^{(1)}\) en dos partes y aplicamos el mismo procedimiento.
+      \[
+      N(I^{(1)}_i)=\{n\in \mathbb{N}: x_n\in  I_i^{(1)} \}, \, N(I^{(1)}_d)=\{n\in \mathbb{N}: x_n\in  I_n^{(1)} \}
+      \]
+      Ya que \(\mathbb{N}=N(I^{(1)}_i)\cup N(I^{(1)}_d)\) alguno de los uniendos debe ser infinito. Denotemos 
+      por \(I^{(2)}\) la mitad para la cual \(N(I^{(2)})\) es infinito. Puesto que 
+      \(N(I^{(2)})\) es infinito podemos tomar  \(n_2\in N(I^{(2)})\) y \(n_2 > n_1\). 
+      Este será el segundo  elemento de nuestra subsucesión.
+    </p>
+    <p>
+      Continuando de esta manera si tenemos elegido el intervalo \(I^{(k)}\) lo dividimos en dos 
+      y consideramos 
+      \[
+      N(I^{(k)}_i)=\{n\in \mathbb{N}: x_n\in  I_i^{(k)} \}, \, N(I^{(k)}_d)=\{n\in \mathbb{N}: x_n\in  I_n^{(k)} \}
+      \]
+      Ya que \(\mathbb{N}=N(I^{(k)}_i)\cup N(I^{(k)}_d)\) alguno de los uniendos debe ser infinito. Denotemos 
+      por \(I^{(k+1)}\) la mitad para la cual \(N(I^{(k+1)})\) es infinito. Puesto que 
+      \(N(I^{(k+1)})\) es infinito podemos tomar  \(n_{k+1}\in N(I^{(k+1)})\) y \(n_{k+1} > n_k\). 
+      Este será el \((k+1)\)-ésimo  elemento de nuestra subsucesión.
+    </p>
+    <p>
+      Por construcción es claro que \((x_{n_k})_{k=1}^\infty\) es una subsucesión de \((x_n)_{n=1}^\infty\).
+    </p>
+    <p>
+      Como dividimos en dos cada vez tenemos que 
+      \[
+      \textrm{longitud}(I^{(k)})=\frac{1}{2^k}\textrm{longitud}(I)
+      \]
+      y por construcción \(I^{(k+1)}\subseteq I^{(k)}\). Por el Teorema de Intervalos cerrados anidados 
+      tenemos que 
+      \[
+      \cap_{k=1}^\infty I^{(k)}=\{x_0\}
+      \]
+      Resta probar que \(\lim_{k\to \infty} x_{n_k}=x_0\). Para ésto notamos que 
+      para toda \(k\), \(x_{n_k}, x_0 \in I^{(k)} \) por lo que 
+      \[
+      |x_{n_k}-x_0|\leq \textrm{longitud}(I^{(k)})=\frac{1}{2^k}\textrm{longitud}(I)
+      \]
+      aplicando límite cuando \(k\to \infty\) en ambos lados de la desigualdad anterior concluimos 
+      \[
+      \lim_{k\to \infty}|x_{n_k}-x_0|=0
+      \]
+      lo que implica 
+      \[
+        \lim_{k\to \infty} x_{n_k}=x_0.
+      \]
+    </p>
   </div>
 </div>
 
-
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-  Toma \(h\in(-1,1)\) fija y arbitraria.
-
-<ol>
-<li>
-Demuestra que para todo \(n\in \mathbb{N}\)
-
-\[
-1+h \leq \left( 1+\frac{h}{n} \right)^n  \leq (1-h)^{-1}
-\]
-</li>
-
-<li>
-Usando el inciso anterior prueba
-\[
-h \leq e^h-1\leq \frac{h}{1-h}
-\]
-</li>
-
-<li>
-Finalmente, demuestra que
-\[
-\lim_{h\to 0}\frac{e^h-1}{h}=1
-\]
-</li>
-
-<button class="respButton hvr-grow "> Demostración </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <a href="https://youtu.be/6MXOY6GKazo" target="_blank" > Video </a>
-              </div>
-            </div>
-</ol>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Demuestra que la función exponencial es diferenciable en todo
-punto de \(\mathbb{R}\) con
-\[
-\frac{d e^x}{dx}=e^x
-\]
+  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
+   Demuestra \(\lim_{n\to \infty} \frac{n}{2^n}=0\).
 </div>
 
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:ODEMasImportante"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
+  <p>
+   Sea \(t>0\). Demuestra que
+  \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
+  </p>
 
-
-<p>
-  Sea \(f:[a,b] \to \mathbb{R}\) una
-  función continua en \([a,b]\) y diferenciable en \((a,b)\) que satisface
+  <p>
+  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
+  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>k\), factoriza
   \[
-  f'(x)=f(x), \quad \forall x\in (a,b).
+  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{t^{m-k}}{(k+1)(k+2)\cdots m}
   \]
-  Demuestra que existe una constante \(c\) tal que \(f(x)=ce^x\), para todo \(x\in (a,b)\).
-  
-</p>
-<p>
-  Sugerencia: deriva la función \(\frac{f(x)}{e^x}\).
-</p>
-<p>
-  Este ejercicio se puede pensar en términos de ecuaciones diferenciales.
-  El ejercicio dice que, excepto por  constantes, la única función
-  \(f\) que satisface \(f'=f\) (una ecuación diferencial) es la exponencial.
-</p>
+  después, con esta factorización, prueba la desigualdad
+  \[
+  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
+  \]
+  con \(C=\frac{t^k}{k!}\).
+  </p>
+</div>
 
+
+<div class="definicion-box">
+<h2 class="number-title"> Definición </h2>
+<p>
+Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
+todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
+para todos \(n,m \geq N\)
+\[
+|x_n-x_m|<\varepsilon
+\]
+</p>
+<p>
+  La idea de las sucesiones de Cauchy es que son sucesiones para las 
+  cuales los elementos de la sucesión se van hacercando entre sí. 
+</p>
+</div>
+  
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \((a_n)_{n=1}^\infty\) una sucesión de Cauchy. Supón que existe 
+    una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente de \((a_n)_{n=1}^\infty\).
+    Denotemos \(L=\lim_{k\to \infty}a_{n_k}\). Prueba que \((a_n)_{n=1}^\infty\)
+    también es convergente con 
+    \[
+    \lim_{n\to \infty} a_n=L.
+    \]
+  </p>
+</div>
+
+
+<div class="teorema-box">
+
+  <h2 class="number-title"> Teorema </h2>
+  <h3 > Completez de \(\mathbb{R}\) </h3>
+
+  Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
+  satisface el criterio de Cauchy.
 
 </div>
 
 
 
-  </div>
+    </div>
 </body>
 
   </html>

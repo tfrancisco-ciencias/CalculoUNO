@@ -78,599 +78,410 @@
 
       <!-- This part is for title in tab-->
       <title id="Sec"> § 12 </title>
-      
     
   </head>
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> Continuidad</h1> 
-        <!-- this part is for next and prev sections -->
+    <h1 class="number-title flexbox"> La función exponencial </h1> 
+    <!-- this part is for next and prev sections -->
 <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
 <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
-
-           
 
 
 <div class="info-box">
   <h2 class="number-title"> Introducción </h2>
   <p>
-    La noción formal de continuidad tomó varios años en desarrollarse tal vez porque a 
-    primera vista parece algo sencillo. En términos de la gráfica de una función, 
-    una función es continua si se puede dibujar su gráfica "de manera continua", "sin 
-    despegar el lápiz" o "de tal forma que no tenga saltos". Fue Cauchy el que usó la idea 
-    de límite para definir la continuidad y tal vez más importante define la noción 
-    de continuidad <i>para un punto</i>, no en términos de toda la gráfica si no 
-    que fija un punto \(x_0\) en el dominio de la función y define la continuidad 
-    en \(x_0\) analizando el comportamiento de los valores de la función cercanos a 
-    \(x_0\).
+    La función exponencial es tal vez una de las funciones más importantes en las 
+    matemáticas pues tiene montones de aplicaciones: interés compuesto, 
+    crecimiento de poblaciones (personas, bacterias, virus etc.), sistemas de ecuaciones diferenciales,
+    gometría diferencial, teoría de números, análisis funcional. Para una lista de algunos temas donde 
+    aparece funciones de tipo exponencial (por que hay varias) puede visitarse 
+    <a href="https://en.wikipedia.org/wiki/List_of_exponential_topics">esta lista en  wikipedia</a>.
+
+
   </p>
-</div>
-
-
-<div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
-<p>
-  Sea \(f\) una función definida en una vecindad de \(a\). Decimos que \(f\) es
-  continua en \(a\) si,
-  
-  \[
-  \lim_{x\to a}f(x)=f(a).
-  \]
-</p>
-<p>
-  Lo que nos está diciendo el límte anterior es que los valores de la función 
-  cercanos al punto  \(a\) se van aproximando a \(f(a)\). Hay importante
-  resaltar que a pesar que los valores de la función se van aproximando a 
-  valor \(f(a)\) ésto no quiere decir que se están aproximando de una manera 
-  sencilla. En los ejemplos que  siquen se pueden ver que la función puede oscilar 
-  mucho cerca de un punto y sin embargo la función es continua en un punto dado. 
-</p>
-<p>
-  Otro aspecto importante es que la definición de continuidad es <i>local</i>,
-  es decir, cerca del punto donde se está haciendo el análisis. Si uno se mueve
-  a otro punto en el domino de la función la continuidad pude perderse. Por esta 
-  razón las funciones que tienen "mejores" propiedades (por decirlo 
-  de alguna forma) son aquellas que son continuas en todo su dominio de 
-  definición.
- </p>
-<!--<p>
-  Escribiendo el límite anterior usando la definción 
-  epsilon-delta, tenemos que la función 
-  es continua en el punto \(a\)  sii para toda \(\varepsilon>0\) existe \(\delta>0\) tal que
-  \[
-  |x-a|<\delta \Rightarrow |f(x)-f(a)|<\varepsilon.
-  \]
-  
-</p>-->
-
-</div>
-
-
-
-<div class="nota-box">
-  <h2 class="number-title"> Ejemplos y no-ejemplos </h2>
-  <h3>Ejemplos </h3>
   <p>
-    <ol>
-      <li>
-        Por el <a href="./S5.html#Ejer:LimiteIdentidad">Ejercicio 5.9</a> tenemos que
-        la función identidad, \(f(x)=x\) es continua <i>en todo punto</i>. La 
-        continuidad en todos los puntos de su dominio se ve reflejada en la 
-        gráfica de la función pues, intuitivamente, la gráfica se dibuja 
-        de manera continua (sin "despegar el lápiz").
-      </li>
-      <li>
-        De manera similar, por el <a href="./S5.html#Ejer:LimitLawPoly">Ejercicio 5.15<a>,
-        toda función polinomial \(p(x)=\sum_{k=0}^n a_kx^k\), es continua en 
-        todo punto. 
-      </li>
-      <li>
-        De forma más general el <a href="./S7.html#Ejer:DifImplicaConti">Ejercicio 7.26</a> nos dice que 
-        si una función \(f\) es diferenciable en un punto 
-        \(a\) entonces \(f\) es continua en el punto \(a\). Así pues diferenciabilidad 
-        implica continuidad, pero no al contrario (ver 
-        <a href="#Ejer:ContinuidadValorAbs">Ejercicio 12.5</a>).
-      </li>
-      <li>
-        <p>
-          Hasta ahora los ejemplos que se han mencionado son "bonitos" pues
-        las funciones han sido continuas en todos los puntos de su dominio y en 
-        consecuencia sus gráficas se dibujan "continuamente". El siguiente 
-        ejemplo muestra que una función puede ser continua en un punto \(a\) y su 
-        gráfica puede tener muchos "trozos" alrededor del punto \(a\).
-        </p>
-        <p>
-          Definimos \(f:[-1,1]\to \mathbb{R}\) por 
-          \begin{eqnarray*}
-          f(x)=\left\{
-            \begin{array}{cc} 
-              \frac{(-1)^n}{n+1}  & \frac{1}{n+1} < |x|  \leq \frac{1}{n} \\
-              0 & x=0 
-            \end{array}
-            \right.
-          \end{eqnarray*}
-        </p>
-        <p>
-          Nota que ésta función "da muchos saltos" cerca del cero y sin embargo vamos
-          a probar que \(f\) es continua en cero. 
-        </p>
-        <p>
-          Ya que \(f(0)=0\), para probar la continuidad de ésta función en cero debemos de probar 
-          \(\lim_{x\to 0} f(x)=0\). Usando la definición de epsilon-delta, 
-          debemos de probar que para toda \(\varepsilon >0\) existe 
-          \(\delta >0\) tal que si \(|x|<\delta \) entonces \(|f(x)| < \varepsilon\).
-        </p>
-        <p>
-          Ahora, por la propiedad Arquimideana existe \(N\in \mathbb{N}\) tal que 
-          \(\frac{1}{N}< \varepsilon\). Tomamos  \(\delta = \frac{1}{N}\) y 
-          \(x\in [-1,1]\) con \(0<|x|<\delta\). Al calcular \(f(x)\) encontramos 
-          el natural \(n\) tal que \(\frac{1}{n+1}< |x| \leq \frac{1}{n}\). Se sigue que 
-          \(\frac{1}{n+1}< |x|< \delta = \frac{1}{N}\), por lo tanto 
-          \[
-            |f(x)|=\left| \frac{(-1)^n}{n+1} \right|= \frac{1}{n+1}< \frac{1}{N}< \varepsilon.
-          \]
-          Concluimos pues que \(\lim_{x\to 0} f(x)=f(0)=0\).
-        </p>
+    Para introducir a la función exponencial vamos a considerar el siguiente ejemplo de 
+    interés compuesto.
 
-      </li>
-    </ol>
   </p>
-  <h3> No-ejemplos </h3>
-  <p> A parte de los ejemplos, los no-ejemplos son ilustrativo.
-    <ol>
-      <li>
-        Considera la función \(f:\mathbb{R}\to \mathbb{R}\) dada por 
-        \[
-        f(x)=\left\{
-          \begin{array}{cc}
-          1 & x < 0 \\
-          2 & x \geq 0
-          \end{array}
-          \right.
-        \]
-        
-        La función no es continuia en \(x=0\) pues el límite
-        \(\lim_{x\to 0} f(x)\) no existe ya que los límites laterales son  
-        \[
-          \lim_{x\to 0^-} f(x)=1, \lim_{x\to 0^+} f(x)=2
-        \]
-        los cuales son distintos.
-      </li>
-      <li>
-        Considera la función \(f:\mathbb{R}\to \mathbb{R} \) dada por 
-        \[
-          f(x)=\left\{
-            \begin{array}{cc}
-            1 & x\ne  0 \\
-            -2 & x =0
-            \end{array}
-          \right.
-        \]
-        La función no es continua en \(x=0\) pues a pesar de que el límite
-        \(\lim_{x\to 0} f(x)=1\) existe, no es igual al valor de la función en 
-        \(x=0\), que es \(f(0)=-2\).
-      </li>
-      <li>
-        La función de Dirichlet está dada por \(D:[0,1]\to \mathbb{R}\)
-        \[
-          D(x)=\left\{
-            \begin{array}{cc} 
-            1 & x \in \mathbb{Q} \\
-            0 & x \notin \mathbb{Q}
-            \end{array}
-          \right.
-        \]
-      </li>
-      Para cualquier punto \(x_0\in [0,1]\), \(D\) no es continua en \(x_0\)
-      pues el límite \(\lim_{x\to x_0}D(x)\) no existe, razón:
-      supongamos que el límite existe y es igual a un númeor \(L\), 
-      \[ 
-      \lim_{x\to x_0} D(x)=L,
-      \] 
-      para  \(\varepsilon =1/3\), existe una vecindad perforada donde \(|D(x)-L|< 1/3\)
-      para todo \(x\) en la vecindad. Ahora,  si \(x\) es racional 
-      entonces \(| 0 -L|< 1/3\) es decir \(-1/3< L< 1/3\); si \(x\) es irracional \(|1-L|< 1/3\) y al abrir el valor 
-      absoluto lleva a que \( 2/3< L< 4/3 \), contradiciendo la desigualdad anterior.
-    </ol>
+
+
+</div>
+
+
+  <div class="nota-box">
+    <h2 class="number-title"> Ejemplo </h2>
+    <h3> Interés compuesto </h3>
+  <p>
+    Por \(P_0\) denotamos cierta cantidad de dinero (llamado principal)
+    el cual se invertirá anualmete con una tasa de interés del \(100 r\)
+    porciento, con \(0< r < 1\). Por ejemplo, si el interés es el 5% entonces  \(r=0.05\).
+    Al final del año el principal arroja una ganancia de \((0.05)P_0\) y el 
+    total de la inversión tendrá un valor de 
+    \[
+      P_0+(0.05)P_0=P_0(1+0.05).
+    \]
+    Para un interés arbitrario \(r\), al final del año el total de la inversión es 
+    \[
+      P_0+rP_0=P_0(1+r)
+    \]
+  </p> 
+
+  <p>
+   Ahora veamos qué pasa cuando se reinvierte el principal inicial junto con la 
+   ganancia a los seis meses. El valor total de la inversión inicial  a los  seis meses 
+   es 
+  \begin{equation}\label{Eqn:InteresCompAux1}
+    P_1:=P_0\left(1+\frac{r}{2}\right).  
+  \end{equation}
+  Nota: debe ser \(\frac{r}{2}\) pues originalmente \(r\) representa el interés anual y 
+  sólo se invierte por seis meses. 
   </p>
+  <p>
+    Ahora vamos a usar a \(P_1\)  como principal y reinvertirlo por los seis meses restantes. 
+    Al final del año el valor total de la inversión es
+    \begin{equation}\label{Eqn:InteresCompAux2}
+    P_2:=P_1\left(1+\frac{r}{2}\right)=P_0 \left( 1+ \frac{r}{2}\right)^2
+    \end{equation}
+  </p>
+  <p>
+    Comparando \eqref{Eqn:InteresCompAux1} y \eqref{Eqn:InteresCompAux2} vamos que el principal 
+    sólo se ve afectado por  los factores \((1+r)\) y \((1+r/2)^2\) y tenemos que 
+    \[
+    1+r < \left(1+\frac{r}{2} \right)^2=1+r+\frac{r^2}{4}
+    \]
+    lo cual tiene sentido pues al reinvertir a los seis meses se espera una ganancia mayor.
+  </p>
+  <p>
+    Siguiendo con un análisis similar, si el valor total de la inversión se reinvierte 
+    cada 4 meses (es decir, 3 veces al año) tenemos que la inversión original va creciendo 
+    como 
+    \begin{eqnarray*}
+     P_0 & \rightarrow P_1=P_0\left(1+\frac{r}{3} \right)\\
+         &  \rightarrow P_2:=P_1\left( 1+\frac{r}{3}\right)  \\
+        & \rightarrow P_3:=P_2\left(1+\frac{r}{3} \right) 
+    \end{eqnarray*}
+    Por lo tanto, al final del año la inversión total vale 
+    \[
+      P_3=P_2\left(1+\frac{r}{3} \right) =P_1\left(1+\frac{r}{3} \right)^2=P_0\left(1+\frac{r}{3} \right)^3.  
+    \]
+  </p>
+
+  <p>
+  Más en general, si el valor total de la inversión  (principal más ganancia) se reinvierte \(n\)-veces al año 
+  el valor total al final de año es
+  \[
+  P_n=P_0\left(1+\frac{r}{n}\right)^n.
+  \]
+  </p>
+
+  <p>
+  En teoría, si el valor total de la inversión se reinvirtiera cada instante del año,
+  el capital al final del año tendería a 
+  \[
+  \lim_{n\to \infty} P_0\left(1+\frac{r}{n}\right)^n.
+  \]
+  </p>
+
+  <p>
+    Lo sorprendente es que el límite 
+    \[
+    \lim_{n\to \infty} \left(1+\frac{r}{n}\right)^n
+    \]
+    siempre existe para todo \(r\in \mathbb{R}\) y es más, existe un número, denotado 
+    \(e\) (llamado la constante de Euler) para el cual 
+    \[
+    \lim_{n\to \infty} \left(1+\frac{r}{n}\right)^n=e^r.
+    \]
+    Nota: a pesar que \(e\) se llama el número de Euler, este ejemplo del interés compuesto
+    se debe a Jacob Bernoulli.
+  </p>
+  <p>
+    En los ejercicios que siguen se exploran las propiedades de las
+    expresiones 
+    \[
+      \left( 1+\frac{r}{n} \right)^n.
+    \]
+    Advertencia: esta sección es bastante técnica pero al ser la función exponencial 
+    tal importante creemos que es importante presentar todos los detalles.
+  </p>
+
 </div>
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  Sea \(f\) una función definida en una vecindad de \(a\). Demuestra que
-  \(f\) es continua en \(a\) si y sólo si
-  \[
-  \lim_{h\to 0} f(a+h)=f(a)
-  \]
+  <h2 class="number-title" id="Ejer:Exp1"> Ejercicio </h2>
 
 
- <button class="respButton hvr-grow "> Solución  </button>
-            <div class="resp-box flexbox">
-              
-                <p>
-                  Este ejercicio es simplemente una forma diferente de escribir el límite 
-                  \(\lim_{x\to a} f(x)=f(a)\). Iniciamos escribiendo los límites relevantes usando la notación 
-                  de \(\varepsilon, \delta\). 
-                </p>
-                <p>
-                  Para  \(\lim_{x\to a} f(x)=f(a)\) tenemos que para toda 
-                  \(\varepsilon >0\) existe \(\delta > 0\) tal que 
-                    \begin{equation}\label{Ejer:EqnEquivNotacionContinuidad1}
-                       0<|x-a |<\delta \Rightarrow |f(x)-f(a)| < \varepsilon.
-                    \end{equation}  
-                </p>
-                
-                
-                <p>
-                  Para \(\lim_{h\to 0} f(a+h)=f(a)\) tenemos que para toda 
-                  \(\varepsilon > 0\) existe \(\delta >0\) tal que 
-                  \begin{equation}\label{Ejer:EqnEquivNotacionContinuidad2}
-                     0<|h|<\delta \Rightarrow |f(a+h)-f(a)| < \varepsilon.
-                  \end{equation}
-                </p>
-                
-                <p>
-                  Sólo notamos que para pasar de \eqref{Ejer:EqnEquivNotacionContinuidad1}
-                  a \eqref{Ejer:EqnEquivNotacionContinuidad2} tomamos \(h=x-a\) y 
-                  para pasar de \eqref{Ejer:EqnEquivNotacionContinuidad2} a 
-                  \eqref{Ejer:EqnEquivNotacionContinuidad1} tomamos \(x=a+h\).
-                </p>
-                
-              
-            </div>
-
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:ContinuidadValorAbs"> Ejercicio </h2>
-  Demuestra que la función \(f:\mathbb{R}\to \mathbb{R}\) dada por 
-  \(f(x)=|x|\) es continua
-  en todo punto de \(\mathbb{R}\) pero no es diferenciable en \(x=0\).
-<P>
-  Nota: este ejercicio muestra que continuidad no implica diferenciabilidad.
-</P>
- <p>
-
- </p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-    Encuentra los puntos donde las siguientes funciones son continuas.
-  </p>
-  <p>
-    Nota: por \(\lfloor x \rfloor\) denotamos a el mayor entero menor a igual a 
-    \(x\), por ejemplo \(\lfloor 2.75 \rfloor =2 , \lfloor -1.2 \rfloor= -2\). Nota 
-    que se tiene \(\lfloor x \rfloor \leq x < \lfloor x \rfloor +1\).
-  </p>
+  Sea \(x\in \mathbb{R}\), fija y arbitraria.
 <ol>
 <li>
-    la función \(f(x)=\lfloor x \rfloor\), \(x\in \mathbb{R}\).
+  Para \(n,m\in \mathbb{R}\) con \(-x< m < n\) se satisface:
+\[
+\left(1+\frac{x}{m}\right)^m \leq \left(1+\frac{x}{n}\right)^n.
+\]
+donde la igualdad se da si y sólo si \(x=0\).
 </li>
 <li>
-  la función \(f(x)=\lfloor \frac{1}{x} \rfloor\), \(x\in \mathbb{R}\),
-\(x\ne 0\).
-</li>
-<li>
-  la función \(f(x)=\lfloor \sqrt{x} \rfloor\), \(x\in \mathbb{R}\),
-\(x\geq 0\).
-</li>
-<li>
-  la función \(f(x)=\lfloor x^2 \rfloor\), \(x\in \mathbb{R}\).
+Para \(n,m\in \mathbb{R}\) con \(x< m < n\) se satisface:
+\[
+\left(1-\frac{x}{n}\right)^{-n} \leq \left(1-\frac{x}{m}\right)^{-m}.
+\]
+donde la igualdad se da si y sólo si \(x=0\).
 </li>
 </ol>
-<button class="respButton hvr-grow "> Solución 1 y 3  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <a href="https://youtu.be/Sw-oetngMv8" target="_blank" > Video </a>
-              </div>
-            </div>
 
-</div>
+Sugerencia: usar la desigualdad aritmética geométrica.
 
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-<p>
-  Considera la función \(f(x)=x(-1)^{\lfloor x \rfloor }\), para \(x\ne 0\).
-  ¿  Puede definirse \(f(0)\) para que \(f\) sea continua en \(0\)?
-</p>
-<p>
-  Nota: por \(\lfloor x \rfloor\) denotamos a el mayor entero menor a igual a 
-    \(x\).
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Considera la función de Dirichlet  \(D:\mathbb{R}\to \mathbb{R}\) dada por
+Para la primera tomar
 \[
-D(x)=
-\left\{
-\begin{array}{cc}
-1, & \textrm{\(x\) racional,} \\
-0 ,& \textrm{\(x\) irracional.}
-\end{array}
-\right.
+a_1=\cdots=a_m= 1+\frac{x}{m}, \quad a_{m+1}=\cdots =a_n=1
 \]
-y considera las funciones \(g(x)=xD(x), h(x)=x^2D(x)\), \(x\in \mathbb{R}\).
-<ol>
-<li>
-  Prueba que \(h\) es diferenciable en \(x=0\) (y por lo tanto 
-  continua en \(x=0\)).
-</li>
-<li>
-  Prueba que \(g\) es continua en \(x=0\) pero no es diferenciable en \(x=0\).
-</li>
-</ol>
-<button class="respButton hvr-grow "> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <a href="https://youtu.be/Sw-oetngMv8" target="_blank" > Video </a>
-              </div>
-            </div>
+Para la segunda tomar
+\[
+a_1=\cdots=a_m=1-\frac{x}{m}, \quad a_{m+1}=\cdots=a_n=1
+\]
 </div>
 
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:DesigualdadPrincipalSeno"> Ejercicio </h2>
-   Para \(x\) que satisface
-\(0<|x|< \frac{\pi}{2}\) demuestra
+  <h2 class="number-title" id="Ejer:Exp2"> Ejercicio </h2>
+
+Sea \(x\in \mathbb{R}\) fijo y arbitrario con \(x\ne 0\).
+Para \(k\in \mathbb{N}\) con \(k > |x|\):
+
 \[
-|\sen(x)|<|x|.
+\left( 1+\frac{x}{k} \right)^k < \left( 1-\frac{x}{k} \right)^{-k}.
 \]
-
-Concluye que \(\lim_{x\to 0}\sen(x)=0\).
-
-Sugerencia: para \(x\) medido en radianes, el ángulo \(x\) se puede interpretar
-como \(2\times (\sphericalangle AOB)\),
-donde \(AOB\) es el segmento circular, del circulo unitario, que abre
-un ángulo \(x\).
 </div>
 
-
-
-<!--<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Demuestra que la función \(\sen: \mathbb{R} \to \mathbb{R}\) es
-continua en todo \(R\).
-
-Sugerencia: demuestra que, para toda \(a\in \mathbb{R}\),
-\(\lim_{h\to 0}\sen(a+h)=\sen(a)\). Para lo anterior
-utiliza la fórmula para el seno de una suma y el
-<a href="#Ejer:DesigualdadPrincipalSeno">Ejercicio 12.8</a>.
-</div>-->
-
-
-<!--<div class="ejercicio-box">
+<div class="ejercicio-box">
 <h2 class="number-title"> Ejercicio </h2>
-Demuestra que la función \(\cos: \mathbb{R} \to \mathbb{R}\) es
-continua en todo \(\mathbb{R}\).
 
-Sugerencia: primero demuestra la identidad \(\cos(2\alpha)=1-2\sen^2(\alpha)\).
-</div>-->
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-<p>
-  Sea \(f\) una función definida en una vecindad del punto  \(L\) y continua \(L\). 
-  Sea \(g\)  una función definida en una vecindad agujereada de \(a\) tal que
-  \(\lim_{x\to a}g(x)=L\) 
-</p>
-<p>
-  Prueba que 
-  \[
-  \lim_{x\to a}f(g(x))=f(L)
-  \]
-</p>
-<p>
-  Lo cual se puede escribir como 
-  \[ 
-  \lim_{x\to a} f(g(x))=f(\lim_{x\to a} g(x))
-  \]
-  es decir, podemos "meter el límite" para funciones continuas 
-  (¡siempre y cuando el límite de adentro exista!).
-</p>
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Sea \(g\) una función definida en una vecindad de \(x_0\) y continua en
-\(x_0\). Sea \(f\) una función definida en una vecindad de \(g(x_0)\)
-y continua en \(g(x_0)\). Demuestra que la composición \(f \circ g\) es continua en \(x_0\).
-<p>
-  Sugerencia: aplica directamente el ejercicio anterior.
-</p>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-Proporciona ejemplos de funciones \(f\) y \(g\) tales que
-<ol>
-<li>
-  Ni \(f\) ni \(g\) son continuas en \(1\), pero \(f+g,f-g\), \(fg\) son continuas
-en \(1\).
-</li>
-<li>
-  \(g\) es discontinua en \(0\), \(f\) es discontinua en \(g(0)\) pero \(f\circ g\)
-es continua en \(0\).
-</li>
-</ol>
-</div>
-
-
-<div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
-Sea \(f\) una función definida en un intervalo de la forma \([a,b)\).
-
-Decimos que \(f\) es continua por la derecha en \(a\) si
+Sea \(x\in \mathbb{R}\) fijo y arbitrario. Entonces los
+siguientes límites existen
 \[
-\lim_{x\to a^+}f(x)=f(a).
+\lim_{n \to \infty}\left( 1+\frac{x}{n} \right)^n,
+\quad
+\lim_{n \to \infty } \left( 1- \frac{x}{n} \right)^{-n}.
 \]
 
-Sea \(f\) una función definida en un intervalo de la forma \((a,b]\).
 
-Decimos que \(f\) es continua por la izquierda en \(b\) si
+Sugerencia: Considera las sucesiones 
 \[
-\lim_{x\to b^-}f(x)=f(b).
+a_n= \left( 1+\frac{x}{n} \right)^n, \quad 
+b_n=\left( 1- \frac{x}{n} \right)^{-n}.
 \]
-
+Usa   <a href="#Ejer:Exp1">Ejercicio 11.3</a>
+para demostrar que  \((a_n)_{n=1}^\infty\) es monótona 
+creciente y \((b_n)_{n=1}^\infty\) es monótona decreciente. Después 
+prueba que \((a_n)_{n=1}^\infty\) está acotada superiormente y 
+que \((b_m)_{m=1}^\infty\) está acotada inferiormente. Finalmente 
+concluye usando el <a href="./S10.html#Ejer:TeoremaConvergenciaMonotonaSucesiones"> Ejercicio 10.9</a>.
 </div>
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+  <h2 class="number-title" id="Ejer:IgualdadLimitesExponencial"> Ejercicio </h2>
 
-Sea \(f\) una función definida en una vecindad de \(a\). Prueba que \(f\)
-es contina en \(a\) si y sólo si \(f\) es continua por la derecha y por
-la izquierda en \(a\).
-</div>
-
-
-<div class="definicion-box">
-  <h2 class="number-title"> Definición </h2>
-
-Decimos que una función \(f:[a,b]\to \mathbb{R}\) es continua en \([a,b]\) si:
-<ol>
-<li>
-  para todo \(c \in (a,b)\),  \(\lim_{x\to c}f(x)=f(c)\);
-</li>
-<li>
-  \(\lim_{x\to a^+} f(x)=f(a)\);
-</li>
-<li>
-  \(\lim_{x\to b^-}f(x)=f(b)\).
-</li>
-</ol>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:BabyLipschitz"> Ejercicio </h2>
-
-Sea \(f:[a,b]\to \mathbb{R}\) una función
-que satisface: \(|f(u)-f(v)| \leq |u-v|\), para todos \(u,v\in [a,b]\).
 Demuestra que
-\(f\) es continua en todo el intervalo \([a,b]\).
+\[
+\lim_{n\to \infty} \left(  1+ \frac{x}{n}\right)^{n} \quad
+=\lim_{n\to \infty}\left(  1- \frac{x}{n}\right)^{-n}
+\]
+
+Sugerencia:  con \(n>|x|\), toma \(b=(1-x/n)^{-1}, a=(1+x/n)\); usa el
+<a href="./S1.html#Eqn:Resolvent">Ejercicio 1.18</a> para estimar \(b^n-a^n\) y obtener
+\[
+0\leq b^n-a^n \leq \frac{x^2}{n-x}\left( 1 -\frac{x}{n} \right)b^n.
+\]
+Finalmente toma  límite \(n\to \infty\).
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+Definimos la función exponencial, denotada \(exp(x)\) o simplemente \(e^x\) como
+la función \(exp:\mathbb{R}\to \mathbb{R}\) dada por 
+\[
+e^x:=\lim_{n \to \infty}\left( 1+\frac{x}{n} \right)^n
+= \lim_{n \to \infty} \left( 1- \frac{x}{n} \right)^{-n}
+\]
+Nota: por el <a href="#Ejer:IgualdadLimitesExponencial">Ejercicio 11.6</a> ambos 
+límites que aparecen en esta definición son iguales.
 </div>
 
 
 
 <div class="ejercicio-box">
-<h2 class="number-title"> Ejercicio </h2>
-Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\).
+  <h2 class="number-title"> Ejercicio </h2>
+
+Sean \(x,y\in \mathbb{R}\) fijos y arbitrarios y toma
+\(n\in \mathbb{N}\) tal que \(n>-x,-y,-(x+y)\).
 
 <ol>
 <li>
-  Demuestra que la función \(|f|\) es continua en todo \([a,b]\).
+Demuestra que
+\begin{eqnarray*}
+& \left| \left( 1+\frac{x}{n} \right)^n\left(1+\frac{y}{n} \right)^n-
+\left( 1+\frac{x+y}{n}\right)^n \right| \leq
+\\
+& \frac{|xy|}{n^2}
+\sum_{k=0}^{n-1} \left(\left( 1+\frac{|x|}{n}\right)
+\left( 1+\frac{|y|}{n}\right) \right)^k
+\left( 1+\frac{|x|+|y|}{n}\right)^{n-k-1}
+\end{eqnarray*}
 </li>
 <li>
-¿ Es el regreso del inciso anterior cierto? Es decir,
-si \(|f|\) es continua en
-\([a,b]\) entonces \(f\) es continua en \([a,b]\). Demostrar o dar un contraejemplo.
-</li>
-</ol>
-</div>
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Sean \(g:[a,b]\to [c,d]\), \(f:[c,d]\to \mathbb{R}\)  funciones  continuas
-en \([a,b]\) y \([c,d]\), respectivamente. Demuestra que la composición
-\(f \circ g:[a,b]\to \mathbb{R}\) es continua en todo \([a,b]\).
-</div>
-
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-
-Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\) y sea
-\(g:[b,c]\to \mathbb{R}\) una función continua en todo
-\([b,c]\). Prueba que si \(f(b)=g(b)\) entonces la función
-\(h:[a,c]\to \mathbb{R}\) dada por
+Demuestra que
 \[
-h(x)=\left\{
-\begin{array}{cc}
-f(x) & a\leq x \leq b \\
-g(x) & b< x\leq c
-\end{array}
-\right.
+1+\frac{|x|+|y|}{n} \leq \left( 1+\frac{|x|}{n} \right)
+\left(1+\frac{|y|}{n} \right)
 \]
-es continua en todo \([a,c]\).
-<button class="respButton hvr-grow "> Prueba  </button>
+</li>
+<li>
+Usando los dos ejercicios anteriores demuestra que
+\[
+\left| \left( 1+\frac{x}{n} \right)^n\left(1+\frac{y}{n} \right)^n
+- \left( 1+\frac{x+y}{n}\right)^n \right| \leq  \frac{|xy|}{n}e^{|x|}e^{|y|}
+\]
+</li>
+<li>
+Toma límites en el inciso anterior para concluir
+\[
+e^{x}e^y=e^{x+y}
+\]
+</li>
+
+<button class="respButton hvr-grow "> Demostración </button>
             <div class="resp-box flexbox">
               <div class="flexbox">
-                <a href="" target="_blank" > Video </a>
+                <a href="https://youtu.be/Bt8SdbNLtyw" target="_blank" > Video </a>
               </div>
             </div>
+
+</ol>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  <p>
+    Prueba las siguientes propiedades de la función exponencial.
+    <ol>
+      
+      <li>
+        \(e^0=1\).
+      </li>
+      <li>
+        Para todo \(x\in \mathbb{R}\), \(e^x >0\).
+      </li>
+      <li>
+        Si \(x < 0\) entonces \(e^x < 1 \). Si \( x > 0\) entonces \(e^x >1 \).
+      </li>
+      
+      <li>
+        Para todo \(x\in \mathbb{R}\), \(e^{-x}=\frac{1}{x}\).
+      </li>
+      <li>
+        Para todos \(x,y\in \mathbb{R}\), \(\frac{e^x}{e^y}=e^{x-y}\).
+      </li>
+      <li>
+        Si \(x < y\) entonces \(e^x < e^y\). Es decir, la función exponencial es 
+        estrictamente creciente. Sugerencia: usare el inciso anterior y el inciso 3.
+      </li>
+      <li>
+        Para todo \(x\in \mathbb{R}\) y todo \(r \in \mathbb{Q}\),
+        \((e^x)^q=e^{xq}\).
+      </li>
+    </ol>
+  </p>
+  <button class="respButton hvr-grow "> Demostración 1-4 </button>
+  <div class="resp-box flexbox">
+    <div class="video flexbox">
+      <a href="https://youtu.be/NLbJ1T9b_68" target="_blank" > Video </a>
+    </div>
+  </div>
+</div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-En cada inciso, determina los valores de los parámetros dados para que
-la función sea continua en el intervalo dado.
+  Toma \(h\in(-1,1)\) fija y arbitraria.
 
 <ol>
 <li>
-   \(f:[0,3] \to \mathbb{R}\) dada por
+Demuestra que para todo \(n\in \mathbb{N}\)
+
 \[
-f(x)=\left\{
-\begin{array}{cc}
-\sqrt{1-x^2} & 0\leq x \leq 1 \\
-mx+b & 1< x\leq 2 \\
-3 & 2< x \leq 3
-\end{array}
-\right.
+1+h \leq \left( 1+\frac{h}{n} \right)^n  \leq (1-h)^{-1}
 \]
-Determina \(m\) y \(b\)
 </li>
+
 <li>
-\(g:[0,\infty)\to \mathbb{R}\) dada por
+Usando el inciso anterior prueba
 \[
-g(x)=\left\{
-\begin{array}{cc}
-mx+b & 0\leq x < 2 \\
-8 & x=2 \\
-(x-a)^2 & 2< x
-\end{array}
-\right.
+h \leq e^h-1\leq \frac{h}{1-h}
 \]
-
-Determina \(a,b\) y \(m\).
-
-Advertencia: hay múltiples soluciones.
 </li>
+
+<li>
+Finalmente, demuestra que
+\[
+\lim_{h\to 0}\frac{e^h-1}{h}=1
+\]
+</li>
+
+<button class="respButton hvr-grow "> Demostración </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <a href="https://youtu.be/6MXOY6GKazo" target="_blank" > Video </a>
+              </div>
+            </div>
 </ol>
 </div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+Demuestra que la función exponencial es diferenciable en todo
+punto de \(\mathbb{R}\) con
+\[
+\frac{d e^x}{dx}=e^x
+\]
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:ODEMasImportante"> Ejercicio </h2>
+
+
+<p>
+  Sea \(f:[a,b] \to \mathbb{R}\) una
+  función continua en \([a,b]\) y diferenciable en \((a,b)\) que satisface
+  \[
+  f'(x)=f(x), \quad \forall x\in (a,b).
+  \]
+  Demuestra que existe una constante \(c\) tal que \(f(x)=ce^x\), para todo \(x\in (a,b)\).
+  
+</p>
+<p>
+  Sugerencia: deriva la función \(\frac{f(x)}{e^x}\).
+</p>
+<p>
+  Este ejercicio se puede pensar en términos de ecuaciones diferenciales.
+  El ejercicio dice que, excepto por  constantes, la única función
+  \(f\) que satisface \(f'=f\) (una ecuación diferencial) es la exponencial.
+</p>
+
+
+</div>
 
 
 
-    </div>
+  </div>
 </body>
 
   </html>
