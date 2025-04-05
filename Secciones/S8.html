@@ -275,12 +275,12 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
   </p>
   <p>
     Para ilustrar
-    en el dibujo de abajo se tiene el círculo unitario y un ángulo \(\theta\). Al estar 
-    \(\theta\) medido en radianes la longitud del arco de \(A\) a \(B\) es 
-    precisamente \(\theta\).
+    en el dibujo de abajo se tiene el círculo unitario y un ángulo \(\alpha\). Al estar 
+    \(\alpha\) medido en radianes la longitud del arco de \(A\) a \(B\) es 
+    precisamente \(\alpha\).
     <p>
       <div class="flexbox">
-        <img src="./Images/Radianes.jpeg" alt="Radianes" width="30%" height="auto">
+        <img src="./Images/LongitudRadianes.png" alt="RadianesLongitud" width="30%" height="auto">
       </div>
     </p>
 
@@ -291,8 +291,38 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
 
   <p>
     Otra ventaja de los radianes es que están relacionados con el área. De nuevo tomando el círculo 
-    unitario para medir los ángulos, si dibujamos un ámgulo \(\theta\in [0,2\pi]\) el área del 
-    segmento circular que subtiende es precisamente \(\theta\). 
+    unitario para medir los ángulos, si dibujamos un ángulo \(\alpha \in [0,2\pi]\) el área del 
+    segmento circular que subtiende (la "rebanda de pizza"), en la imagen de abajo denotado por \(d\), 
+    es precisamente \(\frac{\alpha}{2}\). 
+    <p>
+      <div class="flexbox">
+        <img src="./Images/AreaRadianes.png" alt="RadianesArea" width="30%" height="auto">
+      </div>
+    </p>
+    <p>
+      Justificación.
+    </p>
+    <p>
+      Sea \(\alpha \in [0,2\pi]\) y sea \(d\) el segmento circular que subtiende el ángulo \(\alpha\) en el círculo unitario. 
+      Queremos probar que \(\textrm{Area}(d)=\frac{\alpha}{2}\).
+    </p>
+    <p>
+      Caso 1: \(\alpha\) es de la forma \(\alpha= \frac{1}{n}2\pi\). En este caso si colocamos  \(n\)-copias del segmento \(d\),
+      uno al lado del otro, obtenemos el círculo unitario por lo  que \(n\textrm{Area}(d)=\pi\) y despejando 
+      tenemos \(\textrm{Area}(d)=\frac{1}{n}\pi=\frac{\alpha}{2}\).
+    </p>
+    <p>
+      Caso 2: \(\alpha= \frac{m}{n}2\pi\), con \(n,m\in \mathbb{N}\), \(m < n\). En este caso tenemos que el mismo 
+      segmento \(d\) puede ser dividido en \(m\) subsegmentos cada uno con un ángulo de \(\frac{1}{n}2\pi\). Si \(d_1, \dots, d_m\)
+      denotan estos subsegmentos tenemos que 
+      \[
+      \textrm{Area}(d)=\sum_{i=1}^m \textrm{Area}(d_i)
+      \]
+      pero por el caso 1, \(\textrm{Area}(d_i)=\frac{1}{n}\pi\) por lo que 
+      \[
+      \textrm{Area}(d)=\sum_{i=1}^m \frac{1}{n}\pi= \frac{m}{n}\pi= \frac{\alpha}{2}.
+      \]
+    </p>
   </p>
 
   <h3> Funciones trigonométricas </h3>
@@ -341,6 +371,69 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
   <p>
 
   </p>
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2> Ejercicio </h2>
+  <p>
+    Sea \(\alpha \in (0,\pi/2)\) y considera el siguiente dibujo,
+      <p>
+        <div class="flexbox">
+    <img src="./Images/AuxiliarLimiteSeno.png" alt="AuxiliarLimiteSeno" width="30%" height="auto">
+        </div>   
+      </p>
+      en donde \(A\) y \(B\) son los puntos en el círculo unitario del segmento de arco que subtiende \(\alpha\), 
+      la recta \(BE\) es tangente a la circunferencia en \(B\) y la recta \(AD\) es tangente a la circunferencia en 
+      \(A\).
+       
+   </p>
+   <p>
+    Prueba que la longitud del segmento de circunferencia que une \(A\) con \(B\) es menor a la distancia 
+    entre los puntos \(A\) y \(D\).
+   </p>
+   <p>
+    Por \(|AD|\) denotamos la distancia entre \(A\) y \(B\). Como estamos midiento \(\alpha\) en radianes,
+    la longitud del arco que une \(A\) con \(B\) es precisamente \(\alpha\) y entonces  
+    debemos de probar que 
+    \[
+    \alpha < |AD|
+    \]
+    Para lo anterior vamos a ver a áreas. Sea \(d\) el segmento circular determinado por \(O,A,B\) 
+    y sea \(P\) el polígono formado por los puntos \(O,A,E,B\). Ya que las rectas \(BE\) y \(AD\) 
+    son tangentes a la circunferencia 
+    y éstas rectas se intersectan en \(E\) tenemos que \(d\subset P\) y por lo tanto
+    \[
+    \textrm{Area}(d) < \textrm{Area}(P),
+    \] 
+    pero \(\textrm{Area}(d)=\frac{\alpha}{2}\) por lo que tenemos 
+    \[
+    \frac{\alpha}{2} < \textrm{Area}(P) \Rightarrow \alpha < 2 \textrm{Area}(P).
+    \]
+    asi pues habremos terminado si probamos 
+    \[
+    2\textrm{Area}(P) < |AD|
+    \]
+    Analizando el área de \(P\) tenemos  
+    \[
+    \textrm{Area}(P)=\textrm{Area}(\Delta_1)+\textrm{Area}(\Delta_2)
+    \]
+    done \(\Delta_1\) es el triángulo con vértices \(O,A,E\) y \(\Delta_2\) es el triángulo 
+    con vértices \(O,E,B\). Ya que \(|OA|=|OB|=1\) tenemos 
+    \[
+    \textrm{Area}(\Delta_1)+\textrm{Area}(\Delta_2)=\frac{|AE|}{2}+\frac{|BE|}{2}
+    \]
+    por lo que 
+    \[
+    2\textrm{Area}(P)=|AE|+|BE|. 
+    \]
+    Finalmente, utilizando el triángulo rectángulo con vértices \(B,E,D\) tenemos \(|BE|< |DE|\) por lo que
+    concluimos
+    \[ 
+    2\textrm{Area}(P)=|AE|+|BE|< |AE|+|DE|=|AD|.
+    \] 
+   </p>
 
 </div>
 
