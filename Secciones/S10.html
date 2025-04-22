@@ -228,10 +228,89 @@ para \(u\in (u_0-\eta, u_0+\eta)\):
             </div>
 
 
- <p>
+            <button class="respButton hvr-grow "> Demostración 2</button>
+            <div class="resp-box flexbox">
+             
+              <p>
+                Escribimos las aproximaciones lineales de \(f\) en \(a\) y de \(g\) en \(f(a)\)
+                \begin{eqnarray*} 
+                f(a+h)&=&f(a)+f'(a)h+E_f(h),\\
+                g(f(a)+k)&=&g(f(a))+ g'(f(a))k+E_g(k), 
+                \end{eqnarray*}
+                donde \(h\) y \(k\) están en vecindades del \(0\) y los errores se comportan como 
+                \begin{eqnarray*} 
+                \lim_{h\to 0}\frac{E_f(h)}{h}&=&0, \\
+                \lim_{k\to 0} \frac{E_g(k)}{k}&=&0.
+                \end{eqnarray*}
+               Nota: para más adelante es importante notar que \(E_f(a)=0\) y \(E_g(f(a))=0\).
+               </p>    
+               <p>
+                Ahora tratamos de usar estas aproximaciones lineales para encontrar 
+                la aproximación lineal de \(g\circ f\) en \(a\). Para \(h\) en una vecindad del cero
+                y usando la aproximación lineal de \(f\) en \(a\) tenemos 
+              
+                \[
+                g\circ f(a+h)=g(f(a+h))=g(f(a)+f'(a)h+E_f(h)),
+                \]
+                ahora definimos \(K(h)=f'(a)h+E_f(h)\) por lo que podemos re-escribir la ecuación 
+                anterior como 
+                \[
+                g\circ f(a+h)=g(f(a)+K(h)).
+                \] 
+                Además notamos que \(\lim_{h\to o}K(h)=0\). Por lo tanto 
+                si \(h\) es pequeño \(K(h)\) también y podemos usar la aproximación lineal de \(g\) cerca \(f(a)\) 
+                para obtener 
+                \begin{eqnarray*} 
+                g(f(a)+K(h))&=& g(f(a))+g'(f(a))K(h)+E_g(K(h))\\
+                &=& g(f(a))+ g'(f(a))f'(a)h+ g'(f(a))E_f(h)+E_g(K(h)).
+                \end{eqnarray*}
+                Si definimos  \(E(h)=g'(f(a))E_f(h)+E_g(K(h))\) podemos re-escribir todo lo anterior como 
+                \[
+                g\circ f(a+h)= g(f(a))+g'(f(a))f'(a)h+E(h), 
+                \]
+                para \(h\) cercana a cero. La ecuación anterior es casi la aproximación lineal de \(g\circ f\) en \(a\)
+                excepto que nos falta probar que el error satisface \(\lim_{h\to 0}\frac{E(h)}{h}=0\), pero si logramos 
+                demostrar ésto necesariamente \(g\circ f\) es diferenciable en \(a\) y su derivada en \(a\) es 
+                precisamente \(g'(f(a))f'(a)\), con lo que habremos terminado la demostración de la regla de la cadena. 
+               </p>       
+               <p>
+                Así pues resta probar \(\lim_{h\to 0}\frac{E(h)}{h}=0\). Pero para \(h\ne 0\)
+                \[
+                \frac{E(h)}{h}=g'(f(a))\frac{E_f(h)}{h}+ \frac{E_g(K(h))}{h},
+                \]
+                y el error de \(f\) se comporta como \(\lim_{h\to 0}\frac{E_f(h)}{h}=0\), asi que sólo resta probar que 
+                \[
+                \lim_{h\to 0} \frac{E_g(K(h))}{h}=0.
+                \]
+                Para probar lo anterior tenemos dos casos.
+                <p>
+                  Caso 1: notamos que si \(K(h)=0\) entonces 
+                  \[
+                  \frac{E_g(K(h))}{h}=0.
+                  \]
+                  
+                </p>
+                <p>
+                  Caso 2: si  \(K(h)\ne 0\) podemos escribir 
+                  \begin{eqnarray*}
+                  \frac{E_g(K(h))}{h}&=& \frac{K(h)}{h}\frac{E_g(K(h))}{K(h)}\\
+                  &=& \left( \frac{f'(a)h+E_f(h)}{h}  \right)\frac{E_g(K(h))}{K(h)}.
+                  \end{eqnarray*}
+                  Además \(\lim_{h\to 0} \frac{f'(a)h+E_f(h)}{h} =f'(a)\). 
+                </p>
+               <p>
+                Por otro lado, \(\lim_{h\to 0}K(h)=0\) y \(\lim_{k\to 0}\frac{E_g(k)}{k}=0\), por lo que juntando éstos dos 
+                obtenemos \(\frac{E_g(K(h))}{K(h)}\) tiende a cero cuando \(h\) tiende a cero  y \(K(h) \ne 0\). 
+               </p>
+               <p>
+                Estos dos casos implican que  
+                \[
+                \lim_{h\to 0}\frac{E_g(K(h))}{h}=f'(a)\cdot 0 = 0.
+                \]
+               </p>
 
- </p>           
-</div>
+            </div>
+          </div>
 
 
 
@@ -473,68 +552,12 @@ Encuentra las siguientes derivadas
             </div>
 </div>
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-    Sea \(f:(a,b)\to \mathbb{R}\) una función diferenciable en todo \((a,b)\). Usa la 
-    regla de la cadena para porbar la siguiente regla de la potencia 
-    \[
-      \frac{df^n(x)}{dx}= nf^{n-1}(x)\frac{df(x)}{dx}
-    \]
-    donde \(n\geq 2\) es un natural.
-  </p>
-
-  <button class="respButton hvr-grow "> Solución </button> 
-  <div class="resp-box flexbox">
-    
-      
-
-      <p>
-        Definimos  \(h(x)=f^n(x)\), para \(x\in (a,b)\). Entonces \(h(x)=g(f(x))\)
-        donde \(g(u)=u^n\).
-      </p> 
-       <p>
-        Ya que  \(f\) es diferenciable en todo \((a,b)\) y 
-        \(g\) es diferenciable en todo \(\mathbb{R}\), por la regla de la cadena 
-        \(g\circ f\) es diferenciable en todo \((a,b)\) y 
-        \[
-        (g\circ f)'(x)=g'(f(x))f'(x)
-        \]
-        Finalmente, sabemos que \(g'(u)=nu^{n-1}\), por lo tanto 
-        \[
-          h'(x)=(g\circ f)'(x)=nf^{n-1}(x)f'(x).
-        \]
-        </p>
-    
-      
-
-  
-  </div>
-  
-</div>
-
-
-
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-    Sea \(f:(a,b)\to \mathbb{R}\) una función diferenciable en todo \((a,b)\) tal que 
-    \(f(x)>0\) para toda \(x\in (a,b)\). Usa la 
-    regla de la cadena para porbar la siguiente regla de la potencia 
-    \[
-      \frac{df^{\frac{1}{n}}(x)}{dx}= \frac{1}{n}f^{\frac{1}{n}-1}(x)\frac{df(x)}{dx}
-    \]
-    donde \(n\geq 2\) es un natural.
-  </p>
-
-
-</div>
 
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
 
-  Sea \(f:(a,b)\to \mathbb{R}\) una función diferrenciable cen todo \((a,b)\) con  
+  Sea \(f:(a,b)\to \mathbb{R}\) una función diferrenciable en todo \((a,b)\) con  
   \(f(x)\ne 0\) para toda \(x\in (a,b)\). Usa la regla de
 la cadena para dar otra prueba de que
 \[
