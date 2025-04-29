@@ -288,20 +288,30 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
     de las manecillas del reloj hacemos la convención de que los valores del ángulo son negativos 
     teniendo los posibles valores en el intervalo \([-2\pi, 0]\).
   </p>
-
   <p>
-    Otra ventaja de los radianes es que están relacionados con el área. De nuevo tomando el círculo 
+    Otra ventaja de los radianes es que están relacionados con el área, como lo demuestra el 
+    siguiente teorema. 
+  </p>
+    
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Theorema </h2>
+
+     De nuevo tomando el círculo 
     unitario para medir los ángulos, si dibujamos un ángulo \(\alpha \in [0,2\pi]\) el área del 
     segmento circular que subtiende (la "rebanda de pizza"), en la imagen de abajo denotado por \(d\), 
     es precisamente \(\frac{\alpha}{2}\). 
-    <p>
+    \[
+    \textrm{Area}(d)=\frac{\alpha}{2}
+    \]
       <div class="flexbox">
         <img src="./Images/AreaRadianes.png" alt="RadianesArea" width="30%" height="auto">
       </div>
-    </p>
-    <p>
-      Justificación.
-    </p>
+    <p></p>
+
+      <button class="respButton hvr-grow "> Justificación </button>
+  <div class="resp-box">
     <p>
       Sea \(\alpha \in [0,2\pi]\) y sea \(d\) el segmento circular que subtiende el ángulo \(\alpha\) en el círculo unitario. 
       Queremos probar que \(\textrm{Area}(d)=\frac{\alpha}{2}\).
@@ -323,7 +333,19 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
       \textrm{Area}(d)=\sum_{i=1}^m \frac{1}{n}\pi= \frac{m}{n}\pi= \frac{\alpha}{2}.
       \]
     </p>
-  </p>
+    <p>
+      Caso 3: \(\alpha\) es un múltiplo irracional de \(2\pi\). Los argumentos para demostrar éste caso están más lejos de lo 
+      que al momento hemos estudiado (continuidad) así que lo vamos a suponer cierto.
+    </p>
+  
+  </div>
+
+</div>
+
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
 
   <h3> Funciones trigonométricas </h3>
   <p>
@@ -368,12 +390,8 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
 
   </ol>
   
-  <p>
-
-  </p>
 
 </div>
-
 <!-- <div class="ejercicio-box">
   <h2> Ejercicio </h2>
   <p>
@@ -438,7 +456,7 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
 --> 
 
 <div class="prop-box">
-  <h2 class="number-title"> Proposición </h2>
+  <h2 class="number-title" id="Aux:LimitesDerivadasTrig"> Proposición </h2>
 
 Demuestra:
 <ol>
@@ -522,17 +540,72 @@ Sean \(p\) y \(q\) dos polinomios con \(p(0)=q(0)=0\) y \(q'(0)\ne 0\). Encuentr
 
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-Demuestra
+<div class="prop-box">
+  <h2 class="number-title"> Proposición </h2>
+Las derivadas de las funciones trigonométricas son:
 \[
-\frac{d\sen(x)}{dx}=\cos(x), \quad \frac{d \cos (x)}{dx}=-\sen(x)
+\frac{d\sen(x)}{dx}=\cos(x), \quad \frac{d \cos (x)}{dx}=-\sen(x),
 \]
-Usando la fórmula para la derivada de un cociente, demuestra
+y para \(x\) con \(\cos(x)\ne 0\), 
 \[
-\frac{d \tan (x)}{dx}=\sec^2(x)
+\frac{d \tan (x)}{dx}=\sec^2(x).
 \]
-para \(x\) con \(\cos(x)\ne 0\).
+
+<button class="respButton hvr-grow "> Demostración </button> 
+<div class="resp-box">
+  <p>
+    Por definición, la derivada de la función seno en \(x\) se puede calcular como:
+    \[
+    \frac{d \sen(x)}{dx}= \lim_{h\to 0} \frac{\sen(x+h)-\sen(x)}{h}
+    \]
+    usando la fórmula para seno de una suma 
+    tenemos que el cociente diferencial se descompone como (para \(h\ne 0\)):
+    \begin{eqnarray*} 
+    \frac{\sen(x+h)-\sen(x)}{h}
+    &=&\frac{\sen(x)\cos(h)+\cos(x)\sen(h)-\sen(x)}{h} \\
+    &=&\sen(x)\left( \frac{\cos(h)-1}{h}\right)+\cos(x)\left( \frac{\sen(h)}{h}\right).
+    \end{eqnarray*}
+  </p>
+  <p>
+    Tomando límite cuando \(h\to 0\) en la expresión anterior y usando la 
+    <a href="#Aux:LimitesDerivadasTrig">Proposición 8.18</a> concluimos que: 
+    \[
+    \frac{d \sen(x)}{dx}= \lim_{h\to 0} \frac{\sen(x+h)-\sen(x)}{h}=\cos(x).
+    \]
+  </p>
+  
+  <p>
+    Para la derivada de coseno es muy similar. Por definición:
+    \[
+    \frac{d \cos(x)}{dx}= \lim_{h\to 0} \frac{\cos(x+h)-\cos(x)}{h}
+    \]
+    usando la fórmula para coseno de una suma: 
+    \begin{eqnarray*} 
+    \frac{\cos(x+h)-\cos(x)}{h}
+    &=&\frac{\cos(x)\cos(h)-\sen(x)\sen(h)-\cos(x)}{h} \\
+    &=&\cos(x)\left(\frac{\cos(h)-1}{h}\right)-\sen(x)\left( \frac{\sen(h)}{h}\right).
+    \end{eqnarray*}
+  </p>
+  <p>
+    Tomando límite cuando \(h\to 0\) en la expresión anterior y usando la 
+    <a href="#Aux:LimitesDerivadasTrig">Proposición 8.18</a> concluimos que: 
+    \[
+    \frac{d \cos(x)}{dx}= \lim_{h\to 0} \frac{\cos(x+h)-\cos(x)}{h}=-\sen(x).
+    \]
+  </p>
+  <p>
+    Para la derivada de tangente, usando que \(\tan=\frac{\sen}{\cos}\), si usamos la 
+    fórmula para la derivada de un cociente, para \(x\) con \(\cos(x)\ne 0\) tenemos:
+    \begin{eqnarray*}
+    \frac{d\tan(x)}{dx}&=&\frac{\cos(x)\frac{d\sen(x)}{dx}-\sen(x)\frac{d\cos(x)}{dx}}{\cos^2(x)}\\
+    &=& \frac{\cos(x)\cos(x)-\sen(x)(-\sen(x))}{\cos^2(x)}\\
+    &=& \frac{\cos^2(x)+\sen^2(x)}{\cos^2(x)} \\
+    &=& \left( \frac{1}{\cos(x)} \right)^2 \\
+    &=& \sec^2(x).
+    \end{eqnarray*}
+  </p>
+  
+</div>
 </div>
 
 
