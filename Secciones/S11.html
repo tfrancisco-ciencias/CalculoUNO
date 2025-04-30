@@ -392,31 +392,56 @@ Demuestra que \(\lim_{n\to \infty}b_n =L\).
 </p>
 <p>
 
-Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7</a>  para obtener
+Sugerencia: usa el <a href="./S2.html#Ejer:SandwichDesigualdades">Ejercicio 2.7</a>  para obtener
 \(|b_n-L| \leq |a_n-L|+|c_n-L|\) y luego usa las propiedades del
-<a href="#Ejer:PropiedadesLimitesSucesiones">Ejercicio 10.4</a> junto  con el
+<a href="#Ejer:PropiedadesLimitesSucesiones">Proposición 11.5</a> junto  con el
 <a href="#Ejer:LemaTeoSandiwch">Ejercicio anterior </a>.
 </p>
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Ejercicio </h2>
+<div class="prop-box">
+  <h2 class="number-title" id="Ejer:LimiteProductoSucesiones"> Proposición  </h2>
   <p>
   Sean
   \((a_n)_{n=1}^\infty\) y \((b_n)_{n=1}^\infty\) dos sucesiones convergentes.
   </p>
-  <p>
+  <ol>
+
+  
+  <li>
   Demuestra que
   \[\lim_{n\to \infty} (a_nb_n)=
   \left( \lim_{n\to \infty} a_n \right)\left( \lim_{n\to \infty}b_n\right)\]
-  </p>
+  
   <p>
-  Sugerencia: usa la desigualdad del triángulo para probar  que
+  Sugerencia: denota \(a=\lim_{n\to \infty}a_n\), \(b=\lim_{n\to \infty}b_n\). Usa la desigualdad del triángulo para probar  que
   \(|a_nb_n -ab| \leq M |b_n-b|+ |b||a_n-a|\), donde \(M\) es una conta para la
   sucesión \((a_n)_{n=1}^\infty\) y luego usa el
-  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 10.10 </a>.
+  <a href="#Ejer:LemaTeoSandiwch">Ejercicio 11.10 </a>.
   </p>
+</li>
+<p></p>
+<li>
+  Prueba que 
+  \[
+  \lim_{n\to \infty} |a_n|=|\lim_{n\to \infty}a_n|
+  \]
+</li>
+<p></p>
+<li>
+  Si \(\lim_{n\to \infty}a_n \ne 0\) entonces  
+  \[
+  \lim_{n\to \infty}\frac{1}{a_n}=\frac{1}{\lim_{n\to \infty}a_n}.
+  \]
+  <p>
+    Sugerencia: denota \(a=\lim_{n\to \infty}a_n\). Demuestra que existe una \(N\) tal que 
+    \( |a_n|< \frac{|a|}{2}\) para todo \(n\geq N\). Luego prueba que para todo \(n\geq N\)
+    se cumple \(\left| \frac{1}{a_n}-\frac{1}{a}\right|\leq \frac{2}{|a|^2}|a-a_n| \) y concluye 
+    el resultado usando el <a href="#Ejer:LemaTeoSandiwch">Ejercicio 11.10 </a>.
+  </p>
+</li>
+</ol>
 </div>
 
 <div class="ejercicio-box">
@@ -513,6 +538,70 @@ Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7<
 
   </p>
 </div>
+
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sea \((a_n)_{n=1}^\infty\) una sucesión con \(\lim_{n\to \infty}a_n=L\). 
+    Entonces toda subsucesión de \((a_n)_{n=1}^\infty\) también converge a \(L\).
+  </p>
+
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(r\in \mathbb{R}\) con \(-1< r < 1\). Prueba que: 
+    \[
+    \lim_{n\to \infty} r^n =0
+    \] 
+  </p>
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Prueba que: 
+    \[
+    \lim_{n\to \infty} \sqrt[n]{n}=1.
+    \]
+  </p>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
+   Prueba que:
+    \[\lim_{n\to \infty} \frac{n}{2^n}=0 .\]
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
+  <p>
+   Sea \(t>0\). Demuestra que
+  \[ \lim_{m\to \infty} \frac{t^m}{m!}=0 .\]
+  </p>
+
+  <p>
+  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
+  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>k\), factoriza
+  \[
+  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{t^{m-k}}{(k+1)(k+2)\cdots m}
+  \]
+  después, con esta factorización, prueba la desigualdad
+  \[
+  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
+  \]
+  con \(C=\frac{t^k}{k!}\).
+  </p>
+</div>
+
+
 
 
 <div class="teorema-box">
@@ -627,37 +716,11 @@ Sugerencia: usa el <a href="./S3.html#Ejer:SandwichDesigualdades">Ejercicio 3.7<
   </div>
 </div>
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:Limiten2n"> Ejercicio </h2>
-   Demuestra \(\lim_{n\to \infty} \frac{n}{2^n}=0\).
-</div>
-
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:LimitePotenciaCocienteFactorial"> Ejercicio </h2>
-  <p>
-   Sea \(t>0\). Demuestra que
-  \(\lim_{m\to \infty} \frac{t^m}{m!}=0\).
-  </p>
-
-  <p>
-  Sugerencia: Primero toma \(k\in \mathbb{N}\) tal que
-  \(\frac{t}{k+1}<\frac{1}{2}\); después, para \(m>k\), factoriza
-  \[
-  \frac{t^m}{m!}= \left(\frac{t^k}{k!} \right) \frac{t^{m-k}}{(k+1)(k+2)\cdots m}
-  \]
-  después, con esta factorización, prueba la desigualdad
-  \[
-  \frac{t^m}{m!} \leq C \left( \frac{1}{2}\right)^{m-k}
-  \]
-  con \(C=\frac{t^k}{k!}\).
-  </p>
-</div>
-
 
 <div class="definicion-box">
 <h2 class="number-title"> Definición </h2>
 <p>
-Una sucesión \((x_k)_{k\geq 0}\) satisface el criterio de Cauchy si para
+Una sucesión \((x_k)_{k=1}^\infty\) satisface el criterio de Cauchy si para
 todo \(\varepsilon>0\), exsite \(N=N(\varepsilon)\in \mathbb{N}\) tal que,
 para todos \(n,m \geq N\)
 \[
@@ -671,8 +734,8 @@ para todos \(n,m \geq N\)
 </div>
   
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+<div class="nota-box">
+  <h2 class="number-title"> Lema  </h2>
   <p>
     Sea \((a_n)_{n=1}^\infty\) una sucesión de Cauchy. Supón que existe 
     una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente de \((a_n)_{n=1}^\infty\).
@@ -690,7 +753,7 @@ para todos \(n,m \geq N\)
   <h2 class="number-title"> Teorema </h2>
   <h3 > Completez de \(\mathbb{R}\) </h3>
 
-  Una sucesión \((x_k)_{k\geq 0}\) converge si y sólo si \((x_k)_{k\geq 0}\)
+  Una sucesión \((x_k)_{k=1}^\infty\) converge si y sólo si \((x_k)_{k=1}^\infty\)
   satisface el criterio de Cauchy.
 
 </div>
