@@ -393,7 +393,7 @@ demuestra que \(|f'(x)| \leq M\) para todo \(x\).
 
 </div>
 <div class="prop-box">
-  <h2 class="number-title"> Lema</h2>
+  <h2 class="number-title" id="Lema:AuxGeometricoDerivadasTrig"> Lema</h2>
  <p>
   Sea \(\alpha \in (0,\pi/2)\) y sean \(A\) y \(B\) los 
   puntos en el círculo unitario del segmento de arco 
@@ -481,16 +481,101 @@ Demuestra:
 \]
 </li>
 
-<p>
-Sugerencia:
-
-\[
-\frac{\cos(\alpha)-1}{\alpha}= \frac{\cos(\alpha)-1}{\alpha}
-\frac{\cos(\alpha)+1}{\cos(\alpha)+1}
-\]
-</p>
 </ol>
+
+<button class="respButton hvr-grow "> Demostración inciso 1 </button>
+<div class="resp-box">
+<p>
+  Paso 1: para \(\alpha \in (0,\pi/2) \), \(\frac{\sen(\alpha)}{\alpha}< 1\).
+</p>
+
+<p>
+  Dibujamos \(\alpha\) en el círculo unitario y por \(A\) y \(B\) denotamos 
+  los puntos en el círculo unitario que subtienden el ángulo \(\alpha\). Por 
+  \(C\) denotamos la intersección de la rectan perpendicular al exe \(x\) que pasa por 
+  \(B\).
+</p>
+<p>
+  <div class="flexbox">
+    <img src="./Images/AuxiliarLimiteSeno.png" alt="AuxiliarLimiteSeno" width="30%" height="auto">
+        </div>   
+</p>
+<p>
+  Ya que estamos midiendo \(\alpha\) en radianes, \(\alpha\) es la longitud de arco de \(A\) a \(B\).
+  Como la distancia más corta entre dos puntos en el plano es  la línea recta que los une, tenemos que 
+  \(|AB|< \alpha\). Por otro lado si consideramos el 
+  triángulo rectángulo con vértices \(A,B,C\), se sigue que  \(|BC|< |AB|\) 
+  (al ser \(|BC|\) un cateto y \(|AB|\) la hipótenusa). Se sigue que 
+  \[
+  \sen(\alpha)=|BC|< |AB|< \alpha \Rightarrow \frac{\sen(\alpha)}{\alpha} < 1
+  \]
+</p>
+<p>
+  Paso 2: para \(\alpha \in (0,\pi/2)\), \(\alpha <  \frac{\sen(\alpha)}{\cos(\alpha)}\).
+</p>
+<p>
+  Considerando de nuevo la figura
+  <p>
+    <div class="flexbox">
+    <img src="./Images/AuxiliarLimiteSeno.png" alt="AuxiliarLimiteSeno" width="30%" height="auto">
+        </div>   
+  </p>
+  Usando el triángulo rectángulo con vértices \(O,A,D\) tenemos 
+  \[
+  \frac{\sen(\alpha)}{\cos(\alpha)}=\tan(\alpha)=\frac{|AD|}{|OA|}=|AD|.
+  \]
+  Por otro lado, ya que \(\alpha\) está medido en radianes,  el 
+  <a href="#Lema:AuxGeometricoDerivadasTrig"> Lema 8.18</a> implica que 
+  \[
+  \alpha < |AD| \Rightarrow \alpha < \frac{\sen(\alpha)}{\cos(\alpha)}
+  \]
+</p>
+<p>
+  Paso 3.
+</p>
+  <p>
+  Finalmente, reescribiendo el paso 2 como \(\cos(\alpha) \leq \frac{\sen(\alpha)}{\alpha}\),
+  el paso 1 y paso 2 implican:
+  \[
+  \cos(\alpha) \leq \frac{\sen(\alpha)}{\alpha} < 1,
+  \]
+  tomando límite cuando \(\alpha \to 0\), usando que \(\lim_{\alpha \to 0}\cos(\alpha)=1\) y el 
+  teorema del sandwich concluimos 
+  \[
+  \lim_{\alpha \to 0}\frac{\sen(\alpha)}{\alpha}=1.
+  \]
+  </p> 
 </div>
+
+<p></p>
+
+  <button class="respButton hvr-grow "> Demostración inciso 2 </button>
+  <div class="resp-box">
+    <p>
+      Para \(\alpha \in (0,\pi/2)\) tenemos: 
+      \begin{eqnarray*}
+      \frac{\cos(\alpha)-1}{\alpha}&=& \frac{\cos(\alpha)-1}{\alpha}
+      \frac{\cos(\alpha)+1}{\cos(\alpha)+1} \\
+      &=&\frac{\cos^2(\alpha)-1}{\alpha(\cos(\alpha)+1)} \\
+      &=& \frac{\sen^2(\alpha)}{\alpha(\cos(\alpha)+1)}\\
+      &=& \frac{\sen(\alpha)}{\alpha} \frac{\sen(\alpha)}{\cos(\alpha)+1}
+      \end{eqnarray*}
+      finalmente usando, 
+      \begin{eqnarray*} 
+      \lim_{\alpha \to 0}\frac{\sen(\alpha)}{\alpha}&=&1, \\
+      \lim_{\alpha \to 0}\frac{\sen(\alpha)}{\cos(\alpha)+1}&=&\frac{\sen(0)}{\cos(0)+1}=\frac{0}{2}=0
+      \end{eqnarray*}
+      concluimos 
+      \[
+      \lim_{\alpha \to 0}\frac{\cos(\alpha)-1}{\alpha}=0.
+      \]
+      </p>
+  </div>
+    
+
+</div>
+
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
