@@ -323,22 +323,21 @@ Una sucesión \((a_n)_{n=1}^\infty\) se llama monótona creciente si
 <li>
   Si \((a_n)_{n=1}^\infty\) es monótona creciente  y existe \(M\in \mathbb{R}\)
   tal que \(a_n \leq M\) para toda \(n\), entonces
-\(\lim_{n \to \infty}a_n\) existe.
+\(\lim_{n \to \infty}a_n\) existe. Además 
+\[
+\lim_{n\to \infty} a_n = \sup_{n\in \mathbb{N}}\{a_n\}
+\]
 </li>
 <li>
   Si \((a_n)_{n=1}^\infty\) es monótona decreciente  y existe \(m \in \mathbb{R}\)
   tal que \(m \leq a_n \) para toda \(n\), entonces
-\(\lim_{n \to \infty}a_n\) existe.
+\(\lim_{n \to \infty}a_n\) existe. Además 
+\[
+\lim_{n\to \infty} a_n = \inf_{n\in \mathbb{N}}\{a_n\}
+\]
 </li>
 </ol>
 
-
-<p>
-Sugerencia: para el caso monótono creciente  usa el
-<a href="./S2.html#Ejer:CaracterizacionSupremo">Ejercicio 2.8</a>
-  para probar que la sucesión  converge a
-\(\sup_{n\in \mathbb{N}}\{ a_n\}\).
-</p>
 </div>
 
 
@@ -547,6 +546,40 @@ Sugerencia: usa el <a href="./S2.html#Ejer:SandwichDesigualdades">Ejercicio 2.7<
     Entonces toda subsucesión de \((a_n)_{n=1}^\infty\) también converge a \(L\).
   </p>
 
+  <button class="respButton hvr-grow "> Demostración </button>
+<div class="resp-box">
+
+
+  <p>
+    Denotamos \(L=\lim_{n\to \infty}a_n\).
+  </p>
+  <p>
+    Sea \((a_{n_k})_{k=1}^\infty\) una subsucesión de \((a_n)_{n=1}^\infty\) (fija y arbitraria).
+    Debemos de probar que \(\lim_{k\to \infty}a_{n_k}=L\).
+  </p>
+  <p>
+    Sea \(\varepsilon >0\). Ya que \(L=\lim_{n\to \infty} a_n\), existe un \(N\in \mathbb{N}\) tal que: 
+    \begin{equation}\label{Eqn:AuxSubsucesiones}
+    n\geq N\Rightarrow |a_n-L| < \varepsilon.
+    \end{equation}
+  </p>
+  <p>
+    Por otro lado, al ser \((a_{n_k})_{k=1}^\infty\) una subsucesión afirmamos que existe \(k_0\)
+    tal  \(n_{k_0} \geq N\). Razón: si no fuese cierto entonces para todo 
+    \(k_{0}\), \(n_{k_0} < N\) y por lo tanto \(\{n_1,n_2,\dots \} \subseteq \{1,\dots, N\}\). Esto es una 
+    contradicción pues el conjunto del lado izquierdo es infinito (pues \(n_1 < n_2 < \cdots < n_{k}< n_{k+1} < \cdots\), 
+    al ser  \((a_{n_k})_{k=1}^\infty\) una subsucesión)
+    y el del lado derecho es finito. 
+  </p>
+  <p>
+    Finalmente, si tomamos \(k \geq k_0\) entonces \(n_{k_0} \leq n_k\) (al ser subsucesión) y por lo tanto 
+    \(N\leq n_{k_0} \leq n_k\) lo que implica por \eqref{Eqn:AuxSubsucesiones} que  \(|a_{n_k}-L| < \varepsilon\). 
+  </p>
+  <p>
+    Al ser \(\varepsilon >0\) arbitraria concluimos que \(\lim_{k\to \infty}a_{n_k}=L\).
+  </p>
+</div>
+
 </div>
 
 
@@ -627,6 +660,34 @@ Sugerencia: usa el <a href="./S2.html#Ejer:SandwichDesigualdades">Ejercicio 2.7<
       \cap_{n=1}^\infty [a_n,b_n]=\{x_0\}
     \]
   </p>
+  
+  <button class="respButton hvr-grow "> Demostración </button>
+  <div class="resp-box">
+  <p>
+    Vamos a denotar  
+    \[
+    A=\{a_n: n\in \mathbb{N}\}.
+    \]
+  </p>
+  <p>
+    Ya que los intervalos están anidados tenemos que cualquier \(b_m\) es cota superior 
+    de \(A\) por lo tanto \(\sup(A)\leq b_m\). Además por definición de supremo de \(A\), 
+    \(a_m\leq \sup(A)\) para toda \(m\). Por lo tanto \(\sup(A)\in [a_m,b_m]\) para toda 
+    \(m\), es decir \(\sup(A)\in \cap_{m=1}^\infty [a_m,b_m]\). Denotamos \(x_0=\sup(A)\).
+  </p>
+  <p>
+    Ahora supongamos que existe \(y_0\in \cap_{n=1}^\infty[a_m,b_m]\). Entonces 
+    \(x_0,y_0\in [a_m,b_m]\) para todo \(m\) por lo que 
+    \[
+    |x_0-y_0|\leq b_m-a_m.
+    \]
+    Tomando límite cuando \(m\to \infty\) y usando \(\lim_{m\to \infty}(b_m-a_m)=0\)
+    concluimos que \(x_0=y_0\). Por lo tanto 
+    \[
+    \cap_{m=1}^\infty [a_m,b_m]=\{x_0\}.
+    \]
+  </p>
+</div>
 </div>
 
 <div class="teorema-box">
