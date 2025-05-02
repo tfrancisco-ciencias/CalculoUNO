@@ -82,26 +82,66 @@
   </head>
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> Aplicaciones del Teorema del valor medio  </h1> 
-  <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button>
+    <h1 class="number-title flexbox"> Aplicaciones  </h1> 
 <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
 
 
 <div class="info-box">
 <h2 class="number-title"> Introducción </h2>
+<p>
+  Para terminar el curso aplicacamos la derivada en una variedad de situaciones 
+  para obtener información acerca de las funciones: si son monótonas crecientes/decrecientes, 
+  concavas hacia arriba/abajo, algunas desigualdades, máximos/mínimos y gráficas de funciones.
+</p>
 
 </div>
 
 
-      <div class="ejercicio-box">
-        <h2 class="number-title" id="Ejer:DerivadaCeroImplicaConstante"> Ejercicio </h2>
+      <div class="teorema-box">
+        <h2 class="number-title" id="Ejer:DerivadaCeroImplicaConstante"> Teorema  </h2>
         <p>
           Sea \(f:[a,b] \to \mathbb{R}\)
-          continua en \([a,b]\) y diferenciable en \((a,b)\). Demuestra que
-          \(f\) es constante en \([a,b]\) si y sólo si \(f'=0\) en \([a,b]\).
+          continua en \([a,b]\) y diferenciable en \((a,b)\). Demuestra que si 
+           \(f'=0\) en \((a,b)\) entonces \(f\) es constante en \([a,b]\).
         </p>
       </div>
+
+
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      Sean \(f,g:[a,b] \to \mathbb{R}\) dos funciones continuas en \([a,b]\)
+      y diferenciables en \((a,b)\). Demuestra que si \(f'(x)=g'(x)\) para toda
+      \(x\in (a,b)\) si y sólo si  existe una constante \(c\), tal que \(f(x)=c+g(x)\),
+      para toda \(x\in [a,b]\).
+    </p>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Este ejercicio muestra porque no se define funciones
+        \(\alpha\)-Lipschitz para \(\alpha >1\).
+      </p>
+      <p>
+        
+        Sea \(f:[a,b]\to \mathbb{R}\) una función, \(M>0\) y \(\alpha >1\) tal que satisfacen
+        \[
+        |f(x)-f(y)| \leq M |x-y|^{\alpha}
+        \]
+        Demuestra que \(f\) es constante.
+      </p>
+      <p>
+        Sugerencia: demuestra que \(f\) es diferenciable y que  \(f'=0\) en \([a,b]\).
+      </p>
+</div>
 
 
       <div class="ejercicio-box">
@@ -114,7 +154,7 @@
               \(|\sen(a)-\sen(b)| \leq |a-b|\)
             </li>
             <li>
-              \(\sen(2x)-\sen(x)| \leq |x|\)
+              \(|\sen(2x)-\sen(x)| \leq |x|\)
             </li>
           </ol>
         </p>
@@ -194,88 +234,9 @@
 
 
 
-      <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-          <p>
-            Sea \(f: D \to \mathbb{R}\) una función. Decimos que \(f\) es Lipschitz en \(D\)
-            si existe \(M>0\) tal que
-            \[
-            |f(x)-f(y)| \leq M |x-y|, \quad \textrm{para toda \(x,y \in  D\).}
-            \]
-
-            Más en general, para un \(\alpha \in (0,1]\) decimos que \(f\) es
-            \(\alpha\)-Lipschitz en \(D\) si existe
-            \(M>0\) tal que
-            \[
-            |f(x)- f(y)| \leq M |x-y|^\alpha, \quad \textrm{para toda \(x,y \in  D\).}
-            \]
-          </p>
-      </div>
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-          <p>
-            Usando diferencia de cuadrados muestra que la función \(f(x)=x^2\) es
-            Lipschitz en cualquier intervalo
-          de la forma \([a,b]\).
-          </p>
-      </div>
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-         <p>
-          Da un ejemplo de una función \(f:[a,b] \to \mathbb{R}\) que sea
-          Lipschitz continua en \([a,b]\) pero
-          no sea diferenciable en una infinidad de puntos en \([a,b]\).
-         </p>
-      </div>
+      
 
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-            <p>
-              Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable en \((a,b)\).
-              Si existe \(M>0\) tal que
-              si \(|f'(x)| \leq M\), para toda \(x\in (a,b)\), demuestra que,
-              para cualesquiera \(x_1,x_2\in [a,b]\):
-              \[
-              |f(x_1)-f(x_2)| \leq M |x_2-x_2|
-              \]
-              es decir, \(f\) es Lipschitz continua en \([a,b]\).
-            </p>
-      </div>
-
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-            <p>
-              Este ejercicio muestra porque no se define funciones
-              \(\alpha\)-Lipschitz para \(\alpha >1\).
-            </p>
-            <p>
-              
-              Sea \(f:[a,b]\to \mathbb{R}\) una función, \(M>0\) y \(\alpha >1\) tal que satisfacen
-              \[
-              |f(x)-f(y)| \leq M |x-y|^{\alpha}
-              \]
-              Demuestra que \(f\) es constante.
-            </p>
-            <p>
-              Sugerencia: demuestra que \(f\) es diferenciable y que  \(f'=0\) en \([a,b]\).
-            </p>
-      </div>
-
-
-
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-          <p>
-            Sean \(f,g:[a,b] \to \mathbb{R}\) dos funciones continuas en \([a,b]\)
-            y diferenciables en \((a,b)\). Demuestra que si \(f'(x)=g'(x)\) para toda
-            \(x\in (a,b)\) si y sólo si  existe una constante \(c\), tal que \(f(x)=c+g(x)\),
-            para toda \(x\in [a,b]\).
-          </p>
-      </div>
 
 
       <div class="ejercicio-box">
@@ -288,10 +249,11 @@
       </div>
 
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema  </h2>
+        <h3> Criterio de la 1a derivada para monoticidad </h3>
           <p>
-            Sea \(f:[a,b)]\to \mathbb{R}\) continua en \([a,b]\) y
+            Sea \(f:[a,b]\to \mathbb{R}\) continua en \([a,b]\) y
             diferenciable en \((a,b)\). Demuestra:
             <ol>
               <li>
@@ -381,22 +343,22 @@
           </p>
       </div>
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema  </h2>
         <h3>Criterio de la primera derivada para extremos locales</h3>
          <p>
           
 
-          Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\). Supongamos que \(f\) es
-          diferenciable en \(I \subset [a,b]\), una vecindad agujereada de \(c \in [a,b]\).
-          Demuestra:
+          Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\). Supongamos que 
+          existe \(c\in (a,b)\) y \(r>0\) tal que:
+         
           <ol>
             <li>
-              Si \(f'(x)>0\) para \(x< c\), \(x\in I\) y \(f'(x) < 0\) para \(x >c\), \(x\in I\)
+              \(f'(x)>0\) para \(x\in (c-r,c)\) y \(f'(x) < 0\) para \(x\in (c, c+r)\),
               entonces \(f\) tiene un máximo local en \(c\).
             </li>
             <li>
-              Si \(f'(x)< 0\) para \(x< c\), \(x\in I\) y \(f'(x)>0\) para \(x>c\), \(x\in I\)
+              \(f'(x)< 0\) para \(x\in (c-r,c)\) y \(f'(x)>0\) para \(x\in (c,c+r)\), 
               entonces \(f\) tiene un mínimo local  en \(c\).
             </li>
           </ol>
@@ -404,8 +366,8 @@
       </div>
 
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema  </h2>
         <h3>Criterio de la segunda derivada para extremos locales</h3>
           <p>
             Supongamos que \(f\) está definida en una vecindad de \(c\) y \(f''\) existe
@@ -439,6 +401,330 @@
           </p>
       </div>
 
+
+       
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+      
+        Este ejercicio generaliza la desigualdad de Bernoulli
+        (<a href="./S3.html#Ejer:DesigualdadBernoulli">Ejercicio 3.16</a> )
+        pasando de \(n\) natural a racional.
+      
+      
+      Sea \(m\in \mathbb{Q}\) una constante  con \(m > 1\) y considera
+      \(f(x)=(1+x)^m-mx\) con
+      \(x\in [-1,\infty)\).
+      <ol>
+      <li>
+        Encuentra el mínimo absoluto de \(f\) en \([-1,\infty)\).
+        Sugerencia: encuentra los intervalos de crecimiento y puntos críticos.
+      </li>
+      <li>
+        Con ayuda del inciso anterior demuestra la desigualdad de Bernoulli:
+        dado \(m\in \mathbb{Q}\), \(m>1\):
+      \[
+      (1+x)^m \geq 1+mx, \quad \forall x\geq -1,
+      \]
+      con igualdad si y sólo si \(x=0\).
+      </li>
+      <li>
+        Con ejemplos muestra que la desigualdad de Bernoulli no se
+        vale si tomamos \(m\in (0,1)\).
+      </li>
+      </ol>
+      </div>
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema  </h2>
+        <h3 >Criterio de la primera derivada para concavidad</h3>
+        
+        Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+        diferenciable en \((a,b)\).
+        
+        <ol>
+        
+        <li>
+          Si \(f'\) es monótona creciente en \((a,b)\) entonces \(f\) es
+          cóncava hacia arriba en \([a,b]\).
+        </li>
+        <li>
+          Si \(f'\) es monótona decreciente en \((a,b)\) entonces \(f\) es
+          cóncava hacia abajo en \([a.b]\).
+        </li>
+        </ol>
+        </div>
+        
+        <div class="teorema-box">
+          <h2 class="number-title"> Teorema  </h2>
+        
+          <h3>Criterio de la segunda derivada para concavidad</h3>
+        
+        Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+        diferenciable en \((a,b)\) y tal que
+        \(f''\) existe  en \((a,b)\).
+        
+        <ol>
+        
+        <li>
+          Si \(f'' >0\)  en \((a,b)\) entonces \(f\) es cóncava hacia arriba en \([a,b]\).
+        </li>
+        <li>
+          Si \(f''< 0\) en \((a,b)\) entonces \(f\) es cóncava hacia abajo en \([a.b]\).
+        </li>
+        </ol>
+        </div>
+        
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title" id="Ejer:RectaSoporteConcavasArriba"> Ejercicio </h2>
+        
+        
+        Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable
+        en \((a,b)\) y tal que \(f'\) es  o bien monótona creciente o
+        monótona decreciente en \((a,b)\).
+        
+        Sea \((x,_0, f(x_0))\), \(x_0 \in (a,b)\) un punto fijo y arbitrario.
+        Demuestra que la recta tangente a la gráfica de \(f\) en \((x_, f(x_0))\)
+        es una recta soporte para la gráfica.
+        </div>
+        
+        <div class="nota-box">
+        <h2 class="number-title"> Optimización </h2>
+        <p>
+          Un problema de optimización es un problema donde se requiere encontrar la mejor solución 
+          (es decir, maximizar o minimizar cierta cantidad) sujeto a restricciones naturales del problema. Como maximizar 
+          ganancias bajo ciertas restricciones de producción.
+        </p>
+        <p>
+          Con las herramientas que hemos desarrollado se pueden resolver problemas de optimización 
+          que involucran dos variables,\(x\) e \(y\) , y de tal forma que la restricción del problema 
+          viene en la forma \(f(x,y)=0\), para alguna función (función restricción).
+        </p>
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+        
+          Sean \(a,b \geq 0\) tales que \(a+b=20\). Maximiza y minimiza las
+          siguientes cantidades.
+        <ol>
+        <li>
+          \(ab\),
+        </li>
+        <li>
+          \(a^2+b^2\),
+        </li>
+        <li>
+          \(a+\sqrt{b}\),
+        </li>
+        <li>
+          \(\sqrt{b}+\sqrt{a}\).
+        </li>
+        </ol>
+        </div>
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+        
+          Fija \(S>0\). Demuestra que, entre todas las posibles elecciones de
+          números positivos \(x,y\) tal que
+        \(x+y=S\), el producto se maximiza cuando \(x=y=\frac{S}{2}\).
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+        <ol>
+        <li>
+          Fija \(P>0\). Demuestra que, entre todas las posibles elecciones de
+          números positivos \(x,y\) tal que
+        \(xy=P\), la suma se minimiza cuando \(x=y=\sqrt{P}\).
+        </li>
+        <li>
+          Usa el ejercicio anterior para dar otra demostración de la
+          desigualdad aritmético-geométrica. Es decir, para \(a,b>0\),
+          \(\sqrt{ab} \leq \frac{a+b}{2}\).
+        
+        Sugerencia: toma \(P=ab\).
+        </li>
+        </ol>
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+           Determina las dimensiones que debe tener una caja rectangular cerrada,
+           con tapas cuadradas, que minimicen el costo de fabricación si el
+           material de los costados cuesta el cuádruple del de las tapas y si el
+           volumen debe ser 1\(m^3\).
+        
+        </div>
+        
+       
+        
+        
+        <div class="definicion-box">
+          <h2 class="number-title"> Definición </h2>
+        En economia, eficiencia tecnológica se define como el cociente
+        \[
+        \frac{\textrm{unidades de producto}}{\textrm{unidades de insumo}}
+        \]
+        
+        Para formalizar esta definición supongamos que \(x\) representa la cantidad
+        de cierto insumo (por ejemplo tiempo o materia prima) y \(Q(x)\) representa
+        la cantidad de producto generado por \(x\). Entonces la eficiencia de \(Q\) en
+        el intervalo \([x_1,x_2]\) es
+        \[
+        \frac{Q(x_2)-Q(x_2)}{x_2-x_1}
+        \]
+        
+        Por ejemplo, si dos intervalos \([x_1,x_2]\), \([x_3,x_4]\) satisfacen
+        \(x_2-x_1=x_4-x_3\), podemos comparar \(Q\) en ambos intervalos y
+        decir que  \(Q\) es mas eficiente en \([x_1,x_2]\) que en \([x_3,x_4]\) si
+        \[
+        \frac{Q(x_4)-Q(x_3)}{x_4-x_3} \leq \frac{Q(x_2)-Q(x_1)}{x_2-x_1}
+        \Leftrightarrow Q(x_4)-Q(x_3) \leq Q(x_2)-Q(x_1).
+        \]
+        
+        El máximo punto de eficiencia de \(Q:[a,b]\to \mathbb{R}\) se define como
+        \[
+        \sup_{a\leq s< t \leq b} \frac{Q(t)-Q(s)}{t-s}
+        \]
+        si es que éste supremo existe.
+        </div>
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title" id="Ejer:EjemploEficiencia"> Ejercicio </h2>
+        
+        
+          Un estudio de productividad efectuado en una fábrica, indica que un
+          trabajador  promedio que inicia su labor a las 8.00 am habrá producido
+          \(Q(t)=-t^3+9t^2+12t\) unidades de  producto, \(t\) horas des pués del inicio.
+          Si partimos el intervalo de trabajo en 8 partes iguales, encuentra el
+          intervalo del día en el que el trabajador es más eficiente.
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Supon que \(Q:[a,b] \to \mathbb{R}\) modela la cantidad de producto generado
+          utilizando \(x\) cantidades de insumo y que \(Q'\) existe y es continua en \([a,b]\).
+        
+        <ol>
+        
+        <li> Usando el T.V.M. demuestra que
+        \[
+        \sup_{a\leq s< t \leq b} \frac{Q(t)-Q(s)}{t-s}= \max_{x\in [a,b]}\{ Q'(x)\}
+        \]
+        </li>
+        <li>
+          Regresando al <a href="#Ejer:EjemploEficiencia">Ejercicio 17.11</a>, ¿ en
+          qué momento de la ma\~nana es el trabajador más eficiente ?
+        </li>
+        <li>
+          El máximo punto de eficiencia también es conocido como el  \emph{punto
+            de beneficios decrecientes}. Proporciona un argumento que
+        justifiqué los dos nombres dados a ese punto.
+        </li>
+        
+        </ol>
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Un anuncio publicitario debe de tener 50 \(m^2\) de material impreso con 4
+          \(cm\) de margen arriba y abajo y con 2 \(cm\) de margen a los lados.
+          ¿ Qué dimensiones debe de tener el anuncio que requiera
+          la menor cantida de papel?
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Sean \(a_1,\dots a_n \in \mathbb{R}\) fijos y arbitrarios. Demuestra que la suma
+        \[
+        \sum_{k=1}^n(a_k-x)^2
+        \]
+        se minimiza cuando \(x\) es  el promedio de las \(a_k\)'s.
+        </div>
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Considera una esfera de radio \(R>0\). Calcula, en términos de \(R\), el
+          radio \(r\) y la altura \(h\), del cono ciruclar recto de máximo volumen que
+          puede ser inscrito dentro de ésta esfera.
+        </div>
+        
+        
+        
+        
+        
+        <!--         <div class="nota-box">
+        <h2 class="number-title"> Trazado de curvas </h2>
+        </div>
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Para las funcones que se presentan, encuentra:
+        <ul>
+        <li>
+          Dominio.
+        </li>
+        <li>
+          Coordenadas de puntos críticos, máximos y mínimos locales.
+        </li>
+        <li>
+          Intervalos de crecimiento y decrecimiento.
+        </li>
+        <li>
+          Intervalos de concavidad hacia arriba y hacia abajo.
+        </li>
+        <li>
+          Coordenadas de puntos de inflexión.
+        </li>
+        <li>
+          Bosqueja la gráfica.
+        </li>
+        </ul>
+        
+        <ol>
+        <li>
+          \(f(x)=x^3-4x\).
+        </li>
+        <li>
+          \(f(x)=e^{x^3-4x}\).
+        </li>
+        <li>
+          \(f(x)=\sqrt{x}+\frac{1}{\sqrt{x}}\).
+        </li>
+        <li>
+          \(f(x)=\left( \frac{x-1}{x} \right)^2\).
+        </li>
+        <li>
+          \(f(x)=\frac{3}{2}x^{2/3}-\frac{3}{5}x^{5/3}\).
+        </li>
+        <li>
+          \(f(x)=\sen(x)+\cos(x)\).
+        </li>
+        </ol>
+        </div>
+        
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          Demuestra que la función \(f(x)=x-\sen(x)\), \(x\in \mathbb{R}\), es
+        estrictamente creciente en \(\mathbb{R}\) y tienen una infinidad de puntos de
+        inflexión.
+        </div>-->
+
+        
+        
 
     </div>
 </body>

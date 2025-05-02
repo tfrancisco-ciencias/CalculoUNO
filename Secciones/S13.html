@@ -421,7 +421,7 @@ y considera las funciones \(g(x)=xD(x), h(x)=x^2D(x)\), \(x\in \mathbb{R}\).
 
 
 
-<div class="ejercicio-box">
+<!-- <div class="ejercicio-box">
   <h2 class="number-title" id="Ejer:DesigualdadPrincipalSeno"> Ejercicio </h2>
    Para \(x\) que satisface
 \(0<|x|< \frac{\pi}{2}\) demuestra
@@ -435,7 +435,7 @@ Sugerencia: para \(x\) medido en radianes, el ángulo \(x\) se puede interpretar
 como \(2\times (\sphericalangle AOB)\),
 donde \(AOB\) es el segmento circular, del circulo unitario, que abre
 un ángulo \(x\).
-</div>
+</div>-->
 
 
 
@@ -462,8 +462,8 @@ Sugerencia: primero demuestra la identidad \(\cos(2\alpha)=1-2\sen^2(\alpha)\).
 
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema  </h2>
 
 <p>
   Sea \(f\) una función definida en una vecindad del punto  \(L\) y continua \(L\). 
@@ -562,16 +562,6 @@ Decimos que una función \(f:[a,b]\to \mathbb{R}\) es continua en \([a,b]\) si:
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title" id="Ejer:BabyLipschitz"> Ejercicio </h2>
-
-Sea \(f:[a,b]\to \mathbb{R}\) una función
-que satisface: \(|f(u)-f(v)| \leq |u-v|\), para todos \(u,v\in [a,b]\).
-Demuestra que
-\(f\) es continua en todo el intervalo \([a,b]\).
-</div>
-
-
 
 <div class="ejercicio-box">
 <h2 class="number-title"> Ejercicio </h2>
@@ -665,6 +655,59 @@ Advertencia: hay múltiples soluciones.
 </li>
 </ol>
 </div>
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+    <p>
+      Sea \(f: D \to \mathbb{R}\) una función. Decimos que \(f\) es Lipschitz en \(D\)
+      si existe \(M>0\) tal que
+      \[
+      |f(x)-f(y)| \leq M |x-y|, \quad \textrm{para toda \(x,y \in  D\).}
+      \]
+
+      Más en general, para un \(\alpha \in (0,1]\) decimos que \(f\) es
+      \(\alpha\)-Lipschitz en \(D\) si existe
+      \(M>0\) tal que
+      \[
+      |f(x)- f(y)| \leq M |x-y|^\alpha, \quad \textrm{para toda \(x,y \in  D\).}
+      \]
+    </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      Usando diferencia de cuadrados muestra que la función \(f(x)=x^2\) es
+      Lipschitz en cualquier intervalo
+    de la forma \([a,b]\).
+    </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+   <p>
+    Da un ejemplo de una función \(f:[a,b] \to \mathbb{R}\) que sea
+    Lipschitz continua en \([a,b]\) pero
+    no sea diferenciable en una infinidad de puntos en \([a,b]\).
+   </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable en \((a,b)\).
+        Si existe \(M>0\) tal que
+        si \(|f'(x)| \leq M\), para toda \(x\in (a,b)\), demuestra que,
+        para cualesquiera \(x_1,x_2\in [a,b]\):
+        \[
+        |f(x_1)-f(x_2)| \leq M |x_2-x_2|
+        \]
+        es decir, \(f\) es Lipschitz continua en \([a,b]\).
+      </p>
+</div>
+
+
 
 
 
