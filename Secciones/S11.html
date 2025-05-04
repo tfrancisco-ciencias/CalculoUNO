@@ -799,13 +799,60 @@ para todos \(n,m \geq N\)
   <h2 class="number-title"> Proposición  </h2>
   <p>
     Sea \((a_n)_{n=1}^\infty\) una sucesión de Cauchy. Supón que existe 
-    una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente de \((a_n)_{n=1}^\infty\).
+    una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente.
     Denotemos \(L=\lim_{k\to \infty}a_{n_k}\). Prueba que \((a_n)_{n=1}^\infty\)
     también es convergente con 
     \[
     \lim_{n\to \infty} a_n=L.
     \]
   </p>
+  <button class="respButton hvr-grow "> Demostración </button>
+  <div class="resp-box">
+
+  
+  <p>
+    Sea \(\varepsilon >0\) fija y arbitraria. Debemos de probar la existencia 
+    de un \(N\in \mathbb{N}\) tal que para todo \(n\geq N\) se cumple: 
+    \begin{equation}\label{Eqn:Aux1}
+    |a_n - L| <\varepsilon .
+    \end{equation}
+  </p>
+  
+  <p>
+    Primero, al ser \((a_n)_{n=1}^\infty\) de Cauchy existe \(\tilde{N}\in \mathbb{N}\)
+    tal que para todos \(n,m\geq \tilde{N}\):
+    \begin{equation}\label{Eqn:Aux2} 
+    |a_n-a_m|< \frac{\varepsilon }{2}.
+    \end{equation}
+  </p>
+  <p>
+    Segundo,  usando que \(lim_{k\to \infty}a_{n_k}=L\) podemos asegurar que existe 
+    \(k_0\in \mathbb{N}\) tal que para todo \(k\geq k_0 \):
+    \begin{equation}\label{Eqn:Aux3} 
+    |a_{n_k}-L|< \frac{\varepsilon}{2}.
+    \end{equation}
+  </p>
+  <p>
+    Por otro lado, ya que tenemos un subsucesión se cumple que \(n_1< n_2 < \cdots \). 
+    Por lo que existe un \(k_1 \in \mathbb{N}\)  tal  que \(k_1 > k_0\) y \(n_{k_1} > \tilde{N}\). 
+  </p>
+  <p>
+    Vamos a tomar \(N=n_{k_1}\) y probar \eqref{Eqn:Aux1}. Si tomamos \(n \geq N=n_{k_1}\) entonces 
+    \(n\geq n_{k_1} \geq \tilde{N}\) asi que por \eqref{Eqn:Aux2}:
+    \begin{eqnarray*} 
+    |a_n-a_{n_{k_1}}| < \frac{\varepsilon}{2}.
+    \end{eqnarray*}
+    Pero como \(k_1 \geq k_0\) por \eqref{Eqn:Aux3} resulta:
+    \[
+    |a_{k_1}-L|< \frac{\varepsilon}{2}.
+    \]
+    Estas dos últimas desigualdades, junto conla desigualdad del triángulo implican
+    \[
+    |a_n-L|< \varepsilon,
+    \]
+    probando \eqref{Eqn:Aux1}.
+  </p>
+</div>
 </div>
 
 
