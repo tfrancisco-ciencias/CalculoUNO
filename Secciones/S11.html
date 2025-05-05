@@ -796,7 +796,7 @@ para todos \(n,m \geq N\)
   
 
 <div class="prop-box">
-  <h2 class="number-title"> Proposición  </h2>
+  <h2 class="number-title" id="Lema:AuxCompletez"> Lema   </h2>
   <p>
     Sea \((a_n)_{n=1}^\infty\) una sucesión de Cauchy. Supón que existe 
     una subsucesión \((a_{n_k})_{k=1}^\infty\) convergente.
@@ -861,9 +861,50 @@ para todos \(n,m \geq N\)
   <h2 class="number-title"> Teorema </h2>
   <h3 > Completez de \(\mathbb{R}\) </h3>
 
-  Una sucesión \((x_k)_{k=1}^\infty\) converge si y sólo si \((x_k)_{k=1}^\infty\)
-  satisface el criterio de Cauchy.
+  <p>
+    Toda sucesión de Cauchy en \(\mathbb{R}\)  
+  converge a un punto en \(\mathbb{R}\). 
+  </p>
 
+  <button class="respButton hvr-grow"> Demostración </button>
+  <div class="resp-box">
+  <p>
+    Sea \((x_n)_{n=1}^\infty\) una sucesión de Cauchy (fija y arbitraria). Debemos de probar que 
+    existe \(x\in \mathbb{R}\) tal que \(\lim_{n\to \infty}x_n=x\).
+  </p>
+  <p>
+  Paso 1: \( (x_n)_{n=1}^\infty\)  es una sucesión acotada.
+  </p>
+  <p>
+    Ya que \( (x_n)_{n=1}^\infty\) es de Cauchy, para \(\varepsilon =1\) existe \(N_1\in \mathbb{N}\)
+    tal que, para todos \(n,m \geq N_1\), \(|x_n-x_m|< 1\). Por lo tanto, para toda \(n \geq N_1\):
+    \[
+    ||x_n|-|x_{N_1}||\leq |x_n-x_{N_1}| < 1 \Rightarrow |x_n| \leq 1+ |x_{N_1}|.
+    \]
+    Si tomamos \(M=\max\{|x_1|, \dots, |x_{N_1}|, 1+|x_{N_1}|  \}\), se sigue que, \(|x_n|\leq M\) 
+    para todo \(n\geq 1\).
+  </p>
+
+  <p>
+    Paso 2: usar el Teorema de Bolzano-Weirestrass para encontrar el límite.
+  </p>
+  <p>
+    Sabemos que  \((x_n)_{n=1}^\infty \subset [-M,M]\), por lo que el Teorema de Bolzano-Weirestrass
+    asegura la existencia  de una subsuseción \((x_{n_k})_{k=1}^\infty\)
+    de \( (x_n)_{n=1}^\infty\) y un punto \(x\in [-M,M]\), tal que \(\lim_{k\to \infty} x_{n_k}=x\).
+  </p>
+  <p>
+    Paso 3: probar \(\lim_{n\to \infty}x_n=x\).
+  </p>
+  <p>
+    Como \((x_n)_{n=1}^\infty\) 
+    es sucesión de Cauchy y \(\lim_{k\to \infty} x_{n_k}=x\) aplicando 
+    directamente la <a href="#Lema:AuxCompletez">Lema 11.23</a> concluimos que \(\lim_{n\to \infty}x_n=x\). 
+
+  </p>
+  </div>
+
+ 
 </div>
 
 
