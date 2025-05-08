@@ -635,7 +635,51 @@ Sugerencia: usa el <a href="./S2.html#Ejer:SandwichDesigualdades">Ejercicio 2.7<
 </div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Este ejercicio da una demostración del algoritmo babilónico 
+    para obtener raíces cuadradas.
+  </p>
+  <p>
+    Fija \(A>0\) y un \(a_0> 0\). La idea es que  \(a_0\) sea una 
+    primera aproximación de \(\sqrt{A}\). 
+  </p>
+  <p>
+    Para \(n\geq 0\) definimos por recursión: 
+    \[
+    a_{n+1}=\frac{1}{2}\left( a_n+ \frac{A}{a_n}\right).
+    \]
+  </p>
+  <p>
+    <ol>
+      <li>
+        Usando la desigualdad aritmético-geométrica prueba que \(a_{n+1}\geq \sqrt{A}\),
+        para todo \(n\geq 0\).
+      </li>
+      <li>
+        Prueba que para todo \(n\geq 0\):
+        \[
+        a_{n+1}-a_n = \frac{A-a_n^2}{2a_n}
+        \]
+      </li>
+      <li>
+        Prueba que la sucesión \((a_n)_{n=1}^\infty\) es monótona creciete y por el 
+        <a>Teorema 11.9</a> concluye que existe \(\lim_{n\to \infty}a_n\). 
+        Denota \(a=\lim_{n\to \infty}a_n\).
+      </li>
+      <li>
+        En la ecuación 
+        \[
+        a_{n+1}=\frac{1}{2}\left( a_n+ \frac{A}{a_n}\right)
+        \]
+        toma límite cuando \(n\to \infty\) y usa la ecuación resultante 
+        para probar que \(a^2=A\).
+      </li>
+    </ol>
+  </p>
 
+</div>
 
 <div class="teorema-box">
   <h2 class="number-title" id="Teo:IntervalosCerradosAnidados"> Teorema </h2>
