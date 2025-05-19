@@ -372,14 +372,49 @@
           </p>
       </div>
 
+
+
+
+       
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+      
+        Este ejercicio generaliza la desigualdad de Bernoulli
+        (<a href="./S3.html#Ejer:DesigualdadBernoulli">Ejercicio 3.16</a> )
+        pasando de \(n\) natural a racional.
+      
+      
+      Sea \(m\in \mathbb{Q}\) una constante  con \(m > 1\) y considera
+      \(f(x)=(1+x)^m-mx\) con
+      \(x\in [-1,\infty)\).
+      <ol>
+      <li>
+        Encuentra el mínimo absoluto de \(f\) en \([-1,\infty)\).
+        Sugerencia: encuentra los intervalos de crecimiento y puntos críticos.
+      </li>
+      <li>
+        Con ayuda del inciso anterior demuestra la desigualdad de Bernoulli:
+        dado \(m\in \mathbb{Q}\), \(m>1\):
+      \[
+      (1+x)^m \geq 1+mx, \quad \forall x\geq -1,
+      \]
+      con igualdad si y sólo si \(x=0\).
+      </li>
+      <li>
+        Con ejemplos muestra que la desigualdad de Bernoulli no se
+        vale si tomamos \(m\in (0,1)\).
+      </li>
+      </ol>
+      </div>
+
+
       <div class="teorema-box">
         <h2 class="number-title"> Teorema  </h2>
         <h3>Criterio de la primera derivada para extremos locales</h3>
          <p>
           
-
-          Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\). Supongamos que 
-          existe \(c\in (a,b)\) y \(r>0\) tal que:
+Supongamos que \(f\) está definida en una vecindad de \(c\), \(f\) es diferenciable 
+en dicha vecindad y existe un \(r>0\) tal que:
          
           <ol>
             <li>
@@ -431,93 +466,7 @@
       </div>
 
 
-       
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
-      
-        Este ejercicio generaliza la desigualdad de Bernoulli
-        (<a href="./S3.html#Ejer:DesigualdadBernoulli">Ejercicio 3.16</a> )
-        pasando de \(n\) natural a racional.
-      
-      
-      Sea \(m\in \mathbb{Q}\) una constante  con \(m > 1\) y considera
-      \(f(x)=(1+x)^m-mx\) con
-      \(x\in [-1,\infty)\).
-      <ol>
-      <li>
-        Encuentra el mínimo absoluto de \(f\) en \([-1,\infty)\).
-        Sugerencia: encuentra los intervalos de crecimiento y puntos críticos.
-      </li>
-      <li>
-        Con ayuda del inciso anterior demuestra la desigualdad de Bernoulli:
-        dado \(m\in \mathbb{Q}\), \(m>1\):
-      \[
-      (1+x)^m \geq 1+mx, \quad \forall x\geq -1,
-      \]
-      con igualdad si y sólo si \(x=0\).
-      </li>
-      <li>
-        Con ejemplos muestra que la desigualdad de Bernoulli no se
-        vale si tomamos \(m\in (0,1)\).
-      </li>
-      </ol>
-      </div>
 
-
-      <div class="teorema-box">
-        <h2 class="number-title"> Teorema  </h2>
-        <h3 >Criterio de la primera derivada para concavidad</h3>
-        
-        Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
-        diferenciable en \((a,b)\).
-        
-        <ol>
-        
-        <li>
-          Si \(f'\) es monótona creciente en \((a,b)\) entonces \(f\) es
-          cóncava hacia arriba en \([a,b]\).
-        </li>
-        <li>
-          Si \(f'\) es monótona decreciente en \((a,b)\) entonces \(f\) es
-          cóncava hacia abajo en \([a.b]\).
-        </li>
-        </ol>
-        </div>
-        
-        <div class="teorema-box">
-          <h2 class="number-title"> Teorema  </h2>
-        
-          <h3>Criterio de la segunda derivada para concavidad</h3>
-        
-        Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
-        diferenciable en \((a,b)\) y tal que
-        \(f''\) existe  en \((a,b)\).
-        
-        <ol>
-        
-        <li>
-          Si \(f'' >0\)  en \((a,b)\) entonces \(f\) es cóncava hacia arriba en \([a,b]\).
-        </li>
-        <li>
-          Si \(f''< 0\) en \((a,b)\) entonces \(f\) es cóncava hacia abajo en \([a.b]\).
-        </li>
-        </ol>
-        </div>
-        
-        
-        
-        <div class="ejercicio-box">
-          <h2 class="number-title" id="Ejer:RectaSoporteConcavasArriba"> Ejercicio </h2>
-        
-        
-        Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable
-        en \((a,b)\) y tal que \(f'\) es  o bien monótona creciente o
-        monótona decreciente en \((a,b)\).
-        
-        Sea \((x,_0, f(x_0))\), \(x_0 \in (a,b)\) un punto fijo y arbitrario.
-        Demuestra que la recta tangente a la gráfica de \(f\) en \((x_, f(x_0))\)
-        es una recta soporte para la gráfica.
-        </div>
         
         <div class="nota-box">
         <h2 class="number-title"> Optimización </h2>
@@ -631,7 +580,7 @@
         
           Un estudio de productividad efectuado en una fábrica, indica que un
           trabajador  promedio que inicia su labor a las 8.00 am habrá producido
-          \(Q(t)=-t^3+9t^2+12t\) unidades de  producto, \(t\) horas des pués del inicio.
+          \(Q(t)=-t^3+9t^2+12t\) unidades de  producto, \(t\) horas después del inicio.
           Si partimos el intervalo de trabajo en 8 partes iguales, encuentra el
           intervalo del día en el que el trabajador es más eficiente.
         </div>
@@ -650,12 +599,12 @@
         \]
         </li>
         <li>
-          Regresando al <a href="#Ejer:EjemploEficiencia">Ejercicio 17.11</a>, ¿ en
-          qué momento de la ma\~nana es el trabajador más eficiente ?
+          Regresando al <a href="#Ejer:EjemploEficiencia">Ejercicio 16.29</a>, ¿ en
+          qué momento de la mañana es el trabajador más eficiente ?
         </li>
         <li>
-          El máximo punto de eficiencia también es conocido como el  \emph{punto
-            de beneficios decrecientes}. Proporciona un argumento que
+          El máximo punto de eficiencia también es conocido como el  
+          <i>punto de beneficios decrecientes </i>. Proporciona un argumento que
         justifiqué los dos nombres dados a ese punto.
         </li>
         
@@ -690,7 +639,61 @@
         </div>
         
         
+          <div class="teorema-box">
+        <h2 class="number-title"> Teorema  </h2>
+        <h3 >Criterio de la primera derivada para concavidad</h3>
         
+        Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+        diferenciable en \((a,b)\).
+        
+        <ol>
+        
+        <li>
+          Si \(f'\) es monótona creciente en \((a,b)\) entonces \(f\) es
+          cóncava hacia arriba en \([a,b]\).
+        </li>
+        <li>
+          Si \(f'\) es monótona decreciente en \((a,b)\) entonces \(f\) es
+          cóncava hacia abajo en \([a.b]\).
+        </li>
+        </ol>
+        </div>
+        
+        <div class="teorema-box">
+          <h2 class="number-title"> Teorema  </h2>
+        
+          <h3>Criterio de la segunda derivada para concavidad</h3>
+        
+        Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+        diferenciable en \((a,b)\) y tal que
+        \(f''\) existe  en \((a,b)\).
+        
+        <ol>
+        
+        <li>
+          Si \(f'' >0\)  en \((a,b)\) entonces \(f\) es cóncava hacia arriba en \([a,b]\).
+        </li>
+        <li>
+          Si \(f''< 0\) en \((a,b)\) entonces \(f\) es cóncava hacia abajo en \([a.b]\).
+        </li>
+        </ol>
+        </div>
+        
+        
+        
+        <div class="ejercicio-box">
+          <h2 class="number-title" id="Ejer:RectaSoporteConcavasArriba"> Ejercicio </h2>
+        
+        
+        Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\) y diferenciable
+        en \((a,b)\) y tal que \(f'\) es  o bien monótona creciente o
+        monótona decreciente en \((a,b)\).
+        
+        Sea \((x,_0, f(x_0))\), \(x_0 \in (a,b)\) un punto fijo y arbitrario.
+        Demuestra que la recta tangente a la gráfica de \(f\) en \((x_, f(x_0))\)
+        es una recta soporte para la gráfica.
+        </div>
+    
         
         
         <!--         <div class="nota-box">
