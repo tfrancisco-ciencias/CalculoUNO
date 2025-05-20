@@ -105,6 +105,20 @@
           continua en \([a,b]\) y diferenciable en \((a,b)\). Demuestra que si 
            \(f'=0\) en \((a,b)\) entonces \(f\) es constante en \([a,b]\).
         </p>
+        <button class="respButton hvr-grow "> Demostración </button>
+
+        <div class="resp-box">
+          <p>
+          Sean \(x_1,x_2\in [a,b]\) fijos y arbitrarios. Por el Teorema del Valor Medio tenemos 
+          que existe \(c\) entre \(x_1\) y \(x_2\) tal que 
+          \[
+          \frac{f(x_2)-f(x_1)}{x_2-x_1}=f'(c).
+          \]
+          Ahora, por hipótesis \(f'(c)=0\). Se sigue que \(f(x_2)-f(x_1)=0\), es decir 
+          \(f(x_1)=f(x_2)\). Al ser \(x_1, x_2\) arbitrarias se concluye que \(f\) es constante.
+        </p>
+        </div>
+        
       </div>
 
 
@@ -137,16 +151,34 @@
   Demuestra que existe una constante \(c\) tal que \(f(x)=ce^x\), para todo \(x\in (a,b)\).
   
 </p>
-<p>
-  Sugerencia: deriva la función \(\frac{f(x)}{e^x}\).
-</p>
+<button class="respButton hvr-grow "> Demostración </button>
+<div class="resp-box">
+
+
 <p>
   Este ejercicio se puede pensar en términos de ecuaciones diferenciales.
   El ejercicio dice que, excepto por  constantes, la única función
   \(f\) que satisface \(f'=f\) (una ecuación diferencial) es la exponencial.
 </p>
 
-
+<p>
+  Sea \(f\) con la propiedad de que \(f'=f\). Sabemos que la función exponencial tiene 
+  ésta propiedad así que vamos a comparar \(f\) con la exponencial tomando su cociente.
+</p>
+<p>
+  Definimos \(g(x)=\frac{f(x)}{e^x}\). Como la función exponencial siempre es positiva, 
+  el cociente está bien definido, es una función continua y es diferenciable.
+</p>
+<p>
+  Usando la derivada del cociente y sabiendo que \(f=f', (e^x)'=e^x\) tenemos:
+  \begin{eqnarray*} 
+  g'(x)=\frac{f'(x)e^x-f(x)(e^x)' }{(e^x)^2}=\frac{f(x)e^x-f(x)e^x}{(e^x)^2}=0
+  \end{eqnarray*}
+  Aplicando el teorema anterior obtenemos que \(g\) es constante, asi que 
+  existe \(c\in \mathbb{R}\) tal que \(g(x)=c\) para todo \(x\in [a,b]\). 
+  Despejando \(f\) de \(g\) obtenemos que \(f(x)=ce^x\) para todo \(x\in [a,b]\).
+</p>
+</div>
 </div>
 
 
@@ -657,6 +689,57 @@ en dicha vecindad y existe un \(r>0\) tal que:
           cóncava hacia abajo en \([a.b]\).
         </li>
         </ol>
+        <p>
+          Nota: sólo es necesario probar inciso 1, pues el inciso 2 
+          se obtiene del 1 intercambiando \(f\) por \(-f\).
+        </p>
+        <button class="respButton hvr-grow "> Demostración inciso 1 </button>
+        <div class="resp-box">
+        <p>
+          Sean \(x_0,x_1\in [a,b]\) con \(x_0 < x_1 \). Para \(t\in [0,1]\) denotamos 
+          \(
+          x_t= (1-t)x_0+tx_1.
+          \)
+          Para probar que \(f\) es cóncava hacia arriba debemos de probar:
+          \[
+          f(x_t) \leq (1-t)f(x_0)+tf(x_1) 
+          \]
+          Para continuar reescribimos \(f(x_t)\) usando las "coordenadas" \(t\) y \(1-t\)
+          como \(f(x_t)=(1-t)f(x_t)+tf(x_t)\). Entonces la desigualdad anterior se 
+          reescribe como 
+          \begin{eqnarray}
+             (1-t)f(x_t)+tf(x_t) & \leq & (1-t)f(x_0)+tf(x_1)  \label{Eqn:Aux1Concavidad} \\
+          \Leftrightarrow (1-t)(f(x_t)-f(x_0) ) &\leq & t(f(x_1)-f(x_t)) \label{Eqn:Aux2Concavidad}
+          \end{eqnarray}
+        </p>
+        <p>
+          Ahora usando el T.V.M. podemos escribir 
+          \begin{equation}\label{Eqn:Aux3Concavidad}
+          f(x_t)-f(x_0)=f'(c_t)(x_t-x_0), \quad f(x_1)-f(x_t)=f'(d_t)(x_1-x_t)
+          \end{equation}
+          donde \(x_0< c_t < x_t\), \(x_t< d_t < x_1\).
+        </p>
+        <p>
+          Ahora, calculando directamente tenemos 
+          \begin{eqnarray} 
+          x_t-x_0&=& (1-t)x_0+tx_1-x_0=-tx_0+tx_1=t(x_1-x_0) \label{Eqn:Aux4Concavidad}\\
+          x_1-x_t&=& x_1- ((1-t)x_0+tx_1)=(1-t)(x_1-x_0) \label{Eqn:Aux5Concavidad}
+          \end{eqnarray}
+        </p>
+        <p>
+          Substituyendo \eqref{Eqn:Aux3Concavidad}, \eqref{Eqn:Aux4Concavidad} y 
+          \eqref{Eqn:Aux5Concavidad} en \eqref{Eqn:Aux2Concavidad} resulta que debemos de probar:
+          \begin{equation}\label{Eqn:Aux6Concavidad}
+           (1-t)t(x_1-x_0)f'(c_t) \leq (1-t)t(x_1-x_0)f'(d_t).
+          \end{equation}
+        </p>
+        <p>
+          Ahora, estamos suponiendo que \(f'\) es monótona creciente en \((a,b)\) y además 
+          sabemos que \( a\leq x_0 < c_t < x_t< d_t < x_1 \leq b  \) por lo que 
+          \(f'(c_t)\leq f'(d_t)\). Ahora \((1-t)t(x_1-x_0) \geq 0\), asi que multiplicando 
+          la desigualdad anterior obtenemos \eqref{Eqn:Aux6Concavidad}.
+        </p>
+         </div>
         </div>
         
         <div class="teorema-box">
@@ -677,6 +760,7 @@ en dicha vecindad y existe un \(r>0\) tal que:
           Si \(f''< 0\) en \((a,b)\) entonces \(f\) es cóncava hacia abajo en \([a.b]\).
         </li>
         </ol>
+
         </div>
         
         
